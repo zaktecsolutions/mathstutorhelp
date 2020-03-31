@@ -111,8 +111,8 @@ class CreateForeignKeysLearningPlatformTable extends Migration
         });
 
         Schema::table('user_course', function (Blueprint $table) {
-            $table->dropForeign('user_courses_user_id_foreign');
-            $table->dropForeign('user_courses_course_id_foreign');
+            $table->dropForeign('user_course_user_id_foreign');
+            $table->dropForeign('user_course_course_id_foreign');
         });
     }
 }
