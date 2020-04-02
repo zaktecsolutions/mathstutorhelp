@@ -3,9 +3,10 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-9">
             <div class="card">
                 <div class="card-header">Users</div>
+                <a href="#" class="btn btn-primary">Add User</a>
                 <div class="card-body">
                     <table class="table">
                         <thead>
@@ -26,17 +27,21 @@
                                 <td>{{ $user->email }}</td>
                                 <td>{{ implode(', ', $user->roles()->get()->pluck('name')->toArray()) }}</td>
                                 <td>
-                                    @can('edit-users')
+
                                     <a href="{{ route('admin.users.edit', $user->id)}}">
-                                        <button type="button" class="btn btn-primary float-left">Edit</button></a>
+                                        <button type="button" class="btn btn-primary float-left">View</button></a> </td>
+                                    @can('edit-users')
+                                    <td><a href="{{ route('admin.users.edit', $user->id)}}">
+                                        <button type="button" class="btn btn-primary float-left">Edit</button></a></td>
                                     @endcan
                                     @can('delete-users')
-                                    <form action="{{ route('admin.users.destroy',$user)}}" method="POST"
+                                   <td> <form action="{{ route('admin.users.destroy',$user)}}" method="POST"
                                         class="float-left">
                                         @csrf
                                         {{ @method_field('DELETE')}}
-                                        <button type="submit" class="btn btn-warning">Delete</button>
+                                        <button type="submit" class="btn btn-warning">Delete</button> 
                                     </form>
+                                    <td>
                                     @endcan
                                 </td>
                             </tr>

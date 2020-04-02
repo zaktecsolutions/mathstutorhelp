@@ -75,44 +75,54 @@ class CreateForeignKeysLearningPlatformTable extends Migration
     public function down()
     {
         Schema::table('courses', function (Blueprint $table) {
-            $table->dropForeign('courses_user_id_foreign');
+            
+            $table->dropForeign(['user_id']);
         });
 
         Schema::table('topics', function (Blueprint $table) {
-            $table->dropForeign('topics_course_id_foreign');
+         
+            $table->dropForeign(['course_id']);
 
         });
 
         Schema::table('quizes', function (Blueprint $table) {
-            $table->dropForeign('quizes_course_id_foreign');
+          
+            $table->dropForeign(['course_id']);
         });
 
         Schema::table('lessons', function (Blueprint $table) {
-            $table->dropForeign('lessons_topic_id_foreign');
+          
+            $table->dropForeign(['topic_id']);
         });
 
         Schema::table('questions', function (Blueprint $table) {
-            $table->dropForeign('questions_quiz_id_foreign');
-            $table->dropForeign('questions_topic_id_foreign');
-            $table->dropForeign('questions_lesson_id_foreign');
+          
+            $table->dropForeign(['quiz_id']);
+            $table->dropForeign(['topic_id']);
+            $table->dropForeign(['lesson_id']);
         });
 
         Schema::table('answers', function (Blueprint $table) {
-            $table->dropForeign('answers_question_id_foreign');
+          
+            $table->dropForeign(['question_id']);
         });
 
         Schema::table('digitutor', function (Blueprint $table) {
-            $table->dropForeign('digitutor_user_id_foreign');
+         
+            $table->dropForeign(['user_id']);
+            
         });
 
         Schema::table('question_answer', function (Blueprint $table) {
-            $table->dropForeign('question_answer_question_id_foreign');
-            $table->dropForeign('question_answer_answer_id_foreign');
+         
+            $table->dropForeign(['question_id']);
+            $table->dropForeign(['answer_id']);
         });
 
         Schema::table('user_course', function (Blueprint $table) {
-            $table->dropForeign('user_course_user_id_foreign');
-            $table->dropForeign('user_course_course_id_foreign');
+          
+            $table->dropForeign(['user_id']);
+            $table->dropForeign(['course_id']);
         });
     }
 }

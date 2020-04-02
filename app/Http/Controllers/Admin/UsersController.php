@@ -100,7 +100,7 @@ class UsersController extends Controller
     {
 
         //dd($request);
-        $user->roles()->sync($request->roles);
+        $user->roles()->sync($request->roles);     // attach a role to the user 
         $user->name = $request->name;
         $user->email = $request->email;
         if ($user->save()) {$request->session()->flash('success', $user->name . ' has been updated');

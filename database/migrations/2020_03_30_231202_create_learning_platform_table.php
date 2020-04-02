@@ -15,12 +15,12 @@ class CreateLearningPlatformTable extends Migration
     {
         Schema::create('courses', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->string('course_name');
             $table->string('course_code');
             $table->string('course_desc');
-            $table->integer('course_grade');
-            $table->text('course_image');
+            $table->string('course_grade');
+            $table->string('course_image');
             $table->timestamps();
            
 
@@ -68,7 +68,7 @@ class CreateLearningPlatformTable extends Migration
             $table->unsignedBigInteger('lesson_id')->nullable();
             $table->string('question_title');
             $table->string('question_body');
-            $table->string('imagepath');
+            $table->string('question_image');
             $table->boolean('published')->default(false);
             $table->timestamps();
         });

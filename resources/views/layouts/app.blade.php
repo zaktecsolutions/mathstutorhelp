@@ -38,7 +38,7 @@
                     {{-- <a class="navbar-brand"><img src="http://mathstutorhelp-env.5enpe4ajs2.eu-west-2.elasticbeanstalk.com/images/mathstutorhelplogo.png"> </a> --}}
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                    
+                        @guest
                         <li class="nav-item">
                             <a class="nav-link" href="#">Home </a>
                         </li>
@@ -51,7 +51,17 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">FAQ </a>
                         </li>
-            
+                        @else
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Dashboard </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('admin.users.index')}}">User Management</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('admin.courses.index')}}">Data Input</a>
+                        </li>
+                        @endguest
                     </ul>
 
                     <!-- Right Side Of Navbar -->

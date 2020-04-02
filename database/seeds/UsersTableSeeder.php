@@ -15,6 +15,7 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         //
+        Schema::disableForeignKeyConstraints();
         User::truncate();
         DB::table('role_user')->truncate();
 
@@ -51,6 +52,8 @@ class UsersTableSeeder extends Seeder
         $student->roles()->attach($studentRole);
         $tutor->roles()->attach($tutorRole);
         $parent->roles()->attach($parentRole);
+        Schema::enableForeignKeyConstraints();
 
     }
+    
 }
