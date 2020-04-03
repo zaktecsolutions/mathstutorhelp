@@ -39,7 +39,6 @@ class CoursesController extends Controller
     {
         //
         return view('admin.courses.create');
-        
 
     }
 
@@ -56,8 +55,8 @@ class CoursesController extends Controller
             'course_name' => 'required| max:120',
             'course_code' => 'required| max:120',
             'course_desc' => 'required| max:120',
-            'course_grade' => 'required| numeric|min:1|max:9',
-            'course_image' => 'required| min:4',
+            'course_grade' => 'required| max:120',
+            'course_image' => 'required| max:120',
         ]);
 
         $course = new Course;
@@ -85,9 +84,9 @@ class CoursesController extends Controller
     public function show(Course $course)
     {
         //
-          // return 'User index page';
-          $courses = Course::all(); //gets all the courses
-          return view('admin.courses.show')->with('courses', $courses);
+        // return 'User index page';
+        $courses = Course::all(); //gets all the courses
+        return view('admin.courses.show')->with('courses', $courses);
     }
 
     /**
@@ -122,6 +121,14 @@ class CoursesController extends Controller
     {
         // dd($request); //check  request
 
+        $this->validate($request, [
+            'course_name' => 'required| max:120',
+            'course_code' => 'required| max:120',
+            'course_desc' => 'required| max:120',
+            'course_grade' => 'required| max:120',
+            'course_image' => 'required| max:120',
+        ]);
+
         $course->course_name = $request->course_name;
         $course->course_code = $request->course_code;
         $course->course_desc = $request->course_desc;
@@ -146,12 +153,12 @@ class CoursesController extends Controller
     {
         //
 
-         if (Gate::denies('manage-users')) {
-    return redirect(route('admin.users.index'));
-    }
+        if (Gate::denies('manage-users')) {
+            return redirect(route('admin.users.index'));
+        }
 
-    $course->delete();
+        $course->delete();
 
-    return redirect()->route('admin.courses.index'); 
+        return redirect()->route('admin.courses.index');
     }
 }
