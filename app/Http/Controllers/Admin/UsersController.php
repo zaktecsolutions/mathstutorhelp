@@ -44,6 +44,7 @@ class UsersController extends Controller
     public function create()
     {
         //
+        return view('admin.users.create');
     }
 
     /**
@@ -54,7 +55,6 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
     }
 
     /**
@@ -66,6 +66,9 @@ class UsersController extends Controller
     public function show(User $user)
     {
         //
+        $users = User::all();
+        return view('admin.users.show')->with('users', $users);
+
     }
 
     /**
@@ -100,7 +103,7 @@ class UsersController extends Controller
     {
 
         //dd($request);
-        $user->roles()->sync($request->roles);     // attach a role to the user 
+        $user->roles()->sync($request->roles); // attach a role to the user
         $user->name = $request->name;
         $user->email = $request->email;
         if ($user->save()) {$request->session()->flash('success', $user->name . ' has been updated');

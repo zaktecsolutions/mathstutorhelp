@@ -52,14 +52,20 @@
                             <a class="nav-link" href="#">FAQ </a>
                         </li>
                         @else
+                        @can('admin-gate')
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Dashboard </a>
-                        </li>
+                            <a class="nav-link" href="{{ route('admindashboard')}}"> Admin Dashboard </a>
+                        </li> @endcan
+                        @can('student-gate')
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('admin.users.index')}}">User Management</a>
-                        </li>
+                            <a class="nav-link" href="{{ route('studentdashboard')}}">Student Dashboard</a>
+                        </li> @endcan
+                        @can('tutor-gate')
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('admin.courses.index')}}">Data Input</a>
+                            <a class="nav-link" href="{{ route('tutordashboard')}}"> Tutor Dashboard</a>
+                        </li> @endcan
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('admin.courses.index')}}"> Contact Us</a>
                         </li>
                         @endguest
                     </ul>

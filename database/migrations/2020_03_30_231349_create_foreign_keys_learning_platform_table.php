@@ -13,9 +13,9 @@ class CreateForeignKeysLearningPlatformTable extends Migration
      */
     public function up()
     {
-        Schema::table('courses', function (Blueprint $table) {
+        Schema::table('users', function (Blueprint $table) {
 
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('course_id')->references('id')->on('courses');
         });
 
         Schema::table('topics', function (Blueprint $table) {
@@ -23,7 +23,7 @@ class CreateForeignKeysLearningPlatformTable extends Migration
             $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
         });
 
-        Schema::table('quizes', function (Blueprint $table) {
+        Schema::table('exams', function (Blueprint $table) {
 
             $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
         });
@@ -35,35 +35,22 @@ class CreateForeignKeysLearningPlatformTable extends Migration
 
         Schema::table('questions', function (Blueprint $table) {
 
-            $table->foreign('quiz_id')->references('id')->on('courses')->onDelete('cascade');
-            $table->foreign('topic_id')->references('id')->on('topics')->onDelete('cascade');
+            $table->foreign('exam_id')->references('id')->on('exams')->onDelete('cascade');
             $table->foreign('lesson_id')->references('id')->on('lessons')->onDelete('cascade');
         });
-
-        Schema::table('answers', function (Blueprint $table) {
-
-            $table->foreign('question_id')->references('id')->on('questions')->onDelete('cascade');
-        });
-
-        Schema::table('digitutor', function (Blueprint $table) {
+        Schema::table('digitutors', function (Blueprint $table) {
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
         });
 
-        Schema::table('question_answer', function (Blueprint $table) {
+        Schema::table('question_topic', function (Blueprint $table) {
 
             $table->foreign('question_id')->references('id')->on('questions')->onDelete('cascade');
-            $table->foreign('answer_id')->references('id')->on('answers')->onDelete('cascade');
+            $table->foreign('topic_id')->references('id')->on('topics')->onDelete('cascade');
 
         });
 
-        Schema::table('user_course', function (Blueprint $table) {
-
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
-
-        });
     }
 
     /**
@@ -74,55 +61,46 @@ class CreateForeignKeysLearningPlatformTable extends Migration
 
     public function down()
     {
-        Schema::table('courses', function (Blueprint $table) {
-            
-            $table->dropForeign(['user_id']);
-        });
 
-        Schema::table('topics', function (Blueprint $table) {
-         
+        Schema::table('users', function (Blueprint $table) {
+
             $table->dropForeign(['course_id']);
 
         });
 
-        Schema::table('quizes', function (Blueprint $table) {
-          
+        Schema::table('topics', function (Blueprint $table) {
+
+            $table->dropForeign(['course_id']);
+
+        });
+
+        Schema::table('exams', function (Blueprint $table) {
+
             $table->dropForeign(['course_id']);
         });
 
         Schema::table('lessons', function (Blueprint $table) {
-          
+
             $table->dropForeign(['topic_id']);
         });
 
         Schema::table('questions', function (Blueprint $table) {
-          
-            $table->dropForeign(['quiz_id']);
-            $table->dropForeign(['topic_id']);
+
+            $table->dropForeign(['exam_id']);
             $table->dropForeign(['lesson_id']);
         });
 
-        Schema::table('answers', function (Blueprint $table) {
-          
-            $table->dropForeign(['question_id']);
-        });
+        Schema::table('digitutors', function (Blueprint $table) {
 
-        Schema::table('digitutor', function (Blueprint $table) {
-         
             $table->dropForeign(['user_id']);
-            
+
         });
 
-        Schema::table('question_answer', function (Blueprint $table) {
-         
+        Schema::table('question_topic', function (Blueprint $table) {
+
             $table->dropForeign(['question_id']);
-            $table->dropForeign(['answer_id']);
+            $table->dropForeign(['topic_id']);
         });
 
-        Schema::table('user_course', function (Blueprint $table) {
-          
-            $table->dropForeign(['user_id']);
-            $table->dropForeign(['course_id']);
-        });
     }
 }

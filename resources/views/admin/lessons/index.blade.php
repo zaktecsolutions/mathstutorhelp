@@ -1,45 +1,47 @@
-{{--  This page will display the course  tables --}}
+{{--  This page will display the lessons tables --}}
 @extends('layouts.app')
 @section('content')
 {{-- <div class="container"> --}}
 <div class="row justify-content-center">
     <div class="col-md-9">
         <div class="card">
-            <div class="card-header">Courses</div>
-            <a href="{{ route('admin.courses.create')}}" class="btn btn-primary">Add course</a>
+            <div class="card-header">lessons</div>
+            <a href="{{ route('admin.lessons.create')}}" class="btn btn-primary">Add lesson</a>
             <div class="card-body">
                 <table class="table">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Course Name</th>
-                            <th scope="col">Course Code</th>
-                         {{--    <th scope="col">Course Descripton</th>
-                            <th scope="col">Course Level</th>
-                            <th scope="col">Course Image </th> --}}
+                            <th scope="col">Lesson Name</th>
+                            <th scope="col">Lesson Code</th>
+                           {{--  <th scope="col">Lesson Desc</th>
+                            <th scope="col">Lesson Worksheet</th>
+                            <th scope="col">Lesson Body</th>
+                            <th scope="col">Lesson Quiz</th> --}}
                             <th scope="col"></th>
                             <th scope="col"> Action</th>
                         </tr>
                     </thead> 
                     <tbody>
-                        @foreach($courses as $course)
+                        @foreach($lessons as $lesson)
                         <tr>
-                            <th scope="row">{{ $course->id }}</th>
-                            <td>{{ $course->course_name }}</td>
-                            <td>{{ $course->course_code }}</td>
-                            {{-- <td>{{ $course->course_desc }}</td>
-                            <td>{{ $course->course_level }}</td>
-                            <td>{{ $course->course_image }}</td> --}}
+                            <th scope="row">{{ $lesson->id }}</th>
+                            <td>{{ $lesson->lesson_name }}</td>
+                            <td>{{ $lesson->lesson_code }}</td>
+                           {{--  <td>{{ $lesson->lesson_desc }}</td>
+                            <td>{{ $lesson->lesson_ws }}</td>
+                            <td>{{ $lesson->lesson_body }}</td>
+                            <td>{{ $lesson->lesson_quiz }}</td> --}}
                             <td>
-                                <a href="{{ route('admin.courses.show', $course->id)}}">
+                                <a href="{{ route('admin.lessons.show', $lesson->id)}}">
                                     <button type="button" class="btn btn-primary float-left">View</button></a> </td>
 
 
-                            <td> <a href="{{ route('admin.courses.edit', $course->id)}}">
+                            <td> <a href="{{ route('admin.lessons.edit', $lesson->id)}}">
                                     <button type="button" class="btn btn-primary float-left">Edit</button></a></td>
 
                             <td>
-                                <form action="{{ route('admin.courses.destroy',$course->id)}}" method="POST"
+                                <form action="{{ route('admin.lessons.destroy',$lesson->id)}}" method="POST"
                                     class="float-left">
                                     @csrf
                                     {{ @method_field('DELETE')}}

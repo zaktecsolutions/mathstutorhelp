@@ -38,26 +38,26 @@
 
 
 {{-- <div class="form-group row">
-    <label for="course_grade" class="col-md-2 col-form-label text-md-right">Course Grade</label>
+    <label for="course_level" class="col-md-2 col-form-label text-md-right">Course_level</label>
     <div class="col-md-6">
         @foreach ($courses as $course)
         <div class="form-check">
-            <input type="checkbox" name="courses_grade" value="{{$course->course_grade}}">
-@if($course->course_grade->pluck ('id')contains($course->course_grade)) checked
+            <input type="checkbox" name="courses_level" value="{{$course->course_level}}">
+@if($course->course_level->pluck ('id')contains($course->course_level)) checked
 @endif>
-<label> {{ $course->course_grade }} </label>
+<label> {{ $course->course_level }} </label>
 </div>
 @endforeach
 </div>
 </div> --}}
 
 <div class="form-group row">
-    <label for="course_grade" class="col-md-2 col-form-label text-md-right"> Course
-        Grade</label>
+    <label for="course_level" class="col-md-2 col-form-label text-md-right"> Course
+        Level </label>
     <div class="col-md-6">
-        <input id="course_grade" type="text" class="form-control @error('course_grade') is-invalid @enderror"
-            name="course_grade" value="{{ $course->course_grade ?? '' }}" required autofocus>
-        @error('course_grade')
+        <input id="course_level" type="text" class="form-control @error('course_level') is-invalid @enderror"
+            name="course_level" value="{{ $course->course_level ?? '' }}" required autofocus>
+        @error('course_level')
         <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>
         </span>

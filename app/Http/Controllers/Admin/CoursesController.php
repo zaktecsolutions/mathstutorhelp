@@ -27,6 +27,7 @@ class CoursesController extends Controller
 
         // return 'User index page';
         $courses = Course::all(); //gets all the courses
+        // dd($courses);
         return view('admin.courses.index')->with('courses', $courses);
     }
 
@@ -55,16 +56,16 @@ class CoursesController extends Controller
             'course_name' => 'required| max:120',
             'course_code' => 'required| max:120',
             'course_desc' => 'required| max:120',
-            'course_grade' => 'required| max:120',
+            'course_level' => 'required| max:120',
             'course_image' => 'required| max:120',
         ]);
 
         $course = new Course;
-        $courses = Course::all();
+        // $courses = Course::all();
         $course->course_name = $request->course_name;
         $course->course_code = $request->course_code;
         $course->course_desc = $request->course_desc;
-        $course->course_grade = $request->course_grade;
+        $course->course_level = $request->course_level;
         $course->course_image = $request->course_image;
 
         if ($course->save()) {$request->session()->flash('success', $course->course_name . ' has been updated');
@@ -99,10 +100,6 @@ class CoursesController extends Controller
     {
         //dd($course)  - check if course is coming
 
-        if (Gate::denies('manage-users')) {
-            return redirect(route('admin.courses.index'));
-        }
-
         $courses = Course::all(); //get all the courses
         return view('admin.courses.edit')->with([
             'course' => $course, // send the course you want to edit
@@ -119,20 +116,19 @@ class CoursesController extends Controller
      */
     public function update(Request $request, Course $course)
     {
-        // dd($request); //check  request
+       // dd($request); //check  request
 
         $this->validate($request, [
             'course_name' => 'required| max:120',
             'course_code' => 'required| max:120',
             'course_desc' => 'required| max:120',
-            'course_grade' => 'required| max:120',
+            'course_level' => 'required| max:120',
             'course_image' => 'required| max:120',
         ]);
-
         $course->course_name = $request->course_name;
         $course->course_code = $request->course_code;
         $course->course_desc = $request->course_desc;
-        $course->course_grade = $request->course_grade;
+        $course->course_level = $request->course_level;
         $course->course_image = $request->course_image;
 
         if ($course->save()) {$request->session()->flash('success', $course->course_name . ' has been updated');
@@ -141,7 +137,6 @@ class CoursesController extends Controller
         }
 
         return redirect()->route('admin.courses.index');
-
     }
     /**
      * Remove the specified resource from storage.

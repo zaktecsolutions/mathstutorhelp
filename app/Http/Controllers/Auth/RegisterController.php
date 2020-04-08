@@ -74,6 +74,8 @@ class RegisterController extends Controller
         //  attach the role to the created user 
         $role = Role::select('id')->where('name','student')->first();
         $user->roles() ->attach($role);
+      /*   $course = Course::select('id')->where('course_code','MTHGF')->first();
+        $user->course() ->attach($course); */
         return $user;
     }
 }

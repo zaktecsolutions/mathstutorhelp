@@ -38,8 +38,19 @@ class User extends Authenticatable
     public function roles()
     {
         // user belong to many roles
+
         return $this->belongsToMany('App\Role');
 
+    }
+
+    public function course()
+    { //courses belong to user
+        return $this->belongTo('App\Course');
+    }
+
+    public function digitutor()
+    { //User has One Tutor
+        return $this->hasOne('App\Digitutor');
     }
 
     public function hasAnyRoles($roles)
@@ -59,4 +70,5 @@ class User extends Authenticatable
         }
         return false;
     }
+
 }

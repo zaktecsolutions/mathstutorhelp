@@ -6,12 +6,20 @@ use Illuminate\Database\Eloquent\Model;
 
 class Course extends Model
 {
-    //
+    
 
-    public function user()
+    public function users()
     {
-        // course hasOne User
-        return $this->hasOne('App\User');
-
+        // course has many users 
+        return $this->hasMany('App\User');
     }
+
+
+    public function topics()
+    {
+        // courses has many topic
+        return $this->hasMany('App\Topic');
+    }
+
+
 }

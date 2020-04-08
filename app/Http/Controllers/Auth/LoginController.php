@@ -42,7 +42,20 @@ class LoginController extends Controller
     public function redirectTo()
     {
         if(Auth::user()->hasRole('admin')){
-            $this->redirectTo = route ('admin.users.index');
+            // $this->redirectTo = route ('admin.users.index');
+            $this->redirectTo = route ('admindashboard');
+            return $this->redirectTo;
+        }
+
+        if(Auth::user()->hasRole('student')){
+            // $this->redirectTo = route ('admin.users.index');
+            $this->redirectTo = route ('studentdashboard');
+            return $this->redirectTo;
+        }
+
+        if(Auth::user()->hasRole('tutor')){
+            // $this->redirectTo = route ('admin.users.index');
+            $this->redirectTo = route ('tutordashboard');
             return $this->redirectTo;
         }
 
