@@ -65,9 +65,7 @@ class UsersController extends Controller
      */
     public function show(User $user)
     {
-        //
-        $users = User::all();
-        return view('admin.users.show')->with('users', $users);
+        return view('admin.users.show')->with('user', $user);
 
     }
 
