@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Course;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
-use App\User;
 use App\Role;
+use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -21,7 +22,7 @@ class RegisterController extends Controller
     | validation and creation. By default this controller uses a trait to
     | provide this functionality without requiring any additional code.
     |
-    */
+     */
 
     use RegistersUsers;
 
@@ -40,6 +41,12 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+    }
+
+    public function showRegistrationForm()
+    {
+        $courses = Course::all();
+        return view('auth.register')->with('courses', $courses);
     }
 
     /**
@@ -63,19 +70,18 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
+
     protected function create(array $data)
     {
-
         $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'course_id' => $data['course_id'],
         ]);
-        //  attach the role to the created user 
-        $role = Role::select('id')->where('name','student')->first();
-        $user->roles() ->attach($role);
-      /*   $course = Course::select('id')->where('course_code','MTHGF')->first();
-        $user->course() ->attach($course); */
+        //  attach the role to the created user
+        $role = Role::select('id')->where('name', 'student')->first();
+        $user->roles()->attach($role);
         return $user;
     }
 }

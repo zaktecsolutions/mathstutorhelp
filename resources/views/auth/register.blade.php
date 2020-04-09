@@ -61,6 +61,20 @@
                             </div>
                         </div>
 
+
+                        <div class="form-group row">
+                            <label for="course_id" class="col-md-4 col-form-label text-md-right">Course</label>
+                            <div class="col-md-6">
+                                @foreach ($courses as $course )
+                                <div class="form-check">
+                                    <input type="radio" name="course_id" value="{{$course->id}}">
+                                    <label> {{ $course->course_name }} </label>
+                                </div>
+                                @endforeach
+                            </div>
+                        </div>
+
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
