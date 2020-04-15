@@ -8,7 +8,7 @@
                 <div class="card-header">Edit answer {{ $answer->id }}</div>
 
                 <div class="card-body">
-                    <form action="{{ route('admin.answers.update', $answer) }}" method="POST">
+                    <form action="{{ route('admin.question.answers.update', [$question,$answer]) }}" method="POST">
                         @csrf
                         {{ method_field('PUT')}}
                         @include('partials.inputanswers')

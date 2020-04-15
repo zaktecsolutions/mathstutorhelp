@@ -8,7 +8,7 @@ class Answer extends Model
 {
     //
     protected $fillable = [
-        'ans_image',  'ans_body', 'ans_explanation'
+        'ans_image',  'ans_body', 'ans_explanation', 'question_id', 'ans_correct'
     ];
 
     public function question()

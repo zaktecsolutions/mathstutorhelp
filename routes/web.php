@@ -33,7 +33,7 @@ Route::namespace ('Admin')->prefix('admin')->name('admin.')->middleware('can:adm
     Route::resource('/questions', 'QuestionsController');
     Route::resource('/digitutors', 'DigitutorsController');
     Route::resource('/quizzes', 'QuizzesController');
-   Route::resource('/answers', 'AnswersController');
+   Route::resource('question.answers', 'AnswersController');
 
 });
 

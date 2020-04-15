@@ -1,9 +1,9 @@
 <div class="form-group row">
     <label for="question_name" class="col-md-2 col-form-label text-md-right">Question Name</label>
     <div class="col-md-8">
-        <input id="question_name" type="question_name" class="form-control @error('question_name') is-invalid @enderror"
-            name="question_name" value="{{$question->question_name ?? '' }}" required autocomplete="question_name"
-            autofocus>
+        <textarea rows="3" id="question_name" class="form-control @error('question_name') is-invalid @enderror"
+            name="question_name" required autocomplete="question_name"
+            autofocus>{{$question->question_name ?? '' }}</textarea>
         @error('question_name')
         <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>
