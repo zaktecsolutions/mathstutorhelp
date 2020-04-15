@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Lesson;
+use App\Topic;
 class LessonsTableSeeder extends Seeder
 {
     /**
@@ -14,7 +15,10 @@ class LessonsTableSeeder extends Seeder
         //
         Schema::disableForeignKeyConstraints();
         lesson::truncate();
+        
+        $topic = Topic::where('topic_code', 'GFN1')->first();
         lesson::create([
+            'topic_id' => $topic->id,
             'lesson_name' => 'Place Value',
             'lesson_code' => 'GFLCN11',
             'lesson_desc' => 'To be able to use place value to read and write numbers',
@@ -24,6 +28,7 @@ class LessonsTableSeeder extends Seeder
 
         ]);
         lesson::create([
+            'topic_id' => $topic->id,
             'lesson_name' => 'Negative Number',
             'lesson_code' => 'GFLCN12',
             'lesson_desc' => 'To be able to use negative numbers',
