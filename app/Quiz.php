@@ -26,7 +26,6 @@ class Quiz extends Model
     public function quizresult()
     {
         //quiz belongs to quizresult
-        return $this->belongsTo('App\Quizresult');
-
+        return $this->hasMany('App\Quizresult');
     }
 }

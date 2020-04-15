@@ -17,13 +17,6 @@ class Topic extends Model
         return $this->belongsTo('App\Course');
     }
 
-    public function questions()
-    {
-        //topic belongs to many questions
-        return $this->belongsToMany('App\Question');
-
-    }
-
     public function lessons()
     {
         // topic has many lessons

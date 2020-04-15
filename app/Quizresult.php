@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Quizresult extends Model
 {
     //
-    public function quizzes()
+    public function quiz()
     {
         // question has many answers
-        return $this->hasMany('App\Quiz');
+        return $this->belongsTo('App\Quiz');
     }
 
     public function quizfeedback()
@@ -21,6 +21,6 @@ class Quizresult extends Model
 
     public function digitutor()
     { //User has One digiTutor
-        return $this->hasOne('App\Digitutor');
+        return $this->belongsTo('App\Digitutor');
     }
 }

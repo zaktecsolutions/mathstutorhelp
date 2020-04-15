@@ -7,22 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 class Quizfeedback extends Model
 {
     //
-    public function lesson()
+    public function question()
     {
         //question belongs to lesson
-        return $this->belongsTo('App\Lesson');
+        return $this->belongsTo('App\Question');
 
     }
     public function answer()
     {
         //question belongs to lesson
         return $this->belongsTo('App\Answer');
-
-    }
-    public function quizfeedback()
-    {
-        //question belongs to lesson
-        return $this->belongsTo('App\Quizfeedback');
-
     }
 }

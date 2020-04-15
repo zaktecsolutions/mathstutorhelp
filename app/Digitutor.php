@@ -21,7 +21,7 @@ class Digitutor extends Model
     public function quizresult()
     {
         //digitutor belongs to user
-        return $this->belongsTo('App\Quizresult');
+        return $this->hasMany('App\Quizresult');
 
     }
 }
