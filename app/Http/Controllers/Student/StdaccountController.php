@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Tutor;
-
+namespace App\Http\Controllers\Student;
+use App\User;
+use App\Course;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class AccountController extends Controller
+class StdaccountController extends Controller
 {
     //
     public function __construct()
@@ -16,26 +17,29 @@ class AccountController extends Controller
         $this->middleware('auth');
     }
 
-   /**
-     * redirects to the tutor dashboard
+    /**
+     * redirects to the student dashboard
      */
     public function index()
     {
-        // $users = User::all();
+        $course = auth()->user()->course_name;
         $user = auth()->user();
-        return view('tutor.account')->with('user', $user);
+        return view('student.stdaccount.account')->with([
+            'course' => $course,
+            'user' => $user,
+        ]);
     }
     /**
-     * redirects to the tutor dashboard
+     * redirects to the student dashboard
      */
     public function edit()
     {
         // dd($user);
         $user = auth()->user();
-        return view('tutor.editstudent')->with('user', $user);
+        return view('student.stdaccount.editstudent')->with('user', $user);
     }
     /**
-     * redirects to the tutor dashboard
+     * redirects to the student dashboard
      */
 
     public function update(Request $request)
@@ -49,8 +53,6 @@ class AccountController extends Controller
             $request->session()->flash('error', 'There was an error updating the user');
         }
 
-        return redirect()->route('tutoraccount');
+        return redirect()->route('studentaccount');
     }
-
-
 }

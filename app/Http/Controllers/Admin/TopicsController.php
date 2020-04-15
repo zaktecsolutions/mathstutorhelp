@@ -21,7 +21,7 @@ class TopicsController extends Controller
          */
         $this->middleware('auth');
     }
-    
+
     public function index()
     {
 
@@ -59,23 +59,20 @@ class TopicsController extends Controller
             'topic_diagnostic_quiz' => 'required| max:120',
             'topic_summary_quiz' => 'required| max:120',
         ]);
-
-        $topic = new Topic;
-        $topic->topic_name = $request->topic_name;
-        $topic->topic_code = $request->topic_code;
-        $topic->topic_desc = $request->topic_desc;
-        $topic->topic_les_num = $request->topic_les_num;
-        $topic->topic_diagnostic_quiz = $request->topic_diagnostic_quiz;
-        $topic->topic_summary_quiz = $request->topic_summary_quiz;
-
+        $topic = topic::create([
+            'topic_name' => $request->topic_name,
+            'topic_code' => $request->topic_code,
+            'topic_desc' => $request->topic_desc,
+            'topic_les_num' => $request->topic_les_num,
+            'topic_diagnostic_quiz' => $request->topic_diagnostic_quiz,
+            'topic_summary_quiz' => $request->topic_summary_quiz,
+        ]);
         if ($topic->save()) {$request->session()->flash('success', $topic->topic_name . ' has been updated');
         } else {
             $request->session()->flash('error', 'There was an error updating the user');
         }
-
         return redirect()->route('admin.topics.index');
     }
-
     /**
      * Display the specified resource.
      *
@@ -86,8 +83,8 @@ class TopicsController extends Controller
     {
         //
         // return 'User index page';
-        $topics = Topic::all(); //gets all the topics
-        return view('admin.topics.show')->with('topics', $topics);
+       // $topics = Topic::all(); gets all the topics
+        return view('admin.topics.show')->with('topic', $topic);
     }
 
     /**
@@ -125,18 +122,19 @@ class TopicsController extends Controller
             'topic_summary_quiz' => 'required| max:120',
         ]);
 
-        $topic->topic_name = $request->topic_name;
-        $topic->topic_code = $request->topic_code;
-        $topic->topic_desc = $request->topic_desc;
-        $topic->topic_les_num = $request->topic_les_num;
-        $topic->topic_diagnostic_quiz = $request->topic_diagnostic_quiz;
-        $topic->topic_summary_quiz = $request->topic_summary_quiz;
-
-        if ($topic->save()) {$request->session()->flash('success', $topic->topic_name . ' has been updated');
+        $success = $topic->update([
+            'topic_name' => $request->topic_name,
+            'topic_code' => $request->topic_code,
+            'topic_desc' => $request->topic_desc,
+            'topic_topic_les_num' => $request->topic_topic_les_num,
+            'topic_diagnostic_quiz' => $request->topic_diagnostic_quiz,
+            'topic_summary_quiz' => $request->topic_summary_quiz,
+        ]);
+        
+        if ($success) {$request->session()->flash('success', $topic->topic_name . ' has been updated');
         } else {
             $request->session()->flash('error', 'There was an error updating the user');
         }
-
         return redirect()->route('admin.topics.index');
     }
 
@@ -151,6 +149,6 @@ class TopicsController extends Controller
         //
         $topic->delete();
 
-        return redirect()->route('admin.courses.index');
+        return redirect()->route('admin.topics.index');
     }
 }

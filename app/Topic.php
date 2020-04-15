@@ -6,10 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Topic extends Model
 {
+    protected $fillable = [
+        'topic_name', 'topic_code', 'topic_desc', 'topic_les_num', 'topic_diagnostic_quiz',
+         'topic_summary_quiz'
+    ];
+ 
     //
     public function course()
     {     //topics belong to the course
-        return $this->belongTo('App\Course');
+        return $this->belongsTo('App\Course');
     }
 
     public function questions()
@@ -23,5 +28,11 @@ class Topic extends Model
     {
         // topic has many lessons
         return $this->hasMany('App\Lesson');
+    }
+
+    public function quizzes()
+    {
+        // topic has many lessons
+        return $this->hasMany('App\Quiz');
     }
 }

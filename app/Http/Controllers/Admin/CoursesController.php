@@ -60,13 +60,13 @@ class CoursesController extends Controller
             'course_image' => 'required| max:120',
         ]);
 
-        $course = new Course;
-        // $courses = Course::all();
-        $course->course_name = $request->course_name;
-        $course->course_code = $request->course_code;
-        $course->course_desc = $request->course_desc;
-        $course->course_level = $request->course_level;
-        $course->course_image = $request->course_image;
+        $course = Course::create([
+            'course_name' => $request->course_name,
+            'course_code' => $request->course_code,
+            'course_desc' => $request->course_desc,
+            'course_level' => $request->course_level,
+            'course_image' => $request->course_image
+    ]);
 
         if ($course->save()) {$request->session()->flash('success', $course->course_name . ' has been updated');
         } else {
@@ -86,8 +86,9 @@ class CoursesController extends Controller
     {
         //
         // return 'User index page';
-        $courses = Course::all(); //gets all the courses
-        return view('admin.courses.show')->with('courses', $courses);
+       // $courses = Course::all(); //gets all the courses
+        return view('admin.courses.show')->with('course', $course);
+    
     }
 
     /**
@@ -125,13 +126,15 @@ class CoursesController extends Controller
             'course_level' => 'required| max:120',
             'course_image' => 'required| max:120',
         ]);
-        $course->course_name = $request->course_name;
-        $course->course_code = $request->course_code;
-        $course->course_desc = $request->course_desc;
-        $course->course_level = $request->course_level;
-        $course->course_image = $request->course_image;
+        $success = $course->update([
+            'course_name' => $request->course_name,
+            'course_code' => $request->course_code,
+            'course_desc' => $request->course_desc,
+            'course_level' => $request->course_level,
+            'course_image' => $request->course_image,
+        ]);
 
-        if ($course->save()) {$request->session()->flash('success', $course->course_name . ' has been updated');
+        if ($success) {$request->session()->flash('success', $course->course_name . ' has been updated');
         } else {
             $request->session()->flash('error', 'There was an error updating the user');
         }
@@ -148,9 +151,7 @@ class CoursesController extends Controller
     {
         //
 
-        if (Gate::denies('manage-users')) {
-            return redirect(route('admin.users.index'));
-        }
+    
 
         $course->delete();
 

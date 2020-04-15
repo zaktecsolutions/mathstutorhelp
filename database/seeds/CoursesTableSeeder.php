@@ -16,16 +16,16 @@ class CoursesTableSeeder extends Seeder
         Schema::disableForeignKeyConstraints();
         Course::truncate();
         Course::create([
-            'course_name' => 'MTH GCSE Maths Foundation',
+            'course_name' => 'MTH GCSE Maths Foundation -Edexcel',
             'course_code' => 'MTHGF',
-            'course_desc' => 'MTH GCSE Maths Foundation Online Course',
-            'course_level' => 'foundation',
+            'course_desc' => 'MTH GCSE Maths Foundation Online Course- Edexcel',
+            'course_level' => 'Foundation',
             'course_image' => '../imagepath/', 
         ]);
         Course::create([
-            'course_name' => 'MTH GCSE Maths Foundation',
+            'course_name' => 'MTH GCSE Maths Higher -Edexcel',
             'course_code' => 'MTHHF',
-            'course_desc' => 'MTH GCSE Maths Higher Online Course',
+            'course_desc' => 'MTH GCSE Maths Higher Online Course -Edexcel',
             'course_level' => 'Higher',
             'course_image' => '../imagepath/', 
         ]);

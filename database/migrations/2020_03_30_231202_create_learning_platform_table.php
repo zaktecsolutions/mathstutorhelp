@@ -31,19 +31,20 @@ class CreateLearningPlatformTable extends Migration
             $table->string('topic_code');
             $table->string('topic_desc');
             $table->integer('topic_les_num');
-            $table->string('topic_diagnostic_quiz');
-            $table->string('topic_summary_quiz');
+            $table->string('topic_quiz');
             $table->timestamps();
         });
 
-        Schema::create('exams', function (Blueprint $table) {
+        Schema::create('quizzes', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('course_id')->nullable();
-            $table->string('exam_name');
-            $table->string('exam_code');
-            $table->string('exam_desc');
-            $table->string('exam_body');
-            $table->string('exam_level');
+            $table->unsignedBigInteger('topic_id')->nullable();
+            $table->string('quiz_name');
+            $table->string('quiz_code');
+            $table->string('quiz_desc');
+            $table->string('quiz_type');
+            $table->string('quiz_body');
+            $table->string('quiz_level');
+            $table->boolean('quiz_diagnostic')->nullable()->default(false);
             $table->boolean('calculator')->nullable()->default(false);
             $table->timestamps();
         });
@@ -63,35 +64,63 @@ class CreateLearningPlatformTable extends Migration
 
         Schema::create('questions', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('exam_id')->nullable();
             $table->unsignedBigInteger('lesson_id')->nullable();
             $table->string('question_name');
             $table->string('question_body');
-            $table->string('question_image');
-            $table->string('ans_body');
-            $table->string('ans_explanation');
-            $table->boolean('is_correct')->default(false);
-            $table->boolean('published')->default(false);
+            $table->string('question_image')->nullable();
+            $table->integer('question_mark');
+            $table->integer('question_grade');
+            $table->string('question_type');
+            $table->string('question_category');
             $table->timestamps();
         });
 
-        Schema::create('digitutors', function (Blueprint $table) {
+        Schema::create('digitutor', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id')->nullable();
-            $table->string('exam_result');
-            $table->text('progress');
+            $table->string('quiz_result');
             $table->integer('user_grade');
             $table->integer('target_grade');
             $table->string('tutor_input');
-            $table->string('summary');
+            $table->string('notes');
             $table->string('next_step');
+            $table->integer('progress_bar');
             $table->timestamps();
         });
 
-        Schema::create('question_topic', function (Blueprint $table) {
+        Schema::create('answers', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('question_id')->nullable();
-            $table->unsignedBigInteger('topic_id')->nullable();
+            $table->string('ans_image')->nullable();
+            $table->string('ans_body');
+            $table->string('ans_explanation');
+            $table->boolean('ans_correct')->nullable()->default(false);
+            $table->boolean('ans_published')->nullable()->default(false);
+            $table->timestamps();
+        });
+
+        Schema::create('quizfeedback', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('quizresult_id')->nullable();
+            $table->unsignedBigInteger('question_id')->nullable();
+            $table->unsignedBigInteger('answer_id')->nullable();
+            $table->boolean('status')->nullable()->default(false);
+            $table->timestamps();
+        });
+
+        Schema::create('quizresult', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('quiz_id')->nullable();
+            $table->unsignedBigInteger('digitutor_id')->nullable();
+            $table->integer('quiz_percent');
+            $table->integer('grade');
+            $table->timestamps();
+        });
+
+        Schema::create('questionquiz', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('question_id')->nullable();
+            $table->unsignedBigInteger('quiz_id')->nullable();
             $table->timestamps();
         });
     }
@@ -106,11 +135,14 @@ class CreateLearningPlatformTable extends Migration
 
         Schema::dropIfExists('courses');
         Schema::dropIfExists('topics');
-        Schema::dropIfExists('exams');
+        Schema::dropIfExists('quizzes');
         Schema::dropIfExists('lessons');
         Schema::dropIfExists('questions');
-        Schema::dropIfExists('digitutors');
-        Schema::dropIfExists('question_topic');
+        Schema::dropIfExists('answers');
+        Schema::dropIfExists('quizfeedback');
+        Schema::dropIfExists('quizresult');
+        Schema::dropIfExists('digitutor');
+        Schema::dropIfExists('questionquiz');
 
     }
 }

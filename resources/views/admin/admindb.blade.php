@@ -21,13 +21,6 @@
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                 <div class="div-square">
                     <a href="{{ route('admin.users.index')}}">
-                        <h4>See Users </h4>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-                <div class="div-square">
-                    <a href="blank.html">
                         <h4>Monitor Users </h4>
                     </a>
                 </div>
@@ -42,14 +35,21 @@
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                 <div class="div-square">
                     <a href="blank.html">
-                        <h4>Monitor Parents</h4>
+                        <h4>DigiTutor </h4>
                     </a>
                 </div>
             </div>
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                 <div class="div-square">
                     <a href="blank.html">
-                        <h4>DigiTutor</h4>
+                        <h4>Settings</h4>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+                <div class="div-square">
+                    <a href="{{ route('admin.answers.index')}}">
+                        <h4>Input Answers</h4>
                     </a>
                 </div>
             </div>
@@ -87,8 +87,8 @@
             </div>
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                 <div class="div-square">
-                    <a href="{{ route('admin.exams.index')}}">
-                        <h4>Input Exams </h4>
+                    <a href="{{ route('admin.quizzes.index')}}">
+                        <h4>Input Quizzes </h4>
                     </a>
                 </div>
             </div>

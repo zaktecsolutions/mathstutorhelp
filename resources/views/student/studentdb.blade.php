@@ -21,34 +21,34 @@
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                 <div class="div-square">
                     <a href="{{ route('studentaccount')}}">
-                        <h4>My Account </h4>
+                        <h4>Account </h4>
                     </a>
                 </div>
             </div>
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                 <div class="div-square">
-                    <a href="blank.html">
-                        <h4>My Progress </h4>
+                   <a href="{{ route('studentcourse')}}">
+                        <h4>Course </h4>
                     </a>
                 </div>
             </div>
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                 <div class="div-square">
-                    <a href="blank.html">
-                        <h4>Tutor Input </h4>
+                   <a href="{{ route('studentquiz')}}">
+                        <h4>Quizzes </h4>
                     </a>
                 </div>
             </div>
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                 <div class="div-square">
-                    <a href="blank.html">
-                        <h4>My Course</h4>
+                   <a href="{{ route('studentaccount')}}">
+                        <h4>Settings</h4>
                     </a>
                 </div>
             </div>
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                 <div class="div-square">
-                    <a href="blank.html">
+                   <a href="{{ route('studentdigitutor')}}">
                         <h4>DigiTutor</h4>
                     </a>
                 </div>
@@ -87,50 +87,11 @@
             </div>
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                 <div class="div-square">
-                    <a href="{{ route('admin.exams.index')}}">
+                    <a href="{{ route('admin.quizzes.index')}}">
                         <h4>Setting </h4>
                     </a>
                 </div>
             </div>
-        </div>
-        <!-- /. ROW  -->
-        {{-- <div class="row text-center pad-top">
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-                <div class="div-square">
-                    <a href="{{ route('admin.exams.index')}}">
-                        <h4>Input Exams</h4>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-                <div class="div-square">
-                    <a href="blank.html">
-                        <h4>Digi Tutor</h4>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-                <div class="div-square">
-                    <a href="blank.html">
-                        <h4>Mail Box</h4>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-                <div class="div-square">
-                    <a href="blank.html">
-                        <h4>Contact</h4>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-                <div class="div-square">
-                    <a href="#">
-                        <h4>Support</h4>
-                    </a>
-                </div>
-            </div> --}}
-
         </div>
         <!-- /. ROW  -->
         <div class="row">

@@ -30,26 +30,35 @@ Route::namespace ('Admin')->prefix('admin')->name('admin.')->middleware('can:adm
     Route::resource('/courses', 'CoursesController');
     Route::resource('/topics', 'TopicsController');
     Route::resource('/lessons', 'LessonsController');
-    Route::resource('/exams', 'ExamsController');
     Route::resource('/questions', 'QuestionsController');
     Route::resource('/digitutors', 'DigitutorsController');
+    Route::resource('/quizzes', 'QuizzesController');
+   Route::resource('/answers', 'AnswersController');
 
 });
 
 Route::namespace ('Student')->middleware('can:student-gate')->group(function () {
 
-    Route::get('/studentaccount', 'AccountController@index')->name('studentaccount');
-    Route::get('/editstudent', 'AccountController@edit')->name('editstudent');
-    Route::post('/updatestudent', 'AccountController@update')->name('updatestudent');
+    Route::get('/studentaccount', 'StdaccountController@index')->name('studentaccount');
+    Route::get('/editstudent', 'StdaccountController@edit')->name('editstudent');
+    Route::post('/updatestudent', 'StdaccountController@update')->name('updatestudent');
+    Route::get('/studentcourse', 'StdcourseController@index')->name('studentcourse');
+    Route::get('/studentdigitutor', 'StddigitutorController@index')->name('studentdigitutor');
+    Route::get('/studentquiz', 'StdquizController@index')->name('studentquiz');
 });
 
 Route::namespace ('Tutor')->middleware('can:tutor-gate')->group(function () {
 
-    Route::get('/tutoraccount', 'AccountController@index')->name('tutoraccount');
-    Route::get('/edittutor', 'AccountController@edit')->name('edittutor');
-    Route::post('/updatetutor', 'AccountController@update')->name('updatetutor');
+    Route::get('/tutoraccount', 'TutaccountController@index')->name('tutoraccount');
+    Route::get('/edittutor', 'TutaccountController@edit')->name('edittutor');
+    Route::post('/updatetutor', 'TutaccountController@update')->name('updatetutor');
 });
 
+
+Route::get('/clear-cache', function() {
+    Artisan::call('cache:clear');
+    return "Cache is cleared";
+});
 /* Route::namespace ('Admin')->prefix('admin')->name('admin.')->group(function () {
 Route::resource('/courses', 'CoursesController');
 }); */

@@ -5,7 +5,7 @@
 <div class="row justify-content-center">
     <div class="col-md-9">
         <div class="card">
-            <div class="card-header">questions</div>
+            <div class="card-header">Questions Index</div>
             <a href="{{ route('admin.questions.create')}}" class="btn btn-primary">Add question</a>
             <div class="card-body">
                 <table class="table">
@@ -37,7 +37,7 @@
                                     class="float-left">
                                     @csrf
                                     {{ @method_field('DELETE')}}
-                                    <button type="submit" class="btn btn-warning">Delete</button>
+                                    <button type="submit" class="btn btn-primary">Delete</button>
                                 </form>
                             </td>
                         </tr>

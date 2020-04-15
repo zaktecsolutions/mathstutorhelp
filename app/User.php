@@ -49,7 +49,7 @@ class User extends Authenticatable
     }
 
     public function digitutor()
-    { //User has One Tutor
+    { //User has One digiTutor
         return $this->hasOne('App\Digitutor');
     }
 

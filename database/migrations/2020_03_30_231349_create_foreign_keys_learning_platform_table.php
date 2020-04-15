@@ -23,9 +23,9 @@ class CreateForeignKeysLearningPlatformTable extends Migration
             $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
         });
 
-        Schema::table('exams', function (Blueprint $table) {
+        Schema::table('quizzes', function (Blueprint $table) {
 
-            $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
+            $table->foreign('topic_id')->references('id')->on('topics')->onDelete('cascade');
         });
 
         Schema::table('lessons', function (Blueprint $table) {
@@ -35,20 +35,36 @@ class CreateForeignKeysLearningPlatformTable extends Migration
 
         Schema::table('questions', function (Blueprint $table) {
 
-            $table->foreign('exam_id')->references('id')->on('exams')->onDelete('cascade');
             $table->foreign('lesson_id')->references('id')->on('lessons')->onDelete('cascade');
         });
-        Schema::table('digitutors', function (Blueprint $table) {
+
+        Schema::table('digitutor', function (Blueprint $table) {
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-
         });
 
-        Schema::table('question_topic', function (Blueprint $table) {
+        Schema::table('answers', function (Blueprint $table) {
 
             $table->foreign('question_id')->references('id')->on('questions')->onDelete('cascade');
-            $table->foreign('topic_id')->references('id')->on('topics')->onDelete('cascade');
+        });
 
+        Schema::table('quizfeedback', function (Blueprint $table) {
+
+            $table->foreign('quizresult_id')->references('id')->on('quizresult')->onDelete('cascade');
+            $table->foreign('question_id')->references('id')->on('questions')->onDelete('cascade');
+            $table->foreign('answer_id')->references('id')->on('answers')->onDelete('cascade');
+        });
+
+        Schema::table('quizresult', function (Blueprint $table) {
+
+            $table->foreign('quiz_id')->references('id')->on('quizresult')->onDelete('cascade');
+            $table->foreign('digitutor_id')->references('id')->on('digitutor')->onDelete('cascade');
+        });
+
+        Schema::table('questionquiz', function (Blueprint $table) {
+
+            $table->foreign('question_id')->references('id')->on('questions')->onDelete('cascade');
+            $table->foreign('quiz_id')->references('id')->on('quizzes')->onDelete('cascade');
         });
 
     }
@@ -74,9 +90,15 @@ class CreateForeignKeysLearningPlatformTable extends Migration
 
         });
 
-        Schema::table('exams', function (Blueprint $table) {
+        Schema::table('answers', function (Blueprint $table) {
 
-            $table->dropForeign(['course_id']);
+            $table->dropForeign(['question_id']);
+
+        });
+
+        Schema::table('quizzes', function (Blueprint $table) {
+
+            $table->dropForeign(['topic_id']);
         });
 
         Schema::table('lessons', function (Blueprint $table) {
@@ -86,20 +108,34 @@ class CreateForeignKeysLearningPlatformTable extends Migration
 
         Schema::table('questions', function (Blueprint $table) {
 
-            $table->dropForeign(['exam_id']);
             $table->dropForeign(['lesson_id']);
         });
 
-        Schema::table('digitutors', function (Blueprint $table) {
+        Schema::table('digitutor', function (Blueprint $table) {
 
             $table->dropForeign(['user_id']);
 
         });
 
-        Schema::table('question_topic', function (Blueprint $table) {
+        Schema::table('quizfeedback', function (Blueprint $table) {
+
+            $table->dropForeign(['quizresult_id']);
+            $table->dropForeign(['question_id']);
+            $table->dropForeign(['answer_id']);
+        });
+
+        Schema::table('quizresult', function (Blueprint $table) {
+
+            $table->dropForeign(['quiz_id']);
+            $table->dropForeign(['digitutor_id']);
+
+        });
+
+        Schema::table('questionquiz', function (Blueprint $table) {
 
             $table->dropForeign(['question_id']);
-            $table->dropForeign(['topic_id']);
+            $table->dropForeign(['quiz_id']);
+
         });
 
     }

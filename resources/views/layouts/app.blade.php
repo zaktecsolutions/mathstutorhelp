@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    {{-- <title>{{ config('app.name', 'Laravel') }}</title> --}}
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -19,11 +19,12 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <title>@yield('title')</title>
 </head>
 
 <body>
     <div id="app">
-        <nav class=" navbar navbar-expand-md navbar-dark bg-dark shadow-sm">    
+        <nav class=" navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -40,13 +41,13 @@
                     <ul class="navbar-nav mr-auto">
                         @guest
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Home </a>
+                            <a class="nav-link" href={{ url('/') }}>HomePage </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Trial </a>
+                            <a class="nav-link" href="#">Demo </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Register </a>
+                            <a class="nav-link" href="#">Contact Us </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">FAQ </a>
@@ -87,7 +88,8 @@
                             <ul class="navbar-right">
                                 <form action="{{ route('logout') }}" method="POST">
                                     @csrf
-                                    <button type="submit" class="btn btn-light"> {{ Auth::user()->name }} Logout</button>
+                                    <button type="submit" class="btn btn-light"> {{ Auth::user()->name }}
+                                        Logout</button>
                                 </form>
                             </ul>
                         </li>
@@ -99,25 +101,25 @@
 
         <main class="py-4">
             <div class="container">
-            @include('partials.alerts')
-            @yield('content')
+                @include('partials.alerts')
+                @yield('content')
             </div>
         </main>
-          <!-- Footer template -->
-<footer class="text-white bg-dark">
+        <!-- Footer template -->
+        <footer class="text-white bg-dark">
 
-    <div class="container">
-  
-      <!-- Copyright -->
-      <div class="footer-copyright text-center py-3">© 2018 Copyright: MathsTutorHelp
-        
-      </div>
-      <!-- Copyright --->
+            <div class="container">
+
+                <!-- Copyright -->
+                <div class="footer-copyright text-center py-3">© 2018 Copyright: MathsTutorHelp
+
+                </div>
+                <!-- Copyright --->
+            </div>
+
+        </footer>
     </div>
-  
-  </footer>   
-    </div>
-   
+
 </body>
 
 </html>

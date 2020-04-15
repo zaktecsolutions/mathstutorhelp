@@ -57,14 +57,14 @@ class LessonsController extends Controller
             'lesson_quiz' => 'required| max:120',
         ]);
 
-        $lesson = new lesson;
-        $lesson->lesson_name = $request->lesson_name;
-        $lesson->lesson_code = $request->lesson_code;
-        $lesson->lesson_desc = $request->lesson_desc;
-        $lesson->lesson_ws = $request->lesson_ws;
-        $lesson->lesson_body = $request->lesson_body;
-        $lesson->lesson_quiz = $request->lesson_quiz;
-
+        $lesson = lesson::create([
+            'lesson_name' => $request->lesson_name,
+            'lesson_code' => $request->lesson_code,
+            'lesson_desc' => $request->lesson_desc,
+            'lesson_ws' => $request->lesson_ws,
+            'lesson_body' => $request->lesson_body,
+            'lesson_quiz' => $request->lesson_quiz,
+        ]);
         if ($lesson->save()) {$request->session()->flash('success', $lesson->lesson_name . ' has been updated');
         } else {
             $request->session()->flash('error', 'There was an error updating the user');
@@ -83,8 +83,8 @@ class LessonsController extends Controller
     {
 
         // return 'User index page';
-        $lessons = lesson::all(); //gets all the lessons
-        return view('admin.lessons.show')->with('lessons', $lessons);
+      //  $lessons = lesson::all(); gets all the lessons
+        return view('admin.lessons.show')->with('lesson', $lesson);
     }
 
     /**
@@ -121,12 +121,18 @@ class LessonsController extends Controller
             'lesson_body' => 'required| max:120',
             'lesson_quiz' => 'required| max:120',
         ]);
-        $lesson->lesson_name = $request->lesson_name;
-        $lesson->lesson_code = $request->lesson_code;
-        $lesson->lesson_desc = $request->lesson_desc;
-        $lesson->lesson_ws = $request->lesson_ws;
-        $lesson->lesson_body = $request->lesson_body;
-        $lesson->lesson_quiz = $request->lesson_quiz;
+        $success = $lesson->update([
+            'lesson_name' => $request->lesson_name,
+            'lesson_code' => $request->lesson_code,
+            'lesson_desc' => $request->lesson_desc,
+            'lesson_ws' => $request->lesson_ws,
+            'lesson_body' => $request->lesson_body,
+            'lesson_quiz' => $request->lesson_quiz,
+        ]);
+        if ($success) {$request->session()->flash('success', $lesson->lesson_name . ' has been updated');
+        } else {
+            $request->session()->flash('error', 'There was an error updating the user');
+        }
 
         if ($lesson->save()) {$request->session()->flash('success', $lesson->lesson_name . ' has been updated');
         } else {

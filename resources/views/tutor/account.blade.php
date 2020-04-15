@@ -3,10 +3,10 @@
 @section('content')
 {{-- <div class="container"> --}}
 <div class="row justify-content-center">
-    <div class="col-md-9">
+    <div class="col-md-9 col-sm-11 col-xs-12">
         <div class="card">
-            <div class="card-header">Name: {{ $user->name }}</div>
-            {{-- <a href="blank.html" class="btn btn-primary">Add user</a> --}}
+            <div class="card-header">Name: {{ $user->name }}
+                <a class="float-right" href="/tutordashboard">Back to dashboard</a> </div>
             <div class="card-body">
                 <table class="table">
                     <thead>

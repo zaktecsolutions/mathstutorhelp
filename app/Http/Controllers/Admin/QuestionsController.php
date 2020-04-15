@@ -50,16 +50,22 @@ class QuestionsController extends Controller
             'question_name' => 'required| max:120',
             'question_body' => 'required| max:120',
             'question_image' => 'required| max:120',
-            'ans_body' => 'required| max:120',
-            'ans_explanation' => 'required| max:120',
+            'question_mark' => 'required| numeric|min:1|max:9',
+            'question_grade' => 'required| numeric|min:1|max:9',
+            'question_type' => 'required| max:120',
+            'question_category' => 'required| max:120',
         ]);
 
-        $question = new question;
-        $question->question_name = $request->question_name;
-        $question->question_body = $request->question_body;
-        $question->question_image = $request->question_image;
-        $question->ans_body = $request->ans_body;
-        $question->ans_explanation = $request->ans_explanation;
+        $question = Question::create([
+            'question_name' => $request->question_name,
+            'question_body' => $request->question_body,
+            'question_image' => $request->question_image,
+            'question_mark' => $request->question_mark,
+            'question_grade' => $request->question_grade,
+            'question_type' => $request->question_type,
+            'question_category' => $request->question_category,
+
+        ]);
 
         if ($question->save()) {$request->session()->flash('success', $question->question_name . ' has been updated');
         } else {
@@ -77,10 +83,10 @@ class QuestionsController extends Controller
      */
     public function show(Question $question)
     {
-        //
+
         // return 'User index page';
-        $questions = question::all(); //gets all the questions
-        return view('admin.questions.show')->with('questions', $questions);
+        //  $questions = question::all(); //gets all the questions
+        return view('admin.questions.show')->with('question', $question);
     }
 
     /**
@@ -111,16 +117,24 @@ class QuestionsController extends Controller
             'question_name' => 'required| max:120',
             'question_body' => 'required| max:120',
             'question_image' => 'required| max:120',
-            'ans_body' => 'required| max:120',
-            'ans_explanation' => 'required| max:120',
+            'question_mark' => 'required| numeric|min:1|max:9',
+            'question_grade' => 'required| numeric|min:1|max:9',
+            'question_type' => 'required| max:120',
+            'question_category' => 'required| max:120',
         ]);
-        $question->question_name = $request->question_name;
-        $question->question_body = $request->question_body;
-        $question->question_image = $request->question_image;
-        $question->ans_body = $request->ans_body;
-        $question->ans_explanation = $request->ans_explanation;
 
-        if ($question->save()) {$request->session()->flash('success', $question->question_name . ' has been updated');
+        $success = $question->update([
+            'question_name' => $request->question_name,
+            'question_body' => $request->question_body,
+            'question_image' => $request->question_image,
+            'question_mark' => $request->question_mark,
+            'question_grade' => $request->question_grade,
+            'question_type' => $request->question_type,
+            'question_category' => $request->question_category,
+
+        ]);
+
+        if ($success) {$request->session()->flash('success', $question->question_name . ' has been updated');
         } else {
             $request->session()->flash('error', 'There was an error updating the user');
         }

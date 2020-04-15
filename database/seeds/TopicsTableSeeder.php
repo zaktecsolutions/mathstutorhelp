@@ -19,17 +19,75 @@ class TopicsTableSeeder extends Seeder
             'topic_code' => 'GFN1',
             'topic_desc' => 'MTH GCSE Maths Online Course - Foundation - Number 1',
             'topic_les_num' => '50',
-            'topic_diagnostic_quiz' => 'GFTQN1', 
-            'topic_summary_quiz' => 'GFTQN1',
+            'topic_quiz' => 'GFTQN1', 
+            
         ]);
+       
         Topic::create([
             'topic_name' => 'Number 2',
             'topic_code' => 'GFN2',
             'topic_desc' => 'MTH GCSE Maths Online Course - Foundation - Number 2',
             'topic_les_num' => '50',
-            'topic_diagnostic_quiz' => 'GFTQN2', 
-            'topic_summary_quiz' => 'GFTQN2',
+            'topic_quiz' => 'GFTQN2', 
         ]);
+
+        Topic::create([
+            'topic_name' => 'Algebra 1',
+            'topic_code' => 'GFA1',
+            'topic_desc' => 'MTH GCSE Maths Online Course - Foundation - Algebra 1',
+            'topic_les_num' => '50',
+            'topic_quiz' => 'GFTQA1', 
+        ]);
+
+        Topic::create([
+            'topic_name' => 'Algebra 2',
+            'topic_code' => 'GFA2',
+            'topic_desc' => 'MTH GCSE Maths Online Course - Foundation - Algebra 2',
+            'topic_les_num' => '50',
+            'topic_quiz' => 'GFTQA2
+            ', 
+        ]);
+
+        Topic::create([
+            'topic_name' => 'Ratio Proportion',
+            'topic_code' => 'GFRP',
+            'topic_desc' => 'MTH GCSE Maths Online Course - Foundation – Ratio proportion',
+            'topic_les_num' => '50',
+            'topic_quiz' => 'GFTQRP', 
+        ]);
+
+        Topic::create([
+            'topic_name' => 'Geometry and Measurement 1',
+            'topic_code' => 'GFGM1',
+            'topic_desc' => 'MTH GCSE Maths Online Course - Foundation - Geometry and Measurement 1',
+            'topic_les_num' => '50',
+            'topic_quiz' => 'GFTQGM1', 
+        ]);
+
+        Topic::create([
+            'topic_name' => 'Geometry and Measurement 2',
+            'topic_code' => 'GFGM2',
+            'topic_desc' => 'MTH GCSE Maths Online Course - Foundation - Geometry and Measurement 2',
+            'topic_les_num' => '50',
+            'topic_quiz' => 'GFTQGM2', 
+        ]);
+
+        Topic::create([
+            'topic_name' => 'Probability',
+            'topic_code' => 'GFP1',
+            'topic_desc' => 'MTH GCSE Maths Online Course - Foundation - Probability',
+            'topic_les_num' => '50',
+            'topic_quiz' => 'GFTQP1', 
+        ]);
+
+        Topic::create([
+            'topic_name' => 'Statistics',
+            'topic_code' => 'GFS1',
+            'topic_desc' => 'MTH GCSE Maths Online Course - Foundation - Statistics',
+            'topic_les_num' => '50',
+            'topic_quiz' => 'GFTQS1', 
+        ]);
+
         Schema::enableForeignKeyConstraints();
     }
 }

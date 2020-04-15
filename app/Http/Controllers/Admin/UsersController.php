@@ -4,6 +4,7 @@
  */
 namespace App\Http\Controllers\Admin;
 
+use App\Course;
 use App\Http\Controllers\Controller;
 use App\Role;
 use App\User;
@@ -44,7 +45,10 @@ class UsersController extends Controller
     public function create()
     {
         //
-        return view('admin.users.create');
+        $courses = Course::all();
+        return view('admin.users.create')->with([
+            'courses' => $courses,
+        ]);
     }
 
     /**
@@ -82,14 +86,14 @@ class UsersController extends Controller
         if (Gate::denies('edit-users')) {
             return redirect(route('admin.users.index'));
         }
-
+        $courses = Course::all();
         $roles = Role::all();
         return view('admin.users.edit')->with([
             'user' => $user,
             'roles' => $roles,
+            'courses' => $courses,
         ]);
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -99,16 +103,23 @@ class UsersController extends Controller
      */
     public function update(Request $request, User $user)
     {
-
         //dd($request);
-        $user->roles()->sync($request->roles); // attach a role to the user
+        /*  $user->roles()->sync($request->roles); // attach a role to the user
         $user->name = $request->name;
-        $user->email = $request->email;
-        if ($user->save()) {$request->session()->flash('success', $user->name . ' has been updated');
+        $user->email = $request->email; */
+
+        $success = $user->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'course_id' => $request->course_id,
+        ]);
+        $user->roles()->sync($request->roles);
+        // return $success;
+
+        if ($success) {$request->session()->flash('success', $user->name . ' has been updated');
         } else {
             $request->session()->flash('error', 'There was an error updating the user');
         }
-
         return redirect()->route('admin.users.index');
     }
 

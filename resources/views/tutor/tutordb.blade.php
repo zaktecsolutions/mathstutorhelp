@@ -1,16 +1,17 @@
 @extends('layouts.app')
+@section('title', 'Tutor Dashboard')
 @section('content')
 <div id="page-wrapper">
     <div id="page-inner">
         <div class="row">
-            <div class="col-lg-10">
+            <div class="col-md-10 col-sm-11 col-xs-12">
                 <h2>Tutor DASHBOARD</h2>
             </div>
         </div>
         <!-- /. ROW  -->
         <hr />
         <div class="row">
-            <div class="col-lg-10 ">
+            <div class="col-md-10 col-sm-11 col-xs-12">
                 <div class="alert alert-info">
                     <strong>Welcome Tutor ! </strong> Choose any of the following options.
                 </div>
@@ -28,7 +29,7 @@
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                 <div class="div-square">
                     <a href="blank.html">
-                        <h4>My Progress </h4>
+                        <h4>My Students </h4>
                     </a>
                 </div>
             </div>
@@ -42,14 +43,14 @@
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                 <div class="div-square">
                     <a href="blank.html">
-                        <h4>My Course</h4>
+                        <h4>Course List</h4>
                     </a>
                 </div>
             </div>
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                 <div class="div-square">
                     <a href="blank.html">
-                        <h4>DigiTutor</h4>
+                        <h4>Admin</h4>
                     </a>
                 </div>
             </div>
@@ -87,7 +88,7 @@
             </div>
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                 <div class="div-square">
-                    <a href="{{ route('admin.exams.index')}}">
+                    {{-- <a href="{{ route('admin.exams.index')}}"> --}}
                         <h4>Setting </h4>
                     </a>
                 </div>

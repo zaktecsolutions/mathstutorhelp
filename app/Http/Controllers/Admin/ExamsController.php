@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+
 use App\Exam;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -57,12 +58,13 @@ class ExamsController extends Controller
             'exam_level' => 'required| max:120',
         ]);
 
-        $exam = new exam;
-        $exam->exam_name = $request->exam_name;
-        $exam->exam_code = $request->exam_code;
-        $exam->exam_desc = $request->exam_desc;
-        $exam->exam_body = $request->exam_body;
-        $exam->exam_level = $request->exam_level;
+        $exam = exam::create([
+            'exam_name' => $request->exam_name,
+            'exam_code' => $request->exam_code,
+            'exam_desc' => $request->exam_desc,
+            'exam_body' => $request->exam_body,
+            'exam_level' => $request->exam_level,
+        ]);
 
         if ($exam->save()) {$request->session()->flash('success', $exam->exam_name . ' has been updated');
         } else {
@@ -79,9 +81,9 @@ class ExamsController extends Controller
      */
     public function show(Exam $exam)
     {
-          // return 'User index page';
-        $exams = exam::all(); //gets all the exams
-        return view('admin.exams.show')->with('exams', $exams);
+        // return 'User index page';
+        // $exams = exam::all();gets all the exams
+        return view('admin.exams.show')->with('exam', $exam);
     }
 
     /**
@@ -115,14 +117,14 @@ class ExamsController extends Controller
             'exam_body' => 'required| max:120',
             'exam_level' => 'required| max:120',
         ]);
-
-        $exam->exam_name = $request->exam_name;
-        $exam->exam_code = $request->exam_code;
-        $exam->exam_desc = $request->exam_desc;
-        $exam->exam_body = $request->exam_body;
-        $exam->exam_level = $request->exam_level;
-
-        if ($exam->save()) {$request->session()->flash('success', $exam->exam_name . ' has been updated');
+        $success = $exam->update([
+            'exam_name' => $request->exam_name,
+            'exam_code' => $request->exam_code,
+            'exam_desc' => $request->exam_desc,
+            'exam_body' => $request->exam_body,
+            'exam_level' => $request->exam_level,
+        ]);
+        if ($success) {$request->session()->flash('success', $exam->exam_name . ' has been updated');
         } else {
             $request->session()->flash('error', 'There was an error updating the user');
         }

@@ -6,18 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Question extends Model
 {
+
+    protected $fillable = [
+        'question_name', 'question_body', 'question_image', 'question_mark', 'question_grade', 'question_type', 'question_category',
+    ];
     //
-    public function topics()
-    {
-        //topic belongs to many questions
-        return $this->belongsToMany('App\Topic');
 
-    }
-
-    public function exam()
+    public function quizzes()
     {
-        //questions belongs to exams
-        return $this->belongsTo('App\Exam');
+        //quizzes belong to many questions
+        return $this->belongsToMany('App\Quiz');
 
     }
 
@@ -27,4 +25,17 @@ class Question extends Model
         return $this->belongsTo('App\Lesson');
 
     }
+
+    public function answers()
+    {
+        // question has many answers
+        return $this->hasMany('App\Answer');
+    }
+
+    public function quizfeedbacks()
+    {
+        // topic has many lessons
+        return $this->hasMany('App\Quizfeedback');
+    }
+
 }

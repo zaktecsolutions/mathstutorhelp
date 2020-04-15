@@ -42,7 +42,7 @@
                                         class="float-left">
                                         @csrf
                                         {{ @method_field('DELETE')}}
-                                        <button type="submit" class="btn btn-warning">Delete</button> 
+                                        <button type="submit" class="btn btn-primary">Delete</button> 
                                     </form>
                                     <td>
                                   

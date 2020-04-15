@@ -48,5 +48,19 @@
     </div>
 </div>
 
+<div class="form-group row">
+    <label for="course_id" class="col-md-4 col-form-label text-md-right">Course</label>
+    <div class="col-md-6">
+        @foreach ($courses as $course )
+        <div class="form-check">
+            <input type="radio" name="course_id" value="{{$course->id ?? ''}}">
+            {{-- @if($user->course->pluck('id')->contains($course->id)) checked @endif> --}}
+            <label> {{ $course->course_name }} </label>
+        </div>
+        @endforeach
+    </div>
+</div>
+
+
 
 

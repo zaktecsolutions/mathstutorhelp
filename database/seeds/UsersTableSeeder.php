@@ -28,18 +28,21 @@ class UsersTableSeeder extends Seeder
             'name' => 'Admin User',
             'email' => 'admin@admin.com',
             'password' => Hash::make('password'),
+            
         ]);
 
         $student = User::create([
             'name' => 'Student User',
             'email' => 'student@student.com',
             'password' => Hash::make('password'),
+            'course_id' => '1',
         ]);
 
         $tutor = User::create([
             'name' => 'Tutor User',
             'email' => 'tutor@tutor.com',
             'password' => Hash::make('password'),
+            
         ]);
 
         $parent = User::create([

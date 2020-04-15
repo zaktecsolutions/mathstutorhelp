@@ -14,22 +14,16 @@
                             <th scope="col">#</th>
                             <th scope="col">Course Name</th>
                             <th scope="col">Course Code</th>
-                         {{--    <th scope="col">Course Descripton</th>
-                            <th scope="col">Course Level</th>
-                            <th scope="col">Course Image </th> --}}
                             <th scope="col"></th>
                             <th scope="col"> Action</th>
                         </tr>
-                    </thead> 
+                    </thead>
                     <tbody>
                         @foreach($courses as $course)
                         <tr>
                             <th scope="row">{{ $course->id }}</th>
                             <td>{{ $course->course_name }}</td>
                             <td>{{ $course->course_code }}</td>
-                            {{-- <td>{{ $course->course_desc }}</td>
-                            <td>{{ $course->course_level }}</td>
-                            <td>{{ $course->course_image }}</td> --}}
                             <td>
                                 <a href="{{ route('admin.courses.show', $course->id)}}">
                                     <button type="button" class="btn btn-primary float-left">View</button></a> </td>
@@ -43,7 +37,7 @@
                                     class="float-left">
                                     @csrf
                                     {{ @method_field('DELETE')}}
-                                    <button type="submit" class="btn btn-warning">Delete</button>
+                                    <button type="submit" class="btn btn-primary">Delete</button>
                                 </form>
                             </td>
                         </tr>

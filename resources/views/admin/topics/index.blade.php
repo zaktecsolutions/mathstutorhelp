@@ -14,10 +14,6 @@
                             <th scope="col">#</th>
                             <th scope="col">Topic Name</th>
                             <th scope="col">Topic Code</th>
-                        {{--     <th scope="col">Topic Descripton</th>
-                            <th scope="col">Topic Lesson Number</th>
-                            <th scope="col">Topic Diagnostic Quiz</th>
-                            <th scope="col">Topic Summary Quiz</th> --}}
                             <th scope="col"></th>
                             <th scope="col"> Action</th>
                         </tr>
@@ -28,10 +24,6 @@
                             <th scope="row">{{ $topic->id }}</th>
                             <td>{{ $topic->topic_name }}</td>
                             <td>{{ $topic->topic_code }}</td>
-                           {{--  <td>{{ $topic->topic_desc }}</td>
-                            <td>{{ $topic->topic_les_num }}</td>
-                            <td>{{ $topic->topic_diagnostic_quiz }}</td>
-                            <td>{{ $topic->topic_summary_quiz }}</td> --}}
                             <td>
                                 <a href="{{ route('admin.topics.show', $topic->id)}}">
                                     <button type="button" class="btn btn-primary float-left">View</button></a> </td>

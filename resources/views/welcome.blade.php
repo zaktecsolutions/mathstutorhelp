@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', 'MTH HomePage')
 @section('content')
 <section class="jumbotron text-center">
 
