@@ -2,6 +2,7 @@
 
 use App\Lesson;
 use App\Question;
+use App\Quiz;
 use Illuminate\Database\Seeder;
 
 class QuestionsTableSeeder extends Seeder
@@ -18,8 +19,8 @@ class QuestionsTableSeeder extends Seeder
         question::truncate();
 
         $lesson = Lesson::where('lesson_code', 'GFN1LC1')->first();
-
-        question::create([
+        $quiz = Quiz::where('quiz_code','GFN1TDQ')->first();
+        $question = question::create([
             'lesson_id' => $lesson->id,
             'question_name' => 'Place Value and Money',
             'question_body' => 'Write the following numbers  in figures?  Fifty five million, nine hundred  sixty two  thousand, eight hundred  fifty six',
@@ -29,8 +30,9 @@ class QuestionsTableSeeder extends Seeder
             'question_type' => 'Topic Quiz Diagnostic',
 
         ]);
+        $question->quizzes()->attach($quiz);
 
-        question::create([
+        $question = question::create([
             'lesson_id' => $lesson->id,
             'question_name' => 'Place Value and Money',
             'question_body' => 'Write the value of 5 in the following number in word from?  965,888,702.',
@@ -40,8 +42,9 @@ class QuestionsTableSeeder extends Seeder
             'question_type' => 'Topic Quiz Diagnostic',
 
         ]);
+        $question->quizzes()->attach($quiz);
 
-        question::create([
+        $question = question::create([
             'lesson_id' => $lesson->id,
             'question_name' => 'Place Value and Money',
             'question_body' => 'Subtract £225,000 from a half a million pound.',
@@ -49,10 +52,11 @@ class QuestionsTableSeeder extends Seeder
             'question_mark' => '1',
             'question_grade' => '1',
             'question_type' => 'Topic Quiz Diagnostic',
-
         ]);
+        $question->quizzes()->attach($quiz);
 
-        question::create([
+        $quiz = Quiz::where('quiz_code','GFN1TSQ')->first();
+        $question = question::create([
             'lesson_id' => $lesson->id,
             'question_name' => 'Place Value and Money',
             'question_body' => 'Write the following numbers  in figures?
@@ -63,8 +67,9 @@ class QuestionsTableSeeder extends Seeder
             'question_type' => 'Topic Summary Question',
 
         ]);
+        $question->quizzes()->attach($quiz);
 
-        question::create([
+        $question = question::create([
             'lesson_id' => $lesson->id,
             'question_name' => 'Place Value and Money',
             'question_body' => 'Write the value of 6 in the following number in word from? 11, 657, 554 ',
@@ -73,8 +78,9 @@ class QuestionsTableSeeder extends Seeder
             'question_grade' => '1',
             'question_type' => 'Topic Summary Question',
         ]);
+        $question->quizzes()->attach($quiz);
 
-        question::create([
+        $question = question::create([
             'lesson_id' => $lesson->id,
             'question_name' => 'Place Value and Money',
             'question_body' => 'A sticker cost 78p. John has £5. He buys as many stickers he can. Work out the amount of change John should get from £5. Give the answer in pence ',
@@ -83,10 +89,11 @@ class QuestionsTableSeeder extends Seeder
             'question_grade' => '1',
             'question_type' => 'Topic Summary Question',
         ]);
+        $question->quizzes()->attach($quiz);
 
         $lesson = Lesson::where('lesson_code', 'GFN1LC2')->first();
-
-        question::create([
+        $quiz = Quiz::where('quiz_code','GFN1TDQ')->first();
+        $question = question::create([
             'lesson_id' => $lesson->id,
             'question_name' => 'Negative Numbers',
             'question_body' => '4-44',
@@ -95,8 +102,9 @@ class QuestionsTableSeeder extends Seeder
             'question_grade' => '2',
             'question_type' => 'Topic Quiz Diagnostic',
         ]);
+        $question->quizzes()->attach($quiz);
 
-        question::create([
+        $question = question::create([
             'lesson_id' => $lesson->id,
             'question_name' => 'Negative Numbers',
             'question_body' => '-11 + -2',
@@ -106,8 +114,9 @@ class QuestionsTableSeeder extends Seeder
             'question_type' => 'Topic Quiz Diagnostic',
 
         ]);
+        $question->quizzes()->attach($quiz);
 
-        question::create([
+        $question = question::create([
             'lesson_id' => $lesson->id,
             'question_name' => 'Negative Numbers',
             'question_body' => '3 × –8 ÷ -3',
@@ -117,8 +126,10 @@ class QuestionsTableSeeder extends Seeder
             'question_type' => 'Topic Quiz Diagnostic',
 
         ]);
+        $question->quizzes()->attach($quiz);
 
-        question::create([
+        $quiz = Quiz::where('quiz_code','GFN1TSQ')->first();
+        $question = question::create([
             'lesson_id' => $lesson->id,
             'question_name' => 'Negative Numbers',
             'question_body' => '- 7 - 43',
@@ -128,8 +139,9 @@ class QuestionsTableSeeder extends Seeder
             'question_type' => 'Topic Summary Question',
 
         ]);
+        $question->quizzes()->attach($quiz);
 
-        question::create([
+        $question = question::create([
             'lesson_id' => $lesson->id,
             'question_name' => 'Negative Numbers',
             'question_body' => '6 - + 30 ',
@@ -139,8 +151,9 @@ class QuestionsTableSeeder extends Seeder
             'question_type' => 'Topic Summary Question',
 
         ]);
+        $question->quizzes()->attach($quiz);
 
-        question::create([
+        $question = question::create([
             'lesson_id' => $lesson->id,
             'question_name' => 'Negative Numbers',
             'question_body' => '45 ÷ -9 ÷ -5',
@@ -150,6 +163,7 @@ class QuestionsTableSeeder extends Seeder
             'question_type' => 'Topic Summary Question',
 
         ]);
+        $question->quizzes()->attach($quiz);
 
         Schema::enableForeignKeyConstraints();
     }

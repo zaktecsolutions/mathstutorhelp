@@ -114,7 +114,7 @@ class CreateLearningPlatformTable extends Migration
             $table->timestamps();
         });
 
-        Schema::create('questionquiz', function (Blueprint $table) {
+        Schema::create('question_quiz', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('question_id');
             $table->unsignedBigInteger('quiz_id');
@@ -139,7 +139,7 @@ class CreateLearningPlatformTable extends Migration
         Schema::dropIfExists('quizfeedback');
         Schema::dropIfExists('quizresult');
         Schema::dropIfExists('digitutors');
-        Schema::dropIfExists('questionquiz');
+        Schema::dropIfExists('question_quiz');
 
     }
 }

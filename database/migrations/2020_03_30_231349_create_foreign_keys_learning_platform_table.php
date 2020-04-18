@@ -63,7 +63,7 @@ class CreateForeignKeysLearningPlatformTable extends Migration
             $table->foreign('digitutor_id')->references('id')->on('digitutors')->onDelete('cascade');
         });
 
-        Schema::table('questionquiz', function (Blueprint $table) {
+        Schema::table('question_quiz', function (Blueprint $table) {
 
             $table->foreign('question_id')->references('id')->on('questions')->onDelete('cascade');
             $table->foreign('quiz_id')->references('id')->on('quizzes')->onDelete('cascade');
@@ -135,7 +135,7 @@ class CreateForeignKeysLearningPlatformTable extends Migration
 
         });
 
-        Schema::table('questionquiz', function (Blueprint $table) {
+        Schema::table('question_quiz', function (Blueprint $table) {
 
             $table->dropForeign(['question_id']);
             $table->dropForeign(['quiz_id']);
