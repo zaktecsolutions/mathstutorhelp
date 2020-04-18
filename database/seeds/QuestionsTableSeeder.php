@@ -26,7 +26,7 @@ class QuestionsTableSeeder extends Seeder
         $records = $csv->getRecords();
         foreach ($records as $offset => $record) {
             $lesson = Lesson::where('lesson_code', $record["lesson_code"])->first();
-            $quiz = Quiz::where('quiz_code','GFN1TDQ')->first();
+            $quiz = Quiz::where('quiz_code',$record["quiz_code"])->first();
             $question = question::create([
                 'id' => $record["id"],
                 'lesson_id' => $lesson->id,
