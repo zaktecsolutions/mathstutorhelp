@@ -50,16 +50,16 @@ class CreateForeignKeysLearningPlatformTable extends Migration
             $table->foreign('question_id')->references('id')->on('questions')->onDelete('cascade');
         });
 
-        Schema::table('quizfeedback', function (Blueprint $table) {
+        Schema::table('quizfeedbacks', function (Blueprint $table) {
 
-            $table->foreign('quizresult_id')->references('id')->on('quizresult')->onDelete('cascade');
+            $table->foreign('quizresult_id')->references('id')->on('quizresults')->onDelete('cascade');
             $table->foreign('question_id')->references('id')->on('questions')->onDelete('cascade');
             $table->foreign('answer_id')->references('id')->on('answers')->onDelete('cascade');
         });
 
-        Schema::table('quizresult', function (Blueprint $table) {
+        Schema::table('quizresults', function (Blueprint $table) {
 
-            $table->foreign('quiz_id')->references('id')->on('quizresult')->onDelete('cascade');
+            $table->foreign('quiz_id')->references('id')->on('quizresults')->onDelete('cascade');
             $table->foreign('digitutor_id')->references('id')->on('digitutors')->onDelete('cascade');
         });
 
@@ -121,14 +121,14 @@ class CreateForeignKeysLearningPlatformTable extends Migration
 
         });
 
-        Schema::table('quizfeedback', function (Blueprint $table) {
+        Schema::table('quizfeedbacks', function (Blueprint $table) {
 
             $table->dropForeign(['quizresult_id']);
             $table->dropForeign(['question_id']);
             $table->dropForeign(['answer_id']);
         });
 
-        Schema::table('quizresult', function (Blueprint $table) {
+        Schema::table('quizresults', function (Blueprint $table) {
 
             $table->dropForeign(['quiz_id']);
             $table->dropForeign(['digitutor_id']);

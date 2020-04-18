@@ -29,4 +29,12 @@ class Lesson extends Model
         // lesson has many questions
         return $this->hasMany('App\Quiz');
     }
+
+    public function is_complete()
+    {
+        $ids = $this->quizzes()->where('quiz_type','Lesson')->pluck('id');
+        return Quizresult::where('digitutor_id',auth()->user()->digitutor->id)
+        ->whereIn('quiz_id',$ids)
+        ->where('quiz_percent','>=',90)->exists();
+    }
 }

@@ -17,18 +17,18 @@
                             <th scope="col">Topic Code</th>
                             <th scope="col">Topic Description</th>
                             <th scope="col">Topic Lesson Number</th>
-                            <th scope="col">Topic Quiz</th>
+                            <th scope="col">Status</th>
                         </tr>
                     </thead> 
                     <tbody>
                         @foreach($topics as $topic)
                         <tr>
                             <th scope="row">{{ $topic->id }}</th>
-                            <td>{{ $topic->topic_name }}</td>
+                            <td><a href="{{route('studenttopic',[$topic->id])}}">{{ $topic->topic_name }}</a></td>
                             <td>{{ $topic->topic_code }}</td>  
                             <td>{{ $topic->topic_desc }}</td>
-                            <td>{{ $topic->topic_les_num }}</td>   
-                            <td>{{ $topic->topic_quiz }}</td>                    
+                            <td>{{ $topic->lessons()->count() }}</td>   
+                            <td>{{ $topic->is_complete() ? "Complete" : "Pending" }}</td>                    
                         </tr>
                         @endforeach
                     </tbody>

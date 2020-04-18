@@ -37,14 +37,18 @@ Route::namespace ('Admin')->prefix('admin')->name('admin.')->middleware('can:adm
 
 });
 
-Route::namespace ('Student')->middleware('can:student-gate')->group(function () {
+Route::namespace ('Student')
+->middleware('can:student-gate')
+->prefix('student')
+->group(function () {
 
-    Route::get('/studentaccount', 'StdaccountController@index')->name('studentaccount');
-    Route::get('/editstudent', 'StdaccountController@edit')->name('editstudent');
-    Route::post('/updatestudent', 'StdaccountController@update')->name('updatestudent');
-    Route::get('/studentcourse', 'StdcourseController@index')->name('studentcourse');
-    Route::get('/studentdigitutor', 'StddigitutorController@index')->name('studentdigitutor');
-    Route::get('/studentquiz', 'StdquizController@index')->name('studentquiz');
+    Route::get('/account', 'StdaccountController@index')->name('studentaccount');
+    Route::get('/edit', 'StdaccountController@edit')->name('editstudent');
+    Route::post('/update', 'StdaccountController@update')->name('updatestudent');
+    Route::get('/course', 'StdcourseController@index')->name('studentcourse');
+    Route::get('/topic/{id}', 'StdtopicController@show')->name('studenttopic');
+    Route::get('/digitutor', 'StddigitutorController@index')->name('studentdigitutor');
+    Route::get('/quiz', 'StdquizController@index')->name('studentquiz');
 });
 
 Route::namespace ('Tutor')->middleware('can:tutor-gate')->group(function () {

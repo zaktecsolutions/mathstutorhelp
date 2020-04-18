@@ -2,6 +2,7 @@
 
 use App\Role;
 use App\User;
+use App\Digitutor;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
@@ -36,6 +37,9 @@ class UsersTableSeeder extends Seeder
             'email' => 'student@student.com',
             'password' => Hash::make('password'),
             'course_id' => '1',
+        ]);
+        Digitutor::create([
+            'user_id' => $student->id,
         ]);
 
         $tutor = User::create([

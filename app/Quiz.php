@@ -29,9 +29,15 @@ class Quiz extends Model
         return $this->belongsToMany('App\Question');
     }
 
-    public function quizresult()
+    public function quizresults()
     {
         //quiz belongs to quizresult
         return $this->hasMany('App\Quizresult');
+    }
+
+    public function is_complete()
+    {
+        return $this->quizresults()->where('digitutor_id', auth()->user()->digitutor->id)
+            ->where('quiz_percent', '>=', 90)->exists();
     }
 }

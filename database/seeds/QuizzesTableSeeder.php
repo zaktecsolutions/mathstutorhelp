@@ -38,6 +38,9 @@ class QuizzesTableSeeder extends Seeder
             'quiz_type' => 'Topic',
             'quiz_subtype' => 'summary',
         ]);
+
+        $topic = Topic::where('topic_code', 'GFN2')->first();
+
         quiz::create([
             'topic_id' => $topic->id,
             'quiz_name' => 'Number 2',
@@ -54,6 +57,8 @@ class QuizzesTableSeeder extends Seeder
             'quiz_type' => 'Topic',
             'quiz_subtype' => 'summary',
         ]);
+
+        $topic = Topic::where('topic_code', 'GFA1')->first();
         quiz::create([
             'topic_id' => $topic->id,
             'quiz_name' => 'Algebra 1',
@@ -70,6 +75,8 @@ class QuizzesTableSeeder extends Seeder
             'quiz_type' => 'Topic',
             'quiz_subtype' => 'summary',
         ]);
+
+        $topic = Topic::where('topic_code', 'GFA2')->first();
         quiz::create([
             'topic_id' => $topic->id,
             'quiz_name' => 'Algebra 2',
@@ -86,6 +93,8 @@ class QuizzesTableSeeder extends Seeder
             'quiz_type' => 'Topic',
             'quiz_subtype' => 'summary',
         ]);
+
+        $topic = Topic::where('topic_code', 'GFRP')->first();
         quiz::create([
             'topic_id' => $topic->id,
             'quiz_name' => 'Ratio Proportion',
@@ -102,6 +111,8 @@ class QuizzesTableSeeder extends Seeder
             'quiz_type' => 'Topic',
             'quiz_subtype' => 'summary',
         ]);
+
+        $topic = Topic::where('topic_code', 'GFGM1')->first();
         quiz::create([
             'topic_id' => $topic->id,
             'quiz_name' => 'Geometry and Measurement 1',
@@ -118,6 +129,8 @@ class QuizzesTableSeeder extends Seeder
             'quiz_type' => 'Topic',
             'quiz_subtype' => 'summary',
         ]);
+
+        $topic = Topic::where('topic_code', 'GFGM2')->first();
         quiz::create([
             'topic_id' => $topic->id,
             'quiz_name' => 'Geometry and Measurement 2',
@@ -134,6 +147,8 @@ class QuizzesTableSeeder extends Seeder
             'quiz_type' => 'Topic',
             'quiz_subtype' => 'summary',
         ]);
+
+        $topic = Topic::where('topic_code', 'GFP1')->first();
         quiz::create([
             'topic_id' => $topic->id,
             'quiz_name' => 'Probability',
@@ -150,6 +165,8 @@ class QuizzesTableSeeder extends Seeder
             'quiz_type' => 'Topic',
             'quiz_subtype' => 'summary',
         ]);
+
+        $topic = Topic::where('topic_code', 'GFS1')->first();
         quiz::create([
             'topic_id' => $topic->id,
             'quiz_name' => 'Statistics',
@@ -169,6 +186,7 @@ class QuizzesTableSeeder extends Seeder
 
         $lesson = Lesson::where('lesson_code', 'GFN1LC1')->first();
 
+        $topic = Topic::where('topic_code', 'GHN1')->first();
         quiz::create([
             'lesson_id' => $lesson->id,
             'quiz_name' => 'Place Value and Money',
@@ -258,7 +276,7 @@ class QuizzesTableSeeder extends Seeder
             'quiz_code' => '1MA1/1F',
             'quiz_desc' => 'Edexcel-Mathematics- Paper 1 (Non-Calculator)',
             'quiz_type' => 'Course',
-            'quiz_subtype' => 'ExamEdexcel',
+            'quiz_subtype' => 'exam',
         ]);
         Schema::enableForeignKeyConstraints();
 

@@ -23,10 +23,11 @@ class Course extends Model
         // courses has many topic
         return $this->hasMany('App\Topic');
     }
-    public function Quizzes()
+    public function quizzes()
     {
         // courses has many quizzes
         return $this->hasMany('App\Quiz');
     }
+
 
 }

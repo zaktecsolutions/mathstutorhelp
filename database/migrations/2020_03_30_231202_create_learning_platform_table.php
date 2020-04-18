@@ -30,7 +30,7 @@ class CreateLearningPlatformTable extends Migration
             $table->string('topic_name');
             $table->string('topic_code');
             $table->string('topic_desc');
-            $table->integer('topic_les_num');
+            $table->float('topic_index');
             $table->timestamps();
         });
 
@@ -74,14 +74,14 @@ class CreateLearningPlatformTable extends Migration
 
         Schema::create('digitutors', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('user_id')->nullable();
-            $table->string('quiz_result');
-            $table->integer('user_grade');
-            $table->integer('target_grade');
-            $table->string('tutor_input');
-            $table->string('notes');
-            $table->string('next_step');
-            $table->integer('progress_bar');
+            $table->unsignedBigInteger('user_id');
+            $table->string('quiz_result')->nullable();
+            $table->integer('user_grade')->nullable();
+            $table->integer('target_grade')->nullable();
+            $table->string('tutor_input')->nullable();
+            $table->string('notes')->nullable();
+            $table->string('next_step')->nullable();
+            $table->integer('progress_bar')->nullable();
             $table->timestamps();
         });
 
@@ -96,7 +96,7 @@ class CreateLearningPlatformTable extends Migration
             $table->timestamps();
         });
 
-        Schema::create('quizfeedback', function (Blueprint $table) {
+        Schema::create('quizfeedbacks', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('quizresult_id');
             $table->unsignedBigInteger('question_id');
@@ -105,7 +105,7 @@ class CreateLearningPlatformTable extends Migration
             $table->timestamps();
         });
 
-        Schema::create('quizresult', function (Blueprint $table) {
+        Schema::create('quizresults', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('quiz_id');
             $table->unsignedBigInteger('digitutor_id');
@@ -136,8 +136,8 @@ class CreateLearningPlatformTable extends Migration
         Schema::dropIfExists('lessons');
         Schema::dropIfExists('questions');
         Schema::dropIfExists('answers');
-        Schema::dropIfExists('quizfeedback');
-        Schema::dropIfExists('quizresult');
+        Schema::dropIfExists('quizfeedbacks');
+        Schema::dropIfExists('quizresults');
         Schema::dropIfExists('digitutors');
         Schema::dropIfExists('question_quiz');
 

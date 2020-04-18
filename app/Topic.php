@@ -11,7 +11,7 @@ class Topic extends Model
          'topic_summary_quiz'
     ]; */
     protected $guarded = [];
- 
+
     //
     public function course()
     {     //topics belong to the course
@@ -27,6 +27,14 @@ class Topic extends Model
     public function quizzes()
     {
         // topic has many quizzes
-        return $this->hasMany('App\Quiz');
+        return $this->hasMany('App\Quiz')->orderBy('quiz_subtype');
+    }
+
+    public function is_complete()
+    {
+        $ids = $this->quizzes()->where('quiz_type', 'Topic')->pluck('id');
+        return Quizresult::where('digitutor_id', auth()->user()->digitutor->id)
+            ->whereIn('quiz_id', $ids)
+            ->where('quiz_percent', '>=', 90)->exists();
     }
 }
