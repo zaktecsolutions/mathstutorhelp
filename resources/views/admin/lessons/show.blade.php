@@ -44,14 +44,6 @@
                             {{ $lesson->lesson_body }}
                         </div>
                     </div>
-
-                    <div class="row">
-                        <label for="lesson" class="col-md-2 text-md-right font-weight-bold">Lesson Quiz</label>
-                        <div class="col-md-8">
-                            {{ $lesson->lesson_quiz }}
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </div>

@@ -7,9 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Answer extends Model
 {
     //
-    protected $fillable = [
+   /*  protected $fillable = [
         'ans_image',  'ans_body', 'ans_explanation', 'question_id', 'ans_correct'
-    ];
+    ]; */
+    protected $guarded = [];
 
     public function question()
     {

@@ -1,10 +1,8 @@
 <?php
-
 namespace App\Http\Controllers\Admin;
 
 use App\Course;
 use App\Http\Controllers\Controller;
-use Gate;
 use Illuminate\Http\Request;
 
 class CoursesController extends Controller
@@ -38,8 +36,9 @@ class CoursesController extends Controller
      */
     public function create()
     {
-        //
-        return view('admin.courses.create');
+        $courses = Course::all();
+        
+        return view('admin.courses.create')->with('courses', $courses);
 
     }
 
@@ -52,28 +51,16 @@ class CoursesController extends Controller
     public function store(Request $request)
     {
         //
-        $this->validate($request, [
-            'course_name' => 'required| max:120',
-            'course_code' => 'required| max:120',
-            'course_desc' => 'required| max:120',
-            'course_level' => 'required| max:120',
-            'course_image' => 'required| max:120',
-        ]);
 
-        $course = Course::create([
-            'course_name' => $request->course_name,
-            'course_code' => $request->course_code,
-            'course_desc' => $request->course_desc,
-            'course_level' => $request->course_level,
-            'course_image' => $request->course_image
-    ]);
+        $course = Course::create($this->validatedData());
 
-        if ($course->save()) {$request->session()->flash('success', $course->course_name . ' has been updated');
+         if ($course) {$request->session()->flash('success', $course->course_name . ' has been inserted');
         } else {
-            $request->session()->flash('error', 'There was an error updating the user');
-        }
-
+        $request->session()->flash('error', 'There was an error updating the user');
+        } 
+   
         return redirect()->route('admin.courses.index');
+        //return redirect()->route('admin.courses'.$course->id);
     }
 
     /**
@@ -86,9 +73,9 @@ class CoursesController extends Controller
     {
         //
         // return 'User index page';
-       // $courses = Course::all(); //gets all the courses
+        // $courses = Course::all(); //gets all the courses
         return view('admin.courses.show')->with('course', $course);
-    
+
     }
 
     /**
@@ -117,28 +104,15 @@ class CoursesController extends Controller
      */
     public function update(Request $request, Course $course)
     {
-       // dd($request); //check  request
+        // dd($request); //check  request
 
-        $this->validate($request, [
-            'course_name' => 'required| max:120',
-            'course_code' => 'required| max:120',
-            'course_desc' => 'required| max:120',
-            'course_level' => 'required| max:120',
-            'course_image' => 'required| max:120',
-        ]);
-        $success = $course->update([
-            'course_name' => $request->course_name,
-            'course_code' => $request->course_code,
-            'course_desc' => $request->course_desc,
-            'course_level' => $request->course_level,
-            'course_image' => $request->course_image,
-        ]);
+        $course->update($this->validatedData());
 
-        if ($success) {$request->session()->flash('success', $course->course_name . ' has been updated');
+        if ($course) {$request->session()->flash('success', $course->course_name . ' has been updated');
         } else {
             $request->session()->flash('error', 'There was an error updating the user');
         }
-
+               
         return redirect()->route('admin.courses.index');
     }
     /**
@@ -150,11 +124,21 @@ class CoursesController extends Controller
     public function destroy(Course $course)
     {
         //
-
-    
-
         $course->delete();
 
         return redirect()->route('admin.courses.index');
+    }
+
+    protected function validatedData()
+    {
+        return request()->validate([
+            'course_name' => 'required| max:120',
+            'course_code' => 'required| max:120',
+            'course_desc' => 'required| max:120',
+            'course_level' => 'required| max:120',
+            'course_image' => 'required| max:120',
+
+        ]);
+
     }
 }

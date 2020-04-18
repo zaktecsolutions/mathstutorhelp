@@ -48,8 +48,8 @@
                                     name="course_name" value="{{ $user->course_name}}" required autofocus> --}}
                                     @foreach ($courses as $course )
                                     <div class="form-check">
-                                        <input type="radio" name="course_id" value="{{$course->id}}"
-                                        @if($user->course->pluck('id')->contains($course->id)) checked @endif>
+                                        <input type="radio" name="course_id" value="{{$course->id ?? ''}}"
+                                        @if($user->course->pluck('id')->contains($course->id)) checked @endif> 
                                         <label> {{ $course->course_name }} </label>
                                     </div>
                                     @endforeach

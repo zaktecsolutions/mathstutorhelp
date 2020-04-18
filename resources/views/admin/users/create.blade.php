@@ -9,7 +9,7 @@
                 <div class="card-body">
                     <form action="{{ route('register') }}" method="POST">
                         @csrf
-                        @include('partials.inputusers', $courses )
+                        @include('admin.users.form', $courses )
                         <button type="submit" class="btn btn-primary">
                             {{ __('Register') }}
                         </button>

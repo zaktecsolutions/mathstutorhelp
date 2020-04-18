@@ -11,7 +11,7 @@
                     <form action="{{ route('admin.quizzes.update', $quiz) }}" method="POST">
                         @csrf
                         {{ method_field('PUT')}}
-                        @include('partials.inputquizzes')
+                        @include('admin.quizzes.form')
                         <button type="submit" class="btn btn-primary">
                             Update
                         </button>

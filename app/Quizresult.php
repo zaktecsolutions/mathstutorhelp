@@ -9,18 +9,19 @@ class Quizresult extends Model
     //
     public function quiz()
     {
-        // question has many answers
+        // quizresult belongs to quiz
         return $this->belongsTo('App\Quiz');
     }
 
     public function quizfeedback()
     {
-        // question has many answers
+        // quiz result has many quiz feedback
         return $this->hasMany('App\Quizfeedback');
     }
 
     public function digitutor()
-    { //User has One digiTutor
+    { 
+        //quizresult belings to digitutor
         return $this->belongsTo('App\Digitutor');
     }
 }

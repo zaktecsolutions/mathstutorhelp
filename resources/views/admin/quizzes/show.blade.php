@@ -40,19 +40,11 @@
                     </div>
 
                     <div class="row">
-                        <label for="quiz" class="col-md-2 text-md-right font-weight-bold">Quiz Body</label>
+                        <label for="quiz" class="col-md-2 text-md-right font-weight-bold">Quiz SubType</label>
                         <div class="col-md-6">
-                            {{ $quiz->quiz_body }}
+                            {{ $quiz->quiz_subtype }}
                         </div>
                     </div>
-                   
-                    <div class="row">
-                        <label for="quiz" class="col-md-2 text-md-right font-weight-bold">Quiz Level</label>
-                        <div class="col-md-6">
-                            {{ $quiz->quiz_level }}
-                        </div>
-                    </div>
-    
                 </div>
             </div>
         </div>

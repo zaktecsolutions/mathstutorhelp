@@ -14,10 +14,6 @@
                             <th scope="col">#</th>
                             <th scope="col">Lesson Name</th>
                             <th scope="col">Lesson Code</th>
-                           {{--  <th scope="col">Lesson Desc</th>
-                            <th scope="col">Lesson Worksheet</th>
-                            <th scope="col">Lesson Body</th>
-                            <th scope="col">Lesson Quiz</th> --}}
                             <th scope="col"></th>
                             <th scope="col"> Action</th>
                         </tr>
@@ -28,10 +24,7 @@
                             <th scope="row">{{ $lesson->id }}</th>
                             <td>{{ $lesson->lesson_name }}</td>
                             <td>{{ $lesson->lesson_code }}</td>
-                           {{--  <td>{{ $lesson->lesson_desc }}</td>
-                            <td>{{ $lesson->lesson_ws }}</td>
-                            <td>{{ $lesson->lesson_body }}</td>
-                            <td>{{ $lesson->lesson_quiz }}</td> --}}
+                           
                             <td>
                                 <a href="{{ route('admin.lessons.show', $lesson->id)}}">
                                     <button type="button" class="btn btn-primary float-left">View</button></a> </td>
@@ -45,7 +38,7 @@
                                     class="float-left">
                                     @csrf
                                     {{ @method_field('DELETE')}}
-                                    <button type="submit" class="btn btn-warning">Delete</button>
+                                    <button type="submit" class="btn btn-primary">Delete</button>
                                 </form>
                             </td>
                         </tr>

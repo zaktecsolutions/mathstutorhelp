@@ -49,28 +49,13 @@ class QuizzesController extends Controller
     public function store(Request $request)
     {
         //
-        $this->validate($request, [
-            'quiz_name' => 'required| max:120',
-            'quiz_code' => 'required| max:120',
-            'quiz_desc' => 'required| max:120',
-            'quiz_type' => 'required| max:120',
-            'quiz_body' => 'required| max:120',
-            'quiz_level' => 'required| max:120',
-        ]);
-        $quiz = Quiz::create([
-            'quiz_name' => $request->quiz_name,
-            'quiz_code' => $request->quiz_code,
-            'quiz_desc' => $request->quiz_desc,
-            'quiz_type' => $request->quiz_type,
-            'quiz_body' => $request->quiz_body,
-            'quiz_level' => $request->quiz_level,
+        $quiz = Quiz::create($this->validatedData());
 
-        ]);
-
-        if ($quiz->save()) {$request->session()->flash('success', $quiz->quiz_name . ' has been updated');
+        if ($quiz) {$request->session()->flash('success', $quiz->quiz_name . ' has been inserted');
         } else {
             $request->session()->flash('error', 'There was an error updating the user');
         }
+
         return redirect()->route('admin.quizzes.index');
     }
 
@@ -113,28 +98,12 @@ class QuizzesController extends Controller
      */
     public function update(Request $request, Quiz $quiz)
     {
-        //
-        $this->validate($request, [
-            'quiz_name' => 'required| max:120',
-            'quiz_code' => 'required| max:120',
-            'quiz_desc' => 'required| max:120',
-            'quiz_type' => 'required| max:120',
-            'quiz_body' => 'required| max:120',
-            'quiz_level' => 'required| max:120',
-        ]);
-        $success = $quiz->update([
-            'quiz_name' => $request->quiz_name,
-            'quiz_code' => $request->quiz_code,
-            'quiz_desc' => $request->quiz_desc,
-            'quiz_type' => $request->quiz_type,
-            'quiz_body' => $request->quiz_body,
-            'quiz_level' => $request->quiz_level,
-        ]);
-        if ($success) {$request->session()->flash('success', $quiz->quiz_name . ' has been updated');
+        $quiz->update($this->validatedData());
+
+        if ($quiz) {$request->session()->flash('success', $quiz->quiz_name . ' has been updated');
         } else {
             $request->session()->flash('error', 'There was an error updating the user');
         }
-
         return redirect()->route('admin.quizzes.index');
     }
 
@@ -150,5 +119,17 @@ class QuizzesController extends Controller
         $quiz->delete();
 
         return redirect()->route('admin.quizzes.index');
+    }
+
+    protected function validatedData()
+    {
+        return request()->validate([
+            'quiz_name' => 'required| max:120',
+            'quiz_code' => 'required| max:120',
+            'quiz_desc' => 'required| max:120',
+            'quiz_type' => 'required| max:120',
+            'quiz_subtype' => 'required| max:120',
+
+        ]);
     }
 }

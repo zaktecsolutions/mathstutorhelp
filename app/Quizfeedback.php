@@ -18,4 +18,10 @@ class Quizfeedback extends Model
         //question belongs to lesson
         return $this->belongsTo('App\Answer');
     }
+
+    public function quizresult()
+    {
+        //quizfeedback belongs to quizresult
+        return $this->belongsTo('App\Quizresult');
+    }
 }

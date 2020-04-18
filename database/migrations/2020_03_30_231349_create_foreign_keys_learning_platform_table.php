@@ -26,6 +26,8 @@ class CreateForeignKeysLearningPlatformTable extends Migration
         Schema::table('quizzes', function (Blueprint $table) {
 
             $table->foreign('topic_id')->references('id')->on('topics')->onDelete('cascade');
+            $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
+            $table->foreign('lesson_id')->references('id')->on('lessons')->onDelete('cascade');
         });
 
         Schema::table('lessons', function (Blueprint $table) {
@@ -38,7 +40,7 @@ class CreateForeignKeysLearningPlatformTable extends Migration
             $table->foreign('lesson_id')->references('id')->on('lessons')->onDelete('cascade');
         });
 
-        Schema::table('digitutor', function (Blueprint $table) {
+        Schema::table('digitutors', function (Blueprint $table) {
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
@@ -58,7 +60,7 @@ class CreateForeignKeysLearningPlatformTable extends Migration
         Schema::table('quizresult', function (Blueprint $table) {
 
             $table->foreign('quiz_id')->references('id')->on('quizresult')->onDelete('cascade');
-            $table->foreign('digitutor_id')->references('id')->on('digitutor')->onDelete('cascade');
+            $table->foreign('digitutor_id')->references('id')->on('digitutors')->onDelete('cascade');
         });
 
         Schema::table('questionquiz', function (Blueprint $table) {
@@ -99,6 +101,8 @@ class CreateForeignKeysLearningPlatformTable extends Migration
         Schema::table('quizzes', function (Blueprint $table) {
 
             $table->dropForeign(['topic_id']);
+            $table->dropForeign(['course_id']);
+            $table->dropForeign(['lesson_id']);
         });
 
         Schema::table('lessons', function (Blueprint $table) {
@@ -111,7 +115,7 @@ class CreateForeignKeysLearningPlatformTable extends Migration
             $table->dropForeign(['lesson_id']);
         });
 
-        Schema::table('digitutor', function (Blueprint $table) {
+        Schema::table('digitutors', function (Blueprint $table) {
 
             $table->dropForeign(['user_id']);
 

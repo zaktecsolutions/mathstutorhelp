@@ -37,21 +37,6 @@
                             {{ $topic->topic_les_num }}
                         </div>
                     </div>
-
-                    <div class="row">
-                        <label for="topic" class="col-md-2 text-md-right font-weight-bold">Topic Diagnostic Quiz</label>
-                        <div class="col-md-8">
-                            {{ $topic->topic_diagnostic_quiz }}
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <label for="topic" class="col-md-2 text-md-right">Topic Summary Quiz</label>
-                        <div class="col-md-8">
-                            {{ $topic->topic_summary_quiz }}
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </div>

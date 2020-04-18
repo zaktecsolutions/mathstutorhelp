@@ -1,4 +1,4 @@
-{{-- This page will display the question  tables --}}{{-- This page will display the question tables --}}
+{{-- This page will display the question tables --}}
 @extends('layouts.app')
 @section('content')
 <div class="container">
@@ -6,12 +6,13 @@
         <div class="col-md-10 col-sm-11 col-xs-12">
             <a href="/admin/questions">Back to questions</a>
             <div class="card">
-                <a href="{{ route('admin.questions.edit', $question->id)}}">
-                    <button type="button" class="btn btn-primary float-right">Edit</button>
+                <div>
+                    <a href="{{ route('admin.questions.edit', $question->id)}}">
+                    <button type="button" class="btn btn-primary float-right ml-1">Edit</button>
                 </a>
                 <a href="{{ route('admin.question.answers.index', $question->id)}}">
                     <button type="button" class="btn btn-primary float-right">Answers</button>
-                </a>
+                </a> </div>
                 <div class="card-header">Question # {{ $question->id }}</div>
 
                 <div class="card-body">
@@ -54,13 +55,6 @@
                         <label for="question" class="col-md-2 text-md-right font-weight-bold">Question Type</label>
                         <div class="col-md-8">
                             {{ $question->question_type}}
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <label for="question" class="col-md-2 text-md-right font-weight-bold">Question Category</label>
-                        <div class="col-md-8">
-                            {{ $question->question_category}}
                         </div>
                     </div>
                 </div>

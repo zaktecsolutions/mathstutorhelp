@@ -24,12 +24,13 @@ class StdquizController extends Controller
      */
     public function index()
     {
+        $authUser = auth()->user();
         $questions = Question::all(); //gets all the questions
         $answers = Answer::all(); //gets all the answers
-        $quiz = auth()->user()->course()->topic()->topic_quiz;  // get the name of the quiz
-        $user = auth()->user();
+        $quizname= $authuser->course->topic->quiz_name;  // get the name of the quiz
+        
         return view('student.stdquiz.quiz')->with([
-            'user' => $user,
+            'user' => $authuser,
             'quiz' => $quiz,
             'questions' => $questions,
             'answers' => $answers,

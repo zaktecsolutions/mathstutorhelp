@@ -9,7 +9,7 @@
                 <div class="card-body">
                     <form action="{{ route('admin.question.answers.store',$question->id) }}" method="POST">
                         @csrf
-                        @include('partials.inputanswers')
+                        @include('admin.answers.form')
                         <button type="submit" class="btn btn-primary">
                             Insert
                         </button>

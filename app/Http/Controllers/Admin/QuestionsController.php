@@ -46,32 +46,13 @@ class QuestionsController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'question_name' => 'required| max:120',
-            'question_body' => 'required| max:120',
-            'question_image' => 'required| max:120',
-            'question_mark' => 'required| numeric|min:1|max:9',
-            'question_grade' => 'required| numeric|min:1|max:9',
-            'question_type' => 'required| max:120',
-            'question_category' => 'required| max:120',
-        ]);
+        //
+        $question = question::create($this->validatedData());
 
-        $question = Question::create([
-            'question_name' => $request->question_name,
-            'question_body' => $request->question_body,
-            'question_image' => $request->question_image,
-            'question_mark' => $request->question_mark,
-            'question_grade' => $request->question_grade,
-            'question_type' => $request->question_type,
-            'question_category' => $request->question_category,
-
-        ]);
-
-        if ($question->save()) {$request->session()->flash('success', $question->question_name . ' has been updated');
+        if ($question) {$request->session()->flash('success', $question->question_name . ' has been inserted');
         } else {
             $request->session()->flash('error', 'There was an error updating the user');
         }
-
         return redirect()->route('admin.questions.index');
     }
 
@@ -113,28 +94,9 @@ class QuestionsController extends Controller
      */
     public function update(Request $request, Question $question)
     {
-        $this->validate($request, [
-            'question_name' => 'required| max:120',
-            'question_body' => 'required| max:120',
-            'question_image' => 'required| max:120',
-            'question_mark' => 'required| numeric|min:1|max:9',
-            'question_grade' => 'required| numeric|min:1|max:9',
-            'question_type' => 'required| max:120',
-            'question_category' => 'required| max:120',
-        ]);
+        $question->update($this->validatedData());
 
-        $success = $question->update([
-            'question_name' => $request->question_name,
-            'question_body' => $request->question_body,
-            'question_image' => $request->question_image,
-            'question_mark' => $request->question_mark,
-            'question_grade' => $request->question_grade,
-            'question_type' => $request->question_type,
-            'question_category' => $request->question_category,
-
-        ]);
-
-        if ($success) {$request->session()->flash('success', $question->question_name . ' has been updated');
+        if ($question) {$request->session()->flash('success', $question->question_name . ' has been updated');
         } else {
             $request->session()->flash('error', 'There was an error updating the user');
         }
@@ -152,5 +114,17 @@ class QuestionsController extends Controller
         $question->delete();
 
         return redirect()->route('admin.questions.index');
+    }
+    protected function validatedData()
+    {
+        return request()->validate([
+            'question_name' => 'required| max:120',
+            'question_body' => 'required| max:120',
+            'question_image' => 'required| max:120',
+            'question_mark' => 'required| numeric|min:1|max:9',
+            'question_grade' => 'required| numeric|min:1|max:9',
+            'question_type' => 'required| max:120',
+
+        ]);
     }
 }

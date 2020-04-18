@@ -6,10 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Topic extends Model
 {
-    protected $fillable = [
+    /* protected $fillable = [
         'topic_name', 'topic_code', 'topic_desc', 'topic_les_num', 'topic_diagnostic_quiz',
          'topic_summary_quiz'
-    ];
+    ]; */
+    protected $guarded = [];
  
     //
     public function course()
@@ -25,7 +26,7 @@ class Topic extends Model
 
     public function quizzes()
     {
-        // topic has many lessons
+        // topic has many quizzes
         return $this->hasMany('App\Quiz');
     }
 }

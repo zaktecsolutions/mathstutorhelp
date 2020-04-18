@@ -9,7 +9,7 @@
                 <div class="card-body">
                     <form action="{{ route('admin.courses.store') }}" method="POST">
                         @csrf
-                        @include('partials.inputcourse')
+                        @include('admin.courses.form')
                         <button type="submit" class="btn btn-primary">
                             Insert
                         </button>

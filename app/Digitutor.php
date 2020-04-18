@@ -7,9 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Digitutor extends Model
 {
     //
-    protected $fillable = [
+   /*  protected $fillable = [
         'name', 'email', 'password', 'course_id'
-    ];
+    ]; */
+    protected $guarded = [];
 
     public function user()
     {
@@ -20,7 +21,7 @@ class Digitutor extends Model
 
     public function quizresult()
     {
-        //digitutor belongs to user
+        //digitutor has many quizresult
         return $this->hasMany('App\Quizresult');
 
     }

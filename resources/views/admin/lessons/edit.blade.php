@@ -11,7 +11,7 @@
                     <form action="{{ route('admin.lessons.update', $lesson) }}" method="POST">
                         @csrf
                         {{ method_field('PUT')}}
-                        @include('partials.inputlessons')
+                        @include('admin.lessons.form')
                         <button type="submit" class="btn btn-primary">
                             Update
                         </button>

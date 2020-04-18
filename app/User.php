@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'course_id'
+        'name', 'email', 'password', 'course_id',
     ];
 
     /**
@@ -44,12 +44,14 @@ class User extends Authenticatable
     }
 
     public function course()
-    { //courses belong to user
+    {
+        //courses belong to user
         return $this->belongsTo('App\Course');
     }
 
     public function digitutor()
-    { //User has One digiTutor
+    {
+        //User has One digiTutor
         return $this->hasOne('App\Digitutor');
     }
 

@@ -1,7 +1,7 @@
 <?php
 
-use App\Question;
 use App\Lesson;
+use App\Question;
 use Illuminate\Database\Seeder;
 
 class QuestionsTableSeeder extends Seeder
@@ -16,8 +16,9 @@ class QuestionsTableSeeder extends Seeder
         //
         Schema::disableForeignKeyConstraints();
         question::truncate();
-        
-        $lesson = Lesson::where('lesson_code', 'GFLCN11')->first();
+
+        $lesson = Lesson::where('lesson_code', 'GFN1LC1')->first();
+
         question::create([
             'lesson_id' => $lesson->id,
             'question_name' => 'Place Value and Money',
@@ -25,45 +26,42 @@ class QuestionsTableSeeder extends Seeder
             'question_image' => '/image/...',
             'question_mark' => '1',
             'question_grade' => '1',
-            'question_type' => 'scq',
-            'question_category' => 'tdq',
-            
+            'question_type' => 'Topic Quiz Diagnostic',
+
         ]);
 
         question::create([
             'lesson_id' => $lesson->id,
             'question_name' => 'Place Value and Money',
-            'question_body' => 'Write the value of 5 in the following number in word from?  965,888,702',
+            'question_body' => 'Write the value of 5 in the following number in word from?  965,888,702.',
             'question_image' => '/image/...',
             'question_mark' => '1',
             'question_grade' => '1',
-            'question_type' => 'scq',
-            'question_category' => 'tdq',
-            
+            'question_type' => 'Topic Quiz Diagnostic',
+
         ]);
 
         question::create([
             'lesson_id' => $lesson->id,
             'question_name' => 'Place Value and Money',
-            'question_body' => 'Subtract £225,000 from a half a million pound',
+            'question_body' => 'Subtract £225,000 from a half a million pound.',
             'question_image' => '/image/...',
             'question_mark' => '1',
             'question_grade' => '1',
-            'question_type' => 'scq',
-            'question_category' => 'tdq',
-            
+            'question_type' => 'Topic Quiz Diagnostic',
+
         ]);
 
         question::create([
             'lesson_id' => $lesson->id,
             'question_name' => 'Place Value and Money',
-            'question_body' => 'Write the following numbers  in figures? Six hundred and nineteen thousand',
+            'question_body' => 'Write the following numbers  in figures?
+            Six hundred and nineteen thousand',
             'question_image' => '/image/...',
             'question_mark' => '1',
             'question_grade' => '1',
-            'question_type' => 'scq',
-            'question_category' => 'tsq',
-            
+            'question_type' => 'Topic Summary Question',
+
         ]);
 
         question::create([
@@ -73,9 +71,7 @@ class QuestionsTableSeeder extends Seeder
             'question_image' => '/image/...',
             'question_mark' => '1',
             'question_grade' => '1',
-            'question_type' => 'scq',
-            'question_category' => 'tsq',
-            
+            'question_type' => 'Topic Summary Question',
         ]);
 
         question::create([
@@ -85,12 +81,10 @@ class QuestionsTableSeeder extends Seeder
             'question_image' => '/image/...',
             'question_mark' => '1',
             'question_grade' => '1',
-            'question_type' => 'scq',
-            'question_category' => 'tsq',
-            
+            'question_type' => 'Topic Summary Question',
         ]);
 
-        $lesson = Lesson::where('lesson_code', 'GFLCN12')->first();
+        $lesson = Lesson::where('lesson_code', 'GFN1LC2')->first();
 
         question::create([
             'lesson_id' => $lesson->id,
@@ -99,9 +93,7 @@ class QuestionsTableSeeder extends Seeder
             'question_image' => '/image/...',
             'question_mark' => '1',
             'question_grade' => '2',
-            'question_type' => 'scq',
-            'question_category' => 'tdq',
-            
+            'question_type' => 'Topic Quiz Diagnostic',
         ]);
 
         question::create([
@@ -111,9 +103,8 @@ class QuestionsTableSeeder extends Seeder
             'question_image' => '/image/...',
             'question_mark' => '1',
             'question_grade' => '2',
-            'question_type' => 'scq',
-            'question_category' => 'tdq',
-            
+            'question_type' => 'Topic Quiz Diagnostic',
+
         ]);
 
         question::create([
@@ -123,9 +114,8 @@ class QuestionsTableSeeder extends Seeder
             'question_image' => '/image/...',
             'question_mark' => '1',
             'question_grade' => '2',
-            'question_type' => 'scq',
-            'question_category' => 'tdq',
-            
+            'question_type' => 'Topic Quiz Diagnostic',
+
         ]);
 
         question::create([
@@ -135,9 +125,8 @@ class QuestionsTableSeeder extends Seeder
             'question_image' => '/image/...',
             'question_mark' => '1',
             'question_grade' => '2',
-            'question_type' => 'scq',
-            'question_category' => 'tsq',
-            
+            'question_type' => 'Topic Summary Question',
+
         ]);
 
         question::create([
@@ -147,9 +136,8 @@ class QuestionsTableSeeder extends Seeder
             'question_image' => '/image/...',
             'question_mark' => '1',
             'question_grade' => '2',
-            'question_type' => 'scq',
-            'question_category' => 'tdq',
-            
+            'question_type' => 'Topic Summary Question',
+
         ]);
 
         question::create([
@@ -159,9 +147,8 @@ class QuestionsTableSeeder extends Seeder
             'question_image' => '/image/...',
             'question_mark' => '1',
             'question_grade' => '2',
-            'question_type' => 'scq',
-            'question_category' => 'tdq',
-            
+            'question_type' => 'Topic Summary Question',
+
         ]);
 
         Schema::enableForeignKeyConstraints();

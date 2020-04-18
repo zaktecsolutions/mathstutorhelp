@@ -48,28 +48,12 @@ class LessonsController extends Controller
     public function store(Request $request)
     {
         //
-        $this->validate($request, [
-            'lesson_name' => 'required| max:120',
-            'lesson_code' => 'required| max:120',
-            'lesson_desc' => 'required| max:120',
-            'lesson_ws' => 'required| max:120',
-            'lesson_body' => 'required| max:120',
-            'lesson_quiz' => 'required| max:120',
-        ]);
+        $lesson = Lesson::create($this->validatedData());
 
-        $lesson = lesson::create([
-            'lesson_name' => $request->lesson_name,
-            'lesson_code' => $request->lesson_code,
-            'lesson_desc' => $request->lesson_desc,
-            'lesson_ws' => $request->lesson_ws,
-            'lesson_body' => $request->lesson_body,
-            'lesson_quiz' => $request->lesson_quiz,
-        ]);
-        if ($lesson->save()) {$request->session()->flash('success', $lesson->lesson_name . ' has been updated');
+        if ($lesson) {$request->session()->flash('success', $lesson->lesson_name . ' has been inserted');
         } else {
             $request->session()->flash('error', 'There was an error updating the user');
         }
-
         return redirect()->route('admin.lessons.index');
     }
 
@@ -83,7 +67,7 @@ class LessonsController extends Controller
     {
 
         // return 'User index page';
-      //  $lessons = lesson::all(); gets all the lessons
+        //  $lessons = lesson::all(); gets all the lessons
         return view('admin.lessons.show')->with('lesson', $lesson);
     }
 
@@ -113,28 +97,9 @@ class LessonsController extends Controller
     public function update(Request $request, Lesson $lesson)
     {
         //
-        $this->validate($request, [
-            'lesson_name' => 'required| max:120',
-            'lesson_code' => 'required| max:120',
-            'lesson_desc' => 'required| max:120',
-            'lesson_ws' => 'required| max:120',
-            'lesson_body' => 'required| max:120',
-            'lesson_quiz' => 'required| max:120',
-        ]);
-        $success = $lesson->update([
-            'lesson_name' => $request->lesson_name,
-            'lesson_code' => $request->lesson_code,
-            'lesson_desc' => $request->lesson_desc,
-            'lesson_ws' => $request->lesson_ws,
-            'lesson_body' => $request->lesson_body,
-            'lesson_quiz' => $request->lesson_quiz,
-        ]);
-        if ($success) {$request->session()->flash('success', $lesson->lesson_name . ' has been updated');
-        } else {
-            $request->session()->flash('error', 'There was an error updating the user');
-        }
+        $lesson->update($this->validatedData());
 
-        if ($lesson->save()) {$request->session()->flash('success', $lesson->lesson_name . ' has been updated');
+        if ($lesson) {$request->session()->flash('success', $lesson->lesson_name . ' has been updated');
         } else {
             $request->session()->flash('error', 'There was an error updating the user');
         }
@@ -154,5 +119,16 @@ class LessonsController extends Controller
         $lesson->delete();
 
         return redirect()->route('admin.lessons.index');
+    }
+    protected function validatedData()
+    {
+        return request()->validate([
+            'lesson_name' => 'required| max:120',
+            'lesson_code' => 'required| max:120',
+            'lesson_desc' => 'required| max:120',
+            'lesson_ws' => 'required| max:120',
+            'lesson_body' => 'required| max:120',
+
+        ]);
     }
 }
