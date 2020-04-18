@@ -13,29 +13,23 @@
                 <a href="{{ route('admin.question.answers.index', $question->id)}}">
                     <button type="button" class="btn btn-primary float-right">Answers</button>
                 </a> </div>
-                <div class="card-header">Question # {{ $question->id }}</div>
+                <div class="card-header">Question {{$question->question_name }}</div>
 
                 <div class="card-body">
-                    <div class="row">
-                        <label for="question_name" class="col-md-2 text-md-right font-weight-bold">Question Name
-                        </label>
-                        <div class="col-md-8">
-                            {{$question->question_name }}
-
-                        </div>
-                    </div>
                     <div class="row">
                         <label for="name" class="col-md-2 text-md-right font-weight-bold">Question Body</label>
                         <div class="col-md-8">
                             {{ $question->question_body }}
                         </div>
                     </div>
+                    @if($question->question_image)
                     <div class="row">
                         <label for="roles" class="col-md-2 text-md-right font-weight-bold">Question Image</label>
                         <div class="col-md-8">
-                            {{ $question->question_image }}
+                            <img height="200" src="{{asset('storage/'.$question->question_image)}}" />
                         </div>
                     </div>
+                    @endif
 
                     <div class="row">
                         <label for="question" class="col-md-2 text-md-right font-weight-bold">Question Mark</label>
