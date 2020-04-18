@@ -3,6 +3,8 @@
 use App\Answer;
 use App\Question;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Storage;
+use League\Csv\Reader;
 
 class AnswersTableSeeder extends Seeder
 {
@@ -17,122 +19,18 @@ class AnswersTableSeeder extends Seeder
         Schema::disableForeignKeyConstraints();
         answer::truncate();
 
-        $question = Question::where('id', '1')->first();
-
-        answer::create([
-
-            'question_id' => $question->id,
-            'ans_body' => 'Six hundred and nineteen thousand',
-            'ans_explanation' => 'EXPLANATION',
-        ]);
-
-        $question = Question::where('id', '2')->first();
-
-        answer::create([
-
-            'question_id' => $question->id,
-            'ans_body' => 'million',
-            'ans_explanation' => 'EXPLANATION',
-        ]);
-
-        $question = Question::where('id', '3')->first();
-
-        answer::create([
-
-            'question_id' => $question->id,
-            'ans_body' => '275 000',
-            'ans_explanation' => 'EXPLANATION',
-        ]);
-
-        $question = Question::where('id', '4')->first();
-
-        answer::create([
-
-            'question_id' => $question->id,
-            'ans_body' => '619,000',
-            'ans_explanation' => 'EXPLANATION',
-        ]);
-
-        $question = Question::where('id', '5')->first();
-
-        answer::create([
-
-            'question_id' => $question->id,
-            'ans_body' => 'ten million',
-            'ans_explanation' => 'EXPLANATION',
-        ]);
-
-        $question = Question::where('id', '6')->first();
-
-        answer::create([
-
-            'question_id' => $question->id,
-            'ans_body' => '32p',
-            'ans_explanation' => 'EXPLANATION',
-        ]);
-
-        $question = Question::where('id', '7')->first();
-
-        answer::create([
-
-            'question_id' => $question->id,
-            'ans_body' => '-40',
-            'ans_explanation' => 'EXPLANATION',
-        ]);
-
-        $question = Question::where('id', '8')->first();
-
-        answer::create([
-
-            'question_id' => $question->id,
-            'ans_body' => '-13',
-            'ans_explanation' => 'EXPLANATION',
-        ]);
-
-        $question = Question::where('id', '9')->first();
-
-        answer::create([
-
-            'question_id' => $question->id,
-            'ans_body' => '8',
-            'ans_explanation' => 'EXPLANATION',
-        ]);
-
-        $question = Question::where('id', '9')->first();
-
-        answer::create([
-
-            'question_id' => $question->id,
-            'ans_body' => '8',
-            'ans_explanation' => 'EXPLANATION',
-        ]);
-
-        $question = Question::where('id', '10')->first();
-
-        answer::create([
-
-            'question_id' => $question->id,
-            'ans_body' => '-50',
-            'ans_explanation' => 'EXPLANATION',
-        ]);
-
-        $question = Question::where('id', '11')->first();
-
-        answer::create([
-
-            'question_id' => $question->id,
-            'ans_body' => '-24',
-            'ans_explanation' => 'EXPLANATION',
-        ]);
-
-        $question = Question::where('id', '12')->first();
-
-        answer::create([
-
-            'question_id' => $question->id,
-            'ans_body' => '1',
-            'ans_explanation' => 'EXPLANATION',
-        ]);
+        $seederFile = Storage::path("seeders/answers.csv");
+        $csv = Reader::createFromPath($seederFile, 'r');
+        $csv->setHeaderOffset(0);
+        $records = $csv->getRecords();
+        foreach ($records as $offset => $record) {
+            answer::create([
+                'question_id' => $record["question_id"],
+                'ans_body' => $record["ans_body"],
+                'ans_explanation' => $record["ans_explanation"],
+                'ans_image' => $record["ans_image"],
+            ]);
+        }
 
         Schema::enableForeignKeyConstraints();
     }

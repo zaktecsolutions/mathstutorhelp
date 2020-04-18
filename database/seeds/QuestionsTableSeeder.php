@@ -4,6 +4,8 @@ use App\Lesson;
 use App\Question;
 use App\Quiz;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Storage;
+use League\Csv\Reader;
 
 class QuestionsTableSeeder extends Seeder
 {
@@ -18,152 +20,26 @@ class QuestionsTableSeeder extends Seeder
         Schema::disableForeignKeyConstraints();
         question::truncate();
 
-        $lesson = Lesson::where('lesson_code', 'GFN1LC1')->first();
-        $quiz = Quiz::where('quiz_code','GFN1TDQ')->first();
-        $question = question::create([
-            'lesson_id' => $lesson->id,
-            'question_name' => 'Place Value and Money',
-            'question_body' => 'Write the following numbers  in figures?  Fifty five million, nine hundred  sixty two  thousand, eight hundred  fifty six',
-            'question_image' => '/image/...',
-            'question_mark' => '1',
-            'question_grade' => '1',
-            'question_type' => 'Topic Quiz Diagnostic',
+        $seederFile = Storage::path("seeders/questions.csv");
+        $csv = Reader::createFromPath($seederFile, 'r');
+        $csv->setHeaderOffset(0);
+        $records = $csv->getRecords();
+        foreach ($records as $offset => $record) {
+            $lesson = Lesson::where('lesson_code', $record["lesson_code"])->first();
+            $quiz = Quiz::where('quiz_code','GFN1TDQ')->first();
+            $question = question::create([
+                'id' => $record["id"],
+                'lesson_id' => $lesson->id,
+                'question_name' => $record["lesson_code"],
+                'question_body' => $record["question_body"],
+                'question_image' => $record["question_image"],
+                'question_mark' => $record["question_mark"],
+                'question_grade' => $record["question_grade"],
+                'question_type' => $record["question_type"],
 
-        ]);
-        $question->quizzes()->attach($quiz);
-
-        $question = question::create([
-            'lesson_id' => $lesson->id,
-            'question_name' => 'Place Value and Money',
-            'question_body' => 'Write the value of 5 in the following number in word from?  965,888,702.',
-            'question_image' => '/image/...',
-            'question_mark' => '1',
-            'question_grade' => '1',
-            'question_type' => 'Topic Quiz Diagnostic',
-
-        ]);
-        $question->quizzes()->attach($quiz);
-
-        $question = question::create([
-            'lesson_id' => $lesson->id,
-            'question_name' => 'Place Value and Money',
-            'question_body' => 'Subtract £225,000 from a half a million pound.',
-            'question_image' => '/image/...',
-            'question_mark' => '1',
-            'question_grade' => '1',
-            'question_type' => 'Topic Quiz Diagnostic',
-        ]);
-        $question->quizzes()->attach($quiz);
-
-        $quiz = Quiz::where('quiz_code','GFN1TSQ')->first();
-        $question = question::create([
-            'lesson_id' => $lesson->id,
-            'question_name' => 'Place Value and Money',
-            'question_body' => 'Write the following numbers  in figures?
-            Six hundred and nineteen thousand',
-            'question_image' => '/image/...',
-            'question_mark' => '1',
-            'question_grade' => '1',
-            'question_type' => 'Topic Summary Question',
-
-        ]);
-        $question->quizzes()->attach($quiz);
-
-        $question = question::create([
-            'lesson_id' => $lesson->id,
-            'question_name' => 'Place Value and Money',
-            'question_body' => 'Write the value of 6 in the following number in word from? 11, 657, 554 ',
-            'question_image' => '/image/...',
-            'question_mark' => '1',
-            'question_grade' => '1',
-            'question_type' => 'Topic Summary Question',
-        ]);
-        $question->quizzes()->attach($quiz);
-
-        $question = question::create([
-            'lesson_id' => $lesson->id,
-            'question_name' => 'Place Value and Money',
-            'question_body' => 'A sticker cost 78p. John has £5. He buys as many stickers he can. Work out the amount of change John should get from £5. Give the answer in pence ',
-            'question_image' => '/image/...',
-            'question_mark' => '1',
-            'question_grade' => '1',
-            'question_type' => 'Topic Summary Question',
-        ]);
-        $question->quizzes()->attach($quiz);
-
-        $lesson = Lesson::where('lesson_code', 'GFN1LC2')->first();
-        $quiz = Quiz::where('quiz_code','GFN1TDQ')->first();
-        $question = question::create([
-            'lesson_id' => $lesson->id,
-            'question_name' => 'Negative Numbers',
-            'question_body' => '4-44',
-            'question_image' => '/image/...',
-            'question_mark' => '1',
-            'question_grade' => '2',
-            'question_type' => 'Topic Quiz Diagnostic',
-        ]);
-        $question->quizzes()->attach($quiz);
-
-        $question = question::create([
-            'lesson_id' => $lesson->id,
-            'question_name' => 'Negative Numbers',
-            'question_body' => '-11 + -2',
-            'question_image' => '/image/...',
-            'question_mark' => '1',
-            'question_grade' => '2',
-            'question_type' => 'Topic Quiz Diagnostic',
-
-        ]);
-        $question->quizzes()->attach($quiz);
-
-        $question = question::create([
-            'lesson_id' => $lesson->id,
-            'question_name' => 'Negative Numbers',
-            'question_body' => '3 × –8 ÷ -3',
-            'question_image' => '/image/...',
-            'question_mark' => '1',
-            'question_grade' => '2',
-            'question_type' => 'Topic Quiz Diagnostic',
-
-        ]);
-        $question->quizzes()->attach($quiz);
-
-        $quiz = Quiz::where('quiz_code','GFN1TSQ')->first();
-        $question = question::create([
-            'lesson_id' => $lesson->id,
-            'question_name' => 'Negative Numbers',
-            'question_body' => '- 7 - 43',
-            'question_image' => '/image/...',
-            'question_mark' => '1',
-            'question_grade' => '2',
-            'question_type' => 'Topic Summary Question',
-
-        ]);
-        $question->quizzes()->attach($quiz);
-
-        $question = question::create([
-            'lesson_id' => $lesson->id,
-            'question_name' => 'Negative Numbers',
-            'question_body' => '6 - + 30 ',
-            'question_image' => '/image/...',
-            'question_mark' => '1',
-            'question_grade' => '2',
-            'question_type' => 'Topic Summary Question',
-
-        ]);
-        $question->quizzes()->attach($quiz);
-
-        $question = question::create([
-            'lesson_id' => $lesson->id,
-            'question_name' => 'Negative Numbers',
-            'question_body' => '45 ÷ -9 ÷ -5',
-            'question_image' => '/image/...',
-            'question_mark' => '1',
-            'question_grade' => '2',
-            'question_type' => 'Topic Summary Question',
-
-        ]);
-        $question->quizzes()->attach($quiz);
+            ]);
+            $question->quizzes()->attach($quiz);
+        }
 
         Schema::enableForeignKeyConstraints();
     }
