@@ -35,7 +35,7 @@ class QuestionsTableSeeder extends Seeder
                 'question_image' => $record["question_image"],
                 'question_mark' => $record["question_mark"],
                 'question_grade' => $record["question_grade"],
-                'question_type' => $record["question_type"],
+                /* 'question_type' => $record["question_type"], */
 
             ]);
             $question->quizzes()->attach($quiz);

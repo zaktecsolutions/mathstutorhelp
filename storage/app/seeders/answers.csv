@@ -1,13 +1,61 @@
-ans_image,ans_body,ans_explanation,question_id
-quiz/...,Six hundred and nineteen thousand,EXPLANATION ,1
-quiz/...,million,EXPLANATION ,2
-quiz/...,275 000,EXPLANATION ,3
-quiz/...,"6,19,000",EXPLANATION ,4
-quiz/...,ten million ,EXPLANATION ,5
-quiz/...,32p,EXPLANATION ,6
-quiz/...,-40,EXPLANATION ,7
-quiz/...,-13,EXPLANATION ,8
-quiz/...,8,EXPLANATION ,9
-quiz/...,-50,EXPLANATION ,10
-quiz/...,-24,EXPLANATION ,11
-quiz/...,1,EXPLANATION ,12
+﻿ans_image,ans_body,ans_explanation,question_id
+number1/..,18.16,explanation,1
+number1/..,6.525,explanation,2
+number1/..,6.62,explanation,3
+number1/..,6.14,explanation,4
+number1/..,3.59,explanation,5
+number1/..,5.71,explanation,6
+number1/..,55 962 856,explanation,7
+number1/..,10 million ,explanation,8
+number1/..,100.025,explanation,9
+number1/..,619 000,explanation,10
+number1/..,1 million,explanation,11
+number1/..,6 040.9,explanation,12
+number1/..,-4,explanation,13
+number1/..,-13,explanation,14
+number1/..,8,explanation,15
+number1/..,-50,explanation,16
+number1/..,24,explanation,17
+number1/..,1,explanation,18
+number1/..,45630,explanation,19
+number1/..,0.033,explanation,20
+number1/..,8,explanation,21
+number1/..,559,explanation,22
+number1/..,0.11,explanation,23
+number1/..,6.5,explanation,24
+number1/..,16,explanation,25
+number1/..,12,explanation,26
+number1/..,-64,explanation,27
+number1/..,25,explanation,28
+number1/..,3,explanation,29
+number1/..,-9,explanation,30
+number1/..,32,explanation,31
+number1/..,310 ,explanation,32
+number1/..,1/14 ,explanation,33
+number1/..,74,explanation,34
+number1/..,29,explanation,35
+number1/..,1/9,explanation,36
+number1/..,12,explanation,37
+number1/..,16,explanation,38
+number1/..,(7- 2) x (6+ 3)= 45,explanation,39
+number1/..,32,explanation,40
+number1/..,31,explanation,41
+number1/..,3 x (4 + 1) = 15,explanation,42
+number1/..,0.20,explanation,43
+number1/..,1.5,explanation,44
+number1/..,20,explanation,45
+number1/..,57.5,explanation,46
+number1/..,34 000,explanation,47
+number1/..,60000,explanation,48
+number1/..,2,explanation,49
+number1/..,50 100 150,explanation,50
+number1/..,1 13,explanation,51
+number1/..,No,explanation,52
+number1/..,5 10 15,explanation,53
+number1/..,1 2  4,explanation,54
+number1/..,2 X 2 X 3 X 5,explanation,55
+number1/..,12,explanation,56
+number1/..,720,explanation,57
+number1/..,2x2x2x2x3x3,explanation,58
+number1/..,10,explanation,59
+number1/..,400,explanation,60

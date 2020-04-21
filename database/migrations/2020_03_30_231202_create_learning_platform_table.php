@@ -68,7 +68,6 @@ class CreateLearningPlatformTable extends Migration
             $table->string('question_image')->nullable();
             $table->integer('question_mark');
             $table->integer('question_grade');
-            $table->string('question_type');
             $table->timestamps();
         });
 
