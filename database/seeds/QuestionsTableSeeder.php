@@ -30,13 +30,11 @@ class QuestionsTableSeeder extends Seeder
             $question = question::create([
                 'id' => $record["id"],
                 'lesson_id' => $lesson->id,
-                'question_name' => $record["lesson_code"],
+                'question_name' => $record["question_name"],
                 'question_body' => $record["question_body"],
                 'question_image' => $record["question_image"],
                 'question_mark' => $record["question_mark"],
                 'question_grade' => $record["question_grade"],
-                /* 'question_type' => $record["question_type"], */
-
             ]);
             $question->quizzes()->attach($quiz);
         }
