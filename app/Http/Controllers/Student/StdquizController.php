@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Student;
 use App\Quiz;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 class StdquizController extends Controller
 {
@@ -22,12 +23,19 @@ class StdquizController extends Controller
     public function show($id)
     {
         $quiz = Quiz::find($id);
-       // dd($quiz);
-        $questions = $quiz->questions;
        // dd($questions);
         return view('student.stdquiz.quiz')->with([
-            'quiz' => $quiz,
-            'questions' => $questions,
+            'quiz' => $quiz
         ]);
+    }
+
+    public function questions($quiz_id)
+    {
+        $quiz = Quiz::find($quiz_id);
+        return $quiz->questions;
+    }
+
+    public function answers(Request $request){
+        
     }
 }
