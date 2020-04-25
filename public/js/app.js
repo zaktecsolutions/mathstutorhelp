@@ -37389,9 +37389,13 @@ var render = function() {
       : _vm._e(),
     _vm._v(" "),
     _c("div", [
-      _c("button", { on: { click: _vm.previous } }, [_vm._v("Prev")]),
+      _vm.currentIndex > 0
+        ? _c("button", { on: { click: _vm.previous } }, [_vm._v("Prev")])
+        : _vm._e(),
       _vm._v(" "),
-      _c("button", { on: { click: _vm.next } }, [_vm._v("Next")]),
+      _vm.currentIndex < _vm.questions.length - 1
+        ? _c("button", { on: { click: _vm.next } }, [_vm._v("Next")])
+        : _vm._e(),
       _vm._v(" "),
       _c("button", { on: { click: _vm.submit } }, [_vm._v("Submit")])
     ])

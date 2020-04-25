@@ -12,8 +12,8 @@
       </div>
     </div>
     <div>
-      <button @click="previous">Prev</button>
-      <button @click="next">Next</button>
+      <button v-if="currentIndex>0" @click="previous">Prev</button>
+      <button v-if="currentIndex<(questions.length-1)" @click="next">Next</button>
       <button @click="submit">Submit</button>
     </div>
   </div>
