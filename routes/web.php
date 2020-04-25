@@ -24,7 +24,11 @@ Route::get('/admindashboard', 'HomeController@admindashboard')->name('admindashb
 Route::get('/studentdashboard', 'HomeController@studentdashboard')->name('studentdashboard')->middleware('can:student-gate');
 Route::get('/tutordashboard', 'HomeController@tutordashboard')->name('tutordashboard')->middleware('can:tutor-gate');
 
-Route::namespace ('Admin')->prefix('admin')->name('admin.')->middleware('can:admin-gate')->group(function () {
+Route::namespace ('Admin')
+->prefix('admin')
+->name('admin.')
+->middleware('can:admin-gate')
+->group(function () {
 
     Route::resource('/users', 'UsersController');
     Route::resource('/courses', 'CoursesController');
@@ -48,10 +52,12 @@ Route::namespace ('Student')
     Route::get('/course', 'StdcourseController@index')->name('studentcourse');
     Route::get('/topic/{id}', 'StdtopicController@show')->name('studenttopic');
     Route::get('/digitutor', 'StddigitutorController@index')->name('studentdigitutor');
-    Route::get('/quiz', 'StdquizController@index')->name('studentquiz');
+    Route::get('/quiz/{id}', 'StdquizController@show')->name('studentquiz');
 });
 
-Route::namespace ('Tutor')->middleware('can:tutor-gate')->group(function () {
+Route::namespace ('Tutor')
+->middleware('can:tutor-gate')
+->group(function () {
 
     Route::get('/tutoraccount', 'TutaccountController@index')->name('tutoraccount');
     Route::get('/edittutor', 'TutaccountController@edit')->name('edittutor');

@@ -23,6 +23,7 @@
                     <tbody>
                         @foreach($topic->quizzes as $quiz)
                         <tr>
+                            <td><a href="{{route('studentquiz',[$quiz->id])}}">{{ $quiz->quiz_name }}</a></td>
                             <td>{{ $quiz->quiz_name }}</td>
                             <td>{{ $quiz->quiz_subtype }}</td>
                             <td>{{ $quiz->quiz_desc }}</td>

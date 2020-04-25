@@ -1,12 +1,8 @@
 <?php
 
 namespace App\Http\Controllers\Student;
-
-use App\Answer;
-use App\Course;
+use App\Quiz;
 use App\Http\Controllers\Controller;
-use App\Question;
-use App\Topic;
 
 class StdquizController extends Controller
 {
@@ -22,18 +18,16 @@ class StdquizController extends Controller
     /**
      * redirects to the student dashboard
      */
-    public function index()
+
+    public function show($id)
     {
-        $authUser = auth()->user();
-        $questions = Question::all(); //gets all the questions
-        $answers = Answer::all(); //gets all the answers
-        $quizname= $authuser->course->topic->quiz_name;  // get the name of the quiz
-        
+        $quiz = Quiz::find($id);
+       // dd($quiz);
+        $questions = $quiz->questions;
+       // dd($questions);
         return view('student.stdquiz.quiz')->with([
-            'user' => $authuser,
             'quiz' => $quiz,
             'questions' => $questions,
-            'answers' => $answers,
         ]);
     }
 }

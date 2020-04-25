@@ -145,7 +145,7 @@ class AnswersController extends Controller
         return redirect()->route('admin.question.answers.index');
     }
 
-    protected function validatedData()
+  /*   protected function validatedData()
     {
         return request()->validate([
             'course_name' => 'required| max:120',
@@ -156,5 +156,5 @@ class AnswersController extends Controller
 
         ]);
     }
-
+ */
 }
