@@ -19,7 +19,7 @@ class Digitutor extends Model
 
     }
 
-    public function quizresult()
+    public function quizresults()
     {
         //digitutor has many quizresult
         return $this->hasMany('App\Quizresult');

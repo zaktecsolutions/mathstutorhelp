@@ -27,7 +27,11 @@
                             <td>{{ $quiz->quiz_name }}</td>
                             <td>{{ $quiz->quiz_subtype }}</td>
                             <td>{{ $quiz->quiz_desc }}</td>
-                            <td>{{$quiz->is_complete() ? 'Complete' : 'Pending'}}</td>
+                            @if(!empty($quiz->my_result()))
+                                <td><a href="{{route('studentquizresult',[$quiz->id])}}">{{$quiz->is_complete() ? 'Complete' : 'Incomplete'}}</a></td>
+                            @else
+                            <td>Pending</td>
+                            @endif
                         </tr>
                         @endforeach
                     </tbody>

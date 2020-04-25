@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Quizfeedback extends Model
 {
+    protected $guarded = [];
     //
     public function question()
     {

@@ -51,10 +51,14 @@ export default {
       this.questions.forEach(question => {
         answers.push({
           question_id: question.id,
-          answer: question.answer
+          answer: question.answer || null
         });
       });
-      console.log(answers);
+      axios.post(`/student/quiz/${this.quiz}/answers`,{
+          answers : answers
+      }).then(response =>{
+          window.location.href=`/student/quiz/${this.quiz}/result`
+      });
     }
   }
 };

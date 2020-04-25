@@ -53,6 +53,8 @@ Route::namespace ('Student')
     Route::get('/topic/{id}', 'StdtopicController@show')->name('studenttopic');
     Route::get('/digitutor', 'StddigitutorController@index')->name('studentdigitutor');
     Route::get('/quiz/{quiz_id}/questions', 'StdquizController@questions')->name('studentquizquestions');
+    Route::post('/quiz/{quiz_id}/answers', 'StdquizController@answers')->name('studentquizanswers');
+    Route::get('/quiz/{quiz_id}/result', 'StdquizController@result')->name('studentquizresult');
     Route::get('/quiz/{id}', 'StdquizController@show')->name('studentquiz');
 });
 

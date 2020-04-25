@@ -35,6 +35,12 @@ class Quiz extends Model
         return $this->hasMany('App\Quizresult');
     }
 
+    public function my_result()
+    {
+        //quiz belongs to quizresult
+        return $this->quizresults()->where('digitutor_id', auth()->user()->digitutor->id)->first();
+    }
+
     public function is_complete()
     {
         return $this->quizresults()->where('digitutor_id', auth()->user()->digitutor->id)

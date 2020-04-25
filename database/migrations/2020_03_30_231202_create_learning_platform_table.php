@@ -99,7 +99,8 @@ class CreateLearningPlatformTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('quizresult_id');
             $table->unsignedBigInteger('question_id');
-            $table->unsignedBigInteger('answer_id');
+            $table->string('answer')->nullable();
+            $table->unsignedBigInteger('answer_id')->nullable();
             $table->boolean('status')->default(false);
             $table->timestamps();
         });

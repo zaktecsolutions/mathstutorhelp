@@ -1958,14 +1958,20 @@ __webpack_require__.r(__webpack_exports__);
       this.activeQuestion = this.questions[this.currentIndex - 1];
     },
     submit: function submit() {
+      var _this2 = this;
+
       var answers = [];
       this.questions.forEach(function (question) {
         answers.push({
           question_id: question.id,
-          answer: question.answer
+          answer: question.answer || null
         });
       });
-      console.log(answers);
+      axios.post("/student/quiz/".concat(this.quiz, "/answers"), {
+        answers: answers
+      }).then(function (response) {
+        window.location.href = "/student/quiz/".concat(_this2.quiz, "/result");
+      });
     }
   }
 });
