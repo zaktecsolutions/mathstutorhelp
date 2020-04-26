@@ -20,12 +20,7 @@ class StdcourseController extends Controller
      */
     public function index()
     {
-      /*   $user_id = auth()->user()->user->id;
-        $topics = Topic::find($user_id); */
         $user = auth()->user();
-      // $topics = Topic::all(); //gets all the topics
-     // $course = auth()->user()->course_name;
-      //dd($course);
        $topics = auth()->user()->course->topics;
        
         return view('student.stdcourse.course')->with([
