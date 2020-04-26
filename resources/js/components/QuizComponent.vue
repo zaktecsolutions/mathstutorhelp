@@ -1,7 +1,7 @@
 <template>
   <div>
+    <b-progress :value="currentIndex+1" :max="questions.length" show-value animated></b-progress>
     <div v-if="activeQuestion">
-      <div>Index : {{currentIndex + 1}}</div>
       <div>Name : {{activeQuestion.question_name}}</div>
       <div>Body : {{activeQuestion.question_body}}</div>
       <div>Grade : {{activeQuestion.question_grade}}</div>
@@ -12,9 +12,11 @@
       </div>
     </div>
     <div>
-      <button v-if="currentIndex>0" @click="previous">Prev</button>
-      <button v-if="currentIndex<(questions.length-1)" @click="next">Next</button>
-      <button @click="submit">Submit</button>
+      <b-button v-if="currentIndex>0" @click="previous">Previous</b-button>
+      <b-button class="float-right" v-if="currentIndex<(questions.length-1)" @click="next">Next</b-button>
+    </div>
+    <div class="text-center" v-if="currentIndex==(questions.length-1)">
+      <b-button variant="primary" @click="submit">Submit</b-button>
     </div>
   </div>
 </template>
@@ -54,11 +56,13 @@ export default {
           answer: question.answer || null
         });
       });
-      axios.post(`/student/quiz/${this.quiz}/answers`,{
-          answers : answers
-      }).then(response =>{
-          window.location.href=`/student/quiz/${this.quiz}/result`
-      });
+      axios
+        .post(`/student/quiz/${this.quiz}/answers`, {
+          answers: answers
+        })
+        .then(response => {
+          window.location.href = `/student/quiz/${this.quiz}/result`;
+        });
     }
   }
 };

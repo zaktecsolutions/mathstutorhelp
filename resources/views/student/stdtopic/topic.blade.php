@@ -23,15 +23,18 @@
                     <tbody>
                         @foreach($topic->quizzes as $quiz)
                         <tr>
-                            <td><a href="{{route('studentquiz',[$quiz->id])}}">{{ $quiz->quiz_name }}</a></td>
                             <td>{{ $quiz->quiz_name }}</td>
                             <td>{{ $quiz->quiz_subtype }}</td>
                             <td>{{ $quiz->quiz_desc }}</td>
-                            @if(!empty($quiz->my_result()))
-                                <td><a href="{{route('studentquizresult',[$quiz->id])}}">{{$quiz->is_complete() ? 'Complete' : 'Incomplete'}}</a></td>
-                            @else
-                            <td>Pending</td>
-                            @endif
+                            <td>{{$quiz->is_complete() ? 'Complete' : 'Pending'}}</td>
+                            <td>
+                                @if($quiz->quiz_subtype != 'summary' || $topic->summary_enabled())
+                                    <a href="{{route('studentquiz',[$quiz->id])}}">Take Quiz</a>
+                                @endif
+                                @if(!empty($quiz->my_result()))
+                                <a href="{{route('studentquizresult',[$quiz->id])}}">Result</a>
+                                @endif
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>

@@ -37,4 +37,12 @@ class Topic extends Model
             ->whereIn('quiz_id', $ids)
             ->where('quiz_percent', '>=', 90)->exists();
     }
+
+    public function summary_enabled()
+    {
+        $ids = $this->quizzes()->where('quiz_type', 'Topic')->where('quiz_subtype', 'diagnostic')->pluck('id');
+        return Quizresult::where('digitutor_id', auth()->user()->digitutor->id)
+            ->whereIn('quiz_id', $ids)
+            ->exists();
+    }
 }

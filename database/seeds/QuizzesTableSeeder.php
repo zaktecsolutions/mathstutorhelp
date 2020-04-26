@@ -52,8 +52,8 @@ class QuizzesTableSeeder extends Seeder
                 'quiz_name' => $record["quiz_name"],
                 'quiz_code' => $record["quiz_code"],
                 'quiz_desc' => $record["quiz_desc"],
-                'quiz_type' => $record["quiz_type"],
-                'quiz_subtype' => $record["quiz_subtype"],
+                'quiz_type' => trim($record["quiz_type"]),
+                'quiz_subtype' => trim($record["quiz_subtype"]),
             ]);
             // $quiz->question()->attach($question);
         }
