@@ -1,153 +1,48 @@
 @extends('layouts.app')
 @section('title', 'Tutor Dashboard')
 @section('content')
-<div id="page-wrapper">
-    <div id="page-inner">
-        <div class="row">
-            <div class="col-md-10 col-sm-11 col-xs-12">
-                <h2>Tutor DASHBOARD</h2>
-            </div>
+<div class="row justify-content-center">
+    <div class="col-md-9 col-sm-11 col-xs-12">
+        <div>
+            <h3>Tutor Dashboard</h3>
         </div>
-        <!-- /. ROW  -->
-        <hr />
-        <div class="row">
-            <div class="col-md-10 col-sm-11 col-xs-12">
-                <div class="alert alert-info">
-                    <strong>Welcome Tutor ! </strong> Choose any of the following options.
-                </div>
-            </div>
-        </div>
-        <!-- /. ROW  -->
-        <div class="row text-center pad-top">
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-                <div class="div-square">
-                    <a href="{{ route('tutoraccount')}}">
-                        <h4>My Account </h4>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-                <div class="div-square">
-                    <a href="blank.html">
-                        <h4>My Students </h4>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-                <div class="div-square">
-                    <a href="blank.html">
-                        <h4>Tutor Input </h4>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-                <div class="div-square">
-                    <a href="blank.html">
-                        <h4>Course List</h4>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-                <div class="div-square">
-                    <a href="blank.html">
-                        <h4>Admin</h4>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <!-- /. ROW  -->
-        <div class="row text-center pad-top">
 
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-                <div class="div-square">
-                    <a href="{{ route('admin.courses.index')}}">
-                        <h4>Input Courses</h4>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-                <div class="div-square">
-                    <a href="{{ route('admin.topics.index')}}">
-                        <h4>Input Topics</h4>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-                <div class="div-square">
-                    <a href="{{ route('admin.lessons.index')}}">
-                        <h4>Input Lessons</h4>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-                <div class="div-square">
-                    <a href="{{ route('admin.questions.index')}}">
-                        <h4>Input Questions </h4>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-                <div class="div-square">
-                    {{-- <a href="{{ route('admin.exams.index')}}"> --}}
-                        <h4>Setting </h4>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <!-- /. ROW  -->
-        {{-- <div class="row text-center pad-top">
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-                <div class="div-square">
-                    <a href="{{ route('admin.exams.index')}}">
-                        <h4>Input Exams</h4>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-                <div class="div-square">
-                    <a href="blank.html">
-                        <h4>Digi Tutor</h4>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-                <div class="div-square">
-                    <a href="blank.html">
-                        <h4>Mail Box</h4>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-                <div class="div-square">
-                    <a href="blank.html">
-                        <h4>Contact</h4>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-                <div class="div-square">
-                    <a href="#">
-                        <h4>Support</h4>
-                    </a>
-                </div>
-            </div> --}}
+        <div class="card">
+            <div class="card-header">Name: {{ $user->name }}
+                <a class="float-right" href="/studentdashboard">DigiTutor</a> </div>
+            {{-- <a href="blank.html" class="btn btn-primary">Add user</a>  --}}
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Course</th>
+                            <th scope="col"></th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($users as $user)
+                        <tr>
+                            <th scope="row">{{ $user->id }}</th>
+                            <td>{{ $user->name }}</td>
+                            <td>{{ $user->email }}</td>
+                            <td>{{ empty($user->course) ? null :$user->course->course_name }}</td>
+                            <td>
 
-        </div>
-        <!-- /. ROW  -->
-        <div class="row">
-            <div class="col-lg-10 ">
-                <br />
-                <div class="alert alert-dark">
-                    <strong>Want More Icons Free ? </strong> Checkout fontawesome website and use any icon <a
-                        target="_blank" href="http://fortawesome.github.io/Font-Awesome/icons/">Click Here</a>.
-                </div>
-
+                                <a href="{{ route('viewstudent', $user->id)}}">
+                                    <button type="button" class="btn btn-primary float-left">View</button></a> </td>
+                            <td><a href="{{ route('admin.users.edit', $user->id)}}">
+                                    <button type="button" class="btn btn-primary float-left">DigiTutor</button></a></td>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
             </div>
         </div>
-        <!-- /. ROW  -->
     </div>
-    <!-- /. PAGE INNER  -->
-</div>
-<!-- /. PAGE WRAPPER  -->
-</div>
+</div>F
 @endsection

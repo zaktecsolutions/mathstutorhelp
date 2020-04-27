@@ -13,24 +13,24 @@
                     <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Quiz Result</th>
-                            <th scope="col">Grade</th>
-                            <th scope="col">Target Grade</th>
+                            <th scope="col">Quiz Name</th>
+                            <th scope="col">Quiz Percent</th>
+                            <th scope="col">Quiz Grade</th>
                             <th scope="col">Notes</th>
                             <th scope="col">To Do</th>
                         </tr>
                     </thead> 
                     <tbody>
-                     {{--    @foreach($topics as $topic)
+
+                    
                         <tr>
-                            <th scope="row">{{ $topic->id }}</th>
-                            <td>{{ $topic->topic_name }}</td>
-                            <td>{{ $topic->topic_code }}</td>  
-                            <td>{{ $topic->topic_desc }}</td>
-                            <td>{{ $topic->topic_les_num }}</td>   
-                            <td>{{ $topic->topic_quiz }}</td>                    
+                            <th scope="row">1</th>
+                            <td>{{$result->quiz->quiz_name }}</td>
+                            <td>Percent : {{$result->quiz_percent}}</td>  
+                            <td>Grade : {{$result->grade}}</td>
+                                          
                         </tr>
-                        @endforeach --}}
+                        
                     </tbody>
                 </table>
             </div>

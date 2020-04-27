@@ -9,15 +9,17 @@
         </div>
 
         <div class="card">
-            <div class="card-header">Quizzes</div>
+            <div class="card-header">Quizzes
+                <a class="float-right" href="/studentdashboard">Back to dashboard</a> </div>
             <div class="card-body">
-            <table class="table">
+                <table class="table">
                     <thead>
                         <tr>
                             <th scope="col">Quiz Name</th>
                             <th scope="col">Quiz Type</th>
                             <th scope="col">Quiz Description</th>
                             <th scope="col">Status</th>
+                            <th scope="col"> Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -29,10 +31,13 @@
                             <td>{{$quiz->is_complete() ? 'Complete' : 'Pending'}}</td>
                             <td>
                                 @if($quiz->quiz_subtype != 'summary' || $topic->summary_enabled())
-                                    <a href="{{route('studentquiz',[$quiz->id])}}">Take Quiz</a>
-                                @endif
-                                @if(!empty($quiz->my_result()))
-                                <a href="{{route('studentquizresult',[$quiz->id])}}">Result</a>
+                                <a href="{{route('studentquiz',[$quiz->id])}}"> <button type="button"
+                                        class="btn btn-primary float-left">Take Quiz</button></a>
+                            </td>
+                            @endif
+                            @if(!empty($quiz->my_result()))
+                            <td> <a href="{{route('studentquizresult',[$quiz->id])}}"><button type="button"
+                                        class="btn btn-primary float-left">Quiz Result</button></a>
                                 @endif
                             </td>
                         </tr>
@@ -52,6 +57,7 @@
                             <th scope="col">Lesson Name</th>
                             <th scope="col">Lesson Description</th>
                             <th scope="col">Status</th>
+                            <th scope="col"> Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -61,6 +67,8 @@
                             <td>{{ $lesson->lesson_name }}</td>
                             <td>{{ $lesson->lesson_desc }}</td>
                             <td>{{$lesson->is_complete() ? 'Complete' : 'Pending'}}</td>
+                            <td> <a href="">
+                                    <button type="button" class="btn btn-primary float-left">Lesson</button></a></td>
                         </tr>
                         @endforeach
                     </tbody>

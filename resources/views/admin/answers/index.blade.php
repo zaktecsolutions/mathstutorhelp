@@ -23,7 +23,6 @@
                             <th scope="col">Answer Body</th>
                             <th scope="col"></th>
                             <th scope="col"> Action</th>
-
                         </tr>
                     </thead>
                     <tbody>
@@ -40,7 +39,8 @@
                                     <button type="button" class="btn btn-primary float-left">Edit</button></a></td>
 
                             <td>
-                                <form action="{{ route('admin.question.answers.destroy',[$question->id,$answer->id])}}" method="POST" class="float-left">
+                                <form action="{{ route('admin.question.answers.destroy',[$question->id,$answer->id])}}"
+                                    method="POST" class="float-left">
                                     @csrf
                                     {{ @method_field('DELETE')}}
                                     <button type="submit" class="btn btn-primary">Delete</button>

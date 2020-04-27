@@ -60,11 +60,22 @@
                         @can('student-gate')
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('studentdashboard')}}">Student Dashboard</a>
-                        </li> @endcan
+                        </li> 
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('studentaccount')}}">myAccount</a>
+                        </li> 
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('studentdigitutor')}}">DigiTutor</a>
+                        </li>
+                        @endcan
                         @can('tutor-gate')
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('tutordashboard')}}"> Tutor Dashboard</a>
-                        </li> @endcan
+                        </li> 
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('tutoraccount')}}">myAccount</a>
+                        </li>
+                        @endcan
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('admin.courses.index')}}"> Contact Us</a>
                         </li>

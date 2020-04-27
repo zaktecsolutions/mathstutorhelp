@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers\Student;
-
 use App\Http\Controllers\Controller;
 use App\Topic;
 use App\Course;
@@ -14,7 +13,6 @@ class StdcourseController extends Controller
          */
         $this->middleware('auth');
     }
-
     /**
      * redirects to the student dashboard
      */
@@ -23,9 +21,10 @@ class StdcourseController extends Controller
         $user = auth()->user();
        $topics = auth()->user()->course->topics;
        
-        return view('student.stdcourse.course')->with([
+        return view('student.stdtopic.course')->with([
             'user' => $user,
             'topics'=> $topics
+            
         ]);
     }
 }

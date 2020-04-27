@@ -21,7 +21,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admindashboard', 'HomeController@admindashboard')->name('admindashboard')->middleware('can:admin-gate');
-Route::get('/studentdashboard', 'HomeController@studentdashboard')->name('studentdashboard')->middleware('can:student-gate');
+ Route::get('/studentdashboard', 'HomeController@studentdashboard')->name('studentdashboard')->middleware('can:student-gate');
 Route::get('/tutordashboard', 'HomeController@tutordashboard')->name('tutordashboard')->middleware('can:tutor-gate');
 
 Route::namespace ('Admin')
@@ -49,7 +49,7 @@ Route::namespace ('Student')
     Route::get('/account', 'StdaccountController@index')->name('studentaccount');
     Route::get('/edit', 'StdaccountController@edit')->name('editstudent');
     Route::post('/update', 'StdaccountController@update')->name('updatestudent');
-    Route::get('/course', 'StdcourseController@index')->name('studentcourse');
+     Route::get('/course', 'StdcourseController@index')->name('studentcourse');
     Route::get('/topic/{id}', 'StdtopicController@show')->name('studenttopic');
     Route::get('/digitutor', 'StddigitutorController@index')->name('studentdigitutor');
     Route::get('/quiz/{quiz_id}/questions', 'StdquizController@questions')->name('studentquizquestions');
@@ -65,6 +65,7 @@ Route::namespace ('Tutor')
     Route::get('/tutoraccount', 'TutaccountController@index')->name('tutoraccount');
     Route::get('/edittutor', 'TutaccountController@edit')->name('edittutor');
     Route::post('/updatetutor', 'TutaccountController@update')->name('updatetutor');
+    Route::get('/getstudent{id}', 'TutstudentController@show')->name('viewstudent');
 });
 
 

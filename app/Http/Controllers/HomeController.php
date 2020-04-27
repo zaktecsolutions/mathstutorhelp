@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
+use App\Role;
+
 class HomeController extends Controller
 {
     /**
@@ -39,13 +42,30 @@ class HomeController extends Controller
      */
     public function studentdashboard()
     {
-        return view('student.studentdb');
+        $user = auth()->user();
+        $topics = auth()->user()->course->topics;
+
+        return view('student.studentdb')->with([
+            'user' => $user,
+            'topics' => $topics,
+            // return view('student.studentdb');
+        ]);
     }
     /**
      * redirects to the student dashboard
      */
     public function tutordashboard()
     {
-        return view('tutor.tutordb');
+        $user = auth()->user();
+        
+        $users = Role::find(2)->users;
+        //Role::find(3)->users;
+        return view('tutor.tutordb')->with([
+            'user' => $user,
+            'users' => $users,
+
+        ]);
+
+        // return view('tutor.tutordb');
     }
 }
