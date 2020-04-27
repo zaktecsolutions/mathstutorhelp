@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Student;
+
 use App\Quiz;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -21,12 +22,12 @@ class StddigitutorController extends Controller
      */
     public function index()
     {
-       $digitutor = auth()->user()->digitutor;
-       $result = $digitutor->quizresults();
+        $digitutor = auth()->user()->digitutor;
+        $results = $digitutor->quizresults;
         $user = auth()->user();
         return view('student.stdquiz.digitutor')->with([
             'user' => $user,
-            'result' => $result
+            'results' => $results
         ]);
     }
 }

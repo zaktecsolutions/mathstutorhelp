@@ -14,7 +14,7 @@ class Quizresult extends Model
         return $this->belongsTo('App\Quiz');
     }
 
-    public function quizfeedback()
+    public function quizfeedbacks()
     {
         // quiz result has many quiz feedback
         return $this->hasMany('App\Quizfeedback');

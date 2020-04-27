@@ -53,6 +53,10 @@ class StdquizController extends Controller
     public function answers(Request $request, $quiz_id)
     {
         $quiz = Quiz::find($quiz_id);
+        $result = $quiz->my_result();
+        if(!empty($result)){
+            $result->delete();
+        }
         $result = Quizresult::create([
             'quiz_id' => $quiz->id,
             'digitutor_id' => auth()->user()->digitutor->id,

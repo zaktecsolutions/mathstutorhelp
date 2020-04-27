@@ -59,7 +59,7 @@ class CreateForeignKeysLearningPlatformTable extends Migration
 
         Schema::table('quizresults', function (Blueprint $table) {
 
-            $table->foreign('quiz_id')->references('id')->on('quizresults')->onDelete('cascade');
+            $table->foreign('quiz_id')->references('id')->on('quizzes')->onDelete('cascade');
             $table->foreign('digitutor_id')->references('id')->on('digitutors')->onDelete('cascade');
         });
 
