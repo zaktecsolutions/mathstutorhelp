@@ -20,7 +20,8 @@
                         <thead>
                             <tr>
                                 <th scope="col">Questions</th>
-                                <th scope="col">Answer</th>
+                                <th scope="col">Learner Answer</th>
+                                <th scope="col">Tutor Answer</th>
                                 <th scope="col">Lesson Code</th>
                                 <th scope="col">Action</th>
 
@@ -38,18 +39,23 @@
                                     <span class="badge badge-primary badge-pill">Skipped</span>
                                     @endif
                                 </td>
-                                <td>{{$quizfeedback->question->lesson_id}}</td>
-
+                                <td>{{$quizfeedback->ans_body}}</td>
+                                <td>{{$quizfeedback->question->lesson->lesson_code}}</td>
                                 <td>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
                                             value="option1">
-                                        <label class="form-check-label" for="inlineCheckbox1">C</label>
+                                        <label class="form-check-label" for="inlineCheckbox1">R</label>
                                     </div>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox" id="inlineCheckbox2"
                                             value="option2">
-                                        <label class="form-check-label" for="inlineCheckbox2">P</label>
+                                        <label class="form-check-label" for="inlineCheckbox2">O</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2"
+                                            value="option2">
+                                        <label class="form-check-label" for="inlineCheckbox2">G</label>
                                     </div>
                                 </td>
                             </tr>

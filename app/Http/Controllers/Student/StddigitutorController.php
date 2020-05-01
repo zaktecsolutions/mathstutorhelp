@@ -45,4 +45,16 @@ class StddigitutorController extends Controller
             'results' => $results
         ]);
     }
+
+
+    public function result($quiz_id)
+    {
+        $user = User::find($quiz_id);
+        $digitutor = $user->digitutor;
+        $result = $digitutor->quizresults()->where('quiz_id',$quiz_id)->orderBy('created_at', 'DESC')->first();
+        // dd($questions);
+        return view('student.stdquiz.result')->with([
+            'result' => $result
+        ]);
+    }
 }
