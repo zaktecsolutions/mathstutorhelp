@@ -21,55 +21,67 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admindashboard', 'HomeController@admindashboard')->name('admindashboard')->middleware('can:admin-gate');
- Route::get('/studentdashboard', 'HomeController@studentdashboard')->name('studentdashboard')->middleware('can:student-gate');
+Route::get('/studentdashboard', 'HomeController@studentdashboard')->name('studentdashboard')->middleware('can:student-gate');
 Route::get('/tutordashboard', 'HomeController@tutordashboard')->name('tutordashboard')->middleware('can:tutor-gate');
 
 Route::namespace ('Admin')
-->prefix('admin')
-->name('admin.')
-->middleware('can:admin-gate')
-->group(function () {
+    ->prefix('admin')
+    ->name('admin.')
+    ->middleware('can:admin-gate')
+    ->group(function () {
 
-    Route::resource('/users', 'UsersController');
-    Route::resource('/courses', 'CoursesController');
-    Route::resource('/topics', 'TopicsController');
-    Route::resource('/lessons', 'LessonsController');
-    Route::resource('/questions', 'QuestionsController');
-    Route::resource('/digitutors', 'DigitutorsController');
-    Route::resource('/quizzes', 'QuizzesController');
-   Route::resource('question.answers', 'AnswersController');
+        Route::resource('/users', 'UsersController');
+        Route::resource('/courses', 'CoursesController');
+        Route::resource('/topics', 'TopicsController');
+        Route::resource('/lessons', 'LessonsController');
+        Route::resource('/questions', 'QuestionsController');
+        Route::resource('/digitutors', 'DigitutorsController');
+        Route::resource('/quizzes', 'QuizzesController');
+        Route::resource('question.answers', 'AnswersController');
 
-});
+    });
 
 Route::namespace ('Student')
-->middleware('can:student-gate')
-->prefix('student')
-->group(function () {
+    ->middleware('can:manage-users')
+//->prefix('student')
+    ->group(function () {
 
-    Route::get('/account', 'StdaccountController@index')->name('studentaccount');
-    Route::get('/edit', 'StdaccountController@edit')->name('editstudent');
-    Route::post('/update', 'StdaccountController@update')->name('updatestudent');
-     Route::get('/course', 'StdcourseController@index')->name('studentcourse');
-    Route::get('/topic/{id}', 'StdtopicController@show')->name('studenttopic');
-    Route::get('/digitutor', 'StddigitutorController@index')->name('studentdigitutor');
-    Route::get('/quiz/{quiz_id}/questions', 'StdquizController@questions')->name('studentquizquestions');
-    Route::post('/quiz/{quiz_id}/answers', 'StdquizController@answers')->name('studentquizanswers');
-    Route::get('/quiz/{quiz_id}/result', 'StdquizController@result')->name('studentquizresult');
-    Route::get('/quiz/{id}', 'StdquizController@show')->name('studentquiz');
-});
+        Route::get('/digitutor', 'StddigitutorController@index')->name('digitutor');
+        Route::get('/digitutor{id}', 'StddigitutorController@showdigitutor')->name('studentdigitutor');
+        Route::get('/quiz/{quiz_id}/result', 'StdquizController@result')->name('studentquizresult');
+
+    });
+
+Route::namespace ('Student')
+    ->middleware('can:student-gate')
+    ->prefix('student')
+    ->group(function () {
+
+        Route::get('/account', 'StdaccountController@index')->name('studentaccount');
+        Route::get('/edit', 'StdaccountController@edit')->name('editstudent');
+        Route::post('/update', 'StdaccountController@update')->name('updatestudent');
+        Route::get('/course', 'StdcourseController@index')->name('studentcourse');
+        Route::get('/topic/{id}', 'StdtopicController@show')->name('studenttopic');
+        // Route::get('/digitutor', 'StddigitutorController@index')->name('studentdigitutor');
+        Route::get('/quiz/{quiz_id}/questions', 'StdquizController@questions')->name('studentquizquestions');
+        Route::post('/quiz/{quiz_id}/answers', 'StdquizController@answers')->name('studentquizanswers');
+        /*  Route::get('/quiz/{quiz_id}/result', 'StdquizController@result')->name('studentquizresult'); */
+        Route::get('/quiz/{id}', 'StdquizController@show')->name('studentquiz');
+    });
 
 Route::namespace ('Tutor')
-->middleware('can:tutor-gate')
-->group(function () {
+    ->middleware('can:tutor-gate')
+    ->group(function () {
 
-    Route::get('/tutoraccount', 'TutaccountController@index')->name('tutoraccount');
-    Route::get('/edittutor', 'TutaccountController@edit')->name('edittutor');
-    Route::post('/updatetutor', 'TutaccountController@update')->name('updatetutor');
-    Route::get('/getstudent{id}', 'TutstudentController@show')->name('viewstudent');
-});
+        Route::get('/tutoraccount', 'TutaccountController@index')->name('tutoraccount');
+        Route::get('/edittutor', 'TutaccountController@edit')->name('edittutor');
+        Route::post('/updatetutor', 'TutaccountController@update')->name('updatetutor');
+        Route::get('/getstudent{id}', 'TutstudentController@show')->name('viewstudent');
+        //  Route::get('/digitut{id}', 'TutstudentController@showdigitutor')->name('studentdigitut');
 
+    });
 
-Route::get('/clear-cache', function() {
+Route::get('/clear-cache', function () {
     Artisan::call('cache:clear');
     return "Cache is cleared";
 });

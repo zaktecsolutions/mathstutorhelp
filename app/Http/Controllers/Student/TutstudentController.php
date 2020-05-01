@@ -17,4 +17,12 @@ class TutstudentController extends Controller
         ]);
     }
 
+    public function showdigitutor($id)
+    {
+        $user = User::find($id);
+        //return view('tutor.show')->with([
+            return view('student.stdquiz.digitutor')->with([
+            'user' => $user
+        ]);
+    }
 }

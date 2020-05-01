@@ -8,7 +8,7 @@
 
         <div class="card">
              <div class="card-header">Name: {{ $user->name }}
-            <a class="float-right" href="/studentdashboard">DigiTutor</a> </div>
+            <a class="float-right" href="digitutor">DigiTutor</a> </div>
            {{-- <a href="blank.html" class="btn btn-primary">Add user</a>  --}}
             <div class="card-body">
                 <table class="table">
