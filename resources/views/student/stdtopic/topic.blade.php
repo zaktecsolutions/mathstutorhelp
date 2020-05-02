@@ -28,7 +28,9 @@
                             <td>{{ $quiz->quiz_name }}</td>
                             <td>{{ $quiz->quiz_subtype }}</td>
                             <td>{{ $quiz->quiz_desc }}</td>
-                            <td>{{$quiz->is_complete() ? 'Complete' : 'Pending'}}</td>
+                            <td>
+                            <span class="badge badge-{{$quiz->my_status()}}">Status</span>
+                            </td>
                             <td>
                                 @if($quiz->quiz_subtype != 'summary' || $topic->summary_enabled())
                                 <a href="{{route('studentquiz',[$quiz->id])}}"> <button type="button"

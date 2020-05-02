@@ -41,6 +41,22 @@ class Quiz extends Model
         return $this->quizresults()->where('digitutor_id', auth()->user()->digitutor->id)->first();
     }
 
+    public function my_status()
+    {
+        //quiz belongs to quizresult
+        $result = $this->my_result();
+        if ($result == null) {
+            return 'danger';
+        }
+        if ($result->quiz_percent > 90) {
+            return 'success';
+        } else if ($result->quiz_percent > 80) {
+            return 'warning';
+        } else {
+            return 'danger';
+        }
+    }
+
     public function is_complete()
     {
         return $this->quizresults()->where('digitutor_id', auth()->user()->digitutor->id)
