@@ -6,7 +6,7 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class TutstudentController extends Controller
+class StdTutorController extends Controller
 {
     //
     public function show($id)
