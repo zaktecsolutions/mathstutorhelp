@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Question extends Model
 {
 
-   /*  protected $fillable = [
+    /*  protected $fillable = [
         'question_name', 'question_body', 'question_image', 'question_mark', 'question_grade', 'question_type', 'question_category',
     ]; */
     protected $guarded = [];
@@ -17,14 +17,12 @@ class Question extends Model
     {
         //quizzes belong to many questions
         return $this->belongsToMany('App\Quiz');
-
     }
 
     public function lesson()
     {
         //question belongs to lesson
         return $this->belongsTo('App\Lesson');
-
     }
 
     public function answers()
@@ -33,10 +31,14 @@ class Question extends Model
         return $this->hasMany('App\Answer');
     }
 
+    public function my_answer()
+    {
+        return $this->quizfeedbacks()->where('user_id', auth()->user()->id)->first();
+    }
+
     public function quizfeedbacks()
     {
         // topic has many lessons
         return $this->hasMany('App\Quizfeedback');
     }
-
 }

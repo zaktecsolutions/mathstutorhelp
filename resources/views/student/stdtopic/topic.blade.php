@@ -66,7 +66,9 @@
                             <th scope="row">{{ $lesson->lesson_code }}</th>
                             <td>{{ $lesson->lesson_name }}</td>
                             <td>{{ $lesson->lesson_desc }}</td>
-                            <td>{{$lesson->is_complete() ? 'Complete' : 'Pending'}}</td>
+                            <td>
+                            <span class="badge badge-{{$lesson->my_status()}}">Status</span>
+                            </td>
                             <td> <a href="">
                                     <button type="button" class="btn btn-primary float-left">Lesson</button></a></td>
                         </tr>

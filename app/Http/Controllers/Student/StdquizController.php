@@ -85,7 +85,8 @@ class StdquizController extends Controller
                 'question_id' => $question->id,
                 'answer_id' => null,
                 'answer' => $answer["answer"],
-                'status' => $status
+                'status' => $status,
+                'user_id' => auth()->user()->id
             ]);
         }
         $allMarks = $quiz->questions->sum('question_mark');
