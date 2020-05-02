@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\User;
-use App\Role;
 
 class HomeController extends Controller
 {
@@ -58,11 +57,10 @@ class HomeController extends Controller
     {
         $user = auth()->user();
         
-        $users = Role::find(2)->users;
-        //Role::find(3)->users;
+        $students = $user->students;
         return view('tutor.tutordb')->with([
             'user' => $user,
-            'users' => $users,
+            'users' => $students,
 
         ]);
 

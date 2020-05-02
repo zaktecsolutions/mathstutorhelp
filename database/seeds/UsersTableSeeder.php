@@ -1,6 +1,5 @@
 <?php
 
-use App\Role;
 use App\User;
 use App\Digitutor;
 use Illuminate\Database\Seeder;
@@ -18,12 +17,6 @@ class UsersTableSeeder extends Seeder
         //
         Schema::disableForeignKeyConstraints();
         User::truncate();
-        DB::table('role_user')->truncate();
-
-        $adminRole = Role::where('name', 'admin')->first();
-        $studentRole = Role::where('name', 'student')->first();
-        $tutorRole = Role::where('name', 'tutor')->first();
-        $parentRole = Role::where('name', 'parent')->first();
 
         $admin = User::create([
             'name' => 'Admin User',
@@ -31,16 +24,7 @@ class UsersTableSeeder extends Seeder
             'password' => Hash::make('password'),
             
         ]);
-
-        $student = User::create([
-            'name' => 'Student User',
-            'email' => 'student@student.com',
-            'password' => Hash::make('password'),
-            'course_id' => '1',
-        ]);
-        Digitutor::create([
-            'user_id' => $student->id,
-        ]);
+        $admin->assignRole('admin');
 
         $tutor = User::create([
             'name' => 'Tutor User',
@@ -48,17 +32,21 @@ class UsersTableSeeder extends Seeder
             'password' => Hash::make('password'),
             
         ]);
+        $tutor->assignRole('tutor');
 
-        $parent = User::create([
-            'name' => 'Parent User',
-            'email' => 'parent@parent.com',
+        $student = User::create([
+            'name' => 'Student User',
+            'email' => 'student@student.com',
             'password' => Hash::make('password'),
+            'course_id' => '1',
+            'tutor_id' => $tutor->id
+        ]);
+        $student->assignRole('student');
+        
+        Digitutor::create([
+            'user_id' => $student->id,
         ]);
 
-        $admin->roles()->attach($adminRole);
-        $student->roles()->attach($studentRole);
-        $tutor->roles()->attach($tutorRole);
-        $parent->roles()->attach($parentRole);
         Schema::enableForeignKeyConstraints();
 
     }

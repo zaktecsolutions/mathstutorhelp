@@ -18,6 +18,11 @@ class CreateForeignKeysLearningPlatformTable extends Migration
             $table->foreign('course_id')->references('id')->on('courses');
         });
 
+        Schema::table('users', function (Blueprint $table) {
+
+            $table->foreign('tutor_id')->references('id')->on('users');
+        });
+
         Schema::table('topics', function (Blueprint $table) {
 
             $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');

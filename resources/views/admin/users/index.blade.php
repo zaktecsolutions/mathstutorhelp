@@ -28,7 +28,7 @@
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
                                 <td>{{ empty($user->course) ? null :$user->course->course_name }}</td>
-                                <td>{{ implode(', ', $user->roles()->get()->pluck('name')->toArray()) }}</td>
+                                <td>{{ $user->roles->pluck('name')->implode(',') }}</td>
                                 <td>
 
                                     <a href="{{ route('admin.users.show', $user->id)}}">

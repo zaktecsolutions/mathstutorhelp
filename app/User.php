@@ -4,10 +4,11 @@ namespace App;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, HasRoles;
 
     /**
      * The attributes that are mass assignable.
@@ -35,13 +36,6 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    public function roles()
-    {
-        // user belong to many roles
-
-        return $this->belongsToMany('App\Role');
-
-    }
 
     public function course()
     {
@@ -55,22 +49,13 @@ class User extends Authenticatable
         return $this->hasOne('App\Digitutor');
     }
 
-    public function hasAnyRoles($roles)
+    public function tutor()
     {
-
-        if ($this->roles()->whereIn('name', $roles)->first()) {
-            return true;
-        }
-        return false;
+        return $this->belongsTo('App\User', 'tutor_id', 'id');
     }
 
-    public function hasRole($role)
+    public function students()
     {
-
-        if ($this->roles()->where('name', $role)->first()) {
-            return true;
-        }
-        return false;
+        return $this->hasMany('App\User', 'tutor_id', 'id');
     }
-
 }

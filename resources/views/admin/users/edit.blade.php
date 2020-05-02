@@ -49,7 +49,7 @@
                                     @foreach ($courses as $course )
                                     <div class="form-check">
                                         <input type="radio" name="course_id" value="{{$course->id ?? ''}}"
-                                        @if($user->course->pluck('id')->contains($course->id)) checked @endif> 
+                                        @if($user->course->id == $course->id) checked @endif> 
                                         <label> {{ $course->course_name }} </label>
                                     </div>
                                     @endforeach
@@ -66,8 +66,8 @@
                             <div class="col-md-6">
                                 @foreach ($roles as $role )
                                 <div class="form-check">
-                                    <input type="checkbox" name="roles[]" value="{{$role->id}}"
-                                        @if($user->roles->pluck('id')->contains($role->id)) checked @endif>
+                                    <input type="checkbox" name="roles[]" value="{{$role->name}}"
+                                        @if($user->hasRole($role->name)) checked @endif>
                                     <label> {{ $role->name }} </label>
                                 </div>
                                 @endforeach

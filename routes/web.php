@@ -20,14 +20,14 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/admindashboard', 'HomeController@admindashboard')->name('admindashboard')->middleware('can:admin-gate');
-Route::get('/studentdashboard', 'HomeController@studentdashboard')->name('studentdashboard')->middleware('can:student-gate');
-Route::get('/tutordashboard', 'HomeController@tutordashboard')->name('tutordashboard')->middleware('can:tutor-gate');
+Route::get('/admindashboard', 'HomeController@admindashboard')->name('admindashboard')->middleware('role:admin');
+Route::get('/studentdashboard', 'HomeController@studentdashboard')->name('studentdashboard')->middleware('role:student');
+Route::get('/tutordashboard', 'HomeController@tutordashboard')->name('tutordashboard')->middleware('role:tutor');
 
 Route::namespace ('Admin')
     ->prefix('admin')
     ->name('admin.')
-    ->middleware('can:admin-gate')
+    ->middleware('role:admin')
     ->group(function () {
 
         Route::resource('/users', 'UsersController');
@@ -53,7 +53,7 @@ Route::namespace ('Student')
     });
 
 Route::namespace ('Student')
-    ->middleware('can:student-gate')
+    ->middleware('role:student')
     ->prefix('student')
     ->group(function () {
 
@@ -70,7 +70,7 @@ Route::namespace ('Student')
     });
 
 Route::namespace ('Tutor')
-    ->middleware('can:tutor-gate')
+    ->middleware('role:tutor')
     ->group(function () {
 
         Route::get('/tutoraccount', 'TutaccountController@index')->name('tutoraccount');

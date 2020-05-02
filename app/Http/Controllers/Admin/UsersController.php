@@ -6,8 +6,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Course;
 use App\Http\Controllers\Controller;
-use App\Role;
 use App\User;
+use Spatie\Permission\Models\Role;
 use Gate;
 use Illuminate\Http\Request;
 
@@ -113,7 +113,7 @@ class UsersController extends Controller
             'email' => $request->email,
             'course_id' => $request->course_id,
         ]);
-        $user->roles()->sync($request->roles);
+        $user->syncRoles($request->roles);
         // return $success;
 
         if ($success) {$request->session()->flash('success', $user->name . ' has been updated');

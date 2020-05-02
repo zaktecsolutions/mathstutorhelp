@@ -1,6 +1,7 @@
 <?php
 
-use App\Role;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 use Illuminate\Database\Seeder;
 
 class RolesTableSeeder extends Seeder
@@ -14,12 +15,19 @@ class RolesTableSeeder extends Seeder
     {
         //
         Schema::disableForeignKeyConstraints();
+        Permission::truncate();
         Role::truncate();
-        Role::create(['name' => 'admin']);
-        Role::create(['name' => 'student']);
-        Role::create(['name' => 'tutor']);
-        Role::create(['name' => 'parent']);
-        Schema::enableForeignKeyConstraints();
 
+        $admin = Role::create(['name' => 'admin']);
+        $student = Role::create(['name' => 'student']);
+        $tutor = Role::create(['name' => 'tutor']);
+
+        $editUsers = Permission::create(['name' => 'edit-users']);
+        $manageUsers = Permission::create(['name' => 'manage-users']);
+
+        $editUsers->syncRoles(['admin', 'tutor']);
+        $manageUsers->syncRoles(['admin', 'tutor', 'student']);
+
+        Schema::enableForeignKeyConstraints();
     }
 }

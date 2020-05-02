@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Auth;
 use App\Course;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
-use App\Role;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
@@ -80,8 +79,7 @@ class RegisterController extends Controller
             'course_id' => $data['course_id'],
         ]);
         //  attach the role to the created user
-        $role = Role::select('id')->where('name', 'student')->first();
-        $user->roles()->attach($role);
+        $user->assignRole('student');
         return $user;
     }
 }
