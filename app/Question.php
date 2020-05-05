@@ -37,9 +37,9 @@ class Question extends Model
         return $this->answers()->where('ans_correct', 1)->first();
     }
 
-    public function my_answer()
+    public function my_answer($user)
     {
-        return $this->quizfeedbacks()->where('user_id', auth()->user()->id)->first();
+        return $this->quizfeedbacks()->where('user_id', $user->id)->first();
     }
 
     public function quizfeedbacks()

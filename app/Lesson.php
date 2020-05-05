@@ -30,14 +30,14 @@ class Lesson extends Model
         return $quiz->questions()->where('lesson_id', $this->id);
     }
 
-    public function my_status($type = 'diagnostic')
+    public function my_status($user, $type = 'diagnostic')
     {
         $questions = $this->quiz_questions($type)->get();
         $total = 0;
         $right = 0;
         foreach ($questions as $question) {
             $total++;
-            $answer = $question->my_answer();
+            $answer = $question->my_answer($user);
             if ($answer != null && $answer->status == 1) {
                 $right++;
             }

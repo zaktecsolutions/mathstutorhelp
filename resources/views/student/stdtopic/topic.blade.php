@@ -29,17 +29,15 @@
                             <td>{{ $quiz->quiz_subtype }}</td>
                             <td>{{ $quiz->quiz_desc }}</td>
                             <td>
-                            <span class="badge badge-{{$quiz->my_status()}}">Status</span>
+                                <span class="badge badge-{{$quiz->my_status()}}">Status</span>
                             </td>
                             <td>
                                 @if($quiz->quiz_subtype != 'summary' || $topic->summary_enabled())
-                                <a href="{{route('studentquiz',[$quiz->id])}}"> <button type="button"
-                                        class="btn btn-primary float-left">Take Quiz</button></a>
+                                <a href="{{route('studentquiz',[$quiz->id])}}"> <button type="button" class="btn btn-primary float-left">Take Quiz</button></a>
                             </td>
                             @endif
                             @if(!empty($quiz->my_result()))
-                            <td> <a href="{{route('digitutor.quiz-result',[$quiz->my_result()->id])}}"><button type="button"
-                                        class="btn btn-primary float-left">Quiz Result</button></a>
+                            <td> <a href="{{route('digitutor.quiz-result',[$quiz->my_result()->id])}}"><button type="button" class="btn btn-primary float-left">Quiz Result</button></a>
                                 @endif
                             </td>
                         </tr>
@@ -69,7 +67,7 @@
                             <td>{{ $lesson->lesson_name }}</td>
                             <td>{{ $lesson->lesson_desc }}</td>
                             <td>
-                            <span class="badge badge-{{$lesson->my_status()}}">Status</span>
+                                <span class="badge badge-{{$lesson->my_status(auth()->user())}}">Status</span>
                             </td>
                             <td> <a href="">
                                     <button type="button" class="btn btn-primary float-left">Lesson</button></a></td>
