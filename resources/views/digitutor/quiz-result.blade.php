@@ -51,7 +51,7 @@
                                     </div>
                                     <div class="form-check form-check-inline">
                                         <input name="result-{{$quizfeedback->id}}" class="form-check-input" type="radio" id="inlineCheckbox2"
-                                            value="-1" @if($quizfeedback->status == -1) checked @endif>
+                                            value="-1" @if($quizfeedback->status != 1) checked @endif>
                                         <label class="form-check-label" for="inlineCheckbox2">Wrong</label>
                                     </div>
                                    
