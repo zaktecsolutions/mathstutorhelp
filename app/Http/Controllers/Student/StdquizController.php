@@ -1,67 +1,73 @@
 <?php
 
 namespace App\Http\Controllers\Student;
-
+use App\answer;
 use App\Digitutor;
-use App\Quiz;
 use App\Http\Controllers\Controller;
 use App\Question;
+use App\Quiz;
 use App\Quizfeedback;
 use App\Quizresult;
 use Illuminate\Http\Request;
 
 class StdquizController extends Controller
 {
-    //
+    /**
+     * access to registered user
+     */
     public function __construct()
     {
-        /**
-         * access to registered user
-         */
+
         $this->middleware('auth');
     }
 
     /**
-     * redirects to the student dashboard
+     * Displays the student quiz
      */
-
     public function show($id)
     {
         $quiz = Quiz::find($id);
-        // dd($questions);
         return view('student.stdquiz.quiz')->with([
-            'quiz' => $quiz
+            'quiz' => $quiz,
         ]);
     }
-
+    /**
+     * Displays the student quiz result
+     */
     public function result($quiz_id)
     {
-        $digitutor = auth()->user()->digitutor;
-        $result = $digitutor->quizresults()->where('quiz_id',$quiz_id)->orderBy('created_at', 'DESC')->first();
-        // dd($questions);
+        $quiz = Quiz::find($quiz_id);
+        $tutoranswers= Answer::find($quiz_id);
+        $digitutor = auth()->user()->digitutor; // current user didgitutor
+        $result = $digitutor->quizresults()->where('quiz_id', $quiz_id)->orderBy('created_at', 'DESC')->first();
         return view('student.stdquiz.result')->with([
-            'result' => $result
+            'result' => $result,
+            'tutoranswers' => $tutoranswers,
         ]);
     }
-
+    /**
+     * Send the quiz questions to the Vue
+     */
     public function questions($quiz_id)
     {
         $quiz = Quiz::find($quiz_id);
         return $quiz->questions;
     }
-
+    /**
+     * Checks the answers and completes the quiz result table
+     */
     public function answers(Request $request, $quiz_id)
     {
         $quiz = Quiz::find($quiz_id);
         $result = $quiz->my_result();
-        if(!empty($result)){
+        if (!empty($result)) {
             $result->delete();
         }
         $result = Quizresult::create([
             'quiz_id' => $quiz->id,
             'digitutor_id' => auth()->user()->digitutor->id,
             'quiz_percent' => 0,
-            'grade' => 0
+            'grade' => 0,
         ]);
         $totalMarks = 0;
         $totalGrades = 0;
@@ -86,14 +92,14 @@ class StdquizController extends Controller
                 'answer_id' => null,
                 'answer' => $answer["answer"],
                 'status' => $status,
-                'user_id' => auth()->user()->id
+                'user_id' => auth()->user()->id,
             ]);
         }
         $allMarks = $quiz->questions->sum('question_mark');
         $allGrades = $quiz->questions->sum('question_grade');
         $result->update([
             'quiz_percent' => $totalMarks / $allMarks * 100,
-            'grade' => $totalGrades / $allGrades * 100
+            'grade' => $totalGrades / $allGrades * 100,
         ]);
         return $result;
     }

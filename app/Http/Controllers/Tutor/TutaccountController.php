@@ -14,6 +14,20 @@ class TutaccountController extends Controller
          */
         $this->middleware('auth');
     }
+    public function tutordashboard()
+    {
+        /**
+         * returns the tutor dashboard with the users 
+         */
+        $user = auth()->user();
+        $students = $user->students;
+        
+        return view('tutor.tutordb')->with([
+            'user' => $user,
+            'users' => $students,
+        ]);
+        
+    }
 
    /**
      * redirects to the tutor dashboard

@@ -4,7 +4,7 @@
     <div class="row justify-content-center">
         <div class="col-md-10 col-sm-11 col-xs-12">
             <div class="card">
-                <div class="card-header">Quiz Name {{$result->quiz->quiz_name }}
+                <div class="card-header">Quiz Name: {{$result->quiz->quiz_name }}
                     <a class="float-right" href="/studentdashboard">Back to dashboard</a>
                 </div>
                 <div class="card-body">
@@ -19,10 +19,10 @@
                     <table class="table">
                         <thead>
                             <tr>
+                                <th scope="col">Lesson Code</th>
                                 <th scope="col">Questions</th>
                                 <th scope="col">Learner Answer</th>
                                 <th scope="col">Tutor Answer</th>
-                                <th scope="col">Lesson Code</th>
                                 <th scope="col">Action</th>
 
                             </tr>
@@ -30,6 +30,7 @@
                         <tbody>
                             @foreach($result->quizfeedbacks as $quizfeedback)
                             <tr>
+                                <td>{{$quizfeedback->question->lesson->lesson_code}}</td>
                                 <td>{{$quizfeedback->question->question_body}}</td>
                                 <td> @if($quizfeedback->status == 1)
                                     <span class="badge badge-success badge-pill">{{$quizfeedback->answer}}</span>
@@ -39,46 +40,28 @@
                                     <span class="badge badge-primary badge-pill">Skipped</span>
                                     @endif
                                 </td>
-                                <td>{{$quizfeedback->ans_body}}</td>
-                                <td>{{$quizfeedback->question->lesson->lesson_code}}</td>
+                                 {{-- <td>{{$quizfeedback->ans_body}}</td> --}}
+                                 <td>{{$quizfeedback->ans_body}}</td>
+                               
                                 <td>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                            value="option1">
-                                        <label class="form-check-label" for="inlineCheckbox1">R</label>
+                                            value="option1" @if($quizfeedback->status == 1) checked @endif>
+                                        <label class="form-check-label" for="inlineCheckbox1">Right</label>
+                                        
                                     </div>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox" id="inlineCheckbox2"
-                                            value="option2">
-                                        <label class="form-check-label" for="inlineCheckbox2">O</label>
+                                            value="option2"@if($quizfeedback->status == -1) checked @endif>
+                                        <label class="form-check-label" for="inlineCheckbox2">Wrong</label>
                                     </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2"
-                                            value="option2">
-                                        <label class="form-check-label" for="inlineCheckbox2">G</label>
-                                    </div>
+                                   
                                 </td>
                             </tr>
                             @endforeach
 
                         </tbody>
                     </table>
-                    {{--   <ul class="list-group">
-                        @foreach($result->quizfeedbacks as $quizfeedback)
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            {{$quizfeedback->question->lesson_code}}
-                    {{$quizfeedback->question->question_body}}
-                    @if($quizfeedback->status == 1)
-                    <span class="badge badge-success badge-pill">{{$quizfeedback->answer}}</span>
-                    @elseif($quizfeedback->status == -1)
-                    <span class="badge badge-danger badge-pill">{{$quizfeedback->answer}}</span>
-                    @else
-                    <span class="badge badge-primary badge-pill">Skipped</span>
-                    @endif
-
-                    </li>
-                    @endforeach
-                    </ul> --}}
                 </div>
             </div>
         </div>

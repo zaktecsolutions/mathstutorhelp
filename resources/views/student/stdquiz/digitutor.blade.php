@@ -7,7 +7,7 @@
         <div class="card">
             <div class="card-header">
                 <h4> {{ $user->name }} DigiTutor </h4>
-                <a class="float-right" href="/studentdashboard">Back to dashboard</a>
+                <a class="float-right" href="{{ route('studentdashboard')}}">Back to dashboard</a>
             </div>
             {{-- <a href="blank.html" class="btn btn-primary">Add user</a> --}}
             <div class="card-body">
