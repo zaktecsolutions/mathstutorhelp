@@ -30,7 +30,7 @@ Route::namespace ('Admin')
     ->middleware('role:admin')
     ->group(function () {
 
-        Route::get('/admindashboard', 'AdminController@admindashboard')->name('admindashboard');
+        Route::get('/dashboard', 'AdminController@dashboard')->name('dashboard');
         Route::resource('/users', 'UsersController');
         Route::resource('/courses', 'CoursesController');
         Route::resource('/topics', 'TopicsController');

@@ -55,7 +55,7 @@
                         @else
                         @can('admin-gate')
                         <li class="nav-item">
-                             <a class="nav-link" href="{{ route('admindashboard')}}"> Admin Dashboard </a> 
+                             <a class="nav-link" href="{{ route('admin.dashboard')}}"> Admin Dashboard </a> 
                         </li> @endcan
                         @can('student-gate')
                         <li class="nav-item">
