@@ -49,6 +49,7 @@ Route::namespace('Digitutor')
 
         Route::get('/view/{id}', 'DigitutorController@view')->name('view');
         Route::get('/quiz-result/{id}', 'DigitutorController@result')->name('quiz-result');
+        Route::post('/mark-answer', 'DigitutorController@markAnswer')->name('mark-answer');
     });
 
 Route::namespace('Student')

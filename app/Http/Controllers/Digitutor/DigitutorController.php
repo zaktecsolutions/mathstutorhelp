@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Digitutor;
 
 use App\Http\Controllers\Controller;
 use App\Lesson;
+use App\Quizfeedback;
 use App\Quizresult;
 use App\User;
+use Illuminate\Http\Request;
 
 class DigitutorController extends Controller
 {
@@ -48,4 +50,13 @@ class DigitutorController extends Controller
             'result' => $quizResult
         ]);
     }
+
+    public function markAnswer(Request $request)
+    {
+        $feedback = Quizfeedback::find($request->feedback_id);
+        $feedback->status = $request->status;
+        $feedback->save();
+        return $feedback;
+    }
+
 }
