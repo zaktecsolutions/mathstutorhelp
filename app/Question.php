@@ -31,6 +31,12 @@ class Question extends Model
         return $this->hasMany('App\Answer');
     }
 
+    public function right_answer()
+    {
+        // question has many answers
+        return $this->answers()->where('ans_correct', 1)->first();
+    }
+
     public function my_answer()
     {
         return $this->quizfeedbacks()->where('user_id', auth()->user()->id)->first();

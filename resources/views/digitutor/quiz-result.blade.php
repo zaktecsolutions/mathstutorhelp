@@ -40,19 +40,18 @@
                                     <span class="badge badge-primary badge-pill">Skipped</span>
                                     @endif
                                 </td>
-                                 {{-- <td>{{$quizfeedback->ans_body}}</td> --}}
-                                 <td>{{$quizfeedback->ans_body}}</td>
+                                 <td>{{$quizfeedback->question->right_answer()->ans_body}}</td>
                                
                                 <td>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                            value="option1" @if($quizfeedback->status == 1) checked @endif>
+                                        <input name="result-{{$quizfeedback->id}}" class="form-check-input" type="radio" id="inlineCheckbox1"
+                                            value="1" @if($quizfeedback->status == 1) checked @endif>
                                         <label class="form-check-label" for="inlineCheckbox1">Right</label>
                                         
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2"
-                                            value="option2"@if($quizfeedback->status == -1) checked @endif>
+                                        <input name="result-{{$quizfeedback->id}}" class="form-check-input" type="radio" id="inlineCheckbox2"
+                                            value="-1" @if($quizfeedback->status == -1) checked @endif>
                                         <label class="form-check-label" for="inlineCheckbox2">Wrong</label>
                                     </div>
                                    

@@ -26,7 +26,7 @@ class RolesTableSeeder extends Seeder
         $tutorgate = Permission::create(['name' => 'tutor-gate']);
         $admingate = Permission::create(['name' => 'admin-gate']);
         $editUsers = Permission::create(['name' => 'edit-users']);
-        $manageUsers = Permission::create(['name' => 'manage-users']);
+        $manageUsers = Permission::create(['name' => 'digitutor']);
 
         $studentgate->syncRoles(['student']);
         $tutorgate->syncRoles(['tutor']);

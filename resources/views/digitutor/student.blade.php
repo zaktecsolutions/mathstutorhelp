@@ -25,7 +25,7 @@
                         @foreach($results as $result)
                         <tr>
                             <th scope="row">{{$result->created_at}}</th>
-                            <td><a href="{{route('studentquizresult',[$result->quiz->id])}}">{{$result->quiz->quiz_name }}</a></td>
+                            <td><a href="{{route('digitutor.quiz-result',[$result->id])}}">{{$result->quiz->quiz_name }}</a></td>
                             <td>{{$result->quiz_percent}}</td>
                             <td>{{$result->grade}}</td>
                         </tr>

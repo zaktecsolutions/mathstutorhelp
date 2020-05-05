@@ -65,7 +65,7 @@
                             <a class="nav-link" href="{{ route('studentaccount')}}">myAccount</a>
                         </li> 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('studentdigitutor')}}">DigiTutor</a>
+                            <a class="nav-link" href="{{ route('digitutor.view',[auth()->user()->id])}}">DigiTutor</a>
                         </li>
                         @endcan
                         @can('tutor-gate')

@@ -34,7 +34,7 @@
 
                                 <a href="{{ route('viewstudent', $user->id)}}">
                                     <button type="button" class="btn btn-primary float-left">View</button></a> </td>
-                            <td><a href="{{ route('studentdigitutor', $user->id)}}">
+                            <td><a href="{{ route('digitutor.view', $user->id)}}">
                                     <button type="button" class="btn btn-primary float-left">DigiTutor</button></a></td>
                             </td>
                         </tr>

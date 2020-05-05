@@ -38,7 +38,7 @@
                             </td>
                             @endif
                             @if(!empty($quiz->my_result()))
-                            <td> <a href="{{route('studentquizresult',[$quiz->id])}}"><button type="button"
+                            <td> <a href="{{route('digitutor.quiz-result',[$quiz->my_result()->id])}}"><button type="button"
                                         class="btn btn-primary float-left">Quiz Result</button></a>
                                 @endif
                             </td>
