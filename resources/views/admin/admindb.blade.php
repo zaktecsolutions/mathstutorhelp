@@ -22,8 +22,8 @@
             </div>
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                 <div class="div-square">
-                    <a href="{{ route('digitutor.input.index')}}">
-                        <h4>DigiTutor </h4>
+                    <a href="{{ route('admin.students')}}">
+                        <h4>Students </h4>
                     </a>
                 </div>
             </div>

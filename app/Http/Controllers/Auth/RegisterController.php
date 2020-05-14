@@ -6,6 +6,7 @@ use App\Course;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
+use App\Digitutor;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -80,6 +81,9 @@ class RegisterController extends Controller
         ]);
         //  attach the role to the created user
         $user->assignRole('student');
+        Digitutor::create([
+            'user_id' => $user->id,
+        ]);
         return $user;
     }
 }

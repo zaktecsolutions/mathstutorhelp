@@ -54,11 +54,12 @@
                             <a class="nav-link" href="#">FAQ </a>
                         </li>
                         @else
-                        @can('admin-gate')
+                        @role('admin')
                         <li class="nav-item">
                              <a class="nav-link" href="{{ route('admin.dashboard')}}"> Admin Dashboard </a> 
-                        </li> @endcan
-                        @can('student-gate')
+                        </li> 
+                        @endrole
+                        @role('student')
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('studentdashboard')}}">Student Dashboard</a>
                         </li> 
@@ -68,15 +69,15 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('digitutor.view',[auth()->user()->id])}}">DigiTutor</a>
                         </li>
-                        @endcan
-                        @can('tutor-gate')
+                        @endrole
+                        @role('tutor')
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('tutordashboard')}}"> Tutor Dashboard</a>
                         </li> 
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('tutoraccount')}}">myAccount</a>
                         </li>
-                        @endcan
+                        @endrole
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('admin.courses.index')}}"> Contact Us</a>
                         </li>

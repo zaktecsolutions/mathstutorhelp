@@ -29,6 +29,7 @@ Route::namespace ('Admin')
     ->group(function () {
 
         Route::get('/dashboard', 'AdminController@dashboard')->name('dashboard');
+        Route::get('/students', 'AdminController@students')->name('students');
         Route::resource('/users', 'UsersController');
         Route::resource('/courses', 'CoursesController');
         Route::resource('/topics', 'TopicsController');

@@ -22,17 +22,12 @@ class RolesTableSeeder extends Seeder
         $student = Role::create(['name' => 'student']);
         $tutor = Role::create(['name' => 'tutor']);
 
-        $studentgate = Permission::create(['name' => 'student-gate']);
-        $tutorgate = Permission::create(['name' => 'tutor-gate']);
-        $admingate = Permission::create(['name' => 'admin-gate']);
+        
         $editUsers = Permission::create(['name' => 'edit-users']);
-        $manageUsers = Permission::create(['name' => 'digitutor']);
+        $digitutor = Permission::create(['name' => 'digitutor']);
 
-        $studentgate->syncRoles(['student']);
-        $tutorgate->syncRoles(['tutor']);
-        $admingate->syncRoles(['admin']);
         $editUsers->syncRoles(['admin', 'tutor']);
-        $manageUsers->syncRoles(['admin', 'tutor', 'student']);
+        $digitutor->syncRoles(['admin', 'tutor', 'student']);
 
         Schema::enableForeignKeyConstraints();
     }
