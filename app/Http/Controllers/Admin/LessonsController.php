@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Lesson;
+use App\Course;
+use App\Topic;
 use Illuminate\Http\Request;
 
 class LessonsController extends Controller
@@ -20,12 +22,15 @@ class LessonsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Course $course, Topic $topic)
     {
         // return 'User index page';
         $lessons = lesson::all(); //gets all the lessons
         //  dd($lessons);
-        return view('admin.lessons.index')->with('lessons', $lessons);
+        return view('admin.lessons.index')->with([
+            'topic' => $topic,
+            'lessons' => $topic->lessons
+        ]);
     }
 
     /**
@@ -33,10 +38,12 @@ class LessonsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Course $course, Topic $topic)
     {
         //
-        return view('admin.lessons.create');
+        return view('admin.lessons.create')->with([
+            'topic' => $topic
+        ]);
     }
 
     /**
@@ -45,16 +52,20 @@ class LessonsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Course $course, Topic $topic)
     {
         //
         $lesson = Lesson::create($this->validatedData());
 
-        if ($lesson) {$request->session()->flash('success', $lesson->lesson_name . ' has been inserted');
+        if ($lesson) {
+            $request->session()->flash('success', $lesson->lesson_name . ' has been inserted');
         } else {
             $request->session()->flash('error', 'There was an error updating the user');
         }
-        return redirect()->route('admin.lessons.index');
+        return redirect()->route('admin.course.topic.lessons.index', [
+            'course' => $course,
+            'topic' => $topic
+        ]);
     }
 
     /**
@@ -63,12 +74,15 @@ class LessonsController extends Controller
      * @param  \App\Lesson  $lesson
      * @return \Illuminate\Http\Response
      */
-    public function show(Lesson $lesson)
+    public function show(Course $course, Topic $topic, Lesson $lesson)
     {
 
         // return 'User index page';
         //  $lessons = lesson::all(); gets all the lessons
-        return view('admin.lessons.show')->with('lesson', $lesson);
+        return view('admin.lessons.show')->with([
+            'topic' => $topic,
+            'lesson' => $lesson
+        ]);;
     }
 
     /**
@@ -77,13 +91,14 @@ class LessonsController extends Controller
      * @param  \App\Lesson  $lesson
      * @return \Illuminate\Http\Response
      */
-    public function edit(Lesson $lesson)
+    public function edit(Course $course, Topic $topic, Lesson $lesson)
     {
         //dd($lesson)  - check if lesson is coming
 
         $lessons = lesson::all(); //get all the lessons
-        return view('admin.lessons.edit')->with(['lesson' => $lesson, // send the lesson you want to edit
-            // 'lessons' => $lessons, // send all the lessons
+        return view('admin.lessons.edit')->with([
+            'lesson' => $lesson, // send the lesson you want to edit
+            'topic' => $topic, // send all the lessons
         ]);
     }
 
@@ -94,17 +109,21 @@ class LessonsController extends Controller
      * @param  \App\Lesson  $lesson
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Lesson $lesson)
+    public function update(Request $request, Course $course, Topic $topic, Lesson $lesson)
     {
         //
         $lesson->update($this->validatedData());
 
-        if ($lesson) {$request->session()->flash('success', $lesson->lesson_name . ' has been updated');
+        if ($lesson) {
+            $request->session()->flash('success', $lesson->lesson_name . ' has been updated');
         } else {
             $request->session()->flash('error', 'There was an error updating the user');
         }
 
-        return redirect()->route('admin.lessons.index');
+        return redirect()->route('admin.course.topic.lessons.index', [
+            'course' => $course,
+            'topic' => $topic
+        ]);
     }
 
     /**
@@ -113,12 +132,15 @@ class LessonsController extends Controller
      * @param  \App\Lesson  $lesson
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Lesson $lesson)
+    public function destroy(Course $course, Topic $topic, Lesson $lesson)
     {
         //
         $lesson->delete();
 
-        return redirect()->route('admin.lessons.index');
+        return redirect()->route('admin.lessons.index', [
+            'course' => $course,
+            'topic' => $topic
+        ]);
     }
     protected function validatedData()
     {

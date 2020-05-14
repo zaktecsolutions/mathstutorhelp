@@ -53,13 +53,6 @@
             </div>
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                 <div class="div-square">
-                    <a href="{{ route('admin.lessons.index')}}">
-                        <h4> Lessons</h4>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-                <div class="div-square">
                     <a href="{{ route('admin.questions.index')}}">
                         <h4>Questions </h4>
                     </a>

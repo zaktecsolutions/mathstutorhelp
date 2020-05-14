@@ -6,7 +6,7 @@
         <div class="col-md-10">
             <a href="/admin/lessons">Back to lessons</a>
             <div class="card">
-                <a href="{{ route('admin.lessons.edit', $lesson->id)}}">
+                <a href="{{ route('admin.course.topic.lessons.edit',[$topic->course,$topic, $lesson])}}">
                     <button type="button" class="btn btn-primary float-right">Edit</button></a>
                 <div class="card-header">Lesson # {{ $lesson->id }}</div>
 

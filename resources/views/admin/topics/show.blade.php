@@ -1,4 +1,4 @@
-{{--  This page will display the topic  tables --}}{{-- This page will display the topic tables --}}
+{{-- This page will display the topic  tables --}}{{-- This page will display the topic tables --}}
 @extends('layouts.app')
 @section('content')
 <div class="container">
@@ -6,8 +6,15 @@
         <div class="col-md-10">
             <a href="{{route('admin.course.topics.index',$course)}}">Back to topics</a>
             <div class="card">
-                <a href="{{ route('admin.course.topics.edit', [$course,$topic])}}">
-                    <button type="button" class="btn btn-primary float-right">Edit</button></a>
+                <div>
+                    <a href="{{ route('admin.course.topics.edit', [$course,$topic])}}">
+                        <button type="button" class="ml-1 btn btn-primary float-right">Edit</button>
+                    </a>
+                    <a href="{{ route('admin.course.topic.lessons.index', [$course,$topic])}}">
+                        <button type="button" class="btn btn-primary float-right">Lessons</button>
+                    </a>
+                </div>
+
                 <div class="card-header">Topic # {{ $topic->id }}</div>
 
                 <div class="card-body">
