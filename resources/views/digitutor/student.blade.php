@@ -5,11 +5,13 @@
 <div class="row justify-content-center">
     <div class="col-md-9 col-sm-11 col-xs-12">
         <div class="card">
+            <div><a href="{{route('digitutor.digitutors.show',$user->digitutor->id)}}" class="float-right btn btn-primary">Show Digitutor Details</a>
+                <a class="float-left" href="{{ route('studentdashboard')}}">Back to dashboard</a></div>
             <div class="card-header">
                 <h4> {{ $user->name }} DigiTutor </h4>
-                <a class="float-right" href="{{ route('studentdashboard')}}">Back to dashboard</a>
+
             </div>
-            {{-- <a href="blank.html" class="btn btn-primary">Add user</a> --}}
+
             <div class="card-body">
                 <table class="table">
                     <thead>
@@ -51,7 +53,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                   
+
                     </tbody>
                 </table>
             </div>

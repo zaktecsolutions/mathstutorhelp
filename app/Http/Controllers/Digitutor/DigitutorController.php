@@ -7,6 +7,7 @@ use App\Lesson;
 use App\Quizfeedback;
 use App\Quizresult;
 use App\User;
+use App\Digitutor;
 use Illuminate\Http\Request;
 
 class DigitutorController extends Controller
@@ -67,5 +68,56 @@ class DigitutorController extends Controller
         $feedback->save();
         return $feedback;
     }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Digitutor $digitutor)
+    {
+        return view('digitutor.show')->with([
+            'digitutor' => $digitutor,
+        ]);
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Digitutor $digitutor)
+    {
+        //
+        return view('digitutor.edit')->with([
+            'digitutor' => $digitutor,
+        ]);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
 
 }
