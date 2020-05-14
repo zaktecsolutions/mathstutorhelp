@@ -10,19 +10,19 @@ class Quizresult extends Model
     //
     public function quiz()
     {
-        // quizresult belongs to quiz
+        // Quizresult belongs to Quiz
         return $this->belongsTo('App\Quiz');
     }
 
     public function quizfeedbacks()
     {
-        // quiz result has many quiz feedback
+        // Quizresult belongs to Quizfeedback
         return $this->hasMany('App\Quizfeedback');
     }
 
     public function digitutor()
-    { 
-        //quizresult belings to digitutor
+    {
+        //Quizresult belongs to Digitutor
         return $this->belongsTo('App\Digitutor');
     }
 }

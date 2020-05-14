@@ -6,26 +6,24 @@ use Illuminate\Database\Eloquent\Model;
 
 class Course extends Model
 {
-    // protected $fillable = [
-    //     'course_name', 'course_code', 'course_desc', 'course_level', 'course_image',
-    // ];
+    
 
     protected $guarded = [];
 
     public function users()
     {
-        // course has many users
+        // Course has many User
         return $this->hasMany('App\User');
     }
 
     public function topics()
     {
-        // courses has many topic
+        // Course has many Topic
         return $this->hasMany('App\Topic');
     }
     public function quizzes()
     {
-        // courses has many quizzes
+        // Course has many Quiz
         return $this->hasMany('App\Quiz');
     }
 

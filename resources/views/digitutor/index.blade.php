@@ -6,7 +6,7 @@
     <div class="col-md-9 col-sm-11 col-xs-12">
         <div class="card">
             <div class="card-header">
-                <h4> {{ $user->name }} DigiTutor </h4>
+                {{-- <h4> {{ $users->name }} DigiTutor </h4> --}}
                 <a class="float-right" href="{{ route('studentdashboard')}}">Back to dashboard</a>
             </div>
             {{-- <a href="blank.html" class="btn btn-primary">Add user</a> --}}

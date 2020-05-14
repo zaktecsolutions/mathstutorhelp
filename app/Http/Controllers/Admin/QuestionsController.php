@@ -8,11 +8,11 @@ use Illuminate\Http\Request;
 
 class QuestionsController extends Controller
 {
+    /**
+     * access to registered user
+     */
     public function __construct()
     {
-        /**
-         * access to registered user
-         */
         $this->middleware('auth');
     }
     /**

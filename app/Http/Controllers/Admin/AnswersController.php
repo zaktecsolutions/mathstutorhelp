@@ -50,6 +50,7 @@ class AnswersController extends Controller
             'ans_explanation' => 'required| max:120',
             'ans_correct' => 'required',
         ]);
+    
         $answer = answer::create([
             'ans_image' => $request->ans_image,
             'ans_body' => $request->ans_body,
@@ -109,12 +110,9 @@ class AnswersController extends Controller
     public function update(Question $question, Request $request, Answer $answer)
     {
         //
-        $this->validate($request, [
-            'ans_image' => 'required| max:120',
-            'ans_body' => 'required| max:120',
-            'ans_explanation' => 'required| max:120',
-            'ans_correct' => 'required',
-        ]);
+        $this->validate($request); 
+
+        
         $success = $answer->update([
             'ans_image' => $request->ans_image,
             'ans_body' => $request->ans_body,
@@ -145,16 +143,14 @@ class AnswersController extends Controller
         return redirect()->route('admin.question.answers.index');
     }
 
-  /*   protected function validatedData()
+     protected function validator(array $data)
     {
-        return request()->validate([
-            'course_name' => 'required| max:120',
-            'course_code' => 'required| max:120',
-            'course_desc' => 'required| max:120',
-            'course_level' => 'required| max:120',
-            'course_image' => 'required| max:120',
-
-        ]);
+        return Validator::make($data, [
+            'ans_image' => ['required', 'string', 'max:255'],
+            'ans_body' => ['required', 'string'],
+            'ans_explanation' => ['required', 'string'],
+            'ans_correct' => ['required', 'string'],
+        ]); 
     }
- */
+    
 }

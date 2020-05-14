@@ -6,45 +6,49 @@ use Illuminate\Database\Eloquent\Model;
 
 class Question extends Model
 {
-
-    /*  protected $fillable = [
-        'question_name', 'question_body', 'question_image', 'question_mark', 'question_grade', 'question_type', 'question_category',
-    ]; */
     protected $guarded = [];
-    //
-
+    
     public function quizzes()
     {
-        //quizzes belong to many questions
+        //Question belongs to many Quiz
         return $this->belongsToMany('App\Quiz');
     }
 
     public function lesson()
     {
-        //question belongs to lesson
+        //Question belongs to Lesson
         return $this->belongsTo('App\Lesson');
     }
 
     public function answers()
     {
-        // question has many answers
+        // Question had many Answer
         return $this->hasMany('App\Answer');
+    }
+    
+    public function quizfeedbacks()
+    {
+        // Question has many Quizfeedback
+        return $this->hasMany('App\Quizfeedback');
     }
 
     public function right_answer()
     {
-        // question has many answers
+         /**
+         * retunrs the admin dashboard.
+         *
+         */
         return $this->answers()->where('ans_correct', 1)->first();
     }
 
     public function my_answer($user)
     {
+        /**
+         * retunrs the admin dashboard.
+         *
+         */
         return $this->quizfeedbacks()->where('user_id', $user->id)->first();
     }
 
-    public function quizfeedbacks()
-    {
-        // topic has many lessons
-        return $this->hasMany('App\Quizfeedback');
-    }
+    
 }

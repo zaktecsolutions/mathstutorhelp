@@ -11,19 +11,20 @@ use Illuminate\Http\Request;
 
 class DigitutorController extends Controller
 {
+    /**
+     * access to registered user
+     */
     public function __construct()
     {
-        /**
-         * access to registered user
-         */
         $this->middleware('auth');
     }
 
+    /**
+     * access to registered user
+     */
     public function view($id)
     {
-        /**
-         * returns the digitutor 
-         */
+
         $user = User::find($id);
         $digitutor = $user->digitutor;
         $results = $digitutor->quizresults;
@@ -39,20 +40,28 @@ class DigitutorController extends Controller
         return view('digitutor.student')->with([
             'user' => $user,
             'results' => $results,
-            'todos' => $pending_lessons
+            'todos' => $pending_lessons,
         ]);
     }
+
+    /**
+     * access to registered user
+     */
 
     public function result($id)
     {
         $quizResult = Quizresult::find($id);
         return view('digitutor.quiz-result')->with([
-            'result' => $quizResult
+            'result' => $quizResult,
         ]);
     }
 
+    /**
+     * access to registered user
+     */
     public function markAnswer(Request $request)
     {
+
         $feedback = Quizfeedback::find($request->feedback_id);
         $feedback->status = $request->status;
         $feedback->save();

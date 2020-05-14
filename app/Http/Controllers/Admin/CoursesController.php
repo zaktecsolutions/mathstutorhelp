@@ -7,11 +7,11 @@ use Illuminate\Http\Request;
 
 class CoursesController extends Controller
 {
+    /**
+     * access to registered user
+     */
     public function __construct()
     {
-        /**
-         * access to registered user
-         */
         $this->middleware('auth');
     }
 
@@ -37,7 +37,7 @@ class CoursesController extends Controller
     public function create()
     {
         $courses = Course::all();
-        
+
         return view('admin.courses.create')->with('courses', $courses);
 
     }
@@ -54,11 +54,11 @@ class CoursesController extends Controller
 
         $course = Course::create($this->validatedData());
 
-         if ($course) {$request->session()->flash('success', $course->course_name . ' has been inserted');
+        if ($course) {$request->session()->flash('success', $course->course_name . ' has been inserted');
         } else {
-        $request->session()->flash('error', 'There was an error updating the user');
-        } 
-   
+            $request->session()->flash('error', 'There was an error updating the user');
+        }
+
         return redirect()->route('admin.courses.index');
         //return redirect()->route('admin.courses'.$course->id);
     }
@@ -112,7 +112,7 @@ class CoursesController extends Controller
         } else {
             $request->session()->flash('error', 'There was an error updating the user');
         }
-               
+
         return redirect()->route('admin.courses.index');
     }
     /**

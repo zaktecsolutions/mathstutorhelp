@@ -1,22 +1,25 @@
 @extends('layouts.app')
-@section('title', 'MTH Login page')
+@section('title', 'MTH HomePage')
 @section('content')
+<section class="jumbotron text-center">
 
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
+    
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+    <h1 class="jumbotron-heading">Album example</h1>
 
-                    You are logged in!
-                </div>
-            </div>
-        </div>
-    </div>
+    <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc.
+        Make it short and sIet, but not too short so folks don't simply skip over it entirely.</p>
+
+    <p>
+
+        <a href="#" class="btn btn-primary">Main call to action</a>
+
+        <a href="#" class="btn btn-secondary">Secondary action</a>
+
+    </p>
+
+
+
+</section>
+
 @endsection

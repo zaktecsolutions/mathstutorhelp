@@ -39,13 +39,13 @@ class User extends Authenticatable
 
     public function course()
     {
-        //courses belong to user
+        //User belongs to Course
         return $this->belongsTo('App\Course');
     }
 
     public function digitutor()
     {
-        //User has One digiTutor
+        //User has One DigiTutor
         return $this->hasOne('App\Digitutor');
     }
 

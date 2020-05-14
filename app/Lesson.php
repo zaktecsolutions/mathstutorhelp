@@ -7,31 +7,42 @@ use Illuminate\Database\Eloquent\Model;
 class Lesson extends Model
 {
 
-    /*  protected $fillable = [
-        'lesson_name', 'lesson_code', 'lesson_desc', 'course_id', 'lesson_ws', 'lesson_body', 'lesson_quiz',
-    ]; */
     protected $guarded = [];
 
-    //
     public function topic()
-    { //    lessson belongs to topic
+    { 
+        //    Lesson belongs to Topic
         return $this->belongsTo('App\Topic');
     }
 
     public function questions()
     {
-        // lesson has many questions
+        // Lesson has many Question 
         return $this->hasMany('App\Question');
+    }
+
+    public function quizzes()
+    {
+        // Lesson has many Quiz
+        return $this->hasMany('App\Quiz');
     }
 
     public function quiz_questions($type = 'diagnostic')
     {
+        /**
+         * retunrs the admin dashboard.
+         *
+         */
         $quiz = $this->topic->quizzes()->where('quiz_subtype', $type)->first();
         return $quiz->questions()->where('lesson_id', $this->id);
     }
 
     public function my_status($user, $type = 'diagnostic')
     {
+        /**
+         * return the status of the lesson.
+         *
+         */
         $questions = $this->quiz_questions($type)->get();
         $total = 0;
         $right = 0;
@@ -42,7 +53,10 @@ class Lesson extends Model
                 $right++;
             }
         }
-        if ($total == 0) return 'success';
+        if ($total == 0) {
+            return 'success';
+        }
+
         $percentage = ($right / $total * 100);
         if ($percentage > 66) {
             return 'success';
@@ -53,14 +67,12 @@ class Lesson extends Model
         }
     }
 
-    public function quizzes()
-    {
-        // lesson has many questions
-        return $this->hasMany('App\Quiz');
-    }
-
     public function is_complete()
     {
+        /**
+         * retunrs the admin dashboard.
+         *
+         */
         $ids = $this->quizzes()->where('quiz_type', 'Lesson')->pluck('id');
         return Quizresult::where('digitutor_id', auth()->user()->digitutor->id)
             ->whereIn('quiz_id', $ids)

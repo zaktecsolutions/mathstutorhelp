@@ -11,29 +11,21 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-    public function index()
+  
+     public function index()
     {
         /**
          * Show the application dashboard.
          *
          */
         return view('home');
-    }
+    } 
    
-    public function admindashboard()
-    { //
-        /**
-         * retunrs the admin dashboard.
-         *
-         */
+    /* public function admindashboard()
+    { 
         $users = User::all();
         return view('admin.admindb')->with('users', $users);
-    }
+    } */
 
     /* public function studentdashboard()
     {

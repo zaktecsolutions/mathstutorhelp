@@ -6,44 +6,48 @@ use Illuminate\Database\Eloquent\Model;
 
 class Quiz extends Model
 {
-    /*    protected $fillable = [
-    'quiz_name', 'quiz_code', 'quiz_desc', 'quiz_type','quiz_body','quiz_level'
-    ]; */
+
     protected $guarded = [];
-    //
+
     public function topic()
     {
-        //quiz belongs to course
+        //Quiz belongs to Topic
         return $this->belongsTo('App\Topic');
     }
 
     public function lesson()
     {
-        //quiz belong to lesson
+        //Quiz belongs to Lesson
         return $this->belongsTo('App\Lesson');
     }
 
     public function questions()
     {
-        // quiz belongs to many questions
+        // Quiz belongs to Many Question
         return $this->belongsToMany('App\Question');
     }
 
     public function quizresults()
     {
-        //quiz belongs to quizresult
+        //Quiz belongs to Many Quizresult
         return $this->hasMany('App\Quizresult');
     }
 
     public function my_result()
     {
-        //quiz belongs to quizresult
+        /**
+         * retunrs the admin dashboard.
+         *
+         */
         return $this->quizresults()->where('digitutor_id', auth()->user()->digitutor->id)->first();
     }
 
     public function my_status()
     {
-        //quiz belongs to quizresult
+        /**
+         * retunrs the admin dashboard.
+         *
+         */
         $result = $this->my_result();
         if ($result == null) {
             return 'danger';
@@ -59,6 +63,10 @@ class Quiz extends Model
 
     public function is_complete()
     {
+        /**
+         * retunrs the admin dashboard.
+         *
+         */
         return $this->quizresults()->where('digitutor_id', auth()->user()->digitutor->id)
             ->where('quiz_percent', '>=', 90)->exists();
     }

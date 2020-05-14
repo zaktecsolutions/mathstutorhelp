@@ -8,13 +8,11 @@ use App\user;
 
 class AdminController extends Controller
 {
-    //
+    /**
+     * access to registered user
+     */
     public function dashboard()
-    { //
-        /**
-         * retunrs the admin dashboard.
-         *
-         */
+    {  
         $users = User::all();
         return view('admin.admindb')->with('users', $users);
     }

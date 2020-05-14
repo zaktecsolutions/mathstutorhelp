@@ -13,18 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-Route::get('/', function () {
+/* Route::get('/', function () {
     return view('welcome');
-});
+}); */
 
-Auth::routes();
+Auth::routes();    // Login and register route from laravel 
 
-Route::get('/home', 'HomeController@index')->name('home');
-// Route::get('/admindashboard', 'HomeController@admindashboard')->name('admindashboard')->middleware('role:admin');
-//  Route::get('/studentdashboard', 'HomeController@studentdashboard')->name('studentdashboard')->middleware('role:student');
-// Route::get('/tutordashboard', 'HomeController@tutordashboard')->name('tutordashboard')->middleware('role:tutor');
+// Welcome page 
+ Route::get('/', 'HomeController@index')->name('home');
 
-Route::namespace('Admin')
+Route::namespace ('Admin')
     ->prefix('admin')
     ->name('admin.')
     ->middleware('role:admin')
@@ -36,12 +34,11 @@ Route::namespace('Admin')
         Route::resource('/topics', 'TopicsController');
         Route::resource('/lessons', 'LessonsController');
         Route::resource('/questions', 'QuestionsController');
-        Route::resource('/digitutors', 'DigitutorsController');
         Route::resource('/quizzes', 'QuizzesController');
         Route::resource('question.answers', 'AnswersController');
     });
 
-Route::namespace('Digitutor')
+Route::namespace ('Digitutor')
     ->middleware('can:digitutor')
     ->prefix('digitutor')
     ->name('digitutor.')
@@ -50,9 +47,11 @@ Route::namespace('Digitutor')
         Route::get('/view/{id}', 'DigitutorController@view')->name('view');
         Route::get('/quiz-result/{id}', 'DigitutorController@result')->name('quiz-result');
         Route::post('/mark-answer', 'DigitutorController@markAnswer')->name('mark-answer');
+        Route::resource('/input', 'InputDTController');
+        Route::resource('/conversation', 'ConversationController');
     });
 
-Route::namespace('Student')
+Route::namespace ('Student')
     ->middleware('role:student')
     ->prefix('student')
     ->group(function () {
@@ -63,13 +62,12 @@ Route::namespace('Student')
         Route::post('/update', 'StdaccountController@update')->name('updatestudent');
         Route::get('/course', 'StdcourseController@index')->name('studentcourse');
         Route::get('/topic/{id}', 'StdtopicController@show')->name('studenttopic');
-        // Route::get('/digitutor', 'StddigitutorController@index')->name('studentdigitutor');
         Route::get('/quiz/{quiz_id}/questions', 'StdquizController@questions')->name('studentquizquestions');
         Route::post('/quiz/{quiz_id}/answers', 'StdquizController@answers')->name('studentquizanswers');
         Route::get('/quiz/{id}', 'StdquizController@show')->name('studentquiz');
     });
 
-Route::namespace('Tutor')
+Route::namespace ('Tutor')
     ->middleware('role:tutor')
     ->group(function () {
 
@@ -78,7 +76,5 @@ Route::namespace('Tutor')
         Route::get('/edittutor', 'TutaccountController@edit')->name('edittutor');
         Route::post('/updatetutor', 'TutaccountController@update')->name('updatetutor');
         Route::get('/getstudent{id}', 'TutstudentController@show')->name('viewstudent');
-
-        //  Route::get('/digitut{id}', 'TutstudentController@showdigitutor')->name('studentdigitut');
 
     });

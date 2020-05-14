@@ -74,6 +74,14 @@
                 $table->foreign('question_id')->references('id')->on('questions')->onDelete('cascade');
                 $table->foreign('quiz_id')->references('id')->on('quizzes')->onDelete('cascade');
             });
+
+            Schema::table('conversation', function (Blueprint $table) {
+
+                $table->foreign('digitutor_id')->references('id')->on('digitutors')->onDelete('cascade');
+                $table->foreign('topic_id')->references('id')->on('topics')->onDelete('cascade');
+            });
+
+       
         }
 
         /**
@@ -137,6 +145,12 @@
 
                 $table->dropForeign(['question_id']);
                 $table->dropForeign(['quiz_id']);
+            });
+
+            Schema::table('conversation', function (Blueprint $table) {
+
+                $table->dropForeign(['digitutor_id']);
+                $table->dropForeign(['topic_id']);
             });
         }
     }
