@@ -1,4 +1,4 @@
-{{--  This page will display the answer tables --}}
+{{-- This page will display the answer tables --}}
 @extends('layouts.app')
 @section('content')
 <div class="container">

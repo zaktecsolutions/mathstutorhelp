@@ -6,6 +6,7 @@ use App\Answer;
 use App\Http\Controllers\Controller;
 use App\Question;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class AnswersController extends Controller
 {
@@ -44,13 +45,8 @@ class AnswersController extends Controller
      */
     public function store(Question $question, Request $request)
     {
-        $this->validate($request, [
-            'ans_image' => 'required| max:120',
-            'ans_body' => 'required| max:120',
-            'ans_explanation' => 'required| max:120',
-            'ans_correct' => 'required',
-        ]);
-    
+        $this->validateAnswer($request->all());
+
         $answer = answer::create([
             'ans_image' => $request->ans_image,
             'ans_body' => $request->ans_body,
@@ -110,9 +106,9 @@ class AnswersController extends Controller
     public function update(Question $question, Request $request, Answer $answer)
     {
         //
-        $this->validate($request); 
+        $this->validateAnswer($request->all());
 
-        
+
         $success = $answer->update([
             'ans_image' => $request->ans_image,
             'ans_body' => $request->ans_body,
@@ -121,12 +117,12 @@ class AnswersController extends Controller
             'question_id' => $question->id,
         ]);
         if ($success) {
-            $request->session()->flash('success', $answer->ans_id . ' has been updated');
+            $request->session()->flash('success', $answer->id . ' has been updated');
         } else {
             $request->session()->flash('error', 'There was an error updating the user');
         }
 
-        return redirect()->route('admin.question.answers.index');
+        return redirect()->route('admin.question.answers.index', [$question]);
     }
 
     /**
@@ -143,14 +139,13 @@ class AnswersController extends Controller
         return redirect()->route('admin.question.answers.index');
     }
 
-     protected function validator(array $data)
+    protected function validateAnswer(array $data)
     {
         return Validator::make($data, [
             'ans_image' => ['required', 'string', 'max:255'],
             'ans_body' => ['required', 'string'],
             'ans_explanation' => ['required', 'string'],
             'ans_correct' => ['required', 'string'],
-        ]); 
+        ]);
     }
-    
 }
