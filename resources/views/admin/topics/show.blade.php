@@ -4,9 +4,9 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-10">
-            <a href="/admin/topics">Back to topics</a>
+            <a href="{{route('admin.course.topics.index',$course)}}">Back to topics</a>
             <div class="card">
-                <a href="{{ route('admin.topics.edit', $topic->id)}}">
+                <a href="{{ route('admin.course.topics.edit', [$course,$topic])}}">
                     <button type="button" class="btn btn-primary float-right">Edit</button></a>
                 <div class="card-header">Topic # {{ $topic->id }}</div>
 

@@ -32,7 +32,7 @@ Route::namespace ('Admin')
         Route::get('/students', 'AdminController@students')->name('students');
         Route::resource('/users', 'UsersController');
         Route::resource('/courses', 'CoursesController');
-        Route::resource('/topics', 'TopicsController');
+        Route::resource('course.topics', 'TopicsController');
         Route::resource('/lessons', 'LessonsController');
         Route::resource('/questions', 'QuestionsController');
         Route::resource('/quizzes', 'QuizzesController');

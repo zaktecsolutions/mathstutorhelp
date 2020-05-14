@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Course;
 use App\Http\Controllers\Controller;
 use App\Topic;
 use Illuminate\Http\Request;
@@ -22,13 +23,14 @@ class TopicsController extends Controller
         $this->middleware('auth');
     }
 
-    public function index()
+    public function index(Course $course)
     {
-
-        // return 'User index page';
-        $topics = Topic::all(); //gets all the topics
-        //  dd($topics);
-        return view('admin.topics.index')->with('topics', $topics);
+        return view('admin.topics.index')->with(
+            [
+                'course' => $course,
+                'topics' => $course->topics
+            ]
+        );
     }
 
     /**
@@ -36,10 +38,10 @@ class TopicsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Course $course)
     {
         //
-        return view('admin.topics.create');
+        return view('admin.topics.create')->with(['course' => $course]);
     }
 
     /**
@@ -48,16 +50,18 @@ class TopicsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Course $course)
     {
         //
 
         $topic = Topic::create($this->validatedData());
 
-        if ($topic) {$request->session()->flash('success', $topic->topic_name . ' has been inserted');
+        if ($topic) {
+            $request->session()->flash('success', $topic->topic_name . ' has been inserted');
         } else {
             $request->session()->flash('error', 'There was an error updating the user');
         }
+        return redirect()->route('admin.course.topics.index', [$course->id]);
     }
     /**
      * Display the specified resource.
@@ -65,12 +69,15 @@ class TopicsController extends Controller
      * @param  \App\Topic  $topic
      * @return \Illuminate\Http\Response
      */
-    public function show(Topic $topic)
+    public function show(Course $course, Topic $topic)
     {
         //
         // return 'User index page';
         // $topics = Topic::all(); gets all the topics
-        return view('admin.topics.show')->with('topic', $topic);
+        return view('admin.topics.show')->with([
+            'topic' => $topic,
+            'course' => $course
+        ]);
     }
 
     /**
@@ -79,13 +86,14 @@ class TopicsController extends Controller
      * @param  \App\Topic  $topic
      * @return \Illuminate\Http\Response
      */
-    public function edit(Topic $topic)
+    public function edit(Course $course, Topic $topic)
     {
         //dd($topic)  - check if topic is coming
 
         $topics = Topic::all(); //get all the topics
-        return view('admin.topics.edit')->with(['topic' => $topic, // send the topic you want to edit
-            // 'topics' => $topics, // send all the topics
+        return view('admin.topics.edit')->with([
+            'topic' => $topic, // send the topic you want to edit
+            'course' => $course,
         ]);
     }
 
@@ -96,17 +104,18 @@ class TopicsController extends Controller
      * @param  \App\Topic  $topic
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Topic $topic)
+    public function update(Request $request, Course $course, Topic $topic)
     {
         //
         $topic->update($this->validatedData());
 
-        if ($topic) {$request->session()->flash('success', $topic->topic_name . ' has been updated');
+        if ($topic) {
+            $request->session()->flash('success', $topic->topic_name . ' has been updated');
         } else {
             $request->session()->flash('error', 'There was an error updating the user');
         }
 
-        return redirect()->route('admin.topics.index');
+        return redirect()->route('admin.course.topics.index', [$course->id]);
     }
 
     /**
@@ -115,12 +124,12 @@ class TopicsController extends Controller
      * @param  \App\Topic  $topic
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Topic $topic)
+    public function destroy(Course $course, Topic $topic)
     {
         //
         $topic->delete();
 
-        return redirect()->route('admin.topics.index');
+        return redirect()->route('admin.topics.index', [$course->id]);
     }
 
     protected function validatedData()
