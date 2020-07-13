@@ -7,29 +7,32 @@ use Illuminate\Http\Request;
 
 class TutaccountController extends Controller
 {
+    /**
+     * access to registered user
+     */
     public function __construct()
     {
-        /**
-         * access to registered user
-         */
+
         $this->middleware('auth');
     }
+
+    /**
+     * access to registered user
+     */
     public function tutordashboard()
     {
-        /**
-         * returns the tutor dashboard with the users 
-         */
+
         $user = auth()->user();
         $students = $user->students;
-        
+
         return view('tutor.tutordb')->with([
             'user' => $user,
             'users' => $students,
         ]);
-        
+
     }
 
-   /**
+    /**
      * redirects to the tutor dashboard
      */
     public function index()

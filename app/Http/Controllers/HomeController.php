@@ -14,42 +14,8 @@ class HomeController extends Controller
   
      public function index()
     {
-        /**
-         * Show the application dashboard.
-         *
-         */
+       
         return view('home');
     } 
    
-    /* public function admindashboard()
-    { 
-        $users = User::all();
-        return view('admin.admindb')->with('users', $users);
-    } */
-
-    /* public function studentdashboard()
-    {
-       
-        $user = auth()->user();
-        $topics = auth()->user()->course->topics;
-
-        return view('student.studentdb')->with([
-            'user' => $user,
-            'topics' => $topics,
-           
-        ]);
-    } */
-
-   /*  public function tutordashboard()
-    {
-        
-        $user = auth()->user();
-        $students = $user->students;
-        
-        return view('tutor.tutordb')->with([
-            'user' => $user,
-            'users' => $students,
-        ]);
-        
-    }  */
 }

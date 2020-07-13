@@ -24,7 +24,6 @@
                                 <th scope="col">Learner Answer</th>
                                 <th scope="col">Tutor Answer</th>
                                 <th scope="col">Action</th>
-
                             </tr>
                         </thead>
                         <tbody>
@@ -33,32 +32,36 @@
                                 <td>{{$quizfeedback->question->lesson->lesson_code}}</td>
                                 <td>{{$quizfeedback->question->question_body}}</td>
                                 <td> @if($quizfeedback->status == 1)
-                                    <span id="badge-{{$quizfeedback->id}}" class="badge badge-success badge-pill">{{$quizfeedback->answer}}</span>
+                                    <span id="badge-{{$quizfeedback->id}}"
+                                        class="badge badge-success badge-pill">{{$quizfeedback->answer}}</span>
                                     @elseif($quizfeedback->status == -1)
-                                    <span id="badge-{{$quizfeedback->id}}" class="badge badge-danger badge-pill">{{$quizfeedback->answer}}</span>
+                                    <span id="badge-{{$quizfeedback->id}}"
+                                        class="badge badge-danger badge-pill">{{$quizfeedback->answer}}</span>
                                     @else
-                                    <span id="badge-{{$quizfeedback->id}}" class="badge badge-primary badge-pill">Skipped</span>
+                                    <span id="badge-{{$quizfeedback->id}}"
+                                        class="badge badge-primary badge-pill">Skipped</span>
                                     @endif
                                 </td>
-                                 <td>{{$quizfeedback->question->right_answer()->ans_body}}</td>
-                               
+                                <td>{{$quizfeedback->question->right_answer()->ans_body}}</td>
                                 <td>
                                     <div class="form-check form-check-inline">
-                                        <input @change="markAnswer({{$quizfeedback->id}},1)" name="result-{{$quizfeedback->id}}" class="form-check-input" type="radio" id="inlineCheckbox1"
-                                            value="1" @if($quizfeedback->status == 1) checked @endif>
+                                        <input @change="markAnswer({{$quizfeedback->id}},1)"
+                                            name="result-{{$quizfeedback->id}}" class="form-check-input" type="radio"
+                                            id="inlineCheckbox1" value="1" @if($quizfeedback->status == 1) checked
+                                        @endif>
                                         <label class="form-check-label" for="inlineCheckbox1">Right</label>
-                                        
+
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input @change="markAnswer({{$quizfeedback->id}},-1)" name="result-{{$quizfeedback->id}}" class="form-check-input" type="radio" id="inlineCheckbox2"
-                                            value="-1" @if($quizfeedback->status != 1) checked @endif>
+                                        <input @change="markAnswer({{$quizfeedback->id}},-1)"
+                                            name="result-{{$quizfeedback->id}}" class="form-check-input" type="radio"
+                                            id="inlineCheckbox2" value="-1" @if($quizfeedback->status != 1) checked
+                                        @endif>
                                         <label class="form-check-label" for="inlineCheckbox2">Wrong</label>
                                     </div>
-                                   
                                 </td>
                             </tr>
                             @endforeach
-
                         </tbody>
                     </table>
                 </div>

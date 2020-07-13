@@ -10,6 +10,14 @@ use Illuminate\Support\Facades\Validator;
 
 class AnswersController extends Controller
 {
+     /**
+     * access to registered user
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -71,9 +79,7 @@ class AnswersController extends Controller
      */
     public function show(Question $question, Answer $answer)
     {
-        //
-        // return 'User index page';
-        // $answers = answer::all();gets all the answers
+       
         return view('admin.answers.show')->with([
             'answer' => $answer,
             'question' => $question,
@@ -107,7 +113,6 @@ class AnswersController extends Controller
     {
         //
         $this->validateAnswer($request->all());
-
 
         $success = $answer->update([
             'ans_image' => $request->ans_image,

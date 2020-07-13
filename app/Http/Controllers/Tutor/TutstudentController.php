@@ -2,18 +2,28 @@
 
 namespace App\Http\Controllers\Tutor;
 
-use App\User;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\User;
 
 class TutstudentController extends Controller
 {
-    //
+    /**
+     * access to registered user
+     */
+    public function __construct()
+    {
+
+        $this->middleware('auth');
+    }
+
+    /**
+     * access to registered user
+     */
     public function show($id)
     {
         $user = User::find($id);
         return view('tutor.show')->with([
-            'user' => $user
+            'user' => $user,
         ]);
     }
 

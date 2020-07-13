@@ -122,14 +122,14 @@ class CreateLearningPlatformTable extends Migration
             $table->timestamps();
         });
 
-        Schema::create('conversation', function (Blueprint $table) {
+       /*  Schema::create('conversation', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('digitutor_id');
             $table->unsignedBigInteger('topic_id') ->nullable();
             $table->integer('from_user_id');
             $table->integer('to_user_id');
             $table->timestamps();
-        });
+        }); */
     }
 
     /**
@@ -150,7 +150,7 @@ class CreateLearningPlatformTable extends Migration
         Schema::dropIfExists('quizresults');
         Schema::dropIfExists('digitutors');
         Schema::dropIfExists('question_quiz');
-        Schema::dropIfExists('conversation');
-
+        /* Schema::dropIfExists('conversation');
+ */
     }
 }

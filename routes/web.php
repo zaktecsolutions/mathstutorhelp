@@ -70,6 +70,7 @@ Route::namespace ('Student')
 
 Route::namespace ('Tutor')
     ->middleware('role:tutor')
+    ->prefix('tutor')
     ->group(function () {
 
         Route::get('/tutordashboard', 'TutaccountController@tutordashboard')->name('tutordashboard');

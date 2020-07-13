@@ -3,11 +3,18 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\user;
 
 class AdminController extends Controller
 {
+    /**
+     * access to registered user
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     /**
      * access to registered user
      */
@@ -16,7 +23,10 @@ class AdminController extends Controller
         $users = User::all();
         return view('admin.admindb')->with('users', $users);
     }
-
+    
+    /**
+     * access to registered user
+     */
     public function students()
     {
         $students = User::whereHas("roles", function ($q) {

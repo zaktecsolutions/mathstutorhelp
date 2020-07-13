@@ -25,23 +25,22 @@ class DigitutorController extends Controller
      */
     public function view($id)
     {
-
-        $user = User::find($id);
-        $digitutor = $user->digitutor;
-        $results = $digitutor->quizresults;
-        $topic_ids = $user->course->topics()->pluck('id')->toArray();
-        $lessons = Lesson::whereIn('topic_id', $topic_ids)->get();
-        $pending_lessons = [];
+         
+        $user = User::find($id);      //find user
+        $digitutor = $user->digitutor;      //find user digitutor 
+        $results = $digitutor->quizresults;    //find quizresult 
+        $topic_ids = $user->course->topics()->pluck('id')->toArray();    //collecting the topic id
+        $lessons = Lesson::whereIn('topic_id', $topic_ids)->get();  // collecting all lessons of the course 
+        $pending_lessons = [];        //collect the lessons that are not green
         foreach ($lessons as $lesson) {
             if ($lesson->my_status($user) != 'success') {
                 $pending_lessons[] = $lesson;
             }
         }
-        //return view('tutor.show')->with([
         return view('digitutor.student')->with([
-            'user' => $user,
-            'results' => $results,
-            'todos' => $pending_lessons,
+            'user' => $user,             // pass the user   
+            'results' => $results,       // pass the quiz result 
+            'todos' => $pending_lessons,   // pass the lesson that are not green
         ]);
     }
 
@@ -51,7 +50,7 @@ class DigitutorController extends Controller
 
     public function result($id)
     {
-        $quizResult = Quizresult::find($id);
+        $quizResult = Quizresult::find($id);   // find quizresult with the id
         return view('digitutor.quiz-result')->with([
             'result' => $quizResult,
         ]);

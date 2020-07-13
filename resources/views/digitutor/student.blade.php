@@ -5,7 +5,10 @@
 <div class="row justify-content-center">
     <div class="col-md-9 col-sm-11 col-xs-12">
         <div class="card">
-            <div><a href="{{route('digitutor.digitutors.show',$user->digitutor->id)}}" class="float-right btn btn-primary">Show Digitutor Details</a>
+            <div>
+             @role('tutor') 
+            <a href="{{route('digitutor.digitutors.show',$user->digitutor->id)}}" class="float-right btn btn-primary">Show Digitutor Details</a>
+                @endrole 
                 <a class="float-left" href="{{ route('studentdashboard')}}">Back to dashboard</a></div>
             <div class="card-header">
                 <h4> {{ $user->name }} DigiTutor </h4>
