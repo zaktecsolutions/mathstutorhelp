@@ -1,4 +1,4 @@
-﻿id      ,quiz_name,quiz_code,quiz_desc,quiz_type,quiz_subtyp,Topic_id,course_code,lesson_code
+﻿id,quiz_name,quiz_code,quiz_desc,quiz_type,quiz_subtype,topic_id,course_code,lesson_code
 1,Number 1,GFN1TDQ,Number 1- Diagnostic Quiz,Topic,diagnostic ,GFN1,,
 2,Number 1,GFN1TSQ,Number 1- Summary Quiz ,Topic, summary,GFN1,,
 3,Number 2 ,GFN2TDQ,Number 2- Diagnostic Quiz,Topic,diagnostic ,GFN2,,
