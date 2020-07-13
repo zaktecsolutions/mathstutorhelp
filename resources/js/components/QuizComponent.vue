@@ -61,7 +61,7 @@ export default {
           answers: answers
         })
         .then(response => {
-          window.location.href = `/student/quiz/${this.quiz}/result`;
+          window.location.href = `/digitutor/quiz-result/${response.data.id}`;
         });
     }
   }

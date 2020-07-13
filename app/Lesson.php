@@ -10,7 +10,7 @@ class Lesson extends Model
     protected $guarded = [];
 
     public function topic()
-    { 
+    {
         //    Lesson belongs to Topic
         return $this->belongsTo('App\Topic');
     }
@@ -34,7 +34,11 @@ class Lesson extends Model
          *
          */
         $quiz = $this->topic->quizzes()->where('quiz_subtype', $type)->first();
-        return $quiz->questions()->where('lesson_id', $this->id);
+        if (!empty($quiz)) {
+            return $quiz->questions()->where('lesson_id', $this->id);
+        } else {
+            return Question::where('id', '<', 0);
+        }
     }
 
     public function my_status($user, $type = 'diagnostic')
