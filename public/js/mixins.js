@@ -118,6 +118,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["quiz"],
   data: function data() {
@@ -201,6 +202,18 @@ var render = function() {
             _c("div", [
               _vm._v("Body : " + _vm._s(_vm.activeQuestion.question_body))
             ]),
+            _vm._v(" "),
+            _vm.activeQuestion.question_image
+              ? _c("div", [
+                  _vm._v("Image : "),
+                  _c("img", {
+                    attrs: {
+                      height: "200",
+                      src: _vm.activeQuestion.question_image
+                    }
+                  })
+                ])
+              : _vm._e(),
             _vm._v(" "),
             _c("div", [
               _vm._v("Grade : " + _vm._s(_vm.activeQuestion.question_grade))
