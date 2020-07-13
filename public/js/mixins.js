@@ -147,8 +147,6 @@ __webpack_require__.r(__webpack_exports__);
       this.activeQuestion = this.questions[this.currentIndex - 1];
     },
     submit: function submit() {
-      var _this2 = this;
-
       var answers = [];
       this.questions.forEach(function (question) {
         answers.push({
@@ -159,7 +157,7 @@ __webpack_require__.r(__webpack_exports__);
       axios.post("/student/quiz/".concat(this.quiz, "/answers"), {
         answers: answers
       }).then(function (response) {
-        window.location.href = "/student/quiz/".concat(_this2.quiz, "/result");
+        window.location.href = "/digitutor/quiz-result/".concat(response.data.id);
       });
     }
   }
@@ -503,7 +501,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\abdullah\Google Drive\sherazGoogle\computerscience\mth\resources\js\mixins.js */"./resources/js/mixins.js");
+module.exports = __webpack_require__(/*! E:\PHP\Laravel\mth\resources\js\mixins.js */"./resources/js/mixins.js");
 
 
 /***/ })

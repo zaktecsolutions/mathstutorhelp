@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Digitutor;
 
+use App\Conversation;
 use App\Http\Controllers\Controller;
 use App\Lesson;
 use App\Quizfeedback;
@@ -29,6 +30,7 @@ class DigitutorController extends Controller
         $user = User::find($id);      //find user
         $digitutor = $user->digitutor;      //find user digitutor 
         $results = $digitutor->quizresults;    //find quizresult 
+        $topics = $user->course->topics;
         $topic_ids = $user->course->topics()->pluck('id')->toArray();    //collecting the topic id
         $lessons = Lesson::whereIn('topic_id', $topic_ids)->get();  // collecting all lessons of the course 
         $pending_lessons = [];        //collect the lessons that are not green
@@ -41,6 +43,7 @@ class DigitutorController extends Controller
             'user' => $user,             // pass the user   
             'results' => $results,       // pass the quiz result 
             'todos' => $pending_lessons,   // pass the lesson that are not green
+            'topics' => $topics
         ]);
     }
 
@@ -66,6 +69,21 @@ class DigitutorController extends Controller
         $feedback->status = $request->status;
         $feedback->save();
         return $feedback;
+    }
+
+    public function sendMessage(Request $request)
+    {
+        $user = User::find(auth()->user()->id);
+        $is_student = $user->hasRole('student');
+        
+        Conversation::create([
+            'message' => $request->message,
+            'student_id' => $is_student ? $user->id : $request->student_id,
+            'tutor_id' => $is_student ? $user->tutor->id : $user->id,
+            'topic_id' => $request->topic_id,
+            'incoming' => !$is_student
+        ]);
+        return redirect()->back();
     }
 
     /**

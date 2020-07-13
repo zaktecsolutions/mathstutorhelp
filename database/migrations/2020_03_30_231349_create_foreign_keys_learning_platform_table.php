@@ -75,10 +75,9 @@
                 $table->foreign('quiz_id')->references('id')->on('quizzes')->onDelete('cascade');
             });
 
-            Schema::table('conversation', function (Blueprint $table) {
-
-                $table->foreign('from_user_id')->references('id')->on('users')->onDelete('cascade');
-                $table->foreign('to_user_id')->references('id')->on('users')->onDelete('cascade');
+            Schema::table('conversations', function (Blueprint $table) {
+                $table->foreign('student_id')->references('id')->on('users')->onDelete('cascade');
+                $table->foreign('tutor_id')->references('id')->on('users')->onDelete('cascade');
                 $table->foreign('topic_id')->references('id')->on('topics')->onDelete('cascade');
             });
         }
@@ -150,9 +149,9 @@
                 $table->dropForeign(['quiz_id']);
             });
 
-            Schema::table('conversation', function (Blueprint $table) {
-                $table->dropForeign(['to_user_id']);
-                $table->dropForeign(['from_user_id']);
+            Schema::table('conversations', function (Blueprint $table) {
+                $table->dropForeign(['student_id']);
+                $table->dropForeign(['tutor_id']);
                 $table->dropForeign(['topic_id']);
             });
         }

@@ -6,9 +6,9 @@
     <div class="col-md-9 col-sm-11 col-xs-12">
         <div class="card">
             <div>
-             @role('tutor') 
-            <a href="{{route('digitutor.digitutors.show',$user->digitutor->id)}}" class="float-right btn btn-primary">Show Digitutor Details</a>
-                @endrole 
+                @role('tutor')
+                <a href="{{route('digitutor.digitutors.show',$user->digitutor->id)}}" class="float-right btn btn-primary">Show Digitutor Details</a>
+                @endrole
                 <a class="float-left" href="{{ route('studentdashboard')}}">Back to dashboard</a></div>
             <div class="card-header">
                 <h4> {{ $user->name }} DigiTutor </h4>
@@ -48,17 +48,45 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Lesson Name</th>
-                            <th scope="col">Lesson Description</th>
-                            <th scope="col">Status</th>
-                            <th scope="col"> Action</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Sender</th>
+                            <th scope="col">Message</th>
+                            <th scope="col">Topic</th>
                         </tr>
                     </thead>
                     <tbody>
-
+                        @foreach($user->conversations as $conversation)
+                        <tr>
+                            <th scope="row">{{$conversation->created_at}}</th>
+                            <td>{{$conversation->incoming? $conversation->tutor->name : $conversation->student->name}}</td>
+                            <td>{{$conversation->message}}</td>
+                            <td>{{!empty($conversation->topic) ? $conversation->topic->topic_name : "General"}}</td>
+                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
+                <h4>New Message</h4>
+                <form method="POST" action="{{route('digitutor.send-message')}}">
+                    @csrf
+                    <div class="row">
+                        <div class="col-md-7">
+                            <textarea class="form-control" name="message"></textarea>
+                        </div>
+                        <div class="col-md-3">
+                            <select class="form-control" name="topic_id">
+                                <option value="">General</option>
+                                @foreach($topics as $topic)
+                                <option value="{{$topic->id}}">{{$topic->topic_name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <input type="hidden" name="student_id" value="{{$user->id}}" />
+                            <button class="btn btn-primary float-left">Send</button>
+                        </div>
+                    </div>
+                </form>
+
             </div>
         </div>
 

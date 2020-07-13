@@ -13,7 +13,6 @@ class Digitutor extends Model
     {
         //Digitutor belongs to User
         return $this->belongsTo('App\User');
-
     }
 
     public function quizresults()
