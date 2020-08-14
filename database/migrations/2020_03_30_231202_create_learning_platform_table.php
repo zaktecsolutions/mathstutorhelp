@@ -56,7 +56,6 @@ class CreateLearningPlatformTable extends Migration
             $table->string('lesson_desc');
             $table->string('lesson_ws');
             $table->string('lesson_body');
-            $table->boolean('lesson_completed')->default(false);
             $table->timestamps();
         });
 
@@ -64,7 +63,9 @@ class CreateLearningPlatformTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('lesson_id')->nullable();
             $table->string('question_name');
-            $table->string('question_body');
+            $table->text('question_body');
+            $table->string('question_type');
+            $table->string('question_code');
             $table->string('question_image')->nullable();
             $table->integer('question_mark');
             $table->integer('question_grade');
@@ -88,8 +89,15 @@ class CreateLearningPlatformTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('question_id');
             $table->string('ans_image')->nullable();
-            $table->string('ans_body');
-            $table->string('ans_explanation')->nullable();
+            $table->string('ans1_b');
+            $table->string('ans1_body');
+            $table->string('ans1_a');
+            $table->string('ans2_b');
+            $table->string('ans2_body');
+            $table->string('ans2_a');
+            $table->string('ans3_body');
+            $table->string('question_code');
+            $table->text('ans_explanation')->nullable();
             $table->boolean('ans_correct')->default(true);
             $table->boolean('ans_published')->default(false);
             $table->timestamps();

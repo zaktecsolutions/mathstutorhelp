@@ -28,9 +28,9 @@ class LessonsTableSeeder extends Seeder
             'lesson_ws' => 'GFN1WS1',
             'lesson_body' => 'Example/Explanation',
         ]); */
-        $files = ["seeders/lessons.csv"];
+        $files = ['a1_lessons.csv','a2_lessons.csv','g1_lessons.csv','g2_lessons.csv','n1_lessons.csv','n2_lessons.csv','p1_lessons.csv','rm_lessons.csv','s1_lessons.csv'];
         foreach ($files as $file) {
-            $seederFile = Storage::path($file);
+            $seederFile = Storage::path('seeders/csv/gcse_foundation/lessons/'.$file);
             $csv = Reader::createFromPath($seederFile, 'r');
             $csv->setHeaderOffset(0);
             $records = $csv->getRecords();

@@ -19,17 +19,28 @@ class AnswersTableSeeder extends Seeder
         Schema::disableForeignKeyConstraints();
         answer::truncate();
 
-        $seederFile = Storage::path("seeders/answers.csv");
-        $csv = Reader::createFromPath($seederFile, 'r');
-        $csv->setHeaderOffset(0);
-        $records = $csv->getRecords();
-        foreach ($records as $offset => $record) {
-            answer::create([
-                'question_id' => $record["question_id"],
-                'ans_body' => $record["ans_body"],
-                'ans_explanation' => $record["ans_explanation"],
-                'ans_image' => $record["ans_image"],
-            ]);
+        $files = ['a1_answers.csv','a2_answers.csv','g1_answers.csv','g2_answers.csv','n1_answers.csv','n2_answers.csv','p1_answers.csv','rm_answers.csv','s1_answers.csv'];
+        foreach ($files as $file) {
+            $seederFile = Storage::path('seeders/csv/gcse_foundation/answers/' . $file);
+            $csv = Reader::createFromPath($seederFile, 'r');
+            $csv->setHeaderOffset(0);
+            $records = $csv->getRecords();
+            foreach ($records as $offset => $record) {
+                $question = Question::where('question_code', $record["question_code"])->first();
+                answer::create([
+                    'question_id' => $question->id,
+                    'ans1_b' => $record["ans1_b"],
+                    'ans1_body' => $record["ans1_body"],
+                    'ans1_a' => $record["ans1_a"],
+                    'ans2_b' => $record["ans2_b"],
+                    'ans2_body' => $record["ans2_body"],
+                    'ans2_a' => $record["ans2_a"],
+                    'ans3_body' => $record["ans3_body"],
+                    'ans_explanation' => $record["ans_explanation"],
+                    'ans_image' => $record["ans_image"],
+                    'question_code' => $record["question_code"],
+                ]);
+            }
         }
 
         Schema::enableForeignKeyConstraints();

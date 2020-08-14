@@ -22,9 +22,9 @@ class QuizzesTableSeeder extends Seeder
 
         Schema::disableForeignKeyConstraints();
         quiz::truncate();
-        $files = ["seeders/quizzes.csv"];
+        $files = ['a1_quizzes.csv','a2_quizzes.csv','edexcel_quizzes.csv','g1_quizzes.csv','g2_quizzes.csv','n1_quizzes.csv','n2_quizzes.csv','p1_quizzes.csv','rm_quizzes.csv','s1_quizzes.csv','topic_quizzes.csv'];
         foreach ($files as $file) {
-            $seederFile = Storage::path($file);
+            $seederFile = Storage::path('seeders/csv/gcse_foundation/quizzes/'.$file);
             $csv = Reader::createFromPath($seederFile, 'r');
             $csv->setHeaderOffset(0);
             $records = $csv->getRecords();
@@ -54,7 +54,7 @@ class QuizzesTableSeeder extends Seeder
                     'quiz_code' => $record["quiz_code"],
                     'quiz_desc' => $record["quiz_desc"],
                     'quiz_type' => trim($record["quiz_type"]),
-                    'quiz_subtype' => trim($record["quiz_subtype"]),
+                    'quiz_subtype' => trim($record["quiz_subtyp"]),
                 ]);
             }
             // $quiz->question()->attach($question);
