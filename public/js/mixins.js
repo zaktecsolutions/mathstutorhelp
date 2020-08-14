@@ -207,9 +207,9 @@ var render = function() {
               ? _c("div", [
                   _vm._v("Image : "),
                   _c("img", {
+                    staticStyle: { "max-height": "200px" },
                     attrs: {
-                      height: "200",
-                      src: _vm.activeQuestion.question_image
+                      src: "/storage" + _vm.activeQuestion.question_image
                     }
                   })
                 ])
@@ -514,7 +514,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\abdullah\Google Drive\sherazGoogle\computerscience\mth\resources\js\mixins.js */"./resources/js/mixins.js");
+module.exports = __webpack_require__(/*! E:\PHP\Laravel\mth\resources\js\mixins.js */"./resources/js/mixins.js");
 
 
 /***/ })

@@ -4,7 +4,7 @@
     <div v-if="activeQuestion">
       <div>Name : {{activeQuestion.question_name}}</div>
       <div>Body : {{activeQuestion.question_body}}</div>
-      <div v-if="activeQuestion.question_image">Image : <img height="200" :src="activeQuestion.question_image"></div>
+      <div v-if="activeQuestion.question_image">Image : <img style="max-height:200px;" :src="'/storage'+activeQuestion.question_image"></div>
       <div>Grade : {{activeQuestion.question_grade}}</div>
       <div>Mark : {{activeQuestion.question_mark}}</div>
       <div>

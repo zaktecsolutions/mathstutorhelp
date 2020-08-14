@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Seeder;
 use App\Course;
+use Illuminate\Support\Facades\Storage;
+use League\Csv\Reader;
 
 class CoursesTableSeeder extends Seeder
 {
@@ -15,55 +17,24 @@ class CoursesTableSeeder extends Seeder
         //
         Schema::disableForeignKeyConstraints();
         Course::truncate();
-        Course::create([
-            'course_name' => 'MTH GCSE Maths Foundation -EDEXCEL',
-            'course_code' => 'MTH-EGF',
-            'course_desc' => 'MTH GCSE Maths Foundation Online Course- Edexcel',
-            'course_level' => 'Foundation',
-            'course_image' => '../imagepath/foundation', 
-        ]);
-        Course::create([
-            'course_name' => 'MTH GCSE Maths Higher -EDEXCEL',
-            'course_code' => 'MTH-EGH',
-            'course_desc' => 'MTH GCSE Maths Higher Online Course -Edexcel',
-            'course_level' => 'Higher',
-            'course_image' => '../imagepath/higher', 
-        ]);
-        Course::create([
-            'course_name' => 'MTH GCSE Maths Higher -OCR',
-            'course_code' => 'MTH-OGF',
-            'course_desc' => 'MTH GCSE Maths Foundation Online Course -OCR',
-            'course_level' => 'Foundation',
-            'course_image' => '../imagepath/foundation', 
-        ]);
-        Course::create([
-            'course_name' => 'MTH GCSE Maths Higher -OCR',
-            'course_code' => 'MTH-OGH',
-            'course_desc' => 'MTH GCSE Maths Higher Online Course -OCR',
-            'course_level' => 'Higher',
-            'course_image' => '../imagepath/higher', 
-        ]);
-        Course::create([
-            'course_name' => 'MTH GCSE Maths Higher -AQA',
-            'course_code' => 'MTH-AGF',
-            'course_desc' => 'MTH GCSE Maths Foundation Online Course -AQA',
-            'course_level' => 'Foundation',
-            'course_image' => '../imagepath/foundation', 
-        ]);
-        Course::create([
-            'course_name' => 'MTH GCSE Maths Higher -AQA',
-            'course_code' => 'MTH-AGH',
-            'course_desc' => 'MTH GCSE Maths Higher Online Course -AQA',
-            'course_level' => 'Higher',
-            'course_image' => '../imagepath/higher', 
-        ]);
-        Course::create([
-            'course_name' => 'MTH Functional Skills',
-            'course_code' => 'MTH-FS',
-            'course_desc' => 'MTH Functional Skills Online Course ',
-            'course_level' => 'Higher/Foundation',
-            'course_image' => '../imagepath/', 
-        ]);
+
+        $files = ['mth_courses.csv'];
+        foreach ($files as $file) {
+
+            $seederFile = Storage::path('seeders/csv/gcse_foundation/courses/'.$file);
+            $csv = Reader::createFromPath($seederFile, 'r');
+            $csv->setHeaderOffset(0);
+            $records = $csv->getRecords();
+            foreach ($records as $offset => $record) {
+                $course = Course::create([
+                    'course_name' => $record["course_name"],
+                    'course_code' => $record["course_code"],
+                    'course_desc' => $record["course_desc"],
+                    'course_level' => $record["course_level"],
+                    'course_image' => $record["course_image"]
+                ]);
+            }
+        }
         Schema::enableForeignKeyConstraints();
     }
 }

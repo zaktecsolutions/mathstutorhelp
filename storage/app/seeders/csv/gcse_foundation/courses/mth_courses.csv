@@ -1,0 +1,10 @@
+﻿course_name,course_code,course_desc,course_level,course_image
+MTH GCSE Maths Foundation,MTH-GF,MTH GCSE Maths Foundation Online Course,Foundation,../imagepath/foundation
+MTH GCSE Maths Higher,MTH-GH,MTH GCSE Maths Higher Online Course ,Higher,../imagepath/higher
+MTH GCSE Maths Foundation -EDEXCEL,MTH-EGF,MTH GCSE Maths Foundation Online Course- Edexcel,Foundation,../imagepath/foundation
+MTH GCSE Maths Higher -EDEXCEL,MTH-EGH,MTH GCSE Maths Higher Online Course -Edexcel,Higher,../imagepath/higher
+MTH GCSE Maths Higher -OCR,MTH-OGF,MTH GCSE Maths Foundation Online Course -OCR,Foundation,../imagepath/foundation
+MTH GCSE Maths Higher -OCR,MTH-OGH,MTH GCSE Maths Higher Online Course -OCR,Higher,../imagepath/higher
+MTH GCSE Maths Higher -AQA,MTH-AGF,MTH GCSE Maths Foundation Online Course -AQA,Foundation,../imagepath/foundation
+MTH GCSE Maths Higher -AQA,MTH-AGH,MTH GCSE Maths Higher Online Course -AQA,Higher,../imagepath/higher
+MTH Functional Skills,MTH-FS,MTH Functional Skills Online Course ,Foundation,../imagepath/FS
