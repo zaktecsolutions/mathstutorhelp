@@ -19,9 +19,9 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($lessons as $lesson)
+                        @foreach($lessons as $index=>$lesson)
                         <tr>
-                            <th scope="row">{{ $lesson->id }}</th>
+                            <th scope="row">{{ $index+1 }}</th>
                             <td>{{ $lesson->lesson_name }}</td>
                             <td>{{ $lesson->lesson_code }}</td>
 

@@ -119,6 +119,68 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["quiz"],
   data: function data() {
@@ -152,7 +214,9 @@ __webpack_require__.r(__webpack_exports__);
       this.questions.forEach(function (question) {
         answers.push({
           question_id: question.id,
-          answer: question.answer || null
+          answer1: question.answer1 || null,
+          answer2: question.answer2 || null,
+          answer3: question.answer3 || null
         });
       });
       axios.post("/student/quiz/".concat(this.quiz, "/answers"), {
@@ -205,7 +269,7 @@ var render = function() {
             _vm._v(" "),
             _vm.activeQuestion.question_image
               ? _c("div", [
-                  _vm._v("Image : "),
+                  _vm._v("\n      Image :\n      "),
                   _c("img", {
                     staticStyle: { "max-height": "200px" },
                     attrs: {
@@ -223,27 +287,421 @@ var render = function() {
               _vm._v("Mark : " + _vm._s(_vm.activeQuestion.question_mark))
             ]),
             _vm._v(" "),
-            _c("div", [
-              _vm._v("\n      Answer :\n      "),
-              _c("textarea", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.activeQuestion.answer,
-                    expression: "activeQuestion.answer"
-                  }
-                ],
-                domProps: { value: _vm.activeQuestion.answer },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.$set(_vm.activeQuestion, "answer", $event.target.value)
-                  }
-                }
-              })
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-2" }, [_vm._v("Answer :")]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-10" }, [
+                _vm.activeQuestion.question_type == "fraction"
+                  ? _c("div", { staticStyle: { width: "180px" } }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.activeQuestion.answer1,
+                            expression: "activeQuestion.answer1"
+                          }
+                        ],
+                        attrs: { type: "text" },
+                        domProps: { value: _vm.activeQuestion.answer1 },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.activeQuestion,
+                              "answer1",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("div", {
+                        staticStyle: {
+                          border: "1px solid black",
+                          margin: "5px 0"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.activeQuestion.answer2,
+                            expression: "activeQuestion.answer2"
+                          }
+                        ],
+                        attrs: { type: "text" },
+                        domProps: { value: _vm.activeQuestion.answer2 },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.activeQuestion,
+                              "answer2",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      })
+                    ])
+                  : _vm.activeQuestion.question_type == "matrix"
+                  ? _c("div", { staticStyle: { width: "220px" } }, [
+                      _c("div", { staticClass: "row" }, [
+                        _vm._m(0),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass: "col-xs-10",
+                            staticStyle: { width: "180px", padding: "10px 0" }
+                          },
+                          [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.activeQuestion.answer1,
+                                  expression: "activeQuestion.answer1"
+                                }
+                              ],
+                              attrs: { type: "text" },
+                              domProps: { value: _vm.activeQuestion.answer1 },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.activeQuestion,
+                                    "answer1",
+                                    $event.target.value
+                                  )
+                                }
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("div", { staticStyle: { margin: "10px 0" } }),
+                            _vm._v(" "),
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.activeQuestion.answer2,
+                                  expression: "activeQuestion.answer2"
+                                }
+                              ],
+                              attrs: { type: "text" },
+                              domProps: { value: _vm.activeQuestion.answer2 },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.activeQuestion,
+                                    "answer2",
+                                    $event.target.value
+                                  )
+                                }
+                              }
+                            })
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _vm._m(1)
+                      ])
+                    ])
+                  : _vm.activeQuestion.question_type == "mixed"
+                  ? _c("div", [
+                      _c("div", { staticClass: "row" }, [
+                        _c(
+                          "div",
+                          { staticClass: "col-xs-6 align-self-center" },
+                          [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.activeQuestion.answer1,
+                                  expression: "activeQuestion.answer1"
+                                }
+                              ],
+                              staticClass: "mr-2",
+                              attrs: { type: "text" },
+                              domProps: { value: _vm.activeQuestion.answer1 },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.activeQuestion,
+                                    "answer1",
+                                    $event.target.value
+                                  )
+                                }
+                              }
+                            })
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass: "col-xs-6",
+                            staticStyle: { width: "180px", padding: "10px 0" }
+                          },
+                          [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.activeQuestion.answer2,
+                                  expression: "activeQuestion.answer2"
+                                }
+                              ],
+                              attrs: { type: "text" },
+                              domProps: { value: _vm.activeQuestion.answer2 },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.activeQuestion,
+                                    "answer2",
+                                    $event.target.value
+                                  )
+                                }
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("div", {
+                              staticStyle: {
+                                margin: "5px 0",
+                                border: "1px solid black"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.activeQuestion.answer3,
+                                  expression: "activeQuestion.answer3"
+                                }
+                              ],
+                              attrs: { type: "text" },
+                              domProps: { value: _vm.activeQuestion.answer3 },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.activeQuestion,
+                                    "answer3",
+                                    $event.target.value
+                                  )
+                                }
+                              }
+                            })
+                          ]
+                        )
+                      ])
+                    ])
+                  : _vm.activeQuestion.question_type == "2-box"
+                  ? _c("div", [
+                      _c(
+                        "div",
+                        { staticClass: "row", staticStyle: { width: "400px" } },
+                        [
+                          _c("div", { staticClass: "col-xs-6" }, [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.activeQuestion.answer1,
+                                  expression: "activeQuestion.answer1"
+                                }
+                              ],
+                              staticClass: "mr-2",
+                              attrs: { type: "text" },
+                              domProps: { value: _vm.activeQuestion.answer1 },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.activeQuestion,
+                                    "answer1",
+                                    $event.target.value
+                                  )
+                                }
+                              }
+                            })
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "col-xs-6" }, [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.activeQuestion.answer2,
+                                  expression: "activeQuestion.answer2"
+                                }
+                              ],
+                              attrs: { type: "text" },
+                              domProps: { value: _vm.activeQuestion.answer2 },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.activeQuestion,
+                                    "answer2",
+                                    $event.target.value
+                                  )
+                                }
+                              }
+                            })
+                          ])
+                        ]
+                      )
+                    ])
+                  : _vm.activeQuestion.question_type == "3-box"
+                  ? _c("div", [
+                      _c(
+                        "div",
+                        { staticClass: "row", staticStyle: { width: "600px" } },
+                        [
+                          _c("div", { staticClass: "col-xs-4" }, [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.activeQuestion.answer1,
+                                  expression: "activeQuestion.answer1"
+                                }
+                              ],
+                              staticClass: "mr-2",
+                              attrs: { type: "text" },
+                              domProps: { value: _vm.activeQuestion.answer1 },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.activeQuestion,
+                                    "answer1",
+                                    $event.target.value
+                                  )
+                                }
+                              }
+                            })
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "col-xs-4" }, [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.activeQuestion.answer2,
+                                  expression: "activeQuestion.answer2"
+                                }
+                              ],
+                              staticClass: "mr-2",
+                              attrs: { type: "text" },
+                              domProps: { value: _vm.activeQuestion.answer2 },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.activeQuestion,
+                                    "answer2",
+                                    $event.target.value
+                                  )
+                                }
+                              }
+                            })
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "col-xs-4" }, [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.activeQuestion.answer3,
+                                  expression: "activeQuestion.answer3"
+                                }
+                              ],
+                              attrs: { type: "text" },
+                              domProps: { value: _vm.activeQuestion.answer3 },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.activeQuestion,
+                                    "answer3",
+                                    $event.target.value
+                                  )
+                                }
+                              }
+                            })
+                          ])
+                        ]
+                      )
+                    ])
+                  : _c("div", [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.activeQuestion.answer1,
+                            expression: "activeQuestion.answer1"
+                          }
+                        ],
+                        attrs: { type: "text" },
+                        domProps: { value: _vm.activeQuestion.answer1 },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.activeQuestion,
+                              "answer1",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      })
+                    ])
+              ])
             ])
           ])
         : _vm._e(),
@@ -286,7 +744,38 @@ var render = function() {
     1
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-xs-1" }, [
+      _c("div", {
+        staticStyle: {
+          height: "100%",
+          width: "10px",
+          border: "2px solid black",
+          "border-right": "none"
+        }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-xs-1" }, [
+      _c("div", {
+        staticStyle: {
+          height: "100%",
+          width: "10px",
+          border: "2px solid black",
+          "border-left": "none"
+        }
+      })
+    ])
+  }
+]
 render._withStripped = true
 
 

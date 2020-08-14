@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Student;
+
 use App\answer;
 use App\Digitutor;
 use App\Http\Controllers\Controller;
@@ -37,7 +38,7 @@ class StdquizController extends Controller
     public function result($quiz_id)
     {
         $quiz = Quiz::find($quiz_id);
-        $tutoranswers= Answer::find($quiz_id);
+        $tutoranswers = Answer::find($quiz_id);
         $digitutor = auth()->user()->digitutor; // current user didgitutor
         $result = $digitutor->quizresults()->where('quiz_id', $quiz_id)->orderBy('created_at', 'DESC')->first();
         return view('student.stdquiz.result')->with([
@@ -76,8 +77,12 @@ class StdquizController extends Controller
             $rightAnswer = $question->answers()->where('ans_correct', true)->first();
             $status = 0;
             /** Skipped */
-            if (!empty($answer["answer"])) {
-                if ($rightAnswer->ans_body == $answer["answer"]) {
+            if (!empty($answer["answer1"])) {
+                if (
+                    $rightAnswer->ans1_body == $answer["answer1"]
+                    && $rightAnswer->ans2_body == $answer["answer2"]
+                    && $rightAnswer->ans3_body == $answer["answer3"]
+                ) {
                     $status = 1; /*"correct"*/
                     $totalMarks += $question->question_mark;
                     $totalGrades += $question->question_grade;
@@ -86,11 +91,19 @@ class StdquizController extends Controller
                 }
             }
 
+            $text_answer = $answer["answer1"];
+            if (!empty($answer["answer2"])) {
+                $text_answer = $text_answer . ' | ' . $answer["answer2"];
+            }
+            if (!empty($answer["answer3"])) {
+                $text_answer = $text_answer . ' | ' . $answer["answer3"];
+            }
+
             Quizfeedback::create([
                 'quizresult_id' => $result->id,
                 'question_id' => $question->id,
                 'answer_id' => null,
-                'answer' => $answer["answer"],
+                'answer' => $text_answer,
                 'status' => $status,
                 'user_id' => auth()->user()->id,
             ]);
