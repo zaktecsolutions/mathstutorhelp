@@ -1,0 +1,45 @@
+﻿question_name,question_body,question_type,question_image,question_mark,question_grade,question_code,lesson_code,quiz_code
+Times and Timetables,Convert 1.25 hr into hours and minutes ,,,1,2,GFRMLC1TDQ1,GFRMLC1,GFRMTDQ
+Times and Timetables,Convert 35 minutes into hours (2dp),,,1,2,GFRMLC1TDQ2,GFRMLC1,GFRMTDQ
+Times and Timetables,Convert 135 minutes into hours,,,1,2,GFRMLC1TSQ1,GFRMLC1,GFRMTSQ
+Times and Timetables,Brian rides 22km in 2 hours 33 minutes. Calculate his time in hours? ,,,1,2,GFRMLC1TSQ2,GFRMLC1,GFRMTSQ
+Measurement,Convert 20000mm into m,,,1,3,GFRMLC2TDQ1,GFRMLC2,GFRMTDQ
+Measurement,60 tea bags weigh 150 g. How much would 2000 tea bags weigh in kg?,,,1,3,GFRMLC2TDQ2,GFRMLC2,GFRMTDQ
+Measurement,Convert 1.3 m² to cm²,,,1,4,GFRMLC2TDQ3,GFRMLC2,GFRMTDQ
+Measurement,Convert 2.5km into m,,,1,3,GFRMLC2TSQ1,GFRMLC2,GFRMTSQ
+Measurement,There are 350 millilitres of juice in a jug. Change 350 millilitres to litres,,,1,3,GFRMLC2TSQ2,GFRMLC2,GFRMTSQ
+Measurement,Convert 2 cm² to m²,,,1,4,GFRMLC2TSQ3,GFRMLC2,GFRMTSQ
+Ratio 1,Write  5p : £1 as a ratio in its simplest form.,,,1,2,GFRMLC3TDQ1,GFRMLC3,GFRMTDQ
+Ratio 1,There are 50 sweets in a packet.24 of the sweets are mints. The rest of the sweets are toffees.  Write down the ratio of the number of mints to the number of toffees. Give your ratio in its simplest form,,,1,2,GFRMLC3TDQ2,GFRMLC3,GFRMTDQ
+Ratio 1,John has a selection of black and red pens. 1/5 of the pens are red. Write down the ratio of black to red pens,,,1,2,GFRMLC3TDQ3,GFRMLC3,GFRMTDQ
+Ratio 1,Write  40mm : 40 cm  as a ratio in its simplest form.,,,1,2,GFRMLC3TSQ1,GFRMLC3,GFRMTSQ
+Ratio 1,There are 40 students on a school trip. 12 of the students are girls. The rest are boys. Find the ratio of the number of girls to the number of boys. Give your ratio in its simplest form.,,,1,2,GFRMLC3TSQ2,GFRMLC3,GFRMTSQ
+Ratio 1,Simone has a selection of green and red pens. 3/5 of the pens are red. Write down the ratio of green to red pens,,,1,2,GFRMLC3TSQ3,GFRMLC3,GFRMTSQ
+Ratio 2,The ratio of men to women in a sports club is 7 : 11. There are 175 men. How many women are there?,,,1,3,GFRMLC4TDQ1,GFRMLC4,GFRMTDQ
+Ratio 2,A map has a scale of 1 : 20000. What distance does 8km on the map represent in map?,,,1,4,GFRMLC4TDQ2,GFRMLC4,GFRMTDQ
+Ratio 2,John wants to make Pie for 4 people. He has this recipe. 2 apple and 8 ounces sauce. How much apple will John need for 10 people?,,,1,4,GFRMLC4TDQ3,GFRMLC4,GFRMTDQ
+Ratio 2,Find the missing numbers in the ratios     3  :  5  : 7        27: 45 : ?,,,1,3,GFRMLC4TSQ1,GFRMLC4,GFRMTSQ
+Ratio 2,A map has a scale of 1 : 100.   What distance does 2m on the map represent in map?,,,1,4,GFRMLC4TSQ2,GFRMLC4,GFRMTSQ
+Ratio 2,"The recipe to make chocolate cake is shown below:  Chocolate Cake -Serves 3  150ml milk, 200ml double cream, 2 tbsp cocoa powder. How much milk is needed for 7 people?",,,1,4,GFRMLC4TSQ3,GFRMLC4,GFRMTSQ
+Best Buy,Cooking oil is sold in two sizes of cans. A small can contains 4 litres of cooking oil and costs £2.20. A large can contains 6 litres of cooking oil and costs £3.24    Which size of can gives the better value for money? (You must show all your working.) ,option,,1,3,GFRMLC5TDQ1,GFRMLC5,GFRMTDQ
+Best Buy,Which apple  is better value for money? Show all calculations and give reasons for your answer.    Large Apple: 1.2kg for £3.89. Small Apple: 700g for £2.14,option,,1,3,GFRMLC5TDQ2,GFRMLC5,GFRMTDQ
+Best Buy,Which bottle of tomato ketchup is better value for money?  Show all calculations and give reasons for your answer.    Large: 720g = £3.60    Small: 480g = £2.50,option,,1,3,GFRMLC5TSQ1,GFRMLC5,GFRMTSQ
+Best Buy,Water is sold in two sizes:  Small: 1 gal = 75p    Large: 3 gal = £2.24. Which is the better value for money? You must show your working,option,,1,3,GFRMLC5TSQ2,GFRMLC5,GFRMTSQ
+Share Ratio,"Paula, Robert and Karl share £240 in the ratio 4 : 5 : 3. How much money do they each receive? ",,,1,3,GFRMLC6TDQ1,GFRMLC6,GFRMTDQ
+Share Ratio,"Kyle, Geri & Mo buy a bag of sweets. The bag contains 60 sweets. Geri gets double Kyle’s amount. Mo gets the same as Geri. How many sweets do they get each?",,,1,4,GFRMLC6TDQ2,GFRMLC6,GFRMTDQ
+Share Ratio,"A metal alloy block of mass 56 kg consists of copper, zinc and tin in the ratio 4 : 3 : 1. Find the mass of Zinc",,,1,3,GFRMLC6TSQ1,GFRMLC6,GFRMTSQ
+Share Ratio,Three people shared some money in a ratio of 4:3:5. The second person got £21 as a result. How much money did they share? ,,,1,4,GFRMLC6TSQ2,GFRMLC6,GFRMTSQ
+Exchanging Money,"""You plan to go to the United States so you buy £300 worth of dollars. How many dollars do you get in exchange? £ to $ (buying) = 1.469",,,1,3,GFRMLC7TDQ1,GFRMLC7,GFRMTDQ
+Exchanging Money,Tania went to Italy. She changed £325 into euro ( € ) The exchange rate was £1 = € 1.68. Change £325 into euros ( € ),,,1,3,GFRMLC7TDQ2,GFRMLC7,GFRMTDQ
+Exchanging Money,John and Sara are going on holiday to the USA. Sara changes £350 into dollars ($). The exchange rate is £1 = $1.34. Work out how many dollars ($) Sara gets,,,1,3,GFRMLC7TSQ1,GFRMLC7,GFRMTSQ
+Exchanging Money,In the USA Sara sees some jeans costing $67. In London the same make of jeans costs £47.50. The exchange rate is £1 = $1.34. Work out the difference between the cost of the jeans in the USA and in London. Give your answer in pounds (£),,,1,4,GFRMLC7TSQ2,GFRMLC7,GFRMTSQ
+Compound Measures,A car travels 40 miles in ¾ of an hour. Find its average speed in miles per hour. (1dp),,,1,5,GFRMLC8TDQ1,GFRMLC8,GFRMTDQ
+Compound Measures,A plane covers a distance of 1200 miles at a speed of 300 mph. How long will it take to complete this journey.,,,1,4,GFRMLC8TDQ2,GFRMLC8,GFRMTDQ
+Compound Measures,The volume of a gold bar is 100cm³. The density of gold is 19.3 grams per cm3. Work out the mass of the gold bar in Kg (2dp),,,1,5,GFRMLC8TDQ3,GFRMLC8,GFRMTDQ
+Compound Measures,Sally walked for 2½ hours  at an average speed of 2.7 m/sec. Find the distance walked in km .,,,1,4,GFRMLC8TSQ1,GFRMLC8,GFRMTSQ
+Compound Measures,An train travels a distance of 120 miles in 2 hours. What is the train’s speed?,,,1,4,GFRMLC8TSQ2,GFRMLC8,GFRMTSQ
+Compound Measures,What is the volume of a piece of rock that has a mass of 72kg and a density of 9kg/m³,,,1,5,GFRMLC8TSQ3,GFRMLC8,GFRMTSQ
+Scale drawings and maps,The distance from Jacksonville to Smithtown on a map is 4 inches.  How many miles are between these cities   1 inch = 15 miles,,,1,2,GFRMLC9TDQ1,GFRMLC9,GFRMTDQ
+Scale drawings and maps,"A map is drawn to a scale of 1:50,000.  How far along the ground, in km, is 13½ cm on the map",,£ to $ (selling) = 1.720,1,3,GFRMLC9TDQ2,GFRMLC9,GFRMTDQ
+Scale drawings and maps,"On a road map, the distance from Green Bay to Chicago is 11 cm. What is the actual distance between the cities if the map scale is 3 cm = 90 km",,,1,3,GFRMLC9TSQ1,GFRMLC9,GFRMTSQ
+Scale drawings and maps,"From the shopping centre to the canal, there is a distance of 13 cm. How far is this in km 2cm = 1km",,,1,2,GFRMLC9TSQ2,GFRMLC9,GFRMTSQ

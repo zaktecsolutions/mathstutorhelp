@@ -1,0 +1,56 @@
+﻿question_name,question_body,question_type,question_image,question_mark,question_grade,question_code,lesson_code,quiz_code
+Calculator Skills,Calculate the following to 2 d.p. using a calculator  √7.85 + 6.5 ²,,,1,2,GFN2LC1TDQ1,GFN2LC1,GFN2TDQ
+Calculator Skills,Calculate the following to 2 d.p. using a calculator ,,/quiz/questions/images_n2/GFN2LC1TDQ2.png,1,3,GFN2LC1TDQ2,GFN2LC1,GFN2TDQ
+Calculator Skills,Calculate the following to 2 d.p. using a calculator ,,/quiz/questions/images_n2/GFN2LC1TDQ3.png,1,3,GFN2LC1TDQ3,GFN2LC1,GFN2TDQ
+Calculator Skills,Calculate the following to 2 d.p. using a calculator ,,/quiz/questions/images_n2/GFN2LC1TSQ1.png,1,3,GFN2LC1TSQ1,GFN2LC1,GFN2TSQ
+Calculator Skills,Calculate the following to 2 d.p. using a calculator ,,/quiz/questions/images_n2/GFN2LC1TSQ2.png,1,3,GFN2LC1TSQ2,GFN2LC1,GFN2TSQ
+Calculator Skills,Calculate the following to 2 d.p. using a calculator ,mixed,/quiz/questions/images_n2/GFN2LC1TSQ3.png,1,3,GFN2LC1TSQ3,GFN2LC1,GFN2TSQ
+Fraction 1,Simplify the following fractions;  36/42,fraction,,1,2,GFN2LC2TDQ1,GFN2LC2,GFN2TDQ
+Fraction 1,Convert to mixed numbers 11/6,mixed,,1,2,GFN2LC2TDQ2,GFN2LC2,GFN2TDQ
+Fraction 1,Convert to improper fractions; 1 1/5,fraction,,1,2,GFN2LC2TDQ3,GFN2LC2,GFN2TDQ
+Fraction 1,Simplify the following fractions;  81/90,fraction,,1,2,GFN2LC2TSQ1,GFN2LC2,GFN2TSQ
+Fraction 1,Convert to mixed numbers 17/5,mixed,,1,2,GFN2LC2TSQ2,GFN2LC2,GFN2TSQ
+Fraction 1,Convert to improper fractions 5 4/7,fraction,,1,2,GFN2LC2TSQ3,GFN2LC2,GFN2TSQ
+Fraction 2,Calculate the following: 3/5 + 1/5 ,fraction,,1,3,GFN2LC3TDQ1,GFN2LC3,GFN2TDQ
+Fraction 2,Calculate the following: 3/4 + 1/3,mixed,,1,3,GFN2LC3TDQ2,GFN2LC3,GFN2TDQ
+Fraction 2,Calculate the following: 7 2/3 - 5 1/7,mixed,,1,3,GFN2LC3TDQ3,GFN2LC3,GFN2TDQ
+Fraction 2,Calculate the following: 5/6 - 3/5,fraction,,1,3,GFN2LC3TSQ1,GFN2LC3,GFN2TSQ
+Fraction 2,Calculate the following: 2/3 - 4/9,mixed,,1,3,GFN2LC3TSQ2,GFN2LC3,GFN2TSQ
+Fraction 2,Calculate the following: 2 2/5 + 3 1/3,mixed,,1,3,GFN2LC3TSQ3,GFN2LC3,GFN2TSQ
+Fraction 3,Calculate the following: ¾ of 24,,,1,3,GFN2LC4TDQ1,GFN2LC4,GFN2TDQ
+Fraction 3,Calculate the following: 3/8 x 2/3,fraction,,1,3,GFN2LC4TDQ2,GFN2LC4,GFN2TDQ
+Fraction 3,Calculate the following: 1 1/2  ÷  2/3,mixed,,1,3,GFN2LC4TDQ3,GFN2LC4,GFN2TDQ
+Fraction 3,Calculate the following: 3/5 of 55,,,1,3,GFN2LC4TSQ1,GFN2LC4,GFN2TSQ
+Fraction 3,Calculate the following: 2/3 - 4/9,fraction,,1,3,GFN2LC4TSQ2,GFN2LC4,GFN2TSQ
+Fraction 3,Calculate the following: 2 2/5 + 3 1/3,fraction,,1,3,GFN2LC4TSQ3,GFN2LC4,GFN2TSQ
+"Fractions, Decimals and Percentage","Order these decimals, fractions and percentages from smallest to largest      23 % , 0.27, 1/5, 23/50 ",,,1,3,GFN2LC5TDQ1,GFN2LC5,GFN2TDQ
+"Fractions, Decimals and Percentage",Catherine went to Castle. She climbed 40% of the way up the tower. How far has she climbed as a fraction?,fraction,,1,3,GFN2LC5TDQ2,GFN2LC5,GFN2TDQ
+"Fractions, Decimals and Percentage",Convert the fraction to decimal  3/25,,,1,3,GFN2LC5TDQ3,GFN2LC5,GFN2TDQ
+"Fractions, Decimals and Percentage","Write these numbers in order of size. Start with the smallest number. 42% , 4/9, 0.5, 3/7 ",,,1,3,GFN2LC5TSQ1,GFN2LC5,GFN2TSQ
+"Fractions, Decimals and Percentage",Sophia says  0.64 is less then 13/20' Is she correct? ,option,,1,3,GFN2LC5TSQ2,GFN2LC5,GFN2TSQ
+"Fractions, Decimals and Percentage",Convert the percentage to decimal 7%,,,1,3,GFN2LC5TSQ3,GFN2LC5,GFN2TSQ
+Percentage 1,A boy scores 2 out of 50 in a French test. What is his percentage?,,,1,3,GFN2LC6TDQ1,GFN2LC6,GFN2TDQ
+Percentage 1,Tommy saves £500 in his account.  He saves 33% more . How much money did he saved? ,,,1,3,GFN2LC6TDQ2,GFN2LC6,GFN2TDQ
+Percentage 1,A computer accessories shop increased the price of one of its printers from £80 to £100. Find the percentage increase in price ? ,,,1,3,GFN2LC6TDQ3,GFN2LC6,GFN2TDQ
+Percentage 1,A class contains 28 pupils. 13 of the pupils are boys. What % of the pupils are girls? ,,,1,3,GFN2LC6TSQ1,GFN2LC6,GFN2TSQ
+Percentage 1,A shirt costing £80 has 45% off in a sale. How much would you pay for the shirt? ,,,1,3,GFN2LC6TSQ2,GFN2LC6,GFN2TSQ
+Percentage 1,A shopkeeper buys chocolate bars wholesale at a price of 32p per bar. She then sells the chocolate bar in her shop at 50p each What is her percentage profit? ,,,1,3,GFN2LC6TSQ3,GFN2LC6,GFN2TSQ
+Percentage 2,The value of Frank’s house has gone up by 20% since last year. If the house was worth £150 000 last year how much is it worth now? ,,,1,3,GFN2LC7TDQ1,GFN2LC7,GFN2TDQ
+Percentage 2,£4000 is invested at 3% per annum compound interest. Find the total value of the investment. after 2 years. ,,,1,3,GFN2LC7TDQ2,GFN2LC7,GFN2TDQ
+Percentage 2,"A shop is having a sale. Each day, prices are reduced by 20% of the price on the previous day. On the first day of the sale, the price of a cooker is £300.Work out the price of the cooker before the start of the sale. ",,,1,3,GFN2LC7TDQ3,GFN2LC7,GFN2TDQ
+Percentage 2,Decrease £65 by 20%?,,,1,3,GFN2LC7TSQ1,GFN2LC7,GFN2TSQ
+Percentage 2,A TV bought in for £1200 loses 15% of its value each year. What is the value of the TV after two years?  ,,,1,3,GFN2LC7TSQ2,GFN2LC7,GFN2TSQ
+Percentage 2,Alisha paid £43.90 for a skirt that had been reduced by 15% in a sale. What was the original price,,,1,3,GFN2LC7TSQ3,GFN2LC7,GFN2TSQ
+Standard Form ,Convert this number in standard form?  0.00000072,,,1,3,GFN2LC8TDQ1,GFN2LC8,GFN2TDQ
+Standard Form ,Calculate the following:  (8 x 10 ⁴) - (7 x 10 ³),,,1,4,GFN2LC8TDQ2,GFN2LC8,GFN2TDQ
+Standard Form ,Calculate the following: (8.8 x 10 ¹⁰) ÷ (4 x 10 ⁷),,"/quiz/questions/images_n1/GFN1LC8TDQ3.png
+",1,5,GFN2LC8TDQ3,GFN2LC8,GFN2TDQ
+Standard Form ,Convert this number in standard form?  6 003 000 000 ,,,1,3,GFN2LC8TSQ1,GFN2LC8,GFN2TSQ
+Standard Form ,Calculate the following: (2.1 x 10 ⁴) + (3 x 10 ⁵),,,1,4,GFN2LC8TSQ2,GFN2LC8,GFN2TSQ
+Standard Form ,Calculate the following: (5 x 10 ⁻²) x  (2.6 x 10 ¹²)        ,,,1,5,GFN2LC8TSQ3,GFN2LC8,GFN2TSQ
+Limits of Accuracy and Reciprocals ,Find the reciprocal of the following; 2,fraction,,1,3,GFN2LC9TDQ1,GFN2LC9,GFN2TDQ
+Limits of Accuracy and Reciprocals ,Find the reciprocal of the following; 4/5,fraction,,1,3,GFN2LC9TDQ2,GFN2LC9,GFN2TDQ
+Limits of Accuracy and Reciprocals ,"A bag of apples weighs 7kg, correct to the nearest kilogram. What is the least possible weight of the bag of apples?",,,1,3,GFN2LC9TDQ3,GFN2LC9,GFN2TDQ
+Limits of Accuracy and Reciprocals ,Find the reciprocal of the following; 5,fraction,,1,3,GFN2LC9TSQ1,GFN2LC9,GFN2TSQ
+Limits of Accuracy and Reciprocals ,Find the reciprocal of the following; 2/9,fraction,,1,3,GFN2LC9TSQ2,GFN2LC9,GFN2TSQ
+Limits of Accuracy and Reciprocals ,"A silver necklace has a mass of 123 grams, correct to the nearest gram. Write down the least possible mass of the necklace.",,,1,3,GFN2LC9TSQ3,GFN2LC9,GFN2TSQ

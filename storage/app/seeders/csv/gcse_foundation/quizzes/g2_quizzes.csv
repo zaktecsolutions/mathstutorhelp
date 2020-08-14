@@ -1,0 +1,11 @@
+﻿quiz_name,quiz_code,quiz_desc,quiz_type,quiz_subtyp,Topic_id,course_code,lesson_code
+Pythagoras theorem,GFG2LQ1,Pythagoras theorem Lesson Quiz,Lesson , summary,,,GFG2LC1
+Trigonometry,GFG2LQ2,Trigonometry Lesson Quiz,Lesson , summary,,,GFG2LC2
+Construction and Loci,GFG2LQ3,Construction and Loci Lesson Quiz,Lesson , summary,,,GFG2LC3
+Vectors,GFG2LQ4,Vectors Lesson Quiz,Lesson , summary,,,GFG2LC4
+Bearings ,GFG2LQ5,Bearings Lesson Quiz,Lesson , summary,,,GFG2LC5
+Translations,GFG2LQ6,Translations Lesson Quiz,Lesson , summary,,,GFG2LC6
+Reflections,GFG2LQ7,Reflections Lesson Quiz,Lesson , summary,,,GFG2LC7
+Rotations ,GFG2LQ8,Rotations Lesson Quiz,Lesson , summary,,,GFG2LC8
+Enlargements,GFG2LQ9,Enlargements Lesson Quiz,Lesson , summary,,,GFG2LC9
+Similarity and Congruence,GFG2LQ10,Similarity and Congruence Lesson Quiz,Lesson , summary,,,GFG2LC10

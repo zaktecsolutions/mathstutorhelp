@@ -1,0 +1,8 @@
+﻿quiz_name,quiz_code,quiz_desc,quiz_type,quiz_subtyp,Topic_id,course_code,lesson_code
+Probability 1,GFP1LQ1,Probability 1 Lesson Quiz,Lesson , summary,,,GFP1LC1
+Probability 2,GFP1LQ2,Probability 2 Lesson Quiz,Lesson , summary,,,GFP1LC2
+Tree Diagrams,GFP1LQ3,Tree Diagrams Lesson Quiz,Lesson , summary,,,GFP1LC3
+Frequency Trees,GFP1LQ4,Frequency Trees Lesson Quiz,Lesson , summary,,,GFP1LC4
+Venn diagrams,GFP1LQ5,Venn diagrams Lesson Quiz,Lesson , summary,,,GFP1LC5
+Two-way Tables,GFP1LQ6,Two-way Tables Lesson Quiz,Lesson , summary,,,GFP1LC6
+Sampling,GFP1LQ7,Sampling Lesson Quiz,Lesson , summary,,,GFP1LC7

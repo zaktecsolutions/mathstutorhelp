@@ -1,0 +1,11 @@
+﻿quiz_name,quiz_code,quiz_desc,quiz_type,quiz_subtyp,Topic_id,course_code,lesson_code
+Triangles,GFG1LQ1,Triangles Lesson Quiz,Lesson , summary,,,GFG1LC1
+Quadrilaterals,GFG1LQ2,Quadrilaterals Lesson Quiz,Lesson , summary,,,GFG1LC2
+Angle Problems,GFG1LQ3,Angle Problems Lesson Quiz,Lesson , summary,,,GFG1LC3
+Circles,GFG1LQ4,Circles Lesson Quiz,Lesson , summary,,,GFG1LC4
+Polygons,GFG1LQ5,Polygons Lesson Quiz,Lesson , summary,,,GFG1LC5
+Area ,GFG1LQ6,Area Lesson Quiz,Lesson , summary,,,GFG1LC6
+Perimeter,GFG1LQ7,Perimeter Lesson Quiz,Lesson , summary,,,GFG1LC7
+3D Shapes,GFG1LQ8,3D Shapes Lesson Quiz,Lesson , summary,,,GFG1LC8
+Volumes,GFG1LQ9,Volumes Lesson Quiz,Lesson , summary,,,GFG1LC9
+Surface Area,GFG1LQ10,Surface Area Lesson Quiz,Lesson , summary,,,GFG1LC10
