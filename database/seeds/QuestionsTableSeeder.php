@@ -38,6 +38,7 @@ class QuestionsTableSeeder extends Seeder
                     'question_grade' => $record["question_grade"],
                     'question_code' => $record["question_code"],
                     'question_type' => $record["question_type"],
+                    'q_calculator' => $record["q_calculator"] == 'TRUE',
                 ]);
                 $question->quizzes()->attach($quiz);
             }
