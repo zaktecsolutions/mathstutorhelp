@@ -52,6 +52,14 @@ class StdquizController extends Controller
     public function questions($quiz_id)
     {
         $quiz = Quiz::find($quiz_id);
+        foreach ($quiz->questions as &$question) {
+            $right_answer = $question->right_answer();
+            $question->format = [
+                [$right_answer->ans1_b, $right_answer->ans1_a],
+                [$right_answer->ans2_b, $right_answer->ans2_a],
+                [$right_answer->ans3_b, $right_answer->ans3_a]
+            ];
+        }
         return $quiz->questions;
     }
     /**

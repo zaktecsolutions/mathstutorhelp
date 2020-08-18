@@ -181,6 +181,119 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["quiz"],
   data: function data() {
@@ -258,456 +371,1080 @@ var render = function() {
       }),
       _vm._v(" "),
       _vm.activeQuestion
-        ? _c("div", [
-            _c("div", [
-              _vm._v("Name : " + _vm._s(_vm.activeQuestion.question_name))
-            ]),
-            _vm._v(" "),
-            _c("div", [
-              _vm._v("Body : " + _vm._s(_vm.activeQuestion.question_body))
-            ]),
-            _vm._v(" "),
-            _vm.activeQuestion.question_image
-              ? _c("div", [
-                  _vm._v("\n      Image :\n      "),
-                  _c("img", {
-                    staticStyle: { "max-height": "200px" },
-                    attrs: {
-                      src: "/storage" + _vm.activeQuestion.question_image
-                    }
-                  })
-                ])
-              : _vm._e(),
-            _vm._v(" "),
-            _c("div", [
-              _vm._v("Grade : " + _vm._s(_vm.activeQuestion.question_grade))
-            ]),
-            _vm._v(" "),
-            _c("div", [
-              _vm._v("Mark : " + _vm._s(_vm.activeQuestion.question_mark))
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-2" }, [_vm._v("Answer :")]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-10" }, [
-                _vm.activeQuestion.question_type == "fraction"
-                  ? _c("div", { staticStyle: { width: "180px" } }, [
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.activeQuestion.answer1,
-                            expression: "activeQuestion.answer1"
-                          }
-                        ],
-                        attrs: { type: "text" },
-                        domProps: { value: _vm.activeQuestion.answer1 },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.activeQuestion,
-                              "answer1",
-                              $event.target.value
-                            )
-                          }
-                        }
-                      }),
+        ? _c(
+            "div",
+            { staticClass: "card", staticStyle: { "min-height": "40vh" } },
+            [
+              _c("div", { staticClass: "card-body" }, [
+                _c("h5", { staticClass: "card-title" }, [
+                  _vm._v(
+                    "\n        " +
+                      _vm._s(_vm.activeQuestion.question_name) +
+                      "\n        "
+                  ),
+                  _c(
+                    "span",
+                    {
+                      staticClass: "d-inline-block",
+                      staticStyle: { float: "right" }
+                    },
+                    [
+                      _vm.activeQuestion.q_calculator
+                        ? _c("img", {
+                            attrs: { src: "/images/calc.png", height: "20" }
+                          })
+                        : _vm._e(),
                       _vm._v(" "),
-                      _c("div", {
-                        staticStyle: {
-                          border: "1px solid black",
-                          margin: "5px 0"
-                        }
-                      }),
+                      _c("span", { staticClass: "badge badge-primary" }, [
+                        _vm._v(
+                          "Grade : " + _vm._s(_vm.activeQuestion.question_grade)
+                        )
+                      ]),
                       _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.activeQuestion.answer2,
-                            expression: "activeQuestion.answer2"
-                          }
-                        ],
-                        attrs: { type: "text" },
-                        domProps: { value: _vm.activeQuestion.answer2 },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.activeQuestion,
-                              "answer2",
-                              $event.target.value
-                            )
-                          }
-                        }
-                      })
-                    ])
-                  : _vm.activeQuestion.question_type == "matrix"
-                  ? _c("div", { staticStyle: { width: "220px" } }, [
-                      _c("div", { staticClass: "row" }, [
-                        _vm._m(0),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass: "col-xs-10",
-                            staticStyle: { width: "180px", padding: "10px 0" }
-                          },
-                          [
-                            _c("input", {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: _vm.activeQuestion.answer1,
-                                  expression: "activeQuestion.answer1"
-                                }
-                              ],
-                              attrs: { type: "text" },
-                              domProps: { value: _vm.activeQuestion.answer1 },
-                              on: {
-                                input: function($event) {
-                                  if ($event.target.composing) {
-                                    return
-                                  }
-                                  _vm.$set(
-                                    _vm.activeQuestion,
-                                    "answer1",
-                                    $event.target.value
-                                  )
-                                }
-                              }
-                            }),
-                            _vm._v(" "),
-                            _c("div", { staticStyle: { margin: "10px 0" } }),
-                            _vm._v(" "),
-                            _c("input", {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: _vm.activeQuestion.answer2,
-                                  expression: "activeQuestion.answer2"
-                                }
-                              ],
-                              attrs: { type: "text" },
-                              domProps: { value: _vm.activeQuestion.answer2 },
-                              on: {
-                                input: function($event) {
-                                  if ($event.target.composing) {
-                                    return
-                                  }
-                                  _vm.$set(
-                                    _vm.activeQuestion,
-                                    "answer2",
-                                    $event.target.value
-                                  )
-                                }
-                              }
-                            })
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _vm._m(1)
-                      ])
-                    ])
-                  : _vm.activeQuestion.question_type == "mixed"
-                  ? _c("div", [
-                      _c("div", { staticClass: "row" }, [
-                        _c(
-                          "div",
-                          { staticClass: "col-xs-6 align-self-center" },
-                          [
-                            _c("input", {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: _vm.activeQuestion.answer1,
-                                  expression: "activeQuestion.answer1"
-                                }
-                              ],
-                              staticClass: "mr-2",
-                              attrs: { type: "text" },
-                              domProps: { value: _vm.activeQuestion.answer1 },
-                              on: {
-                                input: function($event) {
-                                  if ($event.target.composing) {
-                                    return
-                                  }
-                                  _vm.$set(
-                                    _vm.activeQuestion,
-                                    "answer1",
-                                    $event.target.value
-                                  )
-                                }
-                              }
-                            })
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass: "col-xs-6",
-                            staticStyle: { width: "180px", padding: "10px 0" }
-                          },
-                          [
-                            _c("input", {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: _vm.activeQuestion.answer2,
-                                  expression: "activeQuestion.answer2"
-                                }
-                              ],
-                              attrs: { type: "text" },
-                              domProps: { value: _vm.activeQuestion.answer2 },
-                              on: {
-                                input: function($event) {
-                                  if ($event.target.composing) {
-                                    return
-                                  }
-                                  _vm.$set(
-                                    _vm.activeQuestion,
-                                    "answer2",
-                                    $event.target.value
-                                  )
-                                }
-                              }
-                            }),
-                            _vm._v(" "),
-                            _c("div", {
-                              staticStyle: {
-                                margin: "5px 0",
-                                border: "1px solid black"
-                              }
-                            }),
-                            _vm._v(" "),
-                            _c("input", {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: _vm.activeQuestion.answer3,
-                                  expression: "activeQuestion.answer3"
-                                }
-                              ],
-                              attrs: { type: "text" },
-                              domProps: { value: _vm.activeQuestion.answer3 },
-                              on: {
-                                input: function($event) {
-                                  if ($event.target.composing) {
-                                    return
-                                  }
-                                  _vm.$set(
-                                    _vm.activeQuestion,
-                                    "answer3",
-                                    $event.target.value
-                                  )
-                                }
-                              }
-                            })
-                          ]
+                      _c("span", { staticClass: "badge badge-secondary" }, [
+                        _vm._v(
+                          "Mark : " + _vm._s(_vm.activeQuestion.question_mark)
                         )
                       ])
-                    ])
-                  : _vm.activeQuestion.question_type == "2-box"
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "card-text" }, [
+                  _vm._v(_vm._s(_vm.activeQuestion.question_body))
+                ]),
+                _vm._v(" "),
+                _vm.activeQuestion.question_image
                   ? _c("div", [
-                      _c(
-                        "div",
-                        { staticClass: "row", staticStyle: { width: "400px" } },
-                        [
-                          _c("div", { staticClass: "col-xs-6" }, [
-                            _c("input", {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: _vm.activeQuestion.answer1,
-                                  expression: "activeQuestion.answer1"
-                                }
-                              ],
-                              staticClass: "mr-2",
-                              attrs: { type: "text" },
-                              domProps: { value: _vm.activeQuestion.answer1 },
-                              on: {
-                                input: function($event) {
-                                  if ($event.target.composing) {
-                                    return
-                                  }
-                                  _vm.$set(
-                                    _vm.activeQuestion,
-                                    "answer1",
-                                    $event.target.value
-                                  )
-                                }
-                              }
-                            })
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "col-xs-6" }, [
-                            _c("input", {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: _vm.activeQuestion.answer2,
-                                  expression: "activeQuestion.answer2"
-                                }
-                              ],
-                              attrs: { type: "text" },
-                              domProps: { value: _vm.activeQuestion.answer2 },
-                              on: {
-                                input: function($event) {
-                                  if ($event.target.composing) {
-                                    return
-                                  }
-                                  _vm.$set(
-                                    _vm.activeQuestion,
-                                    "answer2",
-                                    $event.target.value
-                                  )
-                                }
-                              }
-                            })
-                          ])
-                        ]
-                      )
-                    ])
-                  : _vm.activeQuestion.question_type == "3-box"
-                  ? _c("div", [
-                      _c(
-                        "div",
-                        { staticClass: "row", staticStyle: { width: "600px" } },
-                        [
-                          _c("div", { staticClass: "col-xs-4" }, [
-                            _c("input", {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: _vm.activeQuestion.answer1,
-                                  expression: "activeQuestion.answer1"
-                                }
-                              ],
-                              staticClass: "mr-2",
-                              attrs: { type: "text" },
-                              domProps: { value: _vm.activeQuestion.answer1 },
-                              on: {
-                                input: function($event) {
-                                  if ($event.target.composing) {
-                                    return
-                                  }
-                                  _vm.$set(
-                                    _vm.activeQuestion,
-                                    "answer1",
-                                    $event.target.value
-                                  )
-                                }
-                              }
-                            })
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "col-xs-4" }, [
-                            _c("input", {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: _vm.activeQuestion.answer2,
-                                  expression: "activeQuestion.answer2"
-                                }
-                              ],
-                              staticClass: "mr-2",
-                              attrs: { type: "text" },
-                              domProps: { value: _vm.activeQuestion.answer2 },
-                              on: {
-                                input: function($event) {
-                                  if ($event.target.composing) {
-                                    return
-                                  }
-                                  _vm.$set(
-                                    _vm.activeQuestion,
-                                    "answer2",
-                                    $event.target.value
-                                  )
-                                }
-                              }
-                            })
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "col-xs-4" }, [
-                            _c("input", {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: _vm.activeQuestion.answer3,
-                                  expression: "activeQuestion.answer3"
-                                }
-                              ],
-                              attrs: { type: "text" },
-                              domProps: { value: _vm.activeQuestion.answer3 },
-                              on: {
-                                input: function($event) {
-                                  if ($event.target.composing) {
-                                    return
-                                  }
-                                  _vm.$set(
-                                    _vm.activeQuestion,
-                                    "answer3",
-                                    $event.target.value
-                                  )
-                                }
-                              }
-                            })
-                          ])
-                        ]
-                      )
-                    ])
-                  : _c("div", [
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.activeQuestion.answer1,
-                            expression: "activeQuestion.answer1"
-                          }
-                        ],
-                        attrs: { type: "text" },
-                        domProps: { value: _vm.activeQuestion.answer1 },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.activeQuestion,
-                              "answer1",
-                              $event.target.value
-                            )
-                          }
+                      _c("img", {
+                        staticStyle: { "max-height": "200px" },
+                        attrs: {
+                          src: "/storage" + _vm.activeQuestion.question_image
                         }
                       })
                     ])
+                  : _vm._e(),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-2" }, [_vm._v("Answer :")]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-10" }, [
+                    _vm.activeQuestion.question_type == "fraction"
+                      ? _c("div", { staticStyle: { width: "180px" } }, [
+                          _c("div", { staticClass: "input-group" }, [
+                            _vm.activeQuestion.format[0][0]
+                              ? _c(
+                                  "div",
+                                  { staticClass: "input-group-prepend" },
+                                  [
+                                    _c(
+                                      "span",
+                                      { staticClass: "input-group-text" },
+                                      [
+                                        _vm._v(
+                                          _vm._s(
+                                            _vm.activeQuestion.format[0][0]
+                                          )
+                                        )
+                                      ]
+                                    )
+                                  ]
+                                )
+                              : _vm._e(),
+                            _vm._v(" "),
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.activeQuestion.answer1,
+                                  expression: "activeQuestion.answer1"
+                                }
+                              ],
+                              attrs: { type: "text" },
+                              domProps: { value: _vm.activeQuestion.answer1 },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.activeQuestion,
+                                    "answer1",
+                                    $event.target.value
+                                  )
+                                }
+                              }
+                            }),
+                            _vm._v(" "),
+                            _vm.activeQuestion.format[0][1]
+                              ? _c(
+                                  "div",
+                                  { staticClass: "input-group-append" },
+                                  [
+                                    _c(
+                                      "span",
+                                      { staticClass: "input-group-text" },
+                                      [
+                                        _vm._v(
+                                          _vm._s(
+                                            _vm.activeQuestion.format[0][1]
+                                          )
+                                        )
+                                      ]
+                                    )
+                                  ]
+                                )
+                              : _vm._e()
+                          ]),
+                          _vm._v(" "),
+                          _c("div", {
+                            staticStyle: {
+                              border: "1px solid black",
+                              margin: "5px 0"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "input-group" }, [
+                            _vm.activeQuestion.format[1][0]
+                              ? _c(
+                                  "div",
+                                  { staticClass: "input-group-prepend" },
+                                  [
+                                    _c(
+                                      "span",
+                                      { staticClass: "input-group-text" },
+                                      [
+                                        _vm._v(
+                                          _vm._s(
+                                            _vm.activeQuestion.format[1][0]
+                                          )
+                                        )
+                                      ]
+                                    )
+                                  ]
+                                )
+                              : _vm._e(),
+                            _vm._v(" "),
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.activeQuestion.answer2,
+                                  expression: "activeQuestion.answer2"
+                                }
+                              ],
+                              attrs: { type: "text" },
+                              domProps: { value: _vm.activeQuestion.answer2 },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.activeQuestion,
+                                    "answer2",
+                                    $event.target.value
+                                  )
+                                }
+                              }
+                            }),
+                            _vm._v(" "),
+                            _vm.activeQuestion.format[1][1]
+                              ? _c(
+                                  "div",
+                                  { staticClass: "input-group-append" },
+                                  [
+                                    _c(
+                                      "span",
+                                      { staticClass: "input-group-text" },
+                                      [
+                                        _vm._v(
+                                          _vm._s(
+                                            _vm.activeQuestion.format[1][1]
+                                          )
+                                        )
+                                      ]
+                                    )
+                                  ]
+                                )
+                              : _vm._e()
+                          ])
+                        ])
+                      : _vm.activeQuestion.question_type == "matrix"
+                      ? _c("div", { staticStyle: { width: "220px" } }, [
+                          _c("div", { staticClass: "row" }, [
+                            _vm._m(0),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              {
+                                staticClass: "col-xs-10",
+                                staticStyle: {
+                                  width: "180px",
+                                  padding: "10px 0"
+                                }
+                              },
+                              [
+                                _c("div", { staticClass: "input-group" }, [
+                                  _vm.activeQuestion.format[0][0]
+                                    ? _c(
+                                        "div",
+                                        { staticClass: "input-group-prepend" },
+                                        [
+                                          _c(
+                                            "span",
+                                            { staticClass: "input-group-text" },
+                                            [
+                                              _vm._v(
+                                                _vm._s(
+                                                  _vm.activeQuestion
+                                                    .format[0][0]
+                                                )
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    : _vm._e(),
+                                  _vm._v(" "),
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: _vm.activeQuestion.answer1,
+                                        expression: "activeQuestion.answer1"
+                                      }
+                                    ],
+                                    attrs: { type: "text" },
+                                    domProps: {
+                                      value: _vm.activeQuestion.answer1
+                                    },
+                                    on: {
+                                      input: function($event) {
+                                        if ($event.target.composing) {
+                                          return
+                                        }
+                                        _vm.$set(
+                                          _vm.activeQuestion,
+                                          "answer1",
+                                          $event.target.value
+                                        )
+                                      }
+                                    }
+                                  }),
+                                  _vm._v(" "),
+                                  _vm.activeQuestion.format[0][1]
+                                    ? _c(
+                                        "div",
+                                        { staticClass: "input-group-append" },
+                                        [
+                                          _c(
+                                            "span",
+                                            { staticClass: "input-group-text" },
+                                            [
+                                              _vm._v(
+                                                _vm._s(
+                                                  _vm.activeQuestion
+                                                    .format[0][1]
+                                                )
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    : _vm._e()
+                                ]),
+                                _vm._v(" "),
+                                _c("div", {
+                                  staticStyle: { margin: "10px 0" }
+                                }),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "input-group" }, [
+                                  _vm.activeQuestion.format[1][0]
+                                    ? _c(
+                                        "div",
+                                        { staticClass: "input-group-prepend" },
+                                        [
+                                          _c(
+                                            "span",
+                                            { staticClass: "input-group-text" },
+                                            [
+                                              _vm._v(
+                                                _vm._s(
+                                                  _vm.activeQuestion
+                                                    .format[1][0]
+                                                )
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    : _vm._e(),
+                                  _vm._v(" "),
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: _vm.activeQuestion.answer2,
+                                        expression: "activeQuestion.answer2"
+                                      }
+                                    ],
+                                    attrs: { type: "text" },
+                                    domProps: {
+                                      value: _vm.activeQuestion.answer2
+                                    },
+                                    on: {
+                                      input: function($event) {
+                                        if ($event.target.composing) {
+                                          return
+                                        }
+                                        _vm.$set(
+                                          _vm.activeQuestion,
+                                          "answer2",
+                                          $event.target.value
+                                        )
+                                      }
+                                    }
+                                  }),
+                                  _vm._v(" "),
+                                  _vm.activeQuestion.format[1][1]
+                                    ? _c(
+                                        "div",
+                                        { staticClass: "input-group-append" },
+                                        [
+                                          _c(
+                                            "span",
+                                            { staticClass: "input-group-text" },
+                                            [
+                                              _vm._v(
+                                                _vm._s(
+                                                  _vm.activeQuestion
+                                                    .format[1][1]
+                                                )
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    : _vm._e()
+                                ])
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _vm._m(1)
+                          ])
+                        ])
+                      : _vm.activeQuestion.question_type == "mixed"
+                      ? _c("div", [
+                          _c("div", { staticClass: "row" }, [
+                            _c(
+                              "div",
+                              { staticClass: "col-xs-6 align-self-center" },
+                              [
+                                _c("div", { staticClass: "input-group mr-2" }, [
+                                  _vm.activeQuestion.format[0][0]
+                                    ? _c(
+                                        "div",
+                                        { staticClass: "input-group-prepend" },
+                                        [
+                                          _c(
+                                            "span",
+                                            { staticClass: "input-group-text" },
+                                            [
+                                              _vm._v(
+                                                _vm._s(
+                                                  _vm.activeQuestion
+                                                    .format[0][0]
+                                                )
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    : _vm._e(),
+                                  _vm._v(" "),
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: _vm.activeQuestion.answer1,
+                                        expression: "activeQuestion.answer1"
+                                      }
+                                    ],
+                                    attrs: { type: "text" },
+                                    domProps: {
+                                      value: _vm.activeQuestion.answer1
+                                    },
+                                    on: {
+                                      input: function($event) {
+                                        if ($event.target.composing) {
+                                          return
+                                        }
+                                        _vm.$set(
+                                          _vm.activeQuestion,
+                                          "answer1",
+                                          $event.target.value
+                                        )
+                                      }
+                                    }
+                                  }),
+                                  _vm._v(" "),
+                                  _vm.activeQuestion.format[0][1]
+                                    ? _c(
+                                        "div",
+                                        { staticClass: "input-group-append" },
+                                        [
+                                          _c(
+                                            "span",
+                                            { staticClass: "input-group-text" },
+                                            [
+                                              _vm._v(
+                                                _vm._s(
+                                                  _vm.activeQuestion
+                                                    .format[0][1]
+                                                )
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    : _vm._e()
+                                ])
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              {
+                                staticClass: "col-xs-6",
+                                staticStyle: {
+                                  width: "180px",
+                                  padding: "10px 0"
+                                }
+                              },
+                              [
+                                _c("div", { staticClass: "input-group" }, [
+                                  _vm.activeQuestion.format[1][0]
+                                    ? _c(
+                                        "div",
+                                        { staticClass: "input-group-prepend" },
+                                        [
+                                          _c(
+                                            "span",
+                                            { staticClass: "input-group-text" },
+                                            [
+                                              _vm._v(
+                                                _vm._s(
+                                                  _vm.activeQuestion
+                                                    .format[1][0]
+                                                )
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    : _vm._e(),
+                                  _vm._v(" "),
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: _vm.activeQuestion.answer2,
+                                        expression: "activeQuestion.answer2"
+                                      }
+                                    ],
+                                    attrs: { type: "text" },
+                                    domProps: {
+                                      value: _vm.activeQuestion.answer2
+                                    },
+                                    on: {
+                                      input: function($event) {
+                                        if ($event.target.composing) {
+                                          return
+                                        }
+                                        _vm.$set(
+                                          _vm.activeQuestion,
+                                          "answer2",
+                                          $event.target.value
+                                        )
+                                      }
+                                    }
+                                  }),
+                                  _vm._v(" "),
+                                  _vm.activeQuestion.format[1][1]
+                                    ? _c(
+                                        "div",
+                                        { staticClass: "input-group-append" },
+                                        [
+                                          _c(
+                                            "span",
+                                            { staticClass: "input-group-text" },
+                                            [
+                                              _vm._v(
+                                                _vm._s(
+                                                  _vm.activeQuestion
+                                                    .format[1][1]
+                                                )
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    : _vm._e()
+                                ]),
+                                _vm._v(" "),
+                                _c("div", {
+                                  staticStyle: {
+                                    margin: "5px 0",
+                                    border: "1px solid black"
+                                  }
+                                }),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "input-group" }, [
+                                  _vm.activeQuestion.format[2][0]
+                                    ? _c(
+                                        "div",
+                                        { staticClass: "input-group-prepend" },
+                                        [
+                                          _c(
+                                            "span",
+                                            { staticClass: "input-group-text" },
+                                            [
+                                              _vm._v(
+                                                _vm._s(
+                                                  _vm.activeQuestion
+                                                    .format[2][0]
+                                                )
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    : _vm._e(),
+                                  _vm._v(" "),
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: _vm.activeQuestion.answer3,
+                                        expression: "activeQuestion.answer3"
+                                      }
+                                    ],
+                                    attrs: { type: "text" },
+                                    domProps: {
+                                      value: _vm.activeQuestion.answer3
+                                    },
+                                    on: {
+                                      input: function($event) {
+                                        if ($event.target.composing) {
+                                          return
+                                        }
+                                        _vm.$set(
+                                          _vm.activeQuestion,
+                                          "answer3",
+                                          $event.target.value
+                                        )
+                                      }
+                                    }
+                                  }),
+                                  _vm._v(" "),
+                                  _vm.activeQuestion.format[2][1]
+                                    ? _c(
+                                        "div",
+                                        { staticClass: "input-group-append" },
+                                        [
+                                          _c(
+                                            "span",
+                                            { staticClass: "input-group-text" },
+                                            [
+                                              _vm._v(
+                                                _vm._s(
+                                                  _vm.activeQuestion
+                                                    .format[2][1]
+                                                )
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    : _vm._e()
+                                ])
+                              ]
+                            )
+                          ])
+                        ])
+                      : _vm.activeQuestion.question_type == "2-box"
+                      ? _c("div", [
+                          _c(
+                            "div",
+                            {
+                              staticClass: "row",
+                              staticStyle: { width: "400px" }
+                            },
+                            [
+                              _c("div", { staticClass: "col-xs-6" }, [
+                                _c("div", { staticClass: "input-group mr-2" }, [
+                                  _vm.activeQuestion.format[0][0]
+                                    ? _c(
+                                        "div",
+                                        { staticClass: "input-group-prepend" },
+                                        [
+                                          _c(
+                                            "span",
+                                            { staticClass: "input-group-text" },
+                                            [
+                                              _vm._v(
+                                                _vm._s(
+                                                  _vm.activeQuestion
+                                                    .format[0][0]
+                                                )
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    : _vm._e(),
+                                  _vm._v(" "),
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: _vm.activeQuestion.answer1,
+                                        expression: "activeQuestion.answer1"
+                                      }
+                                    ],
+                                    attrs: { type: "text" },
+                                    domProps: {
+                                      value: _vm.activeQuestion.answer1
+                                    },
+                                    on: {
+                                      input: function($event) {
+                                        if ($event.target.composing) {
+                                          return
+                                        }
+                                        _vm.$set(
+                                          _vm.activeQuestion,
+                                          "answer1",
+                                          $event.target.value
+                                        )
+                                      }
+                                    }
+                                  }),
+                                  _vm._v(" "),
+                                  _vm.activeQuestion.format[0][1]
+                                    ? _c(
+                                        "div",
+                                        { staticClass: "input-group-append" },
+                                        [
+                                          _c(
+                                            "span",
+                                            { staticClass: "input-group-text" },
+                                            [
+                                              _vm._v(
+                                                _vm._s(
+                                                  _vm.activeQuestion
+                                                    .format[0][1]
+                                                )
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    : _vm._e()
+                                ])
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-xs-6" }, [
+                                _c("div", { staticClass: "input-group" }, [
+                                  _vm.activeQuestion.format[1][0]
+                                    ? _c(
+                                        "div",
+                                        { staticClass: "input-group-prepend" },
+                                        [
+                                          _c(
+                                            "span",
+                                            { staticClass: "input-group-text" },
+                                            [
+                                              _vm._v(
+                                                _vm._s(
+                                                  _vm.activeQuestion
+                                                    .format[1][0]
+                                                )
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    : _vm._e(),
+                                  _vm._v(" "),
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: _vm.activeQuestion.answer2,
+                                        expression: "activeQuestion.answer2"
+                                      }
+                                    ],
+                                    attrs: { type: "text" },
+                                    domProps: {
+                                      value: _vm.activeQuestion.answer2
+                                    },
+                                    on: {
+                                      input: function($event) {
+                                        if ($event.target.composing) {
+                                          return
+                                        }
+                                        _vm.$set(
+                                          _vm.activeQuestion,
+                                          "answer2",
+                                          $event.target.value
+                                        )
+                                      }
+                                    }
+                                  }),
+                                  _vm._v(" "),
+                                  _vm.activeQuestion.format[1][1]
+                                    ? _c(
+                                        "div",
+                                        { staticClass: "input-group-append" },
+                                        [
+                                          _c(
+                                            "span",
+                                            { staticClass: "input-group-text" },
+                                            [
+                                              _vm._v(
+                                                _vm._s(
+                                                  _vm.activeQuestion
+                                                    .format[1][1]
+                                                )
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    : _vm._e()
+                                ])
+                              ])
+                            ]
+                          )
+                        ])
+                      : _vm.activeQuestion.question_type == "3-box"
+                      ? _c("div", [
+                          _c(
+                            "div",
+                            {
+                              staticClass: "row",
+                              staticStyle: { width: "600px" }
+                            },
+                            [
+                              _c("div", { staticClass: "col-xs-4" }, [
+                                _c("div", { staticClass: "input-group mr-2" }, [
+                                  _vm.activeQuestion.format[0][0]
+                                    ? _c(
+                                        "div",
+                                        { staticClass: "input-group-prepend" },
+                                        [
+                                          _c(
+                                            "span",
+                                            { staticClass: "input-group-text" },
+                                            [
+                                              _vm._v(
+                                                _vm._s(
+                                                  _vm.activeQuestion
+                                                    .format[0][0]
+                                                )
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    : _vm._e(),
+                                  _vm._v(" "),
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: _vm.activeQuestion.answer1,
+                                        expression: "activeQuestion.answer1"
+                                      }
+                                    ],
+                                    attrs: { type: "text" },
+                                    domProps: {
+                                      value: _vm.activeQuestion.answer1
+                                    },
+                                    on: {
+                                      input: function($event) {
+                                        if ($event.target.composing) {
+                                          return
+                                        }
+                                        _vm.$set(
+                                          _vm.activeQuestion,
+                                          "answer1",
+                                          $event.target.value
+                                        )
+                                      }
+                                    }
+                                  }),
+                                  _vm._v(" "),
+                                  _vm.activeQuestion.format[0][1]
+                                    ? _c(
+                                        "div",
+                                        { staticClass: "input-group-append" },
+                                        [
+                                          _c(
+                                            "span",
+                                            { staticClass: "input-group-text" },
+                                            [
+                                              _vm._v(
+                                                _vm._s(
+                                                  _vm.activeQuestion
+                                                    .format[0][1]
+                                                )
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    : _vm._e()
+                                ])
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-xs-4" }, [
+                                _c("div", { staticClass: "input-group mr-2" }, [
+                                  _vm.activeQuestion.format[1][0]
+                                    ? _c(
+                                        "div",
+                                        { staticClass: "input-group-prepend" },
+                                        [
+                                          _c(
+                                            "span",
+                                            { staticClass: "input-group-text" },
+                                            [
+                                              _vm._v(
+                                                _vm._s(
+                                                  _vm.activeQuestion
+                                                    .format[1][0]
+                                                )
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    : _vm._e(),
+                                  _vm._v(" "),
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: _vm.activeQuestion.answer2,
+                                        expression: "activeQuestion.answer2"
+                                      }
+                                    ],
+                                    attrs: { type: "text" },
+                                    domProps: {
+                                      value: _vm.activeQuestion.answer2
+                                    },
+                                    on: {
+                                      input: function($event) {
+                                        if ($event.target.composing) {
+                                          return
+                                        }
+                                        _vm.$set(
+                                          _vm.activeQuestion,
+                                          "answer2",
+                                          $event.target.value
+                                        )
+                                      }
+                                    }
+                                  }),
+                                  _vm._v(" "),
+                                  _vm.activeQuestion.format[1][1]
+                                    ? _c(
+                                        "div",
+                                        { staticClass: "input-group-append" },
+                                        [
+                                          _c(
+                                            "span",
+                                            { staticClass: "input-group-text" },
+                                            [
+                                              _vm._v(
+                                                _vm._s(
+                                                  _vm.activeQuestion
+                                                    .format[1][1]
+                                                )
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    : _vm._e()
+                                ])
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-xs-4" }, [
+                                _c("div", { staticClass: "input-group" }, [
+                                  _vm.activeQuestion.format[2][0]
+                                    ? _c(
+                                        "div",
+                                        { staticClass: "input-group-prepend" },
+                                        [
+                                          _c(
+                                            "span",
+                                            { staticClass: "input-group-text" },
+                                            [
+                                              _vm._v(
+                                                _vm._s(
+                                                  _vm.activeQuestion
+                                                    .format[2][0]
+                                                )
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    : _vm._e(),
+                                  _vm._v(" "),
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: _vm.activeQuestion.answer3,
+                                        expression: "activeQuestion.answer3"
+                                      }
+                                    ],
+                                    attrs: { type: "text" },
+                                    domProps: {
+                                      value: _vm.activeQuestion.answer3
+                                    },
+                                    on: {
+                                      input: function($event) {
+                                        if ($event.target.composing) {
+                                          return
+                                        }
+                                        _vm.$set(
+                                          _vm.activeQuestion,
+                                          "answer3",
+                                          $event.target.value
+                                        )
+                                      }
+                                    }
+                                  }),
+                                  _vm._v(" "),
+                                  _vm.activeQuestion.format[2][1]
+                                    ? _c(
+                                        "div",
+                                        { staticClass: "input-group-append" },
+                                        [
+                                          _c(
+                                            "span",
+                                            { staticClass: "input-group-text" },
+                                            [
+                                              _vm._v(
+                                                _vm._s(
+                                                  _vm.activeQuestion
+                                                    .format[2][1]
+                                                )
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    : _vm._e()
+                                ])
+                              ])
+                            ]
+                          )
+                        ])
+                      : _c("div", [
+                          _c("div", { staticClass: "input-group" }, [
+                            _vm.activeQuestion.format[0][0]
+                              ? _c(
+                                  "div",
+                                  { staticClass: "input-group-prepend" },
+                                  [
+                                    _c(
+                                      "span",
+                                      { staticClass: "input-group-text" },
+                                      [
+                                        _vm._v(
+                                          _vm._s(
+                                            _vm.activeQuestion.format[0][0]
+                                          )
+                                        )
+                                      ]
+                                    )
+                                  ]
+                                )
+                              : _vm._e(),
+                            _vm._v(" "),
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.activeQuestion.answer1,
+                                  expression: "activeQuestion.answer1"
+                                }
+                              ],
+                              attrs: { type: "text" },
+                              domProps: { value: _vm.activeQuestion.answer1 },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.activeQuestion,
+                                    "answer1",
+                                    $event.target.value
+                                  )
+                                }
+                              }
+                            }),
+                            _vm._v(" "),
+                            _vm.activeQuestion.format[0][1]
+                              ? _c(
+                                  "div",
+                                  { staticClass: "input-group-append" },
+                                  [
+                                    _c(
+                                      "span",
+                                      { staticClass: "input-group-text" },
+                                      [
+                                        _vm._v(
+                                          _vm._s(
+                                            _vm.activeQuestion.format[0][1]
+                                          )
+                                        )
+                                      ]
+                                    )
+                                  ]
+                                )
+                              : _vm._e()
+                          ])
+                        ])
+                  ])
+                ])
               ])
-            ])
-          ])
+            ]
+          )
         : _vm._e(),
       _vm._v(" "),
       _c(
         "div",
+        { staticClass: "mt-2" },
         [
           _vm.currentIndex > 0
             ? _c("b-button", { on: { click: _vm.previous } }, [
@@ -1003,7 +1740,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\abdullah\Google Drive\sherazGoogle\computerscience\mth\resources\js\mixins.js */"./resources/js/mixins.js");
+module.exports = __webpack_require__(/*! E:\PHP\Laravel\mth\resources\js\mixins.js */"./resources/js/mixins.js");
 
 
 /***/ })
