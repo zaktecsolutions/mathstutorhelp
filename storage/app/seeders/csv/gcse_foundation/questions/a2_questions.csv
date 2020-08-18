@@ -1,31 +1,31 @@
-﻿question_name,question_body,question_type,question_image,question_mark,question_grade,question_code,lesson_code,quiz_code
-Sequences,Write the first term of the following sequence:       3n – 7,,,1,3,GFA2LC1TDQ1,GFA2LC1,GFA2TDQ
-Sequences,"Find the nth term rule for the following:      11,  9,   7,   5,   3,   1,   -1",,,1,4,GFA2LC1TDQ2,GFA2LC1,GFA2TDQ
-Sequences,Write the first terms of the following sequence:       n² – 1,,,1,3,GFA2LC1TSQ1,GFA2LC1,GFA2TSQ
-Sequences,"Find the nth term rule for the following:    12,   8,   4,   0…",,,1,4,GFA2LC1TSQ2,GFA2LC1,GFA2TSQ
-Straight-line graphs ,Complete the missing value in the table,,/quiz/questions/images_a2/GFA2LC2TDQ1.png,1,3,GFA2LC2TDQ1,GFA2LC2,GFA2TDQ
-Straight-line graphs ,What is the  gradient in the following equation:       y = 2 – 3x,,,1,4,GFA2LC2TDQ2,GFA2LC2,GFA2TDQ
-Straight-line graphs ,Calculating the Equation of a Line,,/quiz/questions/images_a2/GFA2LC2TDQ3.png,1,5,GFA2LC2TDQ3,GFA2LC2,GFA2TDQ
-Straight-line graphs ,Complete the missing value in the table,,/quiz/questions/images_a2/GFA2LC2TSQ1.png,1,3,GFA2LC2TSQ1,GFA2LC2,GFA2TSQ
-Straight-line graphs ,"What is the  equations of the line with the following gradient and y–intercept :      Gradient = –2      y-intercept = (0, –7)",,,1,4,GFA2LC2TSQ2,GFA2LC2,GFA2TSQ
-Straight-line graphs ,Calculating the Equation of a Line,,/quiz/questions/images_a2/GFA2LC2TSQ3.png,1,5,GFA2LC2TSQ3,GFA2LC2,GFA2TSQ
-Simultaneous Equations,Solve the following simultaneous equations:   5x + y = 22   :      2x – y =  6,,,1,5,GFA2LC3TDQ1,GFA2LC3,GFA2TDQ
-Simultaneous Equations,Solve the following simultaneous equations:           3x  -  2y = 7      :           5x  + 3y = 37,,,1,5,GFA2LC3TDQ2,GFA2LC3,GFA2TDQ
-Simultaneous Equations,Solve the following simultaneous equations:     6x + y =  15     :     4x + y = 11,,,1,5,GFA2LC3TSQ1,GFA2LC3,GFA2TSQ
-Simultaneous Equations,Solve the following simultaneous equations:                 4x - 2y = 8          :       3x +  6y = 21,,,1,5,GFA2LC3TSQ2,GFA2LC3,GFA2TSQ
-Graphs of Quadratics,Complete the missing value in the table for the following equations: y = x² + 5x + 2,,/quiz/questions/images_a2/GFA2LC4TDQ1.png,1,4,GFA2LC4TDQ1,GFA2LC4,GFA2TDQ
-Graphs of Quadratics,Complete the missing value in the table for the following equations:  y = 2x² – 4x + 1,,/quiz/questions/images_a2/GFA2LC4TDQ2.png,1,4,GFA2LC4TDQ2,GFA2LC4,GFA2TDQ
-Graphs of Quadratics,Complete the missing value in the table for the following equations:   y = x² + 1,,/quiz/questions/images_a2/GFA2LC4TSQ1.png,1,4,GFA2LC4TSQ1,GFA2LC4,GFA2TSQ
-Graphs of Quadratics,Complete the missing value in the table for the following equations:    y = x² - 2x - 8,,/quiz/questions/images_a2/GFA2LC4TSQ2.png,1,4,GFA2LC4TSQ2,GFA2LC4,GFA2TSQ
-Solving Quadratic Equations,Solve the quadratic equation using factorization:     x²+10x+24=0,,,1,5,GFA2LC5TDQ1,GFA2LC5,GFA2TDQ
-Solving Quadratic Equations,Solve the equation: 9x²+15x+5=0;  Give your answer correct to 2 decimal places. ( Use The Quadratic Formula ),,,1,5,GFA2LC5TDQ2,GFA2LC5,GFA2TDQ
-Solving Quadratic Equations,Solve the quadratic equation using factorization :  x²−10x+25=0,,,1,5,GFA2LC5TSQ1,GFA2LC5,GFA2TSQ
-Solving Quadratic Equations,Solve the equation: 3x²+8x+2=0:  Give your answer correct to 2 decimal places. ( Use The Quadratic Formula ),,,1,5,GFA2LC5TSQ2,GFA2LC5,GFA2TSQ
-Real-life Graphs,Paul was travelling in his car to a meeting. This distance–time graph illustrates his journey. At what average speed was he travelling over the first hour,,/quiz/questions/images_a2/GFA2LC6TDQ1.png,1,3,GFA2LC6TDQ1,GFA2LC6,GFA2TDQ
-Real-life Graphs,"I lost my fuel bill, but while talking to my friends I found out that:  Bill, who had used 850 units, was charged £57.50. Wendy, who had used 320 units, was charged £31. Rhanni, who had used 540 units, was charged £42.  Plot the given information and draw a straight-line graph. Use a scale from 0 to 900 on the horizontal units axis, and from £0 to £60 on the vertical cost axis.  Use your graph to find what I will be charged for 700 units",,,1,3,GFA2LC6TDQ2,GFA2LC6,GFA2TDQ
-Real-life Graphs,Paul was travelling in his car to a meeting. This distance–time graph illustrates his journey. At what average speed was he travelling over the second hour,,/quiz/questions/images_a2/GFA2LC6TDQ1.png,1,3,GFA2LC6TSQ1,GFA2LC6,GFA2TSQ
-Real-life Graphs,Use the conversion table to draw a conversion graph between miles and kilometers.Use the conversion graph to convert 80 miles into km ,,/quiz/questions/images_a2/GFA2LC6TSQ2.png,1,3,GFA2LC6TSQ2,GFA2LC6,GFA2TSQ
-Cubic and Reciprocal Graphs,Complete the missing value in the table for the following equations:  y = x³ – x² - 4x + 4 ,,/quiz/questions/images_a2/GFA2LC7TDQ1.png,1,5,GFA2LC7TDQ1,GFA2LC7,GFA2TDQ
-Cubic and Reciprocal Graphs,Complete the missing value in the table for the following equations:    y=1/x,,/quiz/questions/images_a2/GFA2LC7TDQ2.png,1,5,GFA2LC7TDQ2,GFA2LC7,GFA2TDQ
-Cubic and Reciprocal Graphs,Complete the missing value in the table for the following equations:   y = 10 + 19x – 4x² – 4x³,,/quiz/questions/images_a2/GFA2LC7TSQ1.png,1,5,GFA2LC7TSQ1,GFA2LC7,GFA2TSQ
-Cubic and Reciprocal Graphs,Complete the missing value in the table for the following equations:  y=2/x,fraction,/quiz/questions/images_a2/GFA2LC7TSQ2.png,1,5,GFA2LC7TSQ2,GFA2LC7,GFA2TSQ
+﻿question_name,question_body,q_calculator,question_type,question_image,question_mark,question_grade,question_code,lesson_code,quiz_code
+Sequences,Write the first term of the following sequence:       3n – 7,FALSE,,,1,3,GFA2LC1TDQ1,GFA2LC1,GFA2TDQ
+Sequences,"Find the nth term rule for the following:      11,  9,   7,   5,   3,   1,   -1",FALSE,,,1,4,GFA2LC1TDQ2,GFA2LC1,GFA2TDQ
+Sequences,Write the first terms of the following sequence:       n² – 1,FALSE,,,1,3,GFA2LC1TSQ1,GFA2LC1,GFA2TSQ
+Sequences,"Find the nth term rule for the following:    12,   8,   4,   0…",FALSE,,,1,4,GFA2LC1TSQ2,GFA2LC1,GFA2TSQ
+Straight-line graphs ,Complete the missing value in the table,FALSE,,/quiz/questions/images_a2/GFA2LC2TDQ1.png,1,3,GFA2LC2TDQ1,GFA2LC2,GFA2TDQ
+Straight-line graphs ,What is the  gradient in the following equation:       y = 2 – 3x,FALSE,,,1,4,GFA2LC2TDQ2,GFA2LC2,GFA2TDQ
+Straight-line graphs ,Calculating the Equation of a Line,FALSE,,/quiz/questions/images_a2/GFA2LC2TDQ3.png,1,5,GFA2LC2TDQ3,GFA2LC2,GFA2TDQ
+Straight-line graphs ,Complete the missing value in the table,FALSE,,/quiz/questions/images_a2/GFA2LC2TSQ1.png,1,3,GFA2LC2TSQ1,GFA2LC2,GFA2TSQ
+Straight-line graphs ,"What is the  equations of the line with the following gradient and y–intercept :      Gradient = –2      y-intercept = (0, –7)",FALSE,,,1,4,GFA2LC2TSQ2,GFA2LC2,GFA2TSQ
+Straight-line graphs ,Calculating the Equation of a Line,FALSE,,/quiz/questions/images_a2/GFA2LC2TSQ3.png,1,5,GFA2LC2TSQ3,GFA2LC2,GFA2TSQ
+Simultaneous Equations,Solve the following simultaneous equations:   5x + y = 22   :      2x – y =  6,FALSE,,,1,5,GFA2LC3TDQ1,GFA2LC3,GFA2TDQ
+Simultaneous Equations,Solve the following simultaneous equations:           3x  -  2y = 7      :           5x  + 3y = 37,FALSE,,,1,5,GFA2LC3TDQ2,GFA2LC3,GFA2TDQ
+Simultaneous Equations,Solve the following simultaneous equations:     6x + y =  15     :     4x + y = 11,FALSE,,,1,5,GFA2LC3TSQ1,GFA2LC3,GFA2TSQ
+Simultaneous Equations,Solve the following simultaneous equations:                 4x - 2y = 8          :       3x +  6y = 21,FALSE,,,1,5,GFA2LC3TSQ2,GFA2LC3,GFA2TSQ
+Graphs of Quadratics,Complete the missing value in the table for the following equations: y = x² + 5x + 2,FALSE,,/quiz/questions/images_a2/GFA2LC4TDQ1.png,1,4,GFA2LC4TDQ1,GFA2LC4,GFA2TDQ
+Graphs of Quadratics,Complete the missing value in the table for the following equations:  y = 2x² – 4x + 1,TRUE,,/quiz/questions/images_a2/GFA2LC4TDQ2.png,1,4,GFA2LC4TDQ2,GFA2LC4,GFA2TDQ
+Graphs of Quadratics,Complete the missing value in the table for the following equations:   y = x² + 1,FALSE,,/quiz/questions/images_a2/GFA2LC4TSQ1.png,1,4,GFA2LC4TSQ1,GFA2LC4,GFA2TSQ
+Graphs of Quadratics,Complete the missing value in the table for the following equations:    y = x² - 2x - 8,TRUE,,/quiz/questions/images_a2/GFA2LC4TSQ2.png,1,4,GFA2LC4TSQ2,GFA2LC4,GFA2TSQ
+Solving Quadratic Equations,Solve the quadratic equation using factorization:     x²+10x+24=0,FALSE,,,1,5,GFA2LC5TDQ1,GFA2LC5,GFA2TDQ
+Solving Quadratic Equations,Solve the equation: 9x²+15x+5=0;  Give your answer correct to 2 decimal places. ( Use The Quadratic Formula ),TRUE,,,1,5,GFA2LC5TDQ2,GFA2LC5,GFA2TDQ
+Solving Quadratic Equations,Solve the quadratic equation using factorization :  x²−10x+25=0,FALSE,,,1,5,GFA2LC5TSQ1,GFA2LC5,GFA2TSQ
+Solving Quadratic Equations,Solve the equation: 3x²+8x+2=0:  Give your answer correct to 2 decimal places. ( Use The Quadratic Formula ),TRUE,,,1,5,GFA2LC5TSQ2,GFA2LC5,GFA2TSQ
+Real-life Graphs,Paul was travelling in his car to a meeting. This distance–time graph illustrates his journey. At what average speed was he travelling over the first hour,FALSE,,/quiz/questions/images_a2/GFA2LC6TDQ1.png,1,3,GFA2LC6TDQ1,GFA2LC6,GFA2TDQ
+Real-life Graphs,"I lost my fuel bill, but while talking to my friends I found out that:  Bill, who had used 850 units, was charged £57.50. Wendy, who had used 320 units, was charged £31. Rhanni, who had used 540 units, was charged £42.  Plot the given information and draw a straight-line graph. Use a scale from 0 to 900 on the horizontal units axis, and from £0 to £60 on the vertical cost axis.  Use your graph to find what I will be charged for 700 units",FALSE,,,1,3,GFA2LC6TDQ2,GFA2LC6,GFA2TDQ
+Real-life Graphs,Paul was travelling in his car to a meeting. This distance–time graph illustrates his journey. At what average speed was he travelling over the second hour,FALSE,,/quiz/questions/images_a2/GFA2LC6TDQ1.png,1,3,GFA2LC6TSQ1,GFA2LC6,GFA2TSQ
+Real-life Graphs,Use the conversion table to draw a conversion graph between miles and kilometers.Use the conversion graph to convert 80 miles into km ,FALSE,,/quiz/questions/images_a2/GFA2LC6TSQ2.png,1,3,GFA2LC6TSQ2,GFA2LC6,GFA2TSQ
+Cubic and Reciprocal Graphs,Complete the missing value in the table for the following equations:  y = x³ – x² - 4x + 4 ,TRUE,,/quiz/questions/images_a2/GFA2LC7TDQ1.png,1,5,GFA2LC7TDQ1,GFA2LC7,GFA2TDQ
+Cubic and Reciprocal Graphs,Complete the missing value in the table for the following equations:    y=1/x,FALSE,,/quiz/questions/images_a2/GFA2LC7TDQ2.png,1,5,GFA2LC7TDQ2,GFA2LC7,GFA2TDQ
+Cubic and Reciprocal Graphs,Complete the missing value in the table for the following equations:   y = 10 + 19x – 4x² – 4x³,TRUE,,/quiz/questions/images_a2/GFA2LC7TSQ1.png,1,5,GFA2LC7TSQ1,GFA2LC7,GFA2TSQ
+Cubic and Reciprocal Graphs,Complete the missing value in the table for the following equations:  y=2/x,FALSE,fraction,/quiz/questions/images_a2/GFA2LC7TSQ2.png,1,5,GFA2LC7TSQ2,GFA2LC7,GFA2TSQ

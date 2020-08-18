@@ -1,41 +1,43 @@
-﻿question_name,question_body,question_type,question_image,question_mark,question_grade,question_code,lesson_code,quiz_code
-Pythagoras Theorem ,Calculate the length of the diagonal of this square with side 6 cm.,,,1,4,GFG2LC1TDQ1,GFG2LC1,GFG2TDQ
-Pythagoras Theorem ,"A ladder which is 4m long leans against a wall, the bottom of the ladder is 1.5m from the bottom of the wall, how high up the wall does the ladder go? ",,,1,4,GFG2LC1TDQ2,GFG2LC1,GFG2TDQ
-Pythagoras Theorem ,"A boat travels 45 miles east then 60 miles north, how far is it from where it started? (hint: draw a diagram)",,,1,4,GFG2LC1TSQ1,GFG2LC1,GFG2TSQ
-Pythagoras Theorem ,"If a right angle has short lengths 14cm and 8cm, what is the length of the longest side.",,,1,4,GFG2LC1TSQ2,GFG2LC1,GFG2TSQ
-Trigonometry,Work out the missing angle to 3 Significant Figure ,,/quiz/questions/images_g2/GFG2LC2TDQ1.png,1,5,GFG2LC2TDQ1,GFG2LC2,GFG2TDQ
-Trigonometry,Work out the missing length to 3 Significant Figure ,,/quiz/questions/images_g2/GFG2LC2TDQ2.png,1,5,GFG2LC2TDQ2,GFG2LC2,GFG2TDQ
-Trigonometry,Work out the missing angle to 3 Significant Figure ,,/quiz/questions/images_g2/GFG2LC2TSQ1.png,1,5,GFG2LC2TSQ1,GFG2LC2,GFG2TSQ
-Trigonometry,Work out the missing length to 3 Significant Figure ,,/quiz/questions/images_g2/GFG2LC2TSQ2.png,1,5,GFG2LC2TSQ2,GFG2LC2,GFG2TSQ
-Construction and Loci,What shape does a locus of a  point make,,,1,2,GFG2LC3TDQ1,GFG2LC3,GFG2TDQ
-Construction and Loci,An angle is bisected.  Each resulting angle is 78°.  How big was the original angle,,,1,2,GFG2LC3TDQ2,GFG2LC3,GFG2TDQ
-Construction and Loci,A crooked table leg makes an angle of 86.7° with the tabletop.  How much must the carpenter move the leg so that it is perpendicular to the tabletop,,,1,2,GFG2LC3TSQ1,GFG2LC3,GFG2TSQ
-Construction and Loci,"If I bisect a right angle, what will the size of each angle be?",,,1,2,GFG2LC3TSQ2,GFG2LC3,GFG2TSQ
-Vectors,Find the Vector Notation of PQ,matrix ,/quiz/questions/images_g2/GFG2LC4TDQ1.png,1,5,GFG2LC4TDQ1,GFG2LC4,GFG2TDQ
-Vectors,Write the following as column Vectors: 2s,matrix ,,1,5,GFG2LC4TDQ2,GFG2LC4,GFG2TDQ
-Vectors,Find the Vector Notation of RW,matrix ,/quiz/questions/images_g2/GFG2LC4TDQ1.png,1,5,GFG2LC4TSQ1,GFG2LC4,GFG2TSQ
-Vectors,Write the following as column Vectors: s + t,matrix ,,1,5,GFG2LC4TSQ2,GFG2LC4,GFG2TSQ
-Bearings,Write SOUTH WEST of a compass points as three figure bearings,,,1,3,GFG2LC5TDQ1,GFG2LC5,GFG2TDQ
-Bearings,What is the bearing of his outward run from A to B,,/quiz/questions/images_g2/GFG2LC5TDQ2.png,1,3,GFG2LC5TDQ2,GFG2LC5,GFG2TDQ
-Bearings,Write NORTH EAST of a compass points as three figure bearings,,,1,3,GFG2LC5TSQ1,GFG2LC5,GFG2TSQ
-Bearings,What is the bearing of this return run from B to A,,/quiz/questions/images_g2/GFG2LC5TDQ2.png,1,3,GFG2LC5TSQ2,GFG2LC5,GFG2TSQ
-Translations,"Translate the following shape by the  following vector  [ 2, 3]",,/quiz/questions/images_g2/GFG2LC6TDQ1.png,1,2,GFG2LC6TDQ1,GFG2LC6,GFG2TDQ
-Translations,Describe each of the following translations in vector form ,matrix ,/quiz/questions/images_g2/GFG2LC6TDQ2.png,1,2,GFG2LC6TDQ2,GFG2LC6,GFG2TDQ
-Translations,"Translate the following shape by the  following vector [ -3, 2]",,/quiz/questions/images_g2/GFG2LC6TSQ1.png,1,2,GFG2LC6TSQ1,GFG2LC6,GFG2TSQ
-Translations,Describe each of the following translations in vector form ,matrix ,/quiz/questions/images_g2/GFG2LC6TSQ2.png,1,2,GFG2LC6TSQ2,GFG2LC6,GFG2TSQ
-Reflections,Reflect the shape in the line x = -1,,/quiz/questions/images_g2/GFG2LC7TDQ1.png,1,2,GFG2LC7TDQ1,GFG2LC7,GFG2TDQ
-Reflections,Describe the transformation that maps A to B,,/quiz/questions/images_g2/GFG2LC7TDQ2.png,1,2,GFG2LC7TDQ2,GFG2LC7,GFG2TDQ
-Reflections,Reflect the shape in the line y = 2,,/quiz/questions/images_g2/GFG2LC7TSQ1.png,1,2,GFG2LC7TSQ1,GFG2LC7,GFG2TSQ
-Reflections,Describe the transformation that maps A to B,,/quiz/questions/images_g2/GFG2LC7TSQ2.png,1,2,GFG2LC7TSQ2,GFG2LC7,GFG2TSQ
-Rotations ,"Rotate this shape anticlockwise 180° about the point (-3,2)",,/quiz/questions/images_g2/GFG2LC8TDQ1.png,1,2,GFG2LC8TDQ1,GFG2LC8,GFG2TDQ
-Rotations ,Describe the transformation which takes shape A to B.,,/quiz/questions/images_g2/GFG2LC8TDQ2.png,1,2,GFG2LC8TDQ2,GFG2LC8,GFG2TDQ
-Rotations ,"Rotate the shape clockwise 90° about the point (1,2)",,/quiz/questions/images_g2/GFG2LC8TSQ1.png,1,2,GFG2LC8TSQ1,GFG2LC8,GFG2TSQ
-Rotations ,Describe the transformation which takes shape A to B.,,/quiz/questions/images_g2/GFG2LC8TSQ2.png,1,2,GFG2LC8TSQ2,GFG2LC8,GFG2TSQ
-Enlargements,Enlarge this shape by scale factor 2 from the centre of enlargement.,,/quiz/questions/images_g2/GFG2LC9TDQ1.png,1,2,GFG2LC9TDQ1,GFG2LC9,GFG2TDQ
-Enlargements,Describe the transformation fully that takes shape A to shape B.,,/quiz/questions/images_g2/GFG2LC9TDQ2.png,1,2,GFG2LC9TDQ2,GFG2LC9,GFG2TDQ
-Enlargements,Enlarge this shape by scale factor 4 from the centre of enlargement,,/quiz/questions/images_g2/GFG2LC9TSQ1.png,1,2,GFG2LC9TSQ1,GFG2LC9,GFG2TSQ
-Enlargements,Describe the transformation fully that takes shape A to shape B,,/quiz/questions/images_g2/GFG2LC9TSQ2.png,1,2,GFG2LC9TSQ2,GFG2LC9,GFG2TSQ
-Similarity and Congruence,How many line of symmetry the following shape have,,/quiz/questions/images_g2/GFG2LC10TDQ1.png,1,2,GFG2LC10TDQ1,GFG2LC10,GFG2TDQ
-Similarity and Congruence,These triangles are congruent. Find  angle H,,/quiz/questions/images_g2/GFG2LC10TDQ2.png,1,2,GFG2LC10TDQ2,GFG2LC10,GFG2TDQ
-Similarity and Congruence,Decide if the following shapes will tessellate,option,/quiz/questions/images_g2/GFG2LC10TSQ1.png,1,2,GFG2LC10TSQ1,GFG2LC10,GFG2TSQ
-Similarity and Congruence,Are the following triangles congruent ,option,/quiz/questions/images_g2/GFG2LC10TSQ2.png,1,2,GFG2LC10TSQ2,GFG2LC10,GFG2TSQ
+﻿question_name,question_body,q_calculator,question_type,question_image,question_mark,question_grade,question_code,lesson_code,quiz_code
+Pythagoras Theorem ,Calculate the length of the diagonal of this square with side 6 cm.,TRUE,,1,1,4,GFG2LC1TDQ1,GFG2LC1,GFG2TDQ
+Pythagoras Theorem ,"A ladder which is 4m long leans against a wall, the bottom of the ladder is 1.5m from the bottom of the wall, how high up the wall does the ladder go? ",TRUE,,,1,4,GFG2LC1TDQ2,GFG2LC1,GFG2TDQ
+Pythagoras Theorem ,"A boat travels 45 miles east then 60 miles north, how far is it from where it started? (hint: draw a diagram)",TRUE,,,1,4,GFG2LC1TSQ1,GFG2LC1,GFG2TSQ
+Pythagoras Theorem ,"If a right angle has short lengths 14cm and 8cm, what is the length of the longest side.",TRUE,,,1,4,GFG2LC1TSQ2,GFG2LC1,GFG2TSQ
+Trigonometry,Work out the missing angle to 3 Significant Figure ,TRUE,,/quiz/questions/images_g2/GFG2LC2TDQ1.png,1,5,GFG2LC2TDQ1,GFG2LC2,GFG2TDQ
+Trigonometry,Work out the missing length to 3 Significant Figure ,TRUE,,/quiz/questions/images_g2/GFG2LC2TDQ2.png,1,5,GFG2LC2TDQ2,GFG2LC2,GFG2TDQ
+Trigonometry,Work out the missing angle to 3 Significant Figure ,TRUE,,/quiz/questions/images_g2/GFG2LC2TSQ1.png,1,5,GFG2LC2TSQ1,GFG2LC2,GFG2TSQ
+Trigonometry,Work out the missing length to 3 Significant Figure ,TRUE,,/quiz/questions/images_g2/GFG2LC2TSQ2.png,1,5,GFG2LC2TSQ2,GFG2LC2,GFG2TSQ
+Construction and Loci,What shape does a locus of a  point make,FALSE,,,1,2,GFG2LC3TDQ1,GFG2LC3,GFG2TDQ
+Construction and Loci,An angle is bisected.  Each resulting angle is 78°.  How big was the original angle,FALSE,,,1,2,GFG2LC3TDQ2,GFG2LC3,GFG2TDQ
+Construction and Loci,A crooked table leg makes an angle of 86.7° with the tabletop.  How much must the carpenter move the leg so that it is perpendicular to the tabletop,FALSE,,,1,2,GFG2LC3TSQ1,GFG2LC3,GFG2TSQ
+Construction and Loci,"If I bisect a right angle, what will the size of each angle be?",FALSE,,,1,2,GFG2LC3TSQ2,GFG2LC3,GFG2TSQ
+Vectors,Find the Vector Notation of PQ,FALSE,matrix ,/quiz/questions/images_g2/GFG2LC4TDQ1.png,1,5,GFG2LC4TDQ1,GFG2LC4,GFG2TDQ
+Vectors,Write the following as column Vectors: 2s,FALSE,matrix ,,1,5,GFG2LC4TDQ2,GFG2LC4,GFG2TDQ
+Vectors,Find the Vector Notation of RW,FALSE,matrix ,/quiz/questions/images_g2/GFG2LC4TDQ1.png,1,5,GFG2LC4TSQ1,GFG2LC4,GFG2TSQ
+Vectors,Write the following as column Vectors: s + t,FALSE,matrix ,,1,5,GFG2LC4TSQ2,GFG2LC4,GFG2TSQ
+Bearings,Write SOUTH WEST of a compass points as three figure bearings,FALSE,,,1,3,GFG2LC5TDQ1,GFG2LC5,GFG2TDQ
+Bearings,What is the bearing of his outward run from A to B,FALSE,,/quiz/questions/images_g2/GFG2LC5TDQ2.png,1,3,GFG2LC5TDQ2,GFG2LC5,GFG2TDQ
+Bearings,Write NORTH EAST of a compass points as three figure bearings,FALSE,,,1,3,GFG2LC5TSQ1,GFG2LC5,GFG2TSQ
+Bearings,What is the bearing of this return run from B to A,FALSE,,/quiz/questions/images_g2/GFG2LC5TDQ2.png,1,3,GFG2LC5TSQ2,GFG2LC5,GFG2TSQ
+Translations,"Translate the following shape by the  following vector  [ 2, 3]",FALSE,,/quiz/questions/images_g2/GFG2LC6TDQ1.png,1,2,GFG2LC6TDQ1,GFG2LC6,GFG2TDQ
+Translations,Describe each of the following translations in vector form ,FALSE,matrix ,/quiz/questions/images_g2/GFG2LC6TDQ2.png,1,2,GFG2LC6TDQ2,GFG2LC6,GFG2TDQ
+Translations,"Translate the following shape by the  following vector [ -3, 2]",FALSE,,/quiz/questions/images_g2/GFG2LC6TSQ1.png,1,2,GFG2LC6TSQ1,GFG2LC6,GFG2TSQ
+Translations,Describe each of the following translations in vector form ,FALSE,matrix ,/quiz/questions/images_g2/GFG2LC6TSQ2.png,1,2,GFG2LC6TSQ2,GFG2LC6,GFG2TSQ
+Reflections,Reflect the shape in the line x = -1,FALSE,,/quiz/questions/images_g2/GFG2LC7TDQ1.png,1,2,GFG2LC7TDQ1,GFG2LC7,GFG2TDQ
+Reflections,Describe the transformation that maps A to B,FALSE,,/quiz/questions/images_g2/GFG2LC7TDQ2.png,1,2,GFG2LC7TDQ2,GFG2LC7,GFG2TDQ
+Reflections,Reflect the shape in the line y = 2,FALSE,,/quiz/questions/images_g2/GFG2LC7TSQ1.png,1,2,GFG2LC7TSQ1,GFG2LC7,GFG2TSQ
+Reflections,Describe the transformation that maps A to B,FALSE,,/quiz/questions/images_g2/GFG2LC7TSQ2.png,1,2,GFG2LC7TSQ2,GFG2LC7,GFG2TSQ
+Rotations ,"Rotate this shape anticlockwise 180° about the point (-3,2)",FALSE,,/quiz/questions/images_g2/GFG2LC8TDQ1.png,1,2,GFG2LC8TDQ1,GFG2LC8,GFG2TDQ
+Rotations ,Describe the transformation which takes shape A to B.,FALSE,,/quiz/questions/images_g2/GFG2LC8TDQ2.png,1,2,GFG2LC8TDQ2,GFG2LC8,GFG2TDQ
+Rotations ,"Rotate the shape clockwise 90° about the point (1,2)",FALSE,,/quiz/questions/images_g2/GFG2LC8TSQ1.png,1,2,GFG2LC8TSQ1,GFG2LC8,GFG2TSQ
+Rotations ,Describe the transformation which takes shape A to B.,FALSE,,/quiz/questions/images_g2/GFG2LC8TSQ2.png,1,2,GFG2LC8TSQ2,GFG2LC8,GFG2TSQ
+Enlargements,Enlarge this shape by scale factor 2 from the centre of enlargement.,FALSE,,/quiz/questions/images_g2/GFG2LC9TDQ1.png,1,2,GFG2LC9TDQ1,GFG2LC9,GFG2TDQ
+Enlargements,Describe the transformation fully that takes shape A to shape B.,FALSE,,/quiz/questions/images_g2/GFG2LC9TDQ2.png,1,2,GFG2LC9TDQ2,GFG2LC9,GFG2TDQ
+Enlargements,Enlarge this shape by scale factor 4 from the centre of enlargement,FALSE,,/quiz/questions/images_g2/GFG2LC9TSQ1.png,1,2,GFG2LC9TSQ1,GFG2LC9,GFG2TSQ
+Enlargements,Describe the transformation fully that takes shape A to shape B,FALSE,,/quiz/questions/images_g2/GFG2LC9TSQ2.png,1,2,GFG2LC9TSQ2,GFG2LC9,GFG2TSQ
+Similarity and Congruence,How many line of symmetry the following shape have,FALSE,,/quiz/questions/images_g2/GFG2LC10TDQ1.png,1,2,GFG2LC10TDQ1,GFG2LC10,GFG2TDQ
+Similarity and Congruence,These triangles are congruent. Find  angle H,FALSE,,/quiz/questions/images_g2/GFG2LC10TDQ2.png,1,2,GFG2LC10TDQ2,GFG2LC10,GFG2TDQ
+Similarity and Congruence,Decide if the following shapes will tessellate,FALSE,option,/quiz/questions/images_g2/GFG2LC10TSQ1.png,1,2,GFG2LC10TSQ1,GFG2LC10,GFG2TSQ
+Similarity and Congruence,Decide if the following shapes will tessellate,FALSE,option,/quiz/questions/images_g2/GFG2LC10TSQ1.png,1,2,GFG2LC10TSQ1,GFG2LC10,GFG2TSQ
+Similarity and Congruence,Are the following triangles congruent ,FALSE,option,/quiz/questions/images_g2/GFG2LC10TSQ2.png,1,2,GFG2LC10TSQ2,GFG2LC10,GFG2TSQ
+Similarity and Congruence,Are the following triangles congruent ,FALSE,option,/quiz/questions/images_g2/GFG2LC10TSQ2.png,1,2,GFG2LC10TSQ2,GFG2LC10,GFG2TSQ

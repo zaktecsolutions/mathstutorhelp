@@ -1,41 +1,41 @@
-﻿question_name,question_body,question_type,question_image,question_mark,question_grade,question_code,lesson_code,quiz_code
-Algebra Introduction  ,Write the following using algebraic notation: 6 x b,,,1,1,GFA1LC1TDQ1,GFA1LC1,GFA1TDQ
-Algebra Introduction  ,"Sam had x dollars, later he doubled his money. Then his father gave him $5 more. Write an algebraic expression that represent how much Sam has now? ",,,1,1,GFA1LC1TDQ2,GFA1LC1,GFA1TDQ
-Algebra Introduction  ,I think of a number add 5 and then multiply the result by 3 ,,,1,1,GFA1LC1TSQ1,GFA1LC1,GFA1TSQ
-Algebra Introduction  ,Write the following using algebraic notation: 1 x y,,,1,1,GFA1LC1TSQ2,GFA1LC1,GFA1TSQ
-Simplifying Expressions,Simplify these expressions:        –5f –7g + f + 7g ,,,1,2,GFA1LC2TDQ1,GFA1LC2,GFA1TDQ
-Simplifying Expressions,Simplify these expressions:     -3a x -6a,,,1,2,GFA1LC2TDQ2,GFA1LC2,GFA1TDQ
-Simplifying Expressions,Simplify these expressions:              32a⁵÷ 8a³,,,1,3,GFA1LC2TDQ3,GFA1LC2,GFA1TDQ
-Simplifying Expressions,Simplify these expressions:          4c + 3d + 3 – 2c + 6 – d ,,,1,2,GFA1LC2TSQ1,GFA1LC2,GFA1TSQ
-Simplifying Expressions,Simplify these expressions:             -3b⁶ x -b⁵ x -a,,,1,2,GFA1LC2TSQ2,GFA1LC2,GFA1TSQ
-Simplifying Expressions,Simplify these expressions:                14n⁻⁴ ÷ 7n²,,,1,3,GFA1LC2TSQ3,GFA1LC2,GFA1TSQ
-Expanding brackets,Expand the following:           -6x(4x – 2xy),,,1,2,GFA1LC3TDQ1,GFA1LC3,GFA1TDQ
-Expanding brackets,Expand the following:   3(6x + 2y)  + 4 (y – 2x),,,1,3,GFA1LC3TDQ2,GFA1LC3,GFA1TDQ
-Expanding brackets,Expand the following :        (2x + 4)(5x - 4),,,1,4,GFA1LC3TDQ3,GFA1LC3,GFA1TDQ
-Expanding brackets,Expand the following :    6r(r - 2),,,1,2,GFA1LC3TSQ1,GFA1LC3,GFA1TSQ
-Expanding brackets,Expand the following:   2(3n + 4) + 3(3n + 5),,,1,3,GFA1LC3TSQ2,GFA1LC3,GFA1TSQ
-Expanding brackets,Expand the following :       (x-2)²,,,1,4,GFA1LC3TSQ3,GFA1LC3,GFA1TSQ
-Factorising Expressions,Factorize the following:     4x²- 8xy ,,,1,3,GFA1LC4TDQ1,GFA1LC4,GFA1TDQ
-Factorising Expressions,Factorize the following:       x² – 3x – 40,,,1,5,GFA1LC4TDQ2,GFA1LC4,GFA1TDQ
-Factorising Expressions,Factorize the following:     5x²+ 15x ,,,1,3,GFA1LC4TSQ1,GFA1LC4,GFA1TSQ
-Factorising Expressions,Factorize the following:    x² + 16x + 63 ,,,1,5,GFA1LC4TSQ2,GFA1LC4,GFA1TSQ
-Solving Linear Equations ,Solve the following equations:                         2x+11=3,,,1,2,GFA1LC5TDQ1,GFA1LC5,GFA1TDQ
-Solving Linear Equations ,Solve the following equations:                           2(x+3)=7,,,1,3,GFA1LC5TDQ2,GFA1LC5,GFA1TDQ
-Solving Linear Equations ,Solve the following equations:                      7x + 3 = 13 + 2x,,,1,4,GFA1LC5TDQ3,GFA1LC5,GFA1TDQ
-Solving Linear Equations ,Solve the following equations:                          3x- 4 = 3,,,1,2,GFA1LC5TSQ1,GFA1LC5,GFA1TSQ
-Solving Linear Equations ,Solve the following equations:                             4(x+2)=4,,,1,3,GFA1LC5TSQ2,GFA1LC5,GFA1TSQ
-Solving Linear Equations ,Solve the following equations:                         6x + 3 = 27 – 2x,,,1,4,GFA1LC5TSQ3,GFA1LC5,GFA1TSQ
-Forming Equations ,A triangle has 3 sides. One side can be labelled x. One of the other sides is 8cm more than that and the final side is double the first side. The perimeter of the triangle is 26cm. Calculate the smallest side,,,1,4,GFA1LC6TDQ1,GFA1LC6,GFA1TDQ
-Forming Equations ,"Mr Evans is x years old. Mrs Holden is 1 year older than Mr Evans. Miss Stack is 5 years younger than Mr Evans. The sum of their ages is 86 years. Use the expression above to form an equation, and solve to calculate the age of Mr Evans ",,,1,5,GFA1LC6TDQ2,GFA1LC6,GFA1TDQ
-Forming Equations ,Anna and Betty each have a bag of money.  Betty has 2 more pennies than Anna.  The total number of pennies in both bags is 20p. Find How much Betty has,,,1,4,GFA1LC6TSQ1,GFA1LC6,GFA1TSQ
-Forming Equations ,"The lengths of the triangle is  x - 3, x + 4 and x + 2. Given the perimeter is 33cm. Find the value of x",,,1,4,GFA1LC6TSQ2,GFA1LC6,GFA1TSQ
- Formulae and Substitution ,Find the value of  3b - 2a when b = 7 and a = - 5,,,1,3,GFA1LC7TDQ1,GFA1LC7,GFA1TDQ
- Formulae and Substitution ,"The distance d, in metres, that an object falls after being dropped is given by the formula, where t is the time in seconds. How far will the rock have fallen after 2 second. d=4.9t²",,,1,3,GFA1LC7TDQ2,GFA1LC7,GFA1TDQ
- Formulae and Substitution ,6a + 12b = 24:   Make a the subject,fraction,,1,4,GFA1LC7TDQ3,GFA1LC7,GFA1TDQ
- Formulae and Substitution ,Find the value of  3(x² – 1)  when x = -2,,,1,3,GFA1LC7TSQ1,GFA1LC7,GFA1TSQ
- Formulae and Substitution ,"Find the area of a trapezium when a = 5, b = 9 and h = 3",,,1,3,GFA1LC7TSQ2,GFA1LC7,GFA1TSQ
- Formulae and Substitution ,Rearrange the formula of a straight line to make 𝑥 the subject :  5y = x + 2c - 4,,,1,4,GFA1LC7TSQ3,GFA1LC7,GFA1TSQ
-Inequalities,List the number of values that satisfy this inequality and draw on number line:                     4 < x ≤ 9,,,1,4,GFA1LC8TDQ1,GFA1LC8,GFA1TDQ
-Inequalities,Solve the following Inequalities:             3y+3≤6y-3,,,1,4,GFA1LC8TDQ2,GFA1LC8,GFA1TDQ
-Inequalities,List the number of values that satisfy this inequality and draw on number line               -2<x<2,,,1,4,GFA1LC8TSQ1,GFA1LC8,GFA1TSQ
-Inequalities,Solve the following Inequalities:          7+4b>-1,,,1,4,GFA1LC8TSQ2,GFA1LC8,GFA1TSQ
+﻿question_name,question_body,q_calculator,question_type,question_image,question_mark,question_grade,question_code,lesson_code,quiz_code
+Algebra Introduction  ,Write the following using algebraic notation: 6 x b,FALSE,,,1,1,GFA1LC1TDQ1,GFA1LC1,GFA1TDQ
+Algebra Introduction  ,"Sam had x dollars, later he doubled his money. Then his father gave him $5 more. Write an algebraic expression that represent how much Sam has now? ",FALSE,,,1,1,GFA1LC1TDQ2,GFA1LC1,GFA1TDQ
+Algebra Introduction  ,I think of a number add 5 and then multiply the result by 3 ,FALSE,,,1,1,GFA1LC1TSQ1,GFA1LC1,GFA1TSQ
+Algebra Introduction  ,Write the following using algebraic notation: 1 x y,FALSE,,,1,1,GFA1LC1TSQ2,GFA1LC1,GFA1TSQ
+Simplifying Expressions,Simplify these expressions:        –5f –7g + f + 7g ,FALSE,,,1,2,GFA1LC2TDQ1,GFA1LC2,GFA1TDQ
+Simplifying Expressions,Simplify these expressions:     -3a x -6a,FALSE,,,1,2,GFA1LC2TDQ2,GFA1LC2,GFA1TDQ
+Simplifying Expressions,Simplify these expressions:              32a⁵÷ 8a³,FALSE,,,1,3,GFA1LC2TDQ3,GFA1LC2,GFA1TDQ
+Simplifying Expressions,Simplify these expressions:          4c + 3d + 3 – 2c + 6 – d ,FALSE,,,1,2,GFA1LC2TSQ1,GFA1LC2,GFA1TSQ
+Simplifying Expressions,Simplify these expressions:             -3b⁶ x -b⁵ x -a,FALSE,,,1,2,GFA1LC2TSQ2,GFA1LC2,GFA1TSQ
+Simplifying Expressions,Simplify these expressions:                14n⁻⁴ ÷ 7n²,FALSE,,,1,3,GFA1LC2TSQ3,GFA1LC2,GFA1TSQ
+Expanding brackets,Expand the following:           -6x(4x – 2xy),FALSE,,,1,2,GFA1LC3TDQ1,GFA1LC3,GFA1TDQ
+Expanding brackets,Expand the following:   3(6x + 2y)  + 4 (y – 2x),FALSE,,,1,3,GFA1LC3TDQ2,GFA1LC3,GFA1TDQ
+Expanding brackets,Expand the following :        (2x + 4)(5x - 4),FALSE,,,1,4,GFA1LC3TDQ3,GFA1LC3,GFA1TDQ
+Expanding brackets,Expand the following :    6r(r - 2),FALSE,,,1,2,GFA1LC3TSQ1,GFA1LC3,GFA1TSQ
+Expanding brackets,Expand the following:   2(3n + 4) + 3(3n + 5),FALSE,,,1,3,GFA1LC3TSQ2,GFA1LC3,GFA1TSQ
+Expanding brackets,Expand the following :       (x-2)²,FALSE,,,1,4,GFA1LC3TSQ3,GFA1LC3,GFA1TSQ
+Factorising Expressions,Factorize the following:     4x²- 8xy ,FALSE,,,1,3,GFA1LC4TDQ1,GFA1LC4,GFA1TDQ
+Factorising Expressions,Factorize the following:       x² – 3x – 40,FALSE,,,1,5,GFA1LC4TDQ2,GFA1LC4,GFA1TDQ
+Factorising Expressions,Factorize the following:     5x²+ 15x ,FALSE,,,1,3,GFA1LC4TSQ1,GFA1LC4,GFA1TSQ
+Factorising Expressions,Factorize the following:    x² + 16x + 63 ,FALSE,,,1,5,GFA1LC4TSQ2,GFA1LC4,GFA1TSQ
+Solving Linear Equations ,Solve the following equations:                         2x+11=3,FALSE,,,1,2,GFA1LC5TDQ1,GFA1LC5,GFA1TDQ
+Solving Linear Equations ,Solve the following equations:                           2(x+3)=7,FALSE,,,1,3,GFA1LC5TDQ2,GFA1LC5,GFA1TDQ
+Solving Linear Equations ,Solve the following equations:                      7x + 3 = 13 + 2x,FALSE,,,1,4,GFA1LC5TDQ3,GFA1LC5,GFA1TDQ
+Solving Linear Equations ,Solve the following equations:                          3x- 4 = 3,FALSE,fraction,,1,2,GFA1LC5TSQ1,GFA1LC5,GFA1TSQ
+Solving Linear Equations ,Solve the following equations:                             4(x+2)=4,FALSE,,,1,3,GFA1LC5TSQ2,GFA1LC5,GFA1TSQ
+Solving Linear Equations ,Solve the following equations:                         6x + 3 = 27 – 2x,FALSE,,,1,4,GFA1LC5TSQ3,GFA1LC5,GFA1TSQ
+Forming Equations ,A triangle has 3 sides. One side can be labelled x. One of the other sides is 8cm more than that and the final side is double the first side. The perimeter of the triangle is 26cm. Calculate the smallest side,FALSE,,,1,4,GFA1LC6TDQ1,GFA1LC6,GFA1TDQ
+Forming Equations ,"Mr Evans is x years old. Mrs Holden is 1 year older than Mr Evans. Miss Stack is 5 years younger than Mr Evans. The sum of their ages is 86 years. Use the expression above to form an equation, and solve to calculate the age of Mr Evans ",FALSE,,,1,5,GFA1LC6TDQ2,GFA1LC6,GFA1TDQ
+Forming Equations ,Anna and Betty each have a bag of money.  Betty has 2 more pennies than Anna.  The total number of pennies in both bags is 20p. Find How much Betty has,FALSE,,,1,4,GFA1LC6TSQ1,GFA1LC6,GFA1TSQ
+Forming Equations ,"The lengths of the triangle is  x - 3, x + 4 and x + 2. Given the perimeter is 33cm. Find the value of x",FALSE,,,1,4,GFA1LC6TSQ2,GFA1LC6,GFA1TSQ
+Formulae and Substitution ,Find the value of  3b - 2a when b = 7 and a = - 5,FALSE,,,1,3,GFA1LC7TDQ1,GFA1LC7,GFA1TDQ
+Formulae and Substitution ,"The distance d, in metres, that an object falls after being dropped is given by the formula, where t is the time in seconds. How far will the rock have fallen after 2 second. d=4.9t²",FALSE,,,1,3,GFA1LC7TDQ2,GFA1LC7,GFA1TDQ
+Formulae and Substitution ,6a + 12b = 24:   Make a the subject,FALSE,,,1,4,GFA1LC7TDQ3,GFA1LC7,GFA1TDQ
+Formulae and Substitution ,Find the value of  3(x² – 1)  when x = -2,FALSE,,,1,3,GFA1LC7TSQ1,GFA1LC7,GFA1TSQ
+Formulae and Substitution ,"Find the area of a trapezium when a = 5, b = 9 and h = 3",FALSE,,,1,3,GFA1LC7TSQ2,GFA1LC7,GFA1TSQ
+Formulae and Substitution ,Rearrange the formula of a straight line to make 𝑥 the subject :  5y = x + 2c - 4,FALSE,,,1,4,GFA1LC7TSQ3,GFA1LC7,GFA1TSQ
+Inequalities,List the number of values that satisfy this inequality and draw on number line:                     4 < x ≤ 9,FALSE,,,1,4,GFA1LC8TDQ1,GFA1LC8,GFA1TDQ
+Inequalities,Solve the following Inequalities:             3y+3≤6y-3,FALSE,,,1,4,GFA1LC8TDQ2,GFA1LC8,GFA1TDQ
+Inequalities,List the number of values that satisfy this inequality and draw on number line               -2<x<2,FALSE,,,1,4,GFA1LC8TSQ1,GFA1LC8,GFA1TSQ
+Inequalities,Solve the following Inequalities:          7+4b>-1,FALSE,,,1,4,GFA1LC8TSQ2,GFA1LC8,GFA1TSQ

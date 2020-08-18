@@ -1003,7 +1003,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! E:\PHP\Laravel\mth\resources\js\mixins.js */"./resources/js/mixins.js");
+module.exports = __webpack_require__(/*! C:\Users\abdullah\Google Drive\sherazGoogle\computerscience\mth\resources\js\mixins.js */"./resources/js/mixins.js");
 
 
 /***/ })

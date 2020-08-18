@@ -1,42 +1,42 @@
-﻿question_name,question_body,question_type,question_image,question_mark,question_grade,question_code,lesson_code,quiz_code
-Triangles,Calculate angle a,,/quiz/questions/images_g1/GFG1LC1TDQ1.png,1,2,GFG1LC1TDQ1,GFG1LC1,GFG1TDQ
-Triangles,Calculate angle x,,/quiz/questions/images_g1/GFG1LC1TDQ2.png,1,2,GFG1LC1TDQ2,GFG1LC1,GFG1TDQ
-Triangles,Calculate angle a ,,/quiz/questions/images_g1/GFG1LC1TSQ1.png,1,2,GFG1LC1TSQ1,GFG1LC1,GFG1TSQ
-Triangles,Calculate angle a ,,/quiz/questions/images_g1/GFG1LC1TSQ2.png,1,2,GFG1LC1TSQ2,GFG1LC1,GFG1TSQ
-Quadrilaterals,"The measure of three of the quadrilateral are given. Find the measure of the fourth angle.  25°, 34°, 68°, ",,,1,2,GFG1LC2TDQ1,GFG1LC2,GFG1TDQ
-Quadrilaterals,"Which quadrilateral has the following properties?  One pair of parallel sides , Sometimes got one line of symmetry",,,1,2,GFG1LC2TDQ2,GFG1LC2,GFG1TDQ
-Quadrilaterals,"The measure of three of the quadrilateral are given. Find the measure of the fourth angle.  90 °, 80°, 70°, ",,,1,2,GFG1LC2TSQ1,GFG1LC2,GFG1TSQ
-Quadrilaterals,Which quadrilateral has the following properties? All four sides are the same length. There are no right angles.,,,1,2,GFG1LC2TSQ2,GFG1LC2,GFG1TSQ
-Angle Problems,Calculate  q,,/quiz/questions/images_g1/GFG1LC3TDQ1.png,1,3,GFG1LC3TDQ1,GFG1LC3,GFG1TDQ
-Angle Problems,Calculate a,,/quiz/questions/images_g1/GFG1LC3TDQ2.png,1,3,GFG1LC3TDQ2,GFG1LC3,GFG1TDQ
-Angle Problems,Calculate  g,,/quiz/questions/images_g1/GFG1LC3TSQ1.png,1,3,GFG1LC3TSQ1,GFG1LC3,GFG1TSQ
-Angle Problems,Calculate t,,/quiz/questions/images_g1/GFG1LC3TSQ2.png,1,3,GFG1LC3TSQ2,GFG1LC3,GFG1TSQ
-Circles,Peter has baked a birthday cake in a 24 cm diameter tin.  He wants to buy a ribbon to decorate the edge.  How much ribbon does he need?,,,1,3,GFG1LC4TDQ1,GFG1LC4,GFG1TDQ
-Circles,Calculate the area shaded black,,/quiz/questions/images_g1/GFG1LC4TDQ1.png,1,3,GFG1LC4TDQ2,GFG1LC4,GFG1TDQ
-Circles,A circular hole with diameter 5 cm is cut out of a rectangular metal plate of length 10 cm and width 7 cm. Find the area of the plate when the hole has been cut out,,/quiz/questions/images_g1/GFG1LC4TSQ1.png,1,4,GFG1LC4TSQ1,GFG1LC4,GFG1TSQ
-Circles,"Ashley plans to put a fence around his circular garden. When Ashley walks from one side of the garden to the other, through the middle, it is 7.5 metres. Fencing is sold in 1m pieces and costs £2.99 per metre. How much will it cost for Ashley’s new fence?",,,1,4,GFG1LC4TSQ2,GFG1LC4,GFG1TSQ
-Polygons,Calculate the size of the interior angle for a regular dodecagon,,,1,3,GFG1LC5TDQ1,GFG1LC5,GFG1TDQ
-Polygons,How many sides are there in a regular polygon if each interior angle measures 165°,,,1,3,GFG1LC5TDQ2,GFG1LC5,GFG1TDQ
-Polygons,Find the measure of each exterior angle of a regular decagon,,,1,3,GFG1LC5TSQ1,GFG1LC5,GFG1TSQ
-Polygons,Each exterior angle of a regular polygon is 20°. Work out the number of sides of the polygon,,,1,3,GFG1LC5TSQ2,GFG1LC5,GFG1TSQ
-Area ,Calculate the area of the compound shape below,,/quiz/questions/images_g1/GFG1LC6TDQ1.png,1,3,GFG1LC6TDQ1,GFG1LC6,GFG1TDQ
-Area ,Calculate the area of the compound shape below,,/quiz/questions/images_g1/GFG1LC6TDQ2.png,1,3,GFG1LC6TDQ2,GFG1LC6,GFG1TDQ
-Area ,Calculate the area of the shaded region:,,/quiz/questions/images_g1/GFG1LC6TSQ1.png,1,4,GFG1LC6TSQ1,GFG1LC6,GFG1TSQ
-Perimeter,Find the perimeter of this L-shaped room,,/quiz/questions/images_g1/GFG1LC7TDQ1.png,1,2,GFG1LC7TDQ1,GFG1LC7,GFG1TDQ
-Perimeter,A gutter runs all round a roof which is 15m long and 12cm wide.  What length is the gutter in metres,,,1,2,GFG1LC7TDQ2,GFG1LC7,GFG1TDQ
-Perimeter,A regular octagon has one side 2.5cm long. How long is the perimeter of this shape in mm,,,1,2,GFG1LC7TSQ1,GFG1LC7,GFG1TSQ
-Perimeter,Find the perimeter of this compound shape room,,/quiz/questions/images_g1/GFG1LC7TSQ2.png,1,2,GFG1LC7TSQ2,GFG1LC7,GFG1TSQ
-3D Shapes,Can you tell which 3-D shape the following net will make,,/quiz/questions/images_g1/GFG1LC8TDQ1.png,1,2,GFG1LC8TDQ1,GFG1LC8,GFG1TDQ
-3D Shapes,How many vertices does a Triangular Prism have,,,1,2,GFG1LC8TDQ2,GFG1LC8,GFG1TDQ
-3D Shapes,How many bricks can be seen in the plan view ,,/quiz/questions/images_g1/GFG1LC8TDQ3.png,1,2,GFG1LC8TDQ3,GFG1LC8,GFG1TDQ
-3D Shapes,Can you tell which 3-D shape the following net will make,,/quiz/questions/images_g1/GFG1LC8TSQ1.png,1,2,GFG1LC8TSQ1,GFG1LC8,GFG1TSQ
-3D Shapes,How many edges does a Cylinder have,,,1,2,GFG1LC8TSQ2,GFG1LC8,GFG1TSQ
-3D Shapes,How many bricks can be seen in front elevation ,,/quiz/questions/images_g1/GFG1LC8TDQ3.png,1,2,GFG1LC8TSQ3,GFG1LC8,GFG1TSQ
-Volumes,How many of these smaller boxes will fit into the larger box,,/quiz/questions/images_g1/GFG1LC9TDQ1.png,1,3,GFG1LC9TDQ1,GFG1LC9,GFG1TDQ
-Volumes,Calculate the volume of the following triangular prism:,,/quiz/questions/images_g1/GFG1LC9TDQ2.png,1,3,GFG1LC9TDQ2,GFG1LC9,GFG1TDQ
-Volumes,Calculate the volume of the following Cuboid to 2 decimal places:,,/quiz/questions/images_g1/GFG1LC9TSQ1.png,1,3,GFG1LC9TSQ1,GFG1LC9,GFG1TSQ
-Volumes,Calculate the volume of the following triangular prism:,,/quiz/questions/images_g1/GFG1LC9TSQ2.png,1,3,GFG1LC9TSQ2,GFG1LC9,GFG1TSQ
-Surface Area,Work out the surface area of the cuboid in m²:,,/quiz/questions/images_g1/GFG1LC10TDQ1.png,1,4,GFG1LC10TDQ1,GFG1LC10,GFG1TDQ
-Surface Area,Calculate the Surface Area of a Cylinder in cm²,,/quiz/questions/images_g1/GFG1LC10TDQ2.png,1,4,GFG1LC10TDQ2,GFG1LC10,GFG1TDQ
-Surface Area,Work out the surface area of the cuboid in cm²:,,/quiz/questions/images_g1/GFG1LC10TSQ1.png,1,4,GFG1LC10TSQ1,GFG1LC10,GFG1TSQ
-Surface Area,Work out the surface area of a  cube with length= 4m in m²,,,1,3,GFG1LC10TSQ2,GFG1LC10,GFG1TSQ
+﻿question_name,question_body,q_calculator,question_type,question_image,question_mark,question_grade,question_code,lesson_code,quiz_code
+Triangles,Calculate angle a,FALSE,,/quiz/questions/images_g1/GFG1LC1TDQ1.png,1,2,GFG1LC1TDQ1,GFG1LC1,GFG1TDQ
+Triangles,Calculate angle x,FALSE,,/quiz/questions/images_g1/GFG1LC1TDQ2.png,1,2,GFG1LC1TDQ2,GFG1LC1,GFG1TDQ
+Triangles,Calculate angle a ,FALSE,,/quiz/questions/images_g1/GFG1LC1TSQ1.png,1,2,GFG1LC1TSQ1,GFG1LC1,GFG1TSQ
+Triangles,Calculate angle a ,FALSE,,/quiz/questions/images_g1/GFG1LC1TSQ2.png,1,2,GFG1LC1TSQ2,GFG1LC1,GFG1TSQ
+Quadrilaterals,"The measure of three of the quadrilateral are given. Find the measure of the fourth angle.  25°, 34°, 68°, ",FALSE,,,1,2,GFG1LC2TDQ1,GFG1LC2,GFG1TDQ
+Quadrilaterals,"Which quadrilateral has the following properties?  One pair of parallel sides , Sometimes got one line of symmetry",FALSE,,,1,2,GFG1LC2TDQ2,GFG1LC2,GFG1TDQ
+Quadrilaterals,"The measure of three of the quadrilateral are given. Find the measure of the fourth angle.  90 °, 80°, 70°, ",FALSE,,,1,2,GFG1LC2TSQ1,GFG1LC2,GFG1TSQ
+Quadrilaterals,Which quadrilateral has the following properties? All four sides are the same length. There are no right angles.,FALSE,,,1,2,GFG1LC2TSQ2,GFG1LC2,GFG1TSQ
+Angle Problems,Calculate  q,FALSE,,/quiz/questions/images_g1/GFG1LC3TDQ1.png,1,3,GFG1LC3TDQ1,GFG1LC3,GFG1TDQ
+Angle Problems,Calculate a,FALSE,,/quiz/questions/images_g1/GFG1LC3TDQ2.png,1,3,GFG1LC3TDQ2,GFG1LC3,GFG1TDQ
+Angle Problems,Calculate  g,FALSE,,/quiz/questions/images_g1/GFG1LC3TSQ1.png,1,3,GFG1LC3TSQ1,GFG1LC3,GFG1TSQ
+Angle Problems,Calculate t,FALSE,,/quiz/questions/images_g1/GFG1LC3TSQ2.png,1,3,GFG1LC3TSQ2,GFG1LC3,GFG1TSQ
+Circles,Peter has baked a birthday cake in a 24 cm diameter tin.  He wants to buy a ribbon to decorate the edge.  How much ribbon does he need?,TRUE,,,1,3,GFG1LC4TDQ1,GFG1LC4,GFG1TDQ
+Circles,Calculate the area shaded black,TRUE,,/quiz/questions/images_g1/GFG1LC4TDQ1.png,1,3,GFG1LC4TDQ2,GFG1LC4,GFG1TDQ
+Circles,A circular hole with diameter 5 cm is cut out of a rectangular metal plate of length 10 cm and width 7 cm. Find the area of the plate when the hole has been cut out,TRUE,,/quiz/questions/images_g1/GFG1LC4TSQ1.png,1,4,GFG1LC4TSQ1,GFG1LC4,GFG1TSQ
+Circles,"Ashley plans to put a fence around his circular garden. When Ashley walks from one side of the garden to the other, through the middle, it is 7.5 metres. Fencing is sold in 1m pieces and costs £2.99 per metre. How much will it cost for Ashley’s new fence?",TRUE,,,1,4,GFG1LC4TSQ2,GFG1LC4,GFG1TSQ
+Polygons,Calculate the size of the interior angle for a regular dodecagon,TRUE,,,1,3,GFG1LC5TDQ1,GFG1LC5,GFG1TDQ
+Polygons,How many sides are there in a regular polygon if each interior angle measures 165°,TRUE,,,1,3,GFG1LC5TDQ2,GFG1LC5,GFG1TDQ
+Polygons,Find the measure of each exterior angle of a regular decagon,TRUE,,,1,3,GFG1LC5TSQ1,GFG1LC5,GFG1TSQ
+Polygons,Each exterior angle of a regular polygon is 20°. Work out the number of sides of the polygon,TRUE,,,1,3,GFG1LC5TSQ2,GFG1LC5,GFG1TSQ
+Area ,Calculate the area of the compound shape below,FALSE,,/quiz/questions/images_g1/GFG1LC6TDQ1.png,1,3,GFG1LC6TDQ1,GFG1LC6,GFG1TDQ
+Area ,Calculate the area of the compound shape below,FALSE,,/quiz/questions/images_g1/GFG1LC6TDQ2.png,1,3,GFG1LC6TDQ2,GFG1LC6,GFG1TDQ
+Area ,Calculate the area of the shaded region:,TRUE,,/quiz/questions/images_g1/GFG1LC6TSQ1.png,1,4,GFG1LC6TSQ1,GFG1LC6,GFG1TSQ
+Perimeter,Find the perimeter of this L-shaped room,FALSE,,/quiz/questions/images_g1/GFG1LC7TDQ1.png,1,2,GFG1LC7TDQ1,GFG1LC7,GFG1TDQ
+Perimeter,A gutter runs all round a roof which is 15m long and 12cm wide.  What length is the gutter in metres,FALSE,,,1,2,GFG1LC7TDQ2,GFG1LC7,GFG1TDQ
+Perimeter,A regular octagon has one side 2.5cm long. How long is the perimeter of this shape in mm,FALSE,,,1,2,GFG1LC7TSQ1,GFG1LC7,GFG1TSQ
+Perimeter,Find the perimeter of this compound shape room,FALSE,,/quiz/questions/images_g1/GFG1LC7TSQ2.png,1,2,GFG1LC7TSQ2,GFG1LC7,GFG1TSQ
+3D Shapes,Can you tell which 3-D shape the following net will make,FALSE,,/quiz/questions/images_g1/GFG1LC8TDQ1.png,1,2,GFG1LC8TDQ1,GFG1LC8,GFG1TDQ
+3D Shapes,How many vertices does a Triangular Prism have,FALSE,,,1,2,GFG1LC8TDQ2,GFG1LC8,GFG1TDQ
+3D Shapes,How many bricks can be seen in the plan view ,FALSE,,/quiz/questions/images_g1/GFG1LC8TDQ3.png,1,2,GFG1LC8TDQ3,GFG1LC8,GFG1TDQ
+3D Shapes,Can you tell which 3-D shape the following net will make,FALSE,,/quiz/questions/images_g1/GFG1LC8TSQ1.png,1,2,GFG1LC8TSQ1,GFG1LC8,GFG1TSQ
+3D Shapes,How many edges does a Cylinder have,FALSE,,,1,2,GFG1LC8TSQ2,GFG1LC8,GFG1TSQ
+3D Shapes,How many bricks can be seen in front elevation ,FALSE,,/quiz/questions/images_g1/GFG1LC8TDQ3.png,1,2,GFG1LC8TSQ3,GFG1LC8,GFG1TSQ
+Volumes,How many of these smaller boxes will fit into the larger box,FALSE,,/quiz/questions/images_g1/GFG1LC9TDQ1.png,1,3,GFG1LC9TDQ1,GFG1LC9,GFG1TDQ
+Volumes,Calculate the volume of the following triangular prism:,TRUE,,/quiz/questions/images_g1/GFG1LC9TDQ2.png,1,3,GFG1LC9TDQ2,GFG1LC9,GFG1TDQ
+Volumes,Calculate the volume of the following Cuboid to 2 decimal places:,TRUE,,/quiz/questions/images_g1/GFG1LC9TSQ1.png,1,3,GFG1LC9TSQ1,GFG1LC9,GFG1TSQ
+Volumes,Calculate the volume of the following triangular prism:,FALSE,,/quiz/questions/images_g1/GFG1LC9TSQ2.png,1,3,GFG1LC9TSQ2,GFG1LC9,GFG1TSQ
+Surface Area,Work out the surface area of the cuboid in m²:,TRUE,,/quiz/questions/images_g1/GFG1LC10TDQ1.png,1,4,GFG1LC10TDQ1,GFG1LC10,GFG1TDQ
+Surface Area,Calculate the Surface Area of a Cylinder in cm²,TRUE,,/quiz/questions/images_g1/GFG1LC10TDQ2.png,1,4,GFG1LC10TDQ2,GFG1LC10,GFG1TDQ
+Surface Area,Work out the surface area of the cuboid in cm²:,TRUE,,/quiz/questions/images_g1/GFG1LC10TSQ1.png,1,4,GFG1LC10TSQ1,GFG1LC10,GFG1TSQ
+Surface Area,Work out the surface area of a  cube with length= 4m in m²,FALSE,,,1,3,GFG1LC10TSQ2,GFG1LC10,GFG1TSQ
