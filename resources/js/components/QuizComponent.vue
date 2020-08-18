@@ -14,8 +14,8 @@
         </h5>
 
         <p class="card-text">{{activeQuestion.question_body}}</p>
-        <div v-if="activeQuestion.question_image">
-          <img style="max-height:200px;" :src="'/storage'+activeQuestion.question_image" />
+        <div v-if="activeQuestion.question_image" class="text-center mb-2">
+          <img style="max-height:200px;max-width: 100%;" :src="'/storage'+activeQuestion.question_image" />
         </div>
         <div class="row">
           <div class="col-2">Answer :</div>
@@ -169,6 +169,18 @@
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
+            <div v-else-if="activeQuestion.question_type == 'option'">
+              <div class="form-check" v-for="answer in activeQuestion.answers" :key="answer.id">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="answer"
+                  :id="'a'+answer.id"
+                  :value="answer.ans1_body"
+                />
+                <label class="form-check-label" :for="'a'+answer.id">{{answer.ans1_body}}</label>
               </div>
             </div>
             <div v-else>

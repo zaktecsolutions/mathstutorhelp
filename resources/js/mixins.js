@@ -17,11 +17,11 @@ Vue.mixin({
                 })
                 .then(response => {
                     console.log(response.data);
-                    $("#badge-" + feedback_id).removeClass('badge-succes');
-                    $("#badge-" + feedback_id).removeClass('badge-warning');
-                    $("#badge-" + feedback_id).removeClass('badge-danger');
+                    $(".badge-" + feedback_id).removeClass('badge-succes');
+                    $(".badge-" + feedback_id).removeClass('badge-warning');
+                    $(".badge-" + feedback_id).removeClass('badge-danger');
                     var newStatus = response.data.status == 1 ? 'success' : 'danger';
-                    $("#badge-" + feedback_id).addClass('badge-' + newStatus);
+                    $(".badge-" + feedback_id).addClass('badge-' + newStatus);
                 });
         }
     }

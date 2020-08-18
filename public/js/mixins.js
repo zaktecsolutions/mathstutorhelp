@@ -294,6 +294,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["quiz"],
   data: function data() {
@@ -415,9 +427,12 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _vm.activeQuestion.question_image
-                  ? _c("div", [
+                  ? _c("div", { staticClass: "text-center mb-2" }, [
                       _c("img", {
-                        staticStyle: { "max-height": "200px" },
+                        staticStyle: {
+                          "max-height": "200px",
+                          "max-width": "100%"
+                        },
                         attrs: {
                           src: "/storage" + _vm.activeQuestion.question_image
                         }
@@ -1367,6 +1382,37 @@ var render = function() {
                             ]
                           )
                         ])
+                      : _vm.activeQuestion.question_type == "option"
+                      ? _c(
+                          "div",
+                          _vm._l(_vm.activeQuestion.answers, function(answer) {
+                            return _c(
+                              "div",
+                              { key: answer.id, staticClass: "form-check" },
+                              [
+                                _c("input", {
+                                  staticClass: "form-check-input",
+                                  attrs: {
+                                    type: "radio",
+                                    name: "answer",
+                                    id: "a" + answer.id
+                                  },
+                                  domProps: { value: answer.ans1_body }
+                                }),
+                                _vm._v(" "),
+                                _c(
+                                  "label",
+                                  {
+                                    staticClass: "form-check-label",
+                                    attrs: { for: "a" + answer.id }
+                                  },
+                                  [_vm._v(_vm._s(answer.ans1_body))]
+                                )
+                              ]
+                            )
+                          }),
+                          0
+                        )
                       : _c("div", [
                           _c("div", { staticClass: "input-group" }, [
                             _vm.activeQuestion.format[0][0]
@@ -1718,11 +1764,11 @@ Vue.mixin({
         status: status
       }).then(function (response) {
         console.log(response.data);
-        $("#badge-" + feedback_id).removeClass('badge-succes');
-        $("#badge-" + feedback_id).removeClass('badge-warning');
-        $("#badge-" + feedback_id).removeClass('badge-danger');
+        $(".badge-" + feedback_id).removeClass('badge-succes');
+        $(".badge-" + feedback_id).removeClass('badge-warning');
+        $(".badge-" + feedback_id).removeClass('badge-danger');
         var newStatus = response.data.status == 1 ? 'success' : 'danger';
-        $("#badge-" + feedback_id).addClass('badge-' + newStatus);
+        $(".badge-" + feedback_id).addClass('badge-' + newStatus);
       });
     }
   }

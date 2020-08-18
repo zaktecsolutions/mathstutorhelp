@@ -7,7 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Question extends Model
 {
     protected $guarded = [];
-    
+
+    protected $with = ['answers'];
+
     public function quizzes()
     {
         //Question belongs to many Quiz
@@ -25,7 +27,7 @@ class Question extends Model
         // Question had many Answer
         return $this->hasMany('App\Answer');
     }
-    
+
     public function quizfeedbacks()
     {
         // Question has many Quizfeedback
@@ -34,7 +36,7 @@ class Question extends Model
 
     public function right_answer()
     {
-         /**
+        /**
          * retunrs the admin dashboard.
          *
          */
@@ -49,6 +51,4 @@ class Question extends Model
          */
         return $this->quizfeedbacks()->where('user_id', $user->id)->first();
     }
-
-    
 }

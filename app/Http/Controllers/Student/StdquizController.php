@@ -99,19 +99,13 @@ class StdquizController extends Controller
                 }
             }
 
-            $text_answer = $answer["answer1"];
-            if (!empty($answer["answer2"])) {
-                $text_answer = $text_answer . ' | ' . $answer["answer2"];
-            }
-            if (!empty($answer["answer3"])) {
-                $text_answer = $text_answer . ' | ' . $answer["answer3"];
-            }
-
             Quizfeedback::create([
                 'quizresult_id' => $result->id,
                 'question_id' => $question->id,
                 'answer_id' => null,
-                'answer' => $text_answer,
+                'answer1' => $answer["answer1"],
+                'answer2' => $answer["answer2"],
+                'answer3' => $answer["answer3"],
                 'status' => $status,
                 'user_id' => auth()->user()->id,
             ]);

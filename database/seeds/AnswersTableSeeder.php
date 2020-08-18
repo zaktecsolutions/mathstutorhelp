@@ -19,7 +19,7 @@ class AnswersTableSeeder extends Seeder
         Schema::disableForeignKeyConstraints();
         answer::truncate();
 
-        $files = ['a1_answers.csv','a2_answers.csv','g1_answers.csv','g2_answers.csv','n1_answers.csv','n2_answers.csv','p1_answers.csv','rm_answers.csv','s1_answers.csv'];
+        $files = ['a1_answers.csv', 'a2_answers.csv', 'g1_answers.csv', 'g2_answers.csv', 'n1_answers.csv', 'n2_answers.csv', 'p1_answers.csv', 'rm_answers.csv', 's1_answers.csv'];
         foreach ($files as $file) {
             $seederFile = Storage::path('seeders/csv/gcse_foundation/answers/' . $file);
             $csv = Reader::createFromPath($seederFile, 'r');
@@ -27,7 +27,7 @@ class AnswersTableSeeder extends Seeder
             $records = $csv->getRecords();
             foreach ($records as $offset => $record) {
                 $question = Question::where('question_code', $record["question_code"])->first();
-                answer::create([
+                $answer = [
                     'question_id' => $question->id,
                     'ans1_b' => $record["ans1_b"],
                     'ans1_body' => $record["ans1_body"],
@@ -39,7 +39,13 @@ class AnswersTableSeeder extends Seeder
                     'ans_explanation' => $record["ans_explanation"],
                     'ans_image' => $record["ans_image"],
                     'question_code' => $record["question_code"],
-                ]);
+                ];
+
+                if (array_key_exists('ans_correct', $record) && !empty($record["ans_correct"])) {
+                    $answer['ans_correct'] = $record["ans_correct"] != 0;
+                }
+
+                Answer::create($answer);
             }
         }
 
