@@ -1,5 +1,5 @@
 ﻿question_name,question_body,q_calculator,question_type,question_image,question_mark,question_grade,question_code,lesson_code,quiz_code
-Times and Timetables,Convert 1.25 hr into hours and minutes ,FALSE,a,,1,2,GFRMLC1TDQ1,GFRMLC1,GFRMTDQ
+Times and Timetables,Convert 1.25 hr into hours and minutes ,FALSE,,,1,2,GFRMLC1TDQ1,GFRMLC1,GFRMTDQ
 Times and Timetables,Convert 35 minutes into hours (2dp),TRUE,,,1,2,GFRMLC1TDQ2,GFRMLC1,GFRMTDQ
 Times and Timetables,Convert 135 minutes into hours,TRUE,,,1,2,GFRMLC1TSQ1,GFRMLC1,GFRMTSQ
 Times and Timetables,Brian rides 22km in 2 hours 33 minutes. Calculate his time in hours? ,TRUE,,,1,2,GFRMLC1TSQ2,GFRMLC1,GFRMTSQ
@@ -22,12 +22,8 @@ Ratio 2,Find the missing numbers in the ratios     3  :  5  : 7        27: 45 : 
 Ratio 2,A map has a scale of 1 : 100.   What distance does 2m on the map represent in map?,FALSE,,,1,4,GFRMLC4TSQ2,GFRMLC4,GFRMTSQ
 Ratio 2,"The recipe to make chocolate cake is shown below:  Chocolate Cake -Serves 3  150ml milk, 200ml double cream, 2 tbsp cocoa powder. How much milk is needed for 7 people?",FALSE,,,1,4,GFRMLC4TSQ3,GFRMLC4,GFRMTSQ
 Best Buy,Cooking oil is sold in two sizes of cans. A small can contains 4 litres of cooking oil and costs £2.20. A large can contains 6 litres of cooking oil and costs £3.24    Which size of can gives the better value for money? (You must show all your working.) ,FALSE,option,,1,3,GFRMLC5TDQ1,GFRMLC5,GFRMTDQ
-Best Buy,Cooking oil is sold in two sizes of cans. A small can contains 4 litres of cooking oil and costs £2.20. A large can contains 6 litres of cooking oil and costs £3.24    Which size of can gives the better value for money? (You must show all your working.) ,FALSE,option,,1,3,GFRMLC5TDQ1,GFRMLC5,GFRMTDQ
-Best Buy,Which apple  is better value for money? Show all calculations and give reasons for your answer.    Large Apple: 1.2kg for £3.89. Small Apple: 700g for £2.14,TRUE,option,,1,3,GFRMLC5TDQ2,GFRMLC5,GFRMTDQ
 Best Buy,Which apple  is better value for money? Show all calculations and give reasons for your answer.    Large Apple: 1.2kg for £3.89. Small Apple: 700g for £2.14,TRUE,option,,1,3,GFRMLC5TDQ2,GFRMLC5,GFRMTDQ
 Best Buy,Which bottle of tomato ketchup is better value for money?  Show all calculations and give reasons for your answer.    Large: 720g = £3.60    Small: 480g = £2.50,TRUE,option,,1,3,GFRMLC5TSQ1,GFRMLC5,GFRMTSQ
-Best Buy,Which bottle of tomato ketchup is better value for money?  Show all calculations and give reasons for your answer.    Large: 720g = £3.60    Small: 480g = £2.50,TRUE,option,,1,3,GFRMLC5TSQ1,GFRMLC5,GFRMTSQ
-Best Buy,Water is sold in two sizes:  Small: 1 gal = 75p    Large: 3 gal = £2.24. Which is the better value for money? You must show your working,TRUE,option,,1,3,GFRMLC5TSQ2,GFRMLC5,GFRMTSQ
 Best Buy,Water is sold in two sizes:  Small: 1 gal = 75p    Large: 3 gal = £2.24. Which is the better value for money? You must show your working,TRUE,option,,1,3,GFRMLC5TSQ2,GFRMLC5,GFRMTSQ
 Share Ratio,"Paula, Robert and Karl share £240 in the ratio 4 : 5 : 3. How much money do they each receive? ",FALSE,,,1,3,GFRMLC6TDQ1,GFRMLC6,GFRMTDQ
 Share Ratio,"Kyle, Geri & Mo buy a bag of sweets. The bag contains 60 sweets. Geri gets double Kyle’s amount. Mo gets the same as Geri. How many sweets do they get each?",TRUE,,,1,4,GFRMLC6TDQ2,GFRMLC6,GFRMTDQ
