@@ -15,11 +15,13 @@
 
         <p class="card-text">{{activeQuestion.question_body}}</p>
         <div v-if="activeQuestion.question_image" class="text-center mb-2">
-          <img style="max-height:200px;max-width: 100%;" :src="'/storage'+activeQuestion.question_image" />
+          <img
+            style="max-height:200px;max-width: 100%;"
+            :src="'/storage'+activeQuestion.question_image"
+          />
         </div>
-        <div class="row">
-          <div class="col-2">Answer :</div>
-          <div class="col-10">
+        <div class="answer-container">
+          <div>
             <div v-if="activeQuestion.question_type == 'fraction'" style="width:180px;">
               <div class="input-group">
                 <div class="input-group-prepend" v-if="activeQuestion.format[0][0]">
@@ -199,15 +201,27 @@
       </div>
     </div>
 
-    <div class="mt-2">
-      <b-button v-if="currentIndex>0" @click="previous">Previous</b-button>
-      <b-button class="float-right" v-if="currentIndex<(questions.length-1)" @click="next">Next</b-button>
-    </div>
-    <div class="text-center" v-if="currentIndex==(questions.length-1)">
-      <b-button variant="primary" @click="submit">Submit</b-button>
+    <div class="row mt-2">
+      <div class="col-md-4">
+        <b-button class="form-control btn-success" v-if="currentIndex>0" @click="previous">Previous</b-button>
+      </div>
+      <div class="col-md-4">
+        <b-button class="form-control" v-if="currentIndex==(questions.length-1)" variant="primary" @click="submit">Submit</b-button>
+      </div>
+      <div class="col-md-4">
+        <b-button class="form-control btn-success" v-if="currentIndex<(questions.length-1)" @click="next">Next</b-button>
+      </div>
     </div>
   </div>
 </template>
+
+<style>
+.answer-container {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+</style>
 
 <script>
 export default {
