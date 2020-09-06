@@ -130,7 +130,6 @@ class QuizzesController extends Controller
             'quiz_type' => 'required| max:120',
             'quiz_subtype' => 'required| max:120',
             'quiz_calculator' => 'required| max:120',
-
         ]);
     }
 }

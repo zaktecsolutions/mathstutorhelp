@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Question;
 use Illuminate\Http\Request;
+use Ramsey\Uuid\Uuid;
 
 class QuestionsController extends Controller
 {
@@ -49,7 +50,8 @@ class QuestionsController extends Controller
         //
         $question = question::create($this->validatedData());
 
-        if ($question) {$request->session()->flash('success', $question->question_name . ' has been inserted');
+        if ($question) {
+            $request->session()->flash('success', $question->question_name . ' has been inserted');
         } else {
             $request->session()->flash('error', 'There was an error updating the user');
         }
@@ -97,7 +99,8 @@ class QuestionsController extends Controller
         $question->update($this->validatedData());
 
 
-        if ($question) {$request->session()->flash('success', $question->question_name . ' has been updated');
+        if ($question) {
+            $request->session()->flash('success', $question->question_name . ' has been updated');
         } else {
             $request->session()->flash('error', 'There was an error updating the user');
         }
@@ -118,14 +121,22 @@ class QuestionsController extends Controller
     }
     protected function validatedData()
     {
-        return request()->validate([
+        $reqData =  request()->validate([
             'question_name' => 'required| max:120',
             'question_body' => 'required| max:120',
-            'question_image' => 'nullable|mimes:jpeg,jpg,png | max:10',
-            'question_mark' => 'required| numeric|min:1|max:9',
-            'question_grade' => 'required| numeric|min:1|max:9',
+            'question_image' => 'nullable| image | max:2048',
+            'question_mark' => 'required| numeric |min:1|max:9',
+            'question_grade' => 'required| numeric |min:1|max:9',
             'question_type' => 'nullable| max:20',
-
         ]);
+
+        if(array_key_exists('question_image',$reqData))
+        {
+            $path = '/quiz/questions/';
+            $name = Uuid::uuid4() . '.' . request()->file('question_image')->extension();
+            request()->file('question_image')->storeAs('public'.$path, $name);
+            $reqData['question_image'] = $path.$name;
+        }
+        return $reqData;
     }
 }

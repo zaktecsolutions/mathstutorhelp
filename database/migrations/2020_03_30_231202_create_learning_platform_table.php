@@ -100,7 +100,6 @@ class CreateLearningPlatformTable extends Migration
             $table->string('question_code');
             $table->text('ans_explanation')->nullable();
             $table->boolean('ans_correct')->default(true);
-            $table->boolean('ans_published')->default(false);
             $table->timestamps();
         });
 

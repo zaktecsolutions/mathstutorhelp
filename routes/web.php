@@ -53,7 +53,6 @@ Route::namespace ('Digitutor')
         Route::post('/mark-answer', 'DigitutorController@markAnswer')->name('mark-answer');
         Route::post('/send-message', 'DigitutorController@sendMessage')->name('send-message');
         Route::resource('/digitutors', 'DigitutorController');
-        Route::resource('/conversation', 'ConversationController');
     });
 
 // student  route
