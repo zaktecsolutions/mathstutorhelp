@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Question;
+use App\Quiz;
+use App\Topic;
 use Illuminate\Http\Request;
 use Ramsey\Uuid\Uuid;
 
@@ -23,10 +25,30 @@ class QuestionsController extends Controller
      */
     public function index()
     {
+        $topics = Topic::all();
+        $quizes = Quiz::all();
         // return 'User index page';
         $questions = question::all(); //gets all the questions
         //   dd($questions);
-        return view('admin.questions.index')->with('questions', $questions);
+        return view('admin.questions.index')->with(compact('questions', 'topics', 'quizes'));
+    }
+
+    public function filter(Request $request)
+    {
+        $query = Question::query();
+        if ($request->has('topic_id') && !empty($request->topic_id)) {
+            $topic_id = $request->topic_id;
+            $query->whereHas('lesson', function ($q) use ($topic_id) {
+                $q->where('topic_id', $topic_id);
+            });
+        }
+        if ($request->has('quiz_id') && !empty($request->quiz_id)) {
+            $quiz_id = $request->quiz_id;
+            $query->whereHas('quizzes', function ($q) use ($quiz_id) {
+                $q->where('quizzes.id', $quiz_id);
+            });
+        }
+        return view('admin.questions.question-list')->with('questions', $query->get());
     }
 
     /**
@@ -130,12 +152,11 @@ class QuestionsController extends Controller
             'question_type' => 'nullable| max:20',
         ]);
 
-        if(array_key_exists('question_image',$reqData))
-        {
+        if (array_key_exists('question_image', $reqData)) {
             $path = '/quiz/questions/';
             $name = Uuid::uuid4() . '.' . request()->file('question_image')->extension();
-            request()->file('question_image')->storeAs('public'.$path, $name);
-            $reqData['question_image'] = $path.$name;
+            request()->file('question_image')->storeAs('public' . $path, $name);
+            $reqData['question_image'] = $path . $name;
         }
         return $reqData;
     }

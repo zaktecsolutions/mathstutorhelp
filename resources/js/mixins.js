@@ -23,6 +23,16 @@ Vue.mixin({
                     var newStatus = response.data.status == 1 ? 'success' : 'danger';
                     $(".badge-" + feedback_id).addClass('badge-' + newStatus);
                 });
+        },
+        filterQuestions: function () {
+            axios
+                .post(`/admin/questions/filter`, {
+                    topic_id: $("#topic").val(),
+                    quiz_id: $("#quiz").val()
+                })
+                .then(response => {
+                    $("#results").html(response.data);
+                });
         }
     }
 })

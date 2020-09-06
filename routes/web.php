@@ -36,6 +36,7 @@ Route::namespace ('Admin')
         Route::resource('/courses', 'CoursesController');
         Route::resource('course.topics', 'TopicsController');
         Route::resource('course.topic.lessons', 'LessonsController');
+        Route::post('/questions/filter', 'QuestionsController@filter')->name('filter-questions');
         Route::resource('/questions', 'QuestionsController');
         Route::resource('/quizzes', 'QuizzesController');
         Route::resource('question.answers', 'AnswersController');

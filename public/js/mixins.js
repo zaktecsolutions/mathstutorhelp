@@ -2466,6 +2466,14 @@ Vue.mixin({
         var newStatus = response.data.status == 1 ? 'success' : 'danger';
         $(".badge-" + feedback_id).addClass('badge-' + newStatus);
       });
+    },
+    filterQuestions: function filterQuestions() {
+      axios.post("/admin/questions/filter", {
+        topic_id: $("#topic").val(),
+        quiz_id: $("#quiz").val()
+      }).then(function (response) {
+        $("#results").html(response.data);
+      });
     }
   }
 });
@@ -2482,7 +2490,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\abdullah\Google Drive\sherazGoogle\computerscience\mth\resources\js\mixins.js */"./resources/js/mixins.js");
+module.exports = __webpack_require__(/*! E:\PHP\Laravel\mth\resources\js\mixins.js */"./resources/js/mixins.js");
 
 
 /***/ })

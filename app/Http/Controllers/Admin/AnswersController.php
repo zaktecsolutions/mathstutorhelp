@@ -140,7 +140,7 @@ class AnswersController extends Controller
     {
         $reqData =  request()->validate([
             'ans1_body' => 'required| max:120',
-            'ans_image' => 'nullable|mimes:image | max:2048',
+            'ans_image' => 'nullable|image | max:2048',
             'ans1_b' => 'nullable| max:20',
             'ans1_a' => 'nullable| max:20',
             'ans2_body' => 'nullable| max:20',
