@@ -50,11 +50,12 @@
                         <label for="ans_image" class="col-md-2 col-form-label text-md-right font-weight-bold">Course
                             Image </label>
                         <div class="col-md-8">
-                            {{$course->course_image }}
 
                             @if(empty($course->course_image))
 
                             <p>No Image uploaded</p>
+                            @else
+                            <img src="{{asset('storage/'.$course->course_image)}}" height="200px" />
                             @endif
                         </div>
                     </div>

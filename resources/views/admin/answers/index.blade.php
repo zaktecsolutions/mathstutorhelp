@@ -17,16 +17,14 @@
                 </div>
                 @endif
             </div>
-            {{-- <a href="{{ route('admin.question.answers.create',$question->id)}}" class="btn btn-primary">Add
-            answer</a> --}}
+            <a href="{{ route('admin.question.answers.create',$question->id)}}" class="btn btn-primary">Add Answer</a>
             <div class="card-body">
                 <table class="table">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Answer Body</th>
-                            <th scope="col"></th>
-                            <th scope="col"> Action</th>
+                            <th class="text-center" scope="col" colspan="3"> Action</th>
                         </tr>
                     </thead>
                     <tbody>

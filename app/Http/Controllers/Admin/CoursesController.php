@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 use App\Course;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Ramsey\Uuid\Uuid;
 
 class CoursesController extends Controller
 {
@@ -131,14 +132,23 @@ class CoursesController extends Controller
 
     protected function validatedData()
     {
-        return request()->validate([
+        $reqData = request()->validate([
             'course_name' => 'required| max:120',
             'course_code' => 'required| max:120',
             'course_desc' => 'required| max:120',
             'course_level' => 'required| max:120',
-            'course_image' => 'sometimes|mimes:jpeg,jpg,png | max:10',
+            'course_image' => 'sometimes|image | max:2048',
 
         ]);
+
+        if(array_key_exists('course_image',$reqData))
+        {
+            $path = '/course/';
+            $name = Uuid::uuid4() . '.' . request()->file('course_image')->extension();
+            request()->file('course_image')->storeAs('public'.$path, $name);
+            $reqData['course_image'] = $path.$name;
+        }
+        return $reqData;
 
     }
 }

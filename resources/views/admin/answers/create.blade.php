@@ -7,7 +7,7 @@
           <div class="card">
                 <div class="card-header">Insert answer </div>
                 <div class="card-body">
-                    <form action="{{ route('admin.question.answers.store',$question->id) }}" method="POST">
+                    <form action="{{ route('admin.question.answers.store',$question->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @include('admin.answers.form')
                         <button type="submit" class="btn btn-primary">

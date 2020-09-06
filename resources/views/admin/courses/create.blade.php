@@ -7,7 +7,7 @@
           <div class="card">
                 <div class="card-header">Insert course </div>
                 <div class="card-body">
-                    <form action="{{ route('admin.courses.store') }}" method="POST">
+                    <form action="{{ route('admin.courses.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @include('admin.courses.form')
                         <button type="submit" class="btn btn-primary">

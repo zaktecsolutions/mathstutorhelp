@@ -8,7 +8,7 @@
                 <div class="card-header">Edit course {{ $course->id }}</div>
 
                 <div class="card-body">
-                    <form action="{{ route('admin.courses.update', $course) }}" method="POST">
+                    <form action="{{ route('admin.courses.update', $course) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         {{ method_field('PUT')}}
                         @include('admin.courses.form')

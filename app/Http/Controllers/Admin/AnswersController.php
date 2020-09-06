@@ -6,6 +6,7 @@ use App\Answer;
 use App\Http\Controllers\Controller;
 use App\Question;
 use Illuminate\Http\Request;
+use Ramsey\Uuid\Uuid;
 
 /**
  * This control the CRUD for the Answer model
@@ -58,9 +59,10 @@ class AnswersController extends Controller
      */
     public function store(Question $question, Request $request)
     {
-        $answer = answer::create($this->validatedData());
+        $answer = $question->answers()->create($this->validatedData());
 
-        if ($answer) {$request->session()->flash('success', $answer->id . ' has been inserted');
+        if ($answer) {
+            $request->session()->flash('success', $answer->id . ' has been inserted');
         } else {
             $request->session()->flash('error', 'There was an error updating the user');
         }
@@ -111,7 +113,8 @@ class AnswersController extends Controller
 
         $answer->update($this->validatedData());
 
-        if ($answer) {$request->session()->flash('success', $answer->id . ' has been updated');
+        if ($answer) {
+            $request->session()->flash('success', $answer->id . ' has been updated');
         } else {
             $request->session()->flash('error', 'There was an error updating the user');
         }
@@ -135,9 +138,9 @@ class AnswersController extends Controller
 
     protected function validatedData()
     {
-        return request()->validate([
+        $reqData =  request()->validate([
             'ans1_body' => 'required| max:120',
-            'ans_image' => 'nullable|mimes:jpeg,jpg,png | max:10',
+            'ans_image' => 'nullable|mimes:image | max:2048',
             'ans1_b' => 'nullable| max:20',
             'ans1_a' => 'nullable| max:20',
             'ans2_body' => 'nullable| max:20',
@@ -145,9 +148,16 @@ class AnswersController extends Controller
             'ans2_a' => 'nullable| max:20',
             'ans3_body' => 'nullable| max:20',
             'ans_explanation' => 'nullable| max:20',
-            'ans_correct' => 'nullable| max:20',
-            // 'question_id' => $question->id,
+            'ans_correct' => 'nullable| max:20'
         ]);
-    }
 
+        if(array_key_exists('ans_image',$reqData))
+        {
+            $path = '/quiz/answers/';
+            $name = Uuid::uuid4() . '.' . request()->file('ans_image')->extension();
+            request()->file('ans_image')->storeAs('public'.$path, $name);
+            $reqData['ans_image'] = $path.$name;
+        }
+        return $reqData;
+    }
 }

@@ -55,7 +55,7 @@ class LessonsController extends Controller
     public function store(Request $request, Course $course, Topic $topic)
     {
         //
-        $lesson = Lesson::create($this->validatedData());
+        $lesson = $topic->lessons()->create($this->validatedData());
 
         if ($lesson) {
             $request->session()->flash('success', $lesson->lesson_name . ' has been inserted');
@@ -93,9 +93,6 @@ class LessonsController extends Controller
      */
     public function edit(Course $course, Topic $topic, Lesson $lesson)
     {
-        //dd($lesson)  - check if lesson is coming
-
-        $lessons = lesson::all(); //get all the lessons
         return view('admin.lessons.edit')->with([
             'lesson' => $lesson, // send the lesson you want to edit
             'topic' => $topic, // send all the lessons
@@ -137,7 +134,7 @@ class LessonsController extends Controller
         //
         $lesson->delete();
 
-        return redirect()->route('admin.lessons.index', [
+        return redirect()->route('admin.course.topic.lessons.index', [
             'course' => $course,
             'topic' => $topic
         ]);

@@ -54,7 +54,7 @@ class TopicsController extends Controller
     {
         //
 
-        $topic = Topic::create($this->validatedData());
+        $topic = $course->topics()->create($this->validatedData());
 
         if ($topic) {
             $request->session()->flash('success', $topic->topic_name . ' has been inserted');
@@ -88,9 +88,6 @@ class TopicsController extends Controller
      */
     public function edit(Course $course, Topic $topic)
     {
-        //dd($topic)  - check if topic is coming
-
-        $topics = Topic::all(); //get all the topics
         return view('admin.topics.edit')->with([
             'topic' => $topic, // send the topic you want to edit
             'course' => $course,
@@ -129,7 +126,7 @@ class TopicsController extends Controller
         //
         $topic->delete();
 
-        return redirect()->route('admin.topics.index', [$course->id]);
+        return redirect()->route('admin.course.topics.index', [$course->id]);
     }
 
     protected function validatedData()

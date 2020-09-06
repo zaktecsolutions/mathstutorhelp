@@ -90,19 +90,6 @@
 </div>
 
 <div class="form-group row">
-    <label for="ans3_body" class="col-md-2 col-form-label text-md-right"> Question Code  </label>
-    <div class="col-md-8">
-        <input id="ans3_body" type="text" class="form-control @error('ans3_body') is-invalid @enderror" name="ans3_body"
-            value=" {{ $answer->ans3_body ?? '' }} " required autocomplete="ans3_body" autofocus>
-        @error('ans3_body')
-        <span class="invalid-feedback" role="alert">
-            <strong>{{ $message }}</strong>
-        </span>
-        @enderror
-    </div>
-</div>
-
-<div class="form-group row">
     <label for="ans_explanation" class="col-md-2 col-form-label text-md-right ">Answer Explanation</label>
     <div class="col-md-8">
         <input id="ans_explanation" type="text" class="form-control @error('ans_explanation') is-invalid @enderror"
@@ -148,3 +135,5 @@
         @enderror
     </div>
 </div>
+
+<input type="hidden" value="{{$question->question_code}}" name ="question_code" />
