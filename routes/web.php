@@ -14,14 +14,16 @@ use Illuminate\Support\Facades\Route;
  */
 
 /* Route::get('/', function () {
-    return view('welcome');
+return view('welcome');
 }); */
 
-Auth::routes();    // Login and register route from laravel 
+Auth::routes(); // Login and register route from laravel
 
-// Welcome page 
- Route::get('/', 'HomeController@index')->name('home');
+// Welcome page -homepage
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/homepage', 'HomeController@index')->name('home');
 
+// admin user route
 Route::namespace ('Admin')
     ->prefix('admin')
     ->name('admin.')
@@ -39,6 +41,7 @@ Route::namespace ('Admin')
         Route::resource('question.answers', 'AnswersController');
     });
 
+// Digitutor route
 Route::namespace ('Digitutor')
     ->middleware('can:digitutor')
     ->prefix('digitutor')
@@ -53,6 +56,7 @@ Route::namespace ('Digitutor')
         Route::resource('/conversation', 'ConversationController');
     });
 
+// student  route
 Route::namespace ('Student')
     ->middleware('role:student')
     ->prefix('student')
@@ -69,6 +73,7 @@ Route::namespace ('Student')
         Route::get('/quiz/{id}', 'StdquizController@show')->name('studentquiz');
     });
 
+// admin route
 Route::namespace ('Tutor')
     ->middleware('role:tutor')
     ->prefix('tutor')

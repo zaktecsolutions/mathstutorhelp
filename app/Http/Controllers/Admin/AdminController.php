@@ -1,9 +1,9 @@
 <?php
-
 namespace App\Http\Controllers\Admin;
-
 use App\Http\Controllers\Controller;
 use App\user;
+
+
 
 class AdminController extends Controller
 {
@@ -16,7 +16,8 @@ class AdminController extends Controller
     }
     
     /**
-     * access to registered user
+     * Returns the admin dashboard view with the all the users from the database 
+     * Route::get('/dashboard', 'AdminController@dashboard')->name('dashboard')
      */
     public function dashboard()
     {
@@ -25,7 +26,10 @@ class AdminController extends Controller
     }
     
     /**
-     * access to registered user
+     *
+     * Returns the list of students with digitutor from admin dashboard 
+     *  Route::get('/students', 'AdminController@students')->name('students')
+     * 
      */
     public function students()
     {

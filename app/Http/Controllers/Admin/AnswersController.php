@@ -6,11 +6,16 @@ use App\Answer;
 use App\Http\Controllers\Controller;
 use App\Question;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
+
+/**
+ * This control the CRUD for the Answer model
+ * Route::resource('question.answers', 'AnswersController')
+ *
+ */
 
 class AnswersController extends Controller
 {
-     /**
+    /**
      * access to registered user
      */
     public function __construct()
@@ -53,21 +58,13 @@ class AnswersController extends Controller
      */
     public function store(Question $question, Request $request)
     {
-        $this->validateAnswer($request->all());
+        $answer = answer::create($this->validatedData());
 
-        $answer = answer::create([
-            'ans_image' => $request->ans_image,
-            'ans_body' => $request->ans_body,
-            'ans_explanation' => $request->ans_explanation,
-            'question_id' => $question->id,
-            'ans_correct' => $request->ans_correct,
-        ]);
-
-        if ($answer->save()) {
-            $request->session()->flash('success', $answer->answer_body . ' has been updated');
+        if ($answer) {$request->session()->flash('success', $answer->id . ' has been inserted');
         } else {
             $request->session()->flash('error', 'There was an error updating the user');
         }
+
         return redirect()->route('admin.question.answers.index', [$question->id]);
     }
 
@@ -79,7 +76,7 @@ class AnswersController extends Controller
      */
     public function show(Question $question, Answer $answer)
     {
-       
+
         return view('admin.answers.show')->with([
             'answer' => $answer,
             'question' => $question,
@@ -111,18 +108,10 @@ class AnswersController extends Controller
      */
     public function update(Question $question, Request $request, Answer $answer)
     {
-        //
-        $this->validateAnswer($request->all());
 
-        $success = $answer->update([
-            'ans_image' => $request->ans_image,
-            'ans_body' => $request->ans_body,
-            'ans_explanation' => $request->ans_explanation,
-            'ans_correct' => $request->ans_correct,
-            'question_id' => $question->id,
-        ]);
-        if ($success) {
-            $request->session()->flash('success', $answer->id . ' has been updated');
+        $answer->update($this->validatedData());
+
+        if ($answer) {$request->session()->flash('success', $answer->id . ' has been updated');
         } else {
             $request->session()->flash('error', 'There was an error updating the user');
         }
@@ -144,13 +133,21 @@ class AnswersController extends Controller
         return redirect()->route('admin.question.answers.index');
     }
 
-    protected function validateAnswer(array $data)
+    protected function validatedData()
     {
-        return Validator::make($data, [
-            'ans_image' => ['required', 'string', 'max:255'],
-            'ans_body' => ['required', 'string'],
-            'ans_explanation' => ['required', 'string'],
-            'ans_correct' => ['required', 'string'],
+        return request()->validate([
+            'ans1_body' => 'required| max:120',
+            'ans_image' => 'nullable|mimes:jpeg,jpg,png | max:10',
+            'ans1_b' => 'nullable| max:20',
+            'ans1_a' => 'nullable| max:20',
+            'ans2_body' => 'nullable| max:20',
+            'ans2_b' => 'nullable| max:20',
+            'ans2_a' => 'nullable| max:20',
+            'ans3_body' => 'nullable| max:20',
+            'ans_explanation' => 'nullable| max:20',
+            'ans_correct' => 'nullable| max:20',
+            // 'question_id' => $question->id,
         ]);
     }
+
 }

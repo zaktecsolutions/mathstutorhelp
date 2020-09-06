@@ -1,3 +1,8 @@
+{{-- 
+    
+displays the student and the digitutor from the admin dashboard
+
+--}}
 @extends('layouts.app')
 @section('title', 'Students')
 @section('content')

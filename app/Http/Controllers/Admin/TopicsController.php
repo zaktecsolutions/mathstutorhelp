@@ -138,8 +138,9 @@ class TopicsController extends Controller
             'topic_name' => 'required| max:120',
             'topic_code' => 'required| max:120',
             'topic_desc' => 'required| max:120',
-            'topic_les_num' => 'required| numeric|min:1|max:100',
+            'topic_index' => 'required| numeric|min:1|max:100',
 
         ]);
+
     }
 }

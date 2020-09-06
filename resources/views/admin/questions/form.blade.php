@@ -1,3 +1,4 @@
+
 <div class="form-group row">
     <label for="question_name" class="col-md-2 col-form-label text-md-right"> Question Name</label>
     <div class="col-md-8">
@@ -26,18 +27,21 @@
     </div>
 </div>
 
+
 <div class="form-group row">
-    <label for="question_image" class="col-md-2 col-form-label text-md-right">Question Image</label>
+    <label for="question_code" class="col-md-2 col-form-label text-md-right">Question Code</label>
     <div class="col-md-8">
-        <input id="question_image" type="text" class="form-control @error('question_image') is-invalid @enderror"
-            name="question_image" value="{{ $question->question_image ?? old('question_image')  }}" required autofocus>
-        @error('question_image')
+        <textarea rows="1" id="question_code" class="form-control @error('question_code') is-invalid @enderror"
+            name="question_code" required autocomplete="question_code"
+            autofocus>{{$question->question_code ?? old('question_code') }}</textarea>
+        @error('question_code')
         <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>
         </span>
         @enderror
     </div>
 </div>
+
 
 <div class="form-group row">
     <label for="question_mark" class="col-md-2 col-form-label text-md-right"> Question Mark </label>
@@ -66,11 +70,11 @@
     </div>
 </div>
 
-<div class="form-group row">
+  <div class="form-group row">
     <label for="question_type" class="col-md-2 col-form-label text-md-right"> Question Type </label>
     <div class="col-md-6">
         <input id="question_type" type="text" class="form-control @error('question_type') is-invalid @enderror"
-            name="question_type" value="{{ $question->question_type ?? old('question_type')  }}" required autofocus>
+            name="question_type" value="{{ $question->question_type ?? old('question_type')  }}" autofocus>
         @error('question_type')
         <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>
@@ -78,3 +82,39 @@
         @enderror
     </div>
 </div>
+
+
+<div class="form-group row">
+    <label for="question_image" class="col-md-2 col-form-label text-md-right">Question Image</label>
+    <div class="col-md-8">
+        <input id="question_image" type="file" class="form-control @error('question_image') is-invalid @enderror" name="question_image"
+            } autocomplete="question_image" autofocus>
+        @error('question_image')
+        <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+        </span>
+        @enderror
+    </div>
+</div>  
+
+<div class="form-group row">
+    <label for="q_calculator" class="col-md-2 col-form-label text-md-right ">Calculator Allowed </label>
+    <div class="col-md-8">
+        <div class="form-check">
+            <input type="radio" name="q_calculator" value="1" @if(!empty($question) && $question->q_calculator) checked
+            @endif>
+            <label> Yes </label>
+        </div>
+        <div class="form-check">
+            <input type="radio" name="q_calculator" value="0" @if(!empty($question) && !$question->q_calculator) checked
+            @endif>
+            <label> No </label>
+        </div>
+        @error('q_calculator')
+        <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+        </span>
+        @enderror
+    </div>
+</div>
+

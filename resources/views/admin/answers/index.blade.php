@@ -1,4 +1,6 @@
-{{-- This page will display the answer  tables --}}
+{{-- 
+    This page will display the answer  tables from the questions pages 
+    --}}
 @extends('layouts.app')
 @section('content')
 {{-- <div class="container"> --}}
@@ -7,14 +9,16 @@
         <a href="{{ route('admin.questions.show', [$question->id])}}">Back to question</a>
         <div class="card">
             <div class="card-header">
-                {{$question->question_body}}
+                <p class="font-weight-bold">Question Number {{ $question->id }} </p>
+                <h5> {{$question->question_body}}</h5>
                 @if(!empty($question->question_image))
                 <div>
                     {{$question->question_image}}
                 </div>
                 @endif
             </div>
-            <a href="{{ route('admin.question.answers.create',$question->id)}}" class="btn btn-primary">Add answer</a>
+            {{-- <a href="{{ route('admin.question.answers.create',$question->id)}}" class="btn btn-primary">Add
+            answer</a> --}}
             <div class="card-body">
                 <table class="table">
                     <thead>
@@ -29,7 +33,7 @@
                         @foreach($answers as $answer)
                         <tr>
                             <th scope="row">{{ $answer->id }}</th>
-                            <td>{{ $answer->ans_body }}</td>
+                            <td>{{ $answer->ans1_body}}</td>
                             <td>
                                 <a href="{{ route('admin.question.answers.show',[$question->id, $answer->id])}}">
                                     <button type="button" class="btn btn-primary float-left">View</button></a> </td>

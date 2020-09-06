@@ -18,7 +18,7 @@
 
                 <div class="card-body">
                     <div class="row">
-                        <label for="course_name" class="col-md-2 text-md-right font-weight-bold">Course Name </label>
+                        <label for="course_name" class="col-md-2 text-md-right font-weight-bold">Course Name : </label>
                         <div class="col-md-8">
                             {{$course->course_name }}
 
@@ -26,32 +26,38 @@
                     </div>
 
                     <div class="row">
-                        <label for="name" class="col-md-2 text-md-right font-weight-bold">Course Code</label>
+                        <label for="name" class="col-md-2 text-md-right font-weight-bold">Course Code </label>
                         <div class="col-md-8">
                             {{ $course->course_code }}
                         </div>
                     </div>
+
                     <div class="row">
-                        <label for="roles" class="col-md-2 text-md-right font-weight-bold">Course Descripton</label>
+                        <label for="roles" class="col-md-2 text-md-right font-weight-bold">Course Descripton </label>
                         <div class="col-md-8">
                             {{ $course->course_desc }}
                         </div>
                     </div>
 
                     <div class="row">
-                        <label for="course" class="col-md-2 text-md-right font-weight-bold">Course level</label>
+                        <label for="course" class="col-md-2 text-md-right font-weight-bold">Course level </label>
                         <div class="col-md-8">
                             {{ $course->course_level }}
                         </div>
                     </div>
 
                     <div class="row">
-                        <label for="course" class="col-md-2 text-md-right font-weight-bold">Course Image</label>
-                        <div class="col-md-6">
-                            {{ $course->course_image }}
+                        <label for="ans_image" class="col-md-2 col-form-label text-md-right font-weight-bold">Course
+                            Image </label>
+                        <div class="col-md-8">
+                            {{$course->course_image }}
+
+                            @if(empty($course->course_image))
+
+                            <p>No Image uploaded</p>
+                            @endif
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>

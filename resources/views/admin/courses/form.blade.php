@@ -66,11 +66,10 @@
 </div>
 
 <div class="form-group row">
-    <label for="course_image" class="col-md-2 col-form-label text-md-right"> Course
-        Image</label>
-    <div class="col-md-6">
-        <input id="course_image" type="text" class="form-control @error('course_image') is-invalid @enderror"
-            name="course_image" value="{{ $course->course_image ??  old('course_image') }}" required autofocus>
+    <label for="course_image" class="col-md-2 col-form-label text-md-right">Course Image</label>
+    <div class="col-md-8">
+        <input id="course_image" type="file" class="form-control @error('course_image') is-invalid @enderror" name="course_image"
+            } autocomplete="course_image" autofocus>
         @error('course_image')
         <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>

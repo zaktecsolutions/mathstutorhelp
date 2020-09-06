@@ -45,7 +45,31 @@
                             {{ $quiz->quiz_subtype }}
                         </div>
                     </div>
+
+                    <div class="form-group row">
+                        <label for="calculator" class="col-md-2 col-form-label text-md-right font-weight-bold ">Calculator Allowed </label>
+                        <div class="col-md-8">
+                            <div class="form-check">
+                                <input type="radio" name="calculator" value="1" @if(!empty($quiz) &&
+                                    $quiz->calculator) checked @endif>
+                                <label> Yes </label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" name="calculator" value="0" @if(!empty($quiz) &&
+                                    !$quiz->calculator) checked @endif>
+                                <label> No </label>
+                            </div>
+        
+                        </div>
+                    </div>
+    
+
                 </div>
             </div>
         </div>
         @endsection
+
+
+
+
+

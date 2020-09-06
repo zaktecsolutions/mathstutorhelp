@@ -136,7 +136,7 @@ class CoursesController extends Controller
             'course_code' => 'required| max:120',
             'course_desc' => 'required| max:120',
             'course_level' => 'required| max:120',
-            'course_image' => 'required| max:120',
+            'course_image' => 'sometimes|mimes:jpeg,jpg,png | max:10',
 
         ]);
 

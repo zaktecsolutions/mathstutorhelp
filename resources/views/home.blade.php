@@ -3,23 +3,24 @@
 @section('content')
 <section class="jumbotron text-center">
 
-    
+        {{-- Home page where user can login and register  --}}
 
-    <h1 class="jumbotron-heading">Album example</h1>
+    <h1 class="jumbotron-heading">Welcome to Maths Tutor Help </h1>
 
-    <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc.
-        Make it short and sIet, but not too short so folks don't simply skip over it entirely.</p>
+    <p class="lead text-muted">This is MTH online learning platfrom - blended approach to learning maths. Please login
+        or register to this platform </p>
 
     <p>
 
-        <a href="#" class="btn btn-primary">Main call to action</a>
+        <a class="btn btn-primary" href="{{ route('login') }}">{{ __('Login') }} </a>
 
-        <a href="#" class="btn btn-secondary">Secondary action</a>
+        <a class="btn btn-secondary" href="{{ route('register') }}">{{ __('Register') }} </a>
+       
 
     </p>
 
-
+   
 
 </section>
 
-@endsection
+@endsection  

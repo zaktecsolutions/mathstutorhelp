@@ -1,9 +1,14 @@
+{{-- 
+    
+displays the admin dashboard view page
+
+--}}
 @extends('layouts.app')
 @section('content')
 <div class="row justify-content-center">
     <div class="col-md-12 col-sm-11 col-xs-12">
         <div class="row">
-            <h3>ADMIN DASHBOARD</h3>
+            <h4>ADMIN DASHBOARD</h4>
         </div>
         <div class="row text-center pad-top">
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
@@ -34,13 +39,7 @@
                     </a>
                 </div>
             </div>
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-                <div class="div-square">
-                    <a href="blank.html">
-                        <h4>Settings</h4>
-                    </a>
-                </div>
-            </div>
+
         </div>
         <!-- /. ROW  -->
         <div class="row text-center pad-top">
@@ -62,6 +61,13 @@
                 <div class="div-square">
                     <a href="{{ route('admin.quizzes.index')}}">
                         <h4>Quizzes </h4>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+                <div class="div-square">
+                    <a href="blank.html">
+                        <h4>Settings</h4>
                     </a>
                 </div>
             </div>

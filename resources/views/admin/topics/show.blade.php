@@ -39,9 +39,9 @@
                     </div>
 
                     <div class="row">
-                        <label for="topic" class="col-md-2 text-md-right font-weight-bold">Topic Lesson Number</label>
+                        <label for="topic" class="col-md-2 text-md-right font-weight-bold">Topic Index</label>
                         <div class="col-md-8">
-                            {{ $topic->topic_les_num }}
+                            {{ $topic->topic_index }}
                         </div>
                     </div>
                 </div>

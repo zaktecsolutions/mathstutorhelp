@@ -96,6 +96,7 @@ class QuestionsController extends Controller
     {
         $question->update($this->validatedData());
 
+
         if ($question) {$request->session()->flash('success', $question->question_name . ' has been updated');
         } else {
             $request->session()->flash('error', 'There was an error updating the user');
@@ -120,10 +121,10 @@ class QuestionsController extends Controller
         return request()->validate([
             'question_name' => 'required| max:120',
             'question_body' => 'required| max:120',
-            'question_image' => 'required| max:120',
+            'question_image' => 'nullable|mimes:jpeg,jpg,png | max:10',
             'question_mark' => 'required| numeric|min:1|max:9',
             'question_grade' => 'required| numeric|min:1|max:9',
-            'question_type' => 'required| max:120',
+            'question_type' => 'nullable| max:20',
 
         ]);
     }

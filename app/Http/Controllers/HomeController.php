@@ -2,20 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
+/**
+ * return the view for the home page for any user
+ *
+ * @return view
+ */
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-  
-     public function index()
+
+    public function index()
     {
-       
+
         return view('home');
-    } 
-   
+    }
+
 }

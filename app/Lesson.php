@@ -17,7 +17,7 @@ class Lesson extends Model
 
     public function questions()
     {
-        // Lesson has many Question 
+        // Lesson has many Question
         return $this->hasMany('App\Question');
     }
 
@@ -27,12 +27,14 @@ class Lesson extends Model
         return $this->hasMany('App\Quiz');
     }
 
+    
+    /**
+     * returns diagnostic question for a particular lesson 
+     *@
+     */
     public function quiz_questions($type = 'diagnostic')
     {
-        /**
-         * retunrs the admin dashboard.
-         *
-         */
+
         $quiz = $this->topic->quizzes()->where('quiz_subtype', $type)->first();
         if (!empty($quiz)) {
             return $quiz->questions()->where('lesson_id', $this->id);

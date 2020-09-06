@@ -37,11 +37,11 @@
 </div>
 
 <div class="form-group row">
-    <label for="topic_les_num" class="col-md-2 col-form-label text-md-right"> Topic Lesson Number </label>
+    <label for="topic_index" class="col-md-2 col-form-label text-md-right"> Topic Index </label>
     <div class="col-md-6">
-        <input id="topic_les_num" type="text" class="form-control @error('topic_les_num') is-invalid @enderror"
-            name="topic_les_num" value="{{ $topic->topic_les_num ??  old('topic_les_num')  }}" required autofocus>
-        @error('topic_les_num')
+        <input id="topic_index" type="text" class="form-control @error('topic_index') is-invalid @enderror"
+            name="topic_index" value="{{ $topic->topic_index ??  old('topic_index')  }}" required autofocus>
+        @error('topic_index')
         <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>
         </span>
