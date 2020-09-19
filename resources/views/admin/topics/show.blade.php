@@ -11,7 +11,10 @@
                         <button type="button" class="ml-1 btn btn-primary float-right">Edit</button>
                     </a>
                     <a href="{{ route('admin.course.topic.lessons.index', [$course,$topic])}}">
-                        <button type="button" class="btn btn-primary float-right">Lessons</button>
+                        <button type="button" class="ml-1 btn btn-primary float-right">Lessons</button>
+                    </a>
+                    <a href="{{ route('admin.course.topic.quizzes.index', ['course' => $course,'topic' => $topic])}}">
+                        <button type="button" class="btn btn-primary float-right">Quizzes</button>
                     </a>
                 </div>
 

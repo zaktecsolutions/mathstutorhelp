@@ -1,4 +1,4 @@
-{{--  This page will display the lesson  tables --}}{{-- This page will display the lesson tables --}}
+{{-- This page will display the lesson  tables --}}{{-- This page will display the lesson tables --}}
 @extends('layouts.app')
 @section('content')
 <div class="container">
@@ -6,8 +6,16 @@
         <div class="col-md-10">
             <a href="/admin/lessons">Back to lessons</a>
             <div class="card">
-                <a href="{{ route('admin.course.topic.lessons.edit',[$topic->course,$topic, $lesson])}}">
-                    <button type="button" class="btn btn-primary float-right">Edit</button></a>
+
+                <div>
+                    <a href="{{ route('admin.course.topic.lessons.edit',[$topic->course,$topic, $lesson])}}">
+                        <button type="button" class="ml-1 btn btn-primary float-right">Edit</button>
+                    </a>
+
+                    <a href="{{ route('admin.course.topic.lesson.quizzes.index', ['course' => $topic->course,'topic' => $topic,'lesson' => $lesson])}}">
+                        <button type="button" class="btn btn-primary float-right">Quizzes</button>
+                    </a>
+                </div>
                 <div class="card-header">Lesson # {{ $lesson->id }}</div>
 
                 <div class="card-body">
@@ -48,6 +56,3 @@
             </div>
         </div>
         @endsection
-
-
-          

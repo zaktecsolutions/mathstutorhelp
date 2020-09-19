@@ -40,6 +40,10 @@ Route::namespace ('Admin')
         Route::resource('/questions', 'QuestionsController');
         Route::resource('/quizzes', 'QuizzesController');
         Route::resource('question.answers', 'AnswersController');
+
+        Route::resource('course.quizzes', 'QuizController');
+        Route::resource('course.topic.quizzes', 'QuizController');
+        Route::resource('course.topic.lesson.quizzes', 'QuizController');
     });
 
 // Digitutor route
