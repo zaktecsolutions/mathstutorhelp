@@ -28,6 +28,7 @@ Vue.mixin({
             axios
                 .post(`/admin/questions/filter`, {
                     topic_id: $("#topic").val(),
+                    course_id: $("#course").val(),
                     quiz_id: $("#quiz").val()
                 })
                 .then(response => {

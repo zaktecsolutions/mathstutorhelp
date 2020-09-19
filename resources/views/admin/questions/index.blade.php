@@ -9,7 +9,15 @@
             <a href="{{ route('admin.questions.create')}}" class="btn btn-primary">Add question</a>
             <div class="card-body">
                 <div class="row mb-2">
-                    <div class="col-md-4">
+                <div class="col-md-3">
+                        <select id="course" class="form-control">
+                            <option value="">Filter By Course</option>
+                            @foreach($courses as $course)
+                            <option value="{{$course->id}}">{{$course->course_name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="col-md-3">
                         <select id="topic" class="form-control">
                             <option value="">Filter By Topic</option>
                             @foreach($topics as $topic)
@@ -17,7 +25,7 @@
                             @endforeach
                         </select>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <select id="quiz" class="form-control">
                             <option value="">Filter By Quiz</option>
                             @foreach($quizes as $quiz)
@@ -25,7 +33,7 @@
                             @endforeach
                         </select>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <button class="form-control btn btn-primary" @click="filterQuestions">Apply</button>
                     </div>
                 </div>

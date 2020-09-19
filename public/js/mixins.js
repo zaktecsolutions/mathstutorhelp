@@ -2470,6 +2470,7 @@ Vue.mixin({
     filterQuestions: function filterQuestions() {
       axios.post("/admin/questions/filter", {
         topic_id: $("#topic").val(),
+        course_id: $("#course").val(),
         quiz_id: $("#quiz").val()
       }).then(function (response) {
         $("#results").html(response.data);

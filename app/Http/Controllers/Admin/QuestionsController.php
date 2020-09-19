@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Course;
 use App\Http\Controllers\Controller;
 use App\Question;
 use App\Quiz;
@@ -26,11 +27,12 @@ class QuestionsController extends Controller
     public function index()
     {
         $topics = Topic::all();
+        $courses = Course::all();
         $quizes = Quiz::all();
         // return 'User index page';
         $questions = question::all(); //gets all the questions
         //   dd($questions);
-        return view('admin.questions.index')->with(compact('questions', 'topics', 'quizes'));
+        return view('admin.questions.index')->with(compact('questions', 'topics', 'quizes', 'courses'));
     }
 
     public function filter(Request $request)
@@ -40,6 +42,14 @@ class QuestionsController extends Controller
             $topic_id = $request->topic_id;
             $query->whereHas('lesson', function ($q) use ($topic_id) {
                 $q->where('topic_id', $topic_id);
+            });
+        }
+        if ($request->has('course_id') && !empty($request->course_id)) {
+            $course_id = $request->course_id;
+            $query->whereHas('lesson', function ($q) use ($course_id) {
+                $q->whereHas('topic', function ($sq) use ($course_id) {
+                    $sq->where('course_id', $course_id);
+                });
             });
         }
         if ($request->has('quiz_id') && !empty($request->quiz_id)) {
