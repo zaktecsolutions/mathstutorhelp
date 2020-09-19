@@ -24,6 +24,7 @@ class QuizzesController extends Controller
     {
         //
         // return 'User index page';
+
         $quizzes = quiz::all(); //gets all the quizzes
         //dd($quizzes);
         return view('admin.quizzes.index')->with('quizzes', $quizzes);

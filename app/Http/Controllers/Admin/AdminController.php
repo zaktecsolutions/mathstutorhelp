@@ -2,6 +2,7 @@
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\user;
+use App\Course;
 
 
 
@@ -22,7 +23,10 @@ class AdminController extends Controller
     public function dashboard()
     {
         $users = User::all();
-        return view('admin.admindb')->with('users', $users);
+        $courses = Course::all(); //gets all the courses
+        return view('admin.admindb')->with('users', $users)->with('courses',$courses);
+              
+        
     }
     
     /**
