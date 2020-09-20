@@ -37,14 +37,6 @@ come from App\Http\Controllers\Admin\AdminController ;
 
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                 <div class="div-square">
-                    <a href="{{ route('admin.questions.index')}}">
-                        <h4>Questions </h4>
-                    </a>
-                </div>
-            </div>
-
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-                <div class="div-square">
                     <a href="{{ route('admin.quizzes.index')}}">
                         <h4>Quizzes </h4>
                     </a>

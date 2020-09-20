@@ -14,7 +14,10 @@
                         <button type="button" class="ml-1 btn btn-primary float-right">Topics</button>
                     </a>
                     <a href="{{ route('admin.course.quizzes.index', ['course' => $course])}}">
-                        <button type="button" class="btn btn-primary float-right">Quizzes</button>
+                        <button type="button" class="btn ml-1 btn-primary float-right">Quizzes</button>
+                    </a>
+                    <a href="{{ route('admin.course.questions.index', ['course' => $course])}}">
+                        <button type="button" class="btn btn-primary float-right">Questions</button>
                     </a>
                 </div>
                 <div class="card-header">Course {{ $course->id }}</div>

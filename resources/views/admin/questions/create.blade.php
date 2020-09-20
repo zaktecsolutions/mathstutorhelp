@@ -7,7 +7,7 @@
           <div class="card">
                 <div class="card-header">Insert question </div>
                 <div class="card-body">
-                    <form action="{{ route('admin.questions.store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('admin.course.questions.store',[$course]) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @include('admin.questions.form')
                         <button type="submit" class="btn btn-primary">

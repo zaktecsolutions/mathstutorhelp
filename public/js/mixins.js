@@ -2468,10 +2468,13 @@ Vue.mixin({
       });
     },
     filterQuestions: function filterQuestions() {
-      axios.post("/admin/questions/filter", {
-        topic_id: $("#topic").val(),
-        course_id: $("#course").val(),
-        quiz_id: $("#quiz").val()
+      axios.get("/admin/questions/filter", {
+        params: {
+          topic_id: $("#topic").val(),
+          lesson_id: $("#lesson").val(),
+          quiz_id: $("#quiz").val(),
+          course_id: $("#course_id").val()
+        }
       }).then(function (response) {
         $("#results").html(response.data);
       });

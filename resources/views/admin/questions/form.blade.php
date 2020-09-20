@@ -26,7 +26,7 @@
 <div class="form-group row">
     <label for="question_code" class="col-md-2 col-form-label text-md-right">Question Code</label>
     <div class="col-md-8">
-        <textarea rows="1" id="question_code" class="form-control @error('question_code') is-invalid @enderror" name="question_code" required autocomplete="question_code" autofocus>{{$question->question_code ?? old('question_code') }}</textarea>
+        <textarea rows="1" id="question_code" name="question_code" class="form-control @error('question_code') is-invalid @enderror" name="question_code" required autocomplete="question_code" autofocus>{{$question->question_code ?? old('question_code') }}</textarea>
         @error('question_code')
         <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>
@@ -76,6 +76,22 @@
             <option {{$question_type == '2-box' ? 'selected' :'' }} value="2-box">2-box</option>
         </select>
         @error('question_type')
+        <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+        </span>
+        @enderror
+    </div>
+</div>
+
+<div class="form-group row">
+    <label for="lesson_id" class="col-md-2 col-form-label text-md-right"> Lesson </label>
+    <div class="col-md-6">
+        <select id="lesson_id" name="lesson_id" class="form-control @error('lesson_id') is-invalid @enderror">
+            @foreach($lessons as $lesson)
+            <option {{($question->lesson_id ?? old('lesson_id')) == $lesson->id? 'selected' :'' }} value="{{$lesson->id}}">{{$lesson->lesson_name}}</option>
+            @endforeach
+        </select>
+        @error('lesson_id')
         <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>
         </span>

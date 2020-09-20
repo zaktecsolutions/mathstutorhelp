@@ -14,15 +14,15 @@
             <td>{{ $question->question_name }}</td>
             <td>{{ $question->question_body }}</td>
             <td>
-                <a href="{{ route('admin.questions.show', $question->id)}}">
+                <a href="{{ route('admin.course.questions.show',[$course, $question])}}">
                     <button type="button" class="btn btn-primary float-left">View</button></a> </td>
 
 
-            <td> <a href="{{ route('admin.questions.edit', $question->id)}}">
+            <td> <a href="{{ route('admin.course.questions.edit',[$course, $question])}}">
                     <button type="button" class="btn btn-primary float-left">Edit</button></a></td>
 
             <td>
-                <form action="{{ route('admin.questions.destroy',$question->id)}}" method="POST" class="float-left">
+                <form action="{{ route('admin.course.questions.destroy',[$course, $question])}}" method="POST" class="float-left">
                     @csrf
                     {{ @method_field('DELETE')}}
                     <button type="submit" class="btn btn-primary">Delete</button>

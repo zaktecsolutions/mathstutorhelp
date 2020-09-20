@@ -33,11 +33,11 @@ Route::namespace ('Admin')
         Route::get('/dashboard', 'AdminController@dashboard')->name('dashboard');
         Route::get('/students', 'AdminController@students')->name('students');
         Route::resource('/users', 'UsersController');
-        Route::resource('/courses', 'CoursesController');
+        Route::resource('courses', 'CoursesController');
         Route::resource('course.topics', 'TopicsController');
         Route::resource('course.topic.lessons', 'LessonsController');
-        Route::post('/questions/filter', 'QuestionsController@filter')->name('filter-questions');
-        Route::resource('/questions', 'QuestionsController');
+        Route::resource('course.questions', 'QuestionsController');
+        Route::get('/questions/filter', 'QuestionsController@filter')->name('filter-questions');
         Route::resource('/quizzes', 'QuizzesController');
         Route::resource('question.answers', 'AnswersController');
 

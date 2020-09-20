@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Course;
 use App\Http\Controllers\Controller;
+use App\Lesson;
 use App\Question;
 use App\Quiz;
 use App\Topic;
@@ -24,41 +25,62 @@ class QuestionsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Course $course)
     {
-        $topics = Topic::all();
-        $courses = Course::all();
-        $quizes = Quiz::all();
-        // return 'User index page';
-        $questions = question::all(); //gets all the questions
-        //   dd($questions);
-        return view('admin.questions.index')->with(compact('questions', 'topics', 'quizes', 'courses'));
+        $topics = $course->topics;
+
+        $query = Quiz::where(function ($q) use ($course) {
+            $q->where('quiz_type', 'Course')->where('course_id', $course->id);
+        });
+
+        $query->orWhere(function ($q) use ($course) {
+            $q->whereHas('topic', function ($sq) use ($course) {
+                $sq->where('course_id', $course->id);
+            });
+        });
+
+        $quizes = $query->get();
+
+        $lessons = Lesson::whereHas('topic', function ($q) use ($course) {
+            $q->where('course_id', $course->id);
+        })->get();
+        $questions = Question::whereHas('lesson', function ($q) use ($course) {
+            $q->whereHas('topic', function ($sq) use ($course) {
+                $sq->where('course_id', $course->id);
+            });
+        })->get();
+        return view('admin.questions.index')->with(compact('course', 'questions', 'topics', 'quizes', 'lessons'));
     }
 
     public function filter(Request $request)
     {
         $query = Question::query();
+        $course_id = $request->course_id;
+        $course = Course::find($course_id);
+        $query->whereHas('lesson', function ($q) use ($course_id) {
+            $q->whereHas('topic', function ($sq) use ($course_id) {
+                $sq->where('course_id', $course_id);
+            });
+        });
+
         if ($request->has('topic_id') && !empty($request->topic_id)) {
             $topic_id = $request->topic_id;
             $query->whereHas('lesson', function ($q) use ($topic_id) {
                 $q->where('topic_id', $topic_id);
             });
         }
-        if ($request->has('course_id') && !empty($request->course_id)) {
-            $course_id = $request->course_id;
-            $query->whereHas('lesson', function ($q) use ($course_id) {
-                $q->whereHas('topic', function ($sq) use ($course_id) {
-                    $sq->where('course_id', $course_id);
-                });
-            });
+
+        if ($request->has('lesson_id') && !empty($request->lesson_id)) {
+            $query->where('lesson_id', $request->lesson_id);
         }
+
         if ($request->has('quiz_id') && !empty($request->quiz_id)) {
             $quiz_id = $request->quiz_id;
             $query->whereHas('quizzes', function ($q) use ($quiz_id) {
                 $q->where('quizzes.id', $quiz_id);
             });
         }
-        return view('admin.questions.question-list')->with('questions', $query->get());
+        return view('admin.questions.question-list')->with('questions', $query->get())->with('course', $course);
     }
 
     /**
@@ -66,9 +88,12 @@ class QuestionsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Course $course)
     {
-        return view('admin.questions.create');
+        $lessons = Lesson::whereHas('topic', function ($q) use ($course) {
+            $q->where('course_id', $course->id);
+        })->get();
+        return view('admin.questions.create', compact('course', 'lessons'));
     }
 
     /**
@@ -77,17 +102,17 @@ class QuestionsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Course $course)
     {
         //
-        $question = question::create($this->validatedData());
+        $question = Question::create($this->validatedData());
 
         if ($question) {
             $request->session()->flash('success', $question->question_name . ' has been inserted');
         } else {
             $request->session()->flash('error', 'There was an error updating the user');
         }
-        return redirect()->route('admin.questions.index');
+        return redirect()->route('admin.course.questions.index', ['course' => $course]);
     }
 
     /**
@@ -96,12 +121,9 @@ class QuestionsController extends Controller
      * @param  \App\Question  $question
      * @return \Illuminate\Http\Response
      */
-    public function show(Question $question)
+    public function show(Question $question, Course $course)
     {
-
-        // return 'User index page';
-        //  $questions = question::all(); //gets all the questions
-        return view('admin.questions.show')->with('question', $question);
+        return view('admin.questions.show')->with('question', $question)->with('course', $course);
     }
 
     /**
@@ -110,12 +132,15 @@ class QuestionsController extends Controller
      * @param  \App\Question  $question
      * @return \Illuminate\Http\Response
      */
-    public function edit(Question $question)
+    public function edit(Course $course, Question $question)
     {
-        //dd($question)  - check if question is coming
-        $questions = question::all(); //get all the questions
-        return view('admin.questions.edit')->with(['question' => $question, // send the question you want to edit
-            // 'questions' => $questions, // send all the questions
+        $lessons = Lesson::whereHas('topic', function ($q) use ($course) {
+            $q->where('course_id', $course->id);
+        })->get();
+        return view('admin.questions.edit')->with([
+            'question' => $question,
+            'course' => $course,
+            'lessons' => $lessons
         ]);
     }
 
@@ -126,10 +151,9 @@ class QuestionsController extends Controller
      * @param  \App\Question  $question
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Question $question)
+    public function update(Request $request, Course $course, Question $question)
     {
         $question->update($this->validatedData());
-
 
         if ($question) {
             $request->session()->flash('success', $question->question_name . ' has been updated');
@@ -137,7 +161,7 @@ class QuestionsController extends Controller
             $request->session()->flash('error', 'There was an error updating the user');
         }
 
-        return redirect()->route('admin.questions.index');
+        return redirect()->route('admin.course.questions.index', ['course' => $course]);
     }
     /**
      * Remove the specified resource from storage.
@@ -145,16 +169,18 @@ class QuestionsController extends Controller
      * @param  \App\Question  $question
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Question $question)
+    public function destroy(Course $course, Question $question)
     {
         $question->delete();
 
-        return redirect()->route('admin.questions.index');
+        return redirect()->route('admin.course.questions.index', ['course' => $course]);
     }
     protected function validatedData()
     {
         $reqData =  request()->validate([
+            'lesson_id' => 'required',
             'question_name' => 'required| max:120',
+            'question_code' => 'required| max:120',
             'question_body' => 'required| max:120',
             'question_image' => 'nullable| image | max:2048',
             'question_mark' => 'required| numeric |min:1|max:9',
