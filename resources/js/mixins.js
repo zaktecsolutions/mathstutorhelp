@@ -49,6 +49,19 @@ Vue.mixin({
                 .then(response => {
                     $("#results").html(response.data);
                 });
+        },
+        filterQuiz: function () {
+            axios
+                .get(`/admin/quizzes/filter`, {
+                    params: {
+                        lesson_id: $("#lesson").val(),
+                        topic_id: $("#topic").val(),
+                        course_id: $("#course").val()
+                    }
+                })
+                .then(response => {
+                    $("#results").html(response.data);
+                });
         }
     }
 })

@@ -1,4 +1,4 @@
-{{--  This page will display the quiz  tables --}}
+{{-- This page will display the quiz  tables --}}
 @extends('layouts.app')
 @section('content')
 {{-- <div class="container"> --}}
@@ -9,9 +9,16 @@
             <a href="{{ route('admin.quizzes.create')}}" class="btn btn-primary">Add quiz</a>
             <div class="card-body">
 
-{{-- 
                 <div class="row mb-2">
-                    <div class="col-md-4">
+                    <div class="col-md-3">
+                        <select id="course" class="form-control">
+                            <option value="">Filter By Course</option>
+                            @foreach($courses as $course)
+                            <option value="{{$course->id}}">{{$course->course_name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="col-md-3">
                         <select id="topic" class="form-control">
                             <option value="">Filter By Topic</option>
                             @foreach($topics as $topic)
@@ -19,55 +26,24 @@
                             @endforeach
                         </select>
                     </div>
-                    <div class="col-md-4">
-                        <select id="quiz" class="form-control">
-                            <option value="">Filter By Quiz</option>
-                            @foreach($quizes as $quiz)
-                            <option value="{{$quiz->id}}">{{$quiz->quiz_name}}</option>
+                    <div class="col-md-3">
+                        <select id="lesson" class="form-control">
+                            <option value="">Filter By Lesson</option>
+                            @foreach($lessons as $lesson)
+                            <option value="{{$lesson->id}}">{{$lesson->lesson_name}}</option>
                             @endforeach
                         </select>
                     </div>
-                    <div class="col-md-4">
-                        <button class="form-control btn btn-primary" @click="filterQuestions">Apply</button>
+
+                    <div class="col-md-3">
+                        <button class="form-control btn btn-primary" @click="filterQuiz">Apply</button>
                     </div>
-                </div> --}}
+                </div>
 
+                <div id="results">
+                    @include('admin.quizzes.quiz-list', ['quizzes' => $quizzes])
+                </div>
 
-                  <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">quiz Name</th>
-                            <th scope="col">quiz Code</th>
-                            <th scope="col"></th>
-                            <th scope="col"> Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($quizzes as $quiz)
-                        <tr>
-                            <th scope="row">{{ $quiz->id }}</th>
-                <td>{{ $quiz->quiz_name }}</td>
-                <td>{{ $quiz->quiz_code }}</td>
-                <td>
-                    <a href="{{ route('admin.quizzes.show', $quiz->id)}}">
-                        <button type="button" class="btn btn-primary float-left">View</button></a> </td>
-
-
-                <td> <a href="{{ route('admin.quizzes.edit', $quiz->id)}}">
-                        <button type="button" class="btn btn-primary float-left">Edit</button></a></td>
-
-                <td>
-                    <form action="{{ route('admin.quizzes.destroy',$quiz->id)}}" method="POST" class="float-left">
-                        @csrf
-                        {{ @method_field('DELETE')}}
-                        <button type="submit" class="btn btn-primary">Delete</button>
-                    </form>
-                </td>
-                </tr>
-                @endforeach
-                </tbody>
-                </table> 
             </div>
         </div>
     </div>

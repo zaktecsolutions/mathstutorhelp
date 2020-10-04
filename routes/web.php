@@ -39,7 +39,9 @@ Route::namespace('Admin')
         Route::resource('course.topic.lessons', 'LessonsController');
         Route::resource('course.questions', 'QuestionsController');
         Route::get('/questions/filter', 'QuestionsController@filter')->name('filter-questions');
+        Route::get('/quizzes/filter', 'QuizzesController@filter')->name('filter-quizzes');
         Route::resource('/quizzes', 'QuizzesController');
+        
         Route::resource('question.answers', 'AnswersController');
 
         Route::resource('course.quizzes', 'QuizController');

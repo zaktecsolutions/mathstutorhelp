@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Course;
 use App\Http\Controllers\Controller;
+use App\Lesson;
 use App\Quiz;
+use App\Topic;
 use Illuminate\Http\Request;
 
 class QuizzesController extends Controller
@@ -26,9 +29,32 @@ class QuizzesController extends Controller
         // return 'User index page';
 
         $quizzes = quiz::all(); //gets all the quizzes
+        $topics = Topic::all();
+        $courses = Course::all();
+        $lessons = Lesson::all();
         //dd($quizzes);
-        return view('admin.quizzes.index')->with('quizzes', $quizzes);
+        return view('admin.quizzes.index',compact('quizzes','topics','courses','lessons'));
     }
+
+    public function filter(Request $request)
+    {
+        $query = Quiz::query();
+
+        if ($request->has('course_id') && !empty($request->course_id)) {
+            $query->where('course_id', $request->course_id);
+        }
+
+        if ($request->has('topic_id') && !empty($request->topic_id)) {
+            $query->where('topic_id', $request->topic_id);
+        }
+
+        if ($request->has('lesson_id') && !empty($request->lesson_id)) {
+            $query->where('lesson_id', $request->lesson_id);
+        }
+
+        return view('admin.quizzes.quiz-list')->with('quizzes', $query->get());
+    }
+
 
     /**
      * Show the form for creating a new resource.
