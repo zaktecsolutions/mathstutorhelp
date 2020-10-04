@@ -1,19 +1,21 @@
 <template>
   <div>
-    <b-progress :value="currentIndex+1" :max="questions.length" show-value animated></b-progress>
+    <h5 class="text-center">Question {{currentIndex+1}} out of {{questions.length}}</h5>
+    <!-- <b-progress :value="currentIndex+1" :max="questions.length" show-value animated></b-progress> -->
 
     <div class="card" v-if="activeQuestion" style="min-height: 40vh;">
       <div class="card-body">
         <h5 class="card-title">
-          {{activeQuestion.question_name}}
+          <!-- {{activeQuestion.question_name}} -->
           <span class="d-inline-block" style="float: right">
-            <img src="/images/calc.png" v-if="activeQuestion.q_calculator" height="20" />
+            <img title="Calculator" src="/images/calc.png" v-if="activeQuestion.q_calculator" height="20" />
+            <img title="No calculator" src="/images/nocalc.jpg" v-else height="20" />
             <span class="badge badge-primary">Grade : {{activeQuestion.question_grade}}</span>
             <span class="badge badge-secondary">Mark : {{activeQuestion.question_mark}}</span>
           </span>
         </h5>
 
-        <p class="card-text">{{activeQuestion.question_body}}</p>
+        <h5 class="card-text">{{activeQuestion.question_body}}</h5>
         <div v-if="activeQuestion.question_image" class="text-center mb-2">
           <img
             style="max-height:200px;max-width: 100%;"
