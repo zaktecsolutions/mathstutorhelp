@@ -31,7 +31,6 @@ Route::namespace('Admin')
     ->group(function () {
 
         Route::get('/dashboard', 'AdminController@dashboard')->name('dashboard');
-        Route::get('/students', 'AdminController@students')->name('students');
         Route::get('/users/filter', 'UsersController@filter')->name('filter-users');
         Route::resource('/users', 'UsersController');
         

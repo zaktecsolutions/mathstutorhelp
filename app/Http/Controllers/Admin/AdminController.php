@@ -29,17 +29,4 @@ class AdminController extends Controller
         
     }
     
-    /**
-     *
-     * Returns the list of students with digitutor from admin dashboard 
-     *  Route::get('/students', 'AdminController@students')->name('students')
-     * 
-     */
-    public function students()
-    {
-        $students = User::whereHas("roles", function ($q) {
-            $q->where("name", "student");
-        })->get();
-        return view('admin.students')->with('students', $students);
-    }
 }
