@@ -322,6 +322,181 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["quiz"],
   data: function data() {
@@ -1032,12 +1207,42 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("h5", { staticClass: "text-center" }, [
+    _c("h5", [
       _vm._v(
-        "Question " +
+        "\n    Question " +
           _vm._s(_vm.currentIndex + 1) +
           " out of " +
-          _vm._s(_vm.questions.length)
+          _vm._s(_vm.questions.length) +
+          "\n    "
+      ),
+      _c(
+        "span",
+        { staticClass: "d-inline-block", staticStyle: { float: "right" } },
+        [
+          _vm.activeQuestion.q_calculator
+            ? _c("img", {
+                attrs: {
+                  title: "Calculator",
+                  src: "/images/calc.png",
+                  height: "20"
+                }
+              })
+            : _c("img", {
+                attrs: {
+                  title: "No calculator",
+                  src: "/images/nocalc.jpg",
+                  height: "20"
+                }
+              }),
+          _vm._v(" "),
+          _c("span", { staticClass: "badge badge-primary" }, [
+            _vm._v("Grade : " + _vm._s(_vm.activeQuestion.question_grade))
+          ]),
+          _vm._v(" "),
+          _c("span", { staticClass: "badge badge-secondary" }, [
+            _vm._v("Mark : " + _vm._s(_vm.activeQuestion.question_mark))
+          ])
+        ]
       )
     ]),
     _vm._v(" "),
@@ -1047,45 +1252,6 @@ var render = function() {
           { staticClass: "card", staticStyle: { "min-height": "40vh" } },
           [
             _c("div", { staticClass: "card-body" }, [
-              _c("h5", { staticClass: "card-title" }, [
-                _c(
-                  "span",
-                  {
-                    staticClass: "d-inline-block",
-                    staticStyle: { float: "right" }
-                  },
-                  [
-                    _vm.activeQuestion.q_calculator
-                      ? _c("img", {
-                          attrs: {
-                            title: "Calculator",
-                            src: "/images/calc.png",
-                            height: "20"
-                          }
-                        })
-                      : _c("img", {
-                          attrs: {
-                            title: "No calculator",
-                            src: "/images/nocalc.jpg",
-                            height: "20"
-                          }
-                        }),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "badge badge-primary" }, [
-                      _vm._v(
-                        "Grade : " + _vm._s(_vm.activeQuestion.question_grade)
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "badge badge-secondary" }, [
-                      _vm._v(
-                        "Mark : " + _vm._s(_vm.activeQuestion.question_mark)
-                      )
-                    ])
-                  ]
-                )
-              ]),
-              _vm._v(" "),
               _c("h5", { staticClass: "card-text" }, [
                 _vm._v(_vm._s(_vm.activeQuestion.question_body))
               ]),

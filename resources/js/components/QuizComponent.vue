@@ -1,78 +1,141 @@
 <template>
   <div>
-    <h5 class="text-center">Question {{currentIndex+1}} out of {{questions.length}}</h5>
-    <!-- <b-progress :value="currentIndex+1" :max="questions.length" show-value animated></b-progress> -->
-
-    <div class="card" v-if="activeQuestion" style="min-height: 40vh;">
-      <div class="card-body">
-        <h5 class="card-title">
-          <!-- {{activeQuestion.question_name}} -->
-          <span class="d-inline-block" style="float: right">
+    <h5>
+      Question {{ currentIndex + 1 }} out of {{ questions.length }}
+      <span class="d-inline-block" style="float: right">
             <img title="Calculator" src="/images/calc.png" v-if="activeQuestion.q_calculator" height="20" />
             <img title="No calculator" src="/images/nocalc.jpg" v-else height="20" />
             <span class="badge badge-primary">Grade : {{activeQuestion.question_grade}}</span>
             <span class="badge badge-secondary">Mark : {{activeQuestion.question_mark}}</span>
           </span>
-        </h5>
+    </h5>
+    
+    <!-- <b-progress :value="currentIndex+1" :max="questions.length" show-value animated></b-progress> -->
 
-        <h5 class="card-text">{{activeQuestion.question_body}}</h5>
+    <div class="card" v-if="activeQuestion" style="min-height: 40vh">
+      <div class="card-body">
+        <!-- <h5 class="card-title">
+           {{activeQuestion.question_name}}
+        </h5> -->
+
+        <h5 class="card-text">{{ activeQuestion.question_body }}</h5>
         <div v-if="activeQuestion.question_image" class="text-center mb-2">
           <img
-            style="max-height:200px;max-width: 100%;"
-            :src="'/storage'+activeQuestion.question_image"
+            style="max-height: 200px; max-width: 100%"
+            :src="'/storage' + activeQuestion.question_image"
           />
         </div>
         <div class="answer-container">
           <div>
-            <div v-if="activeQuestion.question_type == 'fraction'" style="width:180px;">
+            <div
+              v-if="activeQuestion.question_type == 'fraction'"
+              style="width: 180px"
+            >
               <div class="input-group">
-                <div class="input-group-prepend" v-if="activeQuestion.format[0][0]">
-                  <span class="input-group-text">{{activeQuestion.format[0][0]}}</span>
+                <div
+                  class="input-group-prepend"
+                  v-if="activeQuestion.format[0][0]"
+                >
+                  <span class="input-group-text">{{
+                    activeQuestion.format[0][0]
+                  }}</span>
                 </div>
                 <input type="text" v-model="activeQuestion.answer1" />
-                <div class="input-group-append" v-if="activeQuestion.format[0][1]">
-                  <span class="input-group-text">{{activeQuestion.format[0][1]}}</span>
+                <div
+                  class="input-group-append"
+                  v-if="activeQuestion.format[0][1]"
+                >
+                  <span class="input-group-text">{{
+                    activeQuestion.format[0][1]
+                  }}</span>
                 </div>
               </div>
-              <div style="border: 1px solid black; margin:5px 0;"></div>
+              <div style="border: 1px solid black; margin: 5px 0"></div>
               <div class="input-group">
-                <div class="input-group-prepend" v-if="activeQuestion.format[1][0]">
-                  <span class="input-group-text">{{activeQuestion.format[1][0]}}</span>
+                <div
+                  class="input-group-prepend"
+                  v-if="activeQuestion.format[1][0]"
+                >
+                  <span class="input-group-text">{{
+                    activeQuestion.format[1][0]
+                  }}</span>
                 </div>
                 <input type="text" v-model="activeQuestion.answer2" />
-                <div class="input-group-append" v-if="activeQuestion.format[1][1]">
-                  <span class="input-group-text">{{activeQuestion.format[1][1]}}</span>
+                <div
+                  class="input-group-append"
+                  v-if="activeQuestion.format[1][1]"
+                >
+                  <span class="input-group-text">{{
+                    activeQuestion.format[1][1]
+                  }}</span>
                 </div>
               </div>
             </div>
-            <div v-else-if="activeQuestion.question_type == 'matrix'" style="width:220px;">
+            <div
+              v-else-if="activeQuestion.question_type == 'matrix'"
+              style="width: 220px"
+            >
               <div class="row">
                 <div class="col-xs-1">
-                  <div style="height:100%;width:10px;border:2px solid black; border-right:none;"></div>
+                  <div
+                    style="
+                      height: 100%;
+                      width: 10px;
+                      border: 2px solid black;
+                      border-right: none;
+                    "
+                  ></div>
                 </div>
-                <div class="col-xs-10" style="width:180px;padding:10px 0;">
+                <div class="col-xs-10" style="width: 180px; padding: 10px 0">
                   <div class="input-group">
-                    <div class="input-group-prepend" v-if="activeQuestion.format[0][0]">
-                      <span class="input-group-text">{{activeQuestion.format[0][0]}}</span>
+                    <div
+                      class="input-group-prepend"
+                      v-if="activeQuestion.format[0][0]"
+                    >
+                      <span class="input-group-text">{{
+                        activeQuestion.format[0][0]
+                      }}</span>
                     </div>
                     <input type="text" v-model="activeQuestion.answer1" />
-                    <div class="input-group-append" v-if="activeQuestion.format[0][1]">
-                      <span class="input-group-text">{{activeQuestion.format[0][1]}}</span>
+                    <div
+                      class="input-group-append"
+                      v-if="activeQuestion.format[0][1]"
+                    >
+                      <span class="input-group-text">{{
+                        activeQuestion.format[0][1]
+                      }}</span>
                     </div>
                   </div>
-                  <div style="margin:10px 0;"></div>
+                  <div style="margin: 10px 0"></div>
                   <div class="input-group">
-                    <div class="input-group-prepend" v-if="activeQuestion.format[1][0]">
-                      <span class="input-group-text">{{activeQuestion.format[1][0]}}</span>
+                    <div
+                      class="input-group-prepend"
+                      v-if="activeQuestion.format[1][0]"
+                    >
+                      <span class="input-group-text">{{
+                        activeQuestion.format[1][0]
+                      }}</span>
                     </div>
                     <input type="text" v-model="activeQuestion.answer2" />
-                    <div class="input-group-append" v-if="activeQuestion.format[1][1]">
-                      <span class="input-group-text">{{activeQuestion.format[1][1]}}</span>
+                    <div
+                      class="input-group-append"
+                      v-if="activeQuestion.format[1][1]"
+                    >
+                      <span class="input-group-text">{{
+                        activeQuestion.format[1][1]
+                      }}</span>
                     </div>
                   </div>
                 </div>
                 <div class="col-xs-1">
-                  <div style="height:100%;width:10px;border:2px solid black; border-left:none;"></div>
+                  <div
+                    style="
+                      height: 100%;
+                      width: 10px;
+                      border: 2px solid black;
+                      border-left: none;
+                    "
+                  ></div>
                 </div>
               </div>
             </div>
@@ -80,121 +143,217 @@
               <div class="row">
                 <div class="col-xs-6 align-self-center">
                   <div class="input-group mr-2">
-                    <div class="input-group-prepend" v-if="activeQuestion.format[0][0]">
-                      <span class="input-group-text">{{activeQuestion.format[0][0]}}</span>
+                    <div
+                      class="input-group-prepend"
+                      v-if="activeQuestion.format[0][0]"
+                    >
+                      <span class="input-group-text">{{
+                        activeQuestion.format[0][0]
+                      }}</span>
                     </div>
                     <input type="text" v-model="activeQuestion.answer1" />
-                    <div class="input-group-append" v-if="activeQuestion.format[0][1]">
-                      <span class="input-group-text">{{activeQuestion.format[0][1]}}</span>
+                    <div
+                      class="input-group-append"
+                      v-if="activeQuestion.format[0][1]"
+                    >
+                      <span class="input-group-text">{{
+                        activeQuestion.format[0][1]
+                      }}</span>
                     </div>
                   </div>
                 </div>
-                <div class="col-xs-6" style="width:180px;padding:10px 0;">
+                <div class="col-xs-6" style="width: 180px; padding: 10px 0">
                   <div class="input-group">
-                    <div class="input-group-prepend" v-if="activeQuestion.format[1][0]">
-                      <span class="input-group-text">{{activeQuestion.format[1][0]}}</span>
+                    <div
+                      class="input-group-prepend"
+                      v-if="activeQuestion.format[1][0]"
+                    >
+                      <span class="input-group-text">{{
+                        activeQuestion.format[1][0]
+                      }}</span>
                     </div>
                     <input type="text" v-model="activeQuestion.answer2" />
-                    <div class="input-group-append" v-if="activeQuestion.format[1][1]">
-                      <span class="input-group-text">{{activeQuestion.format[1][1]}}</span>
+                    <div
+                      class="input-group-append"
+                      v-if="activeQuestion.format[1][1]"
+                    >
+                      <span class="input-group-text">{{
+                        activeQuestion.format[1][1]
+                      }}</span>
                     </div>
                   </div>
-                  <div style="margin:5px 0;border: 1px solid black;"></div>
+                  <div style="margin: 5px 0; border: 1px solid black"></div>
                   <div class="input-group">
-                    <div class="input-group-prepend" v-if="activeQuestion.format[2][0]">
-                      <span class="input-group-text">{{activeQuestion.format[2][0]}}</span>
+                    <div
+                      class="input-group-prepend"
+                      v-if="activeQuestion.format[2][0]"
+                    >
+                      <span class="input-group-text">{{
+                        activeQuestion.format[2][0]
+                      }}</span>
                     </div>
                     <input type="text" v-model="activeQuestion.answer3" />
-                    <div class="input-group-append" v-if="activeQuestion.format[2][1]">
-                      <span class="input-group-text">{{activeQuestion.format[2][1]}}</span>
+                    <div
+                      class="input-group-append"
+                      v-if="activeQuestion.format[2][1]"
+                    >
+                      <span class="input-group-text">{{
+                        activeQuestion.format[2][1]
+                      }}</span>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             <div v-else-if="activeQuestion.question_type == '2-box'">
-              <div class="row" style="width:400px;">
+              <div class="row" style="width: 400px">
                 <div class="col-xs-6">
                   <div class="input-group mr-2">
-                    <div class="input-group-prepend" v-if="activeQuestion.format[0][0]">
-                      <span class="input-group-text">{{activeQuestion.format[0][0]}}</span>
+                    <div
+                      class="input-group-prepend"
+                      v-if="activeQuestion.format[0][0]"
+                    >
+                      <span class="input-group-text">{{
+                        activeQuestion.format[0][0]
+                      }}</span>
                     </div>
                     <input type="text" v-model="activeQuestion.answer1" />
-                    <div class="input-group-append" v-if="activeQuestion.format[0][1]">
-                      <span class="input-group-text">{{activeQuestion.format[0][1]}}</span>
+                    <div
+                      class="input-group-append"
+                      v-if="activeQuestion.format[0][1]"
+                    >
+                      <span class="input-group-text">{{
+                        activeQuestion.format[0][1]
+                      }}</span>
                     </div>
                   </div>
                 </div>
                 <div class="col-xs-6">
                   <div class="input-group">
-                    <div class="input-group-prepend" v-if="activeQuestion.format[1][0]">
-                      <span class="input-group-text">{{activeQuestion.format[1][0]}}</span>
+                    <div
+                      class="input-group-prepend"
+                      v-if="activeQuestion.format[1][0]"
+                    >
+                      <span class="input-group-text">{{
+                        activeQuestion.format[1][0]
+                      }}</span>
                     </div>
                     <input type="text" v-model="activeQuestion.answer2" />
-                    <div class="input-group-append" v-if="activeQuestion.format[1][1]">
-                      <span class="input-group-text">{{activeQuestion.format[1][1]}}</span>
+                    <div
+                      class="input-group-append"
+                      v-if="activeQuestion.format[1][1]"
+                    >
+                      <span class="input-group-text">{{
+                        activeQuestion.format[1][1]
+                      }}</span>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             <div v-else-if="activeQuestion.question_type == '3-box'">
-              <div class="row" style="width:600px;">
+              <div class="row" style="width: 600px">
                 <div class="col-xs-4">
                   <div class="input-group mr-2">
-                    <div class="input-group-prepend" v-if="activeQuestion.format[0][0]">
-                      <span class="input-group-text">{{activeQuestion.format[0][0]}}</span>
+                    <div
+                      class="input-group-prepend"
+                      v-if="activeQuestion.format[0][0]"
+                    >
+                      <span class="input-group-text">{{
+                        activeQuestion.format[0][0]
+                      }}</span>
                     </div>
                     <input type="text" v-model="activeQuestion.answer1" />
-                    <div class="input-group-append" v-if="activeQuestion.format[0][1]">
-                      <span class="input-group-text">{{activeQuestion.format[0][1]}}</span>
+                    <div
+                      class="input-group-append"
+                      v-if="activeQuestion.format[0][1]"
+                    >
+                      <span class="input-group-text">{{
+                        activeQuestion.format[0][1]
+                      }}</span>
                     </div>
                   </div>
                 </div>
                 <div class="col-xs-4">
                   <div class="input-group mr-2">
-                    <div class="input-group-prepend" v-if="activeQuestion.format[1][0]">
-                      <span class="input-group-text">{{activeQuestion.format[1][0]}}</span>
+                    <div
+                      class="input-group-prepend"
+                      v-if="activeQuestion.format[1][0]"
+                    >
+                      <span class="input-group-text">{{
+                        activeQuestion.format[1][0]
+                      }}</span>
                     </div>
                     <input type="text" v-model="activeQuestion.answer2" />
-                    <div class="input-group-append" v-if="activeQuestion.format[1][1]">
-                      <span class="input-group-text">{{activeQuestion.format[1][1]}}</span>
+                    <div
+                      class="input-group-append"
+                      v-if="activeQuestion.format[1][1]"
+                    >
+                      <span class="input-group-text">{{
+                        activeQuestion.format[1][1]
+                      }}</span>
                     </div>
                   </div>
                 </div>
                 <div class="col-xs-4">
                   <div class="input-group">
-                    <div class="input-group-prepend" v-if="activeQuestion.format[2][0]">
-                      <span class="input-group-text">{{activeQuestion.format[2][0]}}</span>
+                    <div
+                      class="input-group-prepend"
+                      v-if="activeQuestion.format[2][0]"
+                    >
+                      <span class="input-group-text">{{
+                        activeQuestion.format[2][0]
+                      }}</span>
                     </div>
                     <input type="text" v-model="activeQuestion.answer3" />
-                    <div class="input-group-append" v-if="activeQuestion.format[2][1]">
-                      <span class="input-group-text">{{activeQuestion.format[2][1]}}</span>
+                    <div
+                      class="input-group-append"
+                      v-if="activeQuestion.format[2][1]"
+                    >
+                      <span class="input-group-text">{{
+                        activeQuestion.format[2][1]
+                      }}</span>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             <div v-else-if="activeQuestion.question_type == 'option'">
-              <div class="form-check" v-for="answer in activeQuestion.answers" :key="answer.id">
+              <div
+                class="form-check"
+                v-for="answer in activeQuestion.answers"
+                :key="answer.id"
+              >
                 <input
                   class="form-check-input"
                   type="radio"
                   name="answer"
-                  :id="'a'+answer.id"
+                  :id="'a' + answer.id"
                   :value="answer.ans1_body"
                 />
-                <label class="form-check-label" :for="'a'+answer.id">{{answer.ans1_body}}</label>
+                <label class="form-check-label" :for="'a' + answer.id">{{
+                  answer.ans1_body
+                }}</label>
               </div>
             </div>
             <div v-else>
               <div class="input-group">
-                <div class="input-group-prepend" v-if="activeQuestion.format[0][0]">
-                  <span class="input-group-text">{{activeQuestion.format[0][0]}}</span>
+                <div
+                  class="input-group-prepend"
+                  v-if="activeQuestion.format[0][0]"
+                >
+                  <span class="input-group-text">{{
+                    activeQuestion.format[0][0]
+                  }}</span>
                 </div>
                 <input type="text" v-model="activeQuestion.answer1" />
-                <div class="input-group-append" v-if="activeQuestion.format[0][1]">
-                  <span class="input-group-text">{{activeQuestion.format[0][1]}}</span>
+                <div
+                  class="input-group-append"
+                  v-if="activeQuestion.format[0][1]"
+                >
+                  <span class="input-group-text">{{
+                    activeQuestion.format[0][1]
+                  }}</span>
                 </div>
               </div>
             </div>
@@ -205,13 +364,29 @@
 
     <div class="row mt-2">
       <div class="col-md-4">
-        <b-button class="form-control btn-success" v-if="currentIndex>0" @click="previous">Previous</b-button>
+        <b-button
+          class="form-control btn-success"
+          v-if="currentIndex > 0"
+          @click="previous"
+          >Previous</b-button
+        >
       </div>
       <div class="col-md-4">
-        <b-button class="form-control" v-if="currentIndex==(questions.length-1)" variant="primary" @click="submit">Submit</b-button>
+        <b-button
+          class="form-control"
+          v-if="currentIndex == questions.length - 1"
+          variant="primary"
+          @click="submit"
+          >Submit</b-button
+        >
       </div>
       <div class="col-md-4">
-        <b-button class="form-control btn-success" v-if="currentIndex<(questions.length-1)" @click="next">Next</b-button>
+        <b-button
+          class="form-control btn-success"
+          v-if="currentIndex < questions.length - 1"
+          @click="next"
+          >Next</b-button
+        >
       </div>
     </div>
   </div>
