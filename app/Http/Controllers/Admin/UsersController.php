@@ -1,7 +1,9 @@
 <?php
+
 /**
  * access to registered user
  */
+
 namespace App\Http\Controllers\Admin;
 
 use App\Course;
@@ -13,13 +15,12 @@ use Illuminate\Http\Request;
 
 class UsersController extends Controller
 {
- /**
-         * access to registered user
-         */
+    /**
+     * access to registered user
+     */
     public function __construct()
     {
         $this->middleware('auth');
-
     }
 
     /**
@@ -32,8 +33,29 @@ class UsersController extends Controller
         //
         // return 'User index page';
         $users = User::all();
-        return view('admin.users.index')->with('users', $users);
+        $roles = Role::all();
+        $courses = Course::all();
+        return view('admin.users.index', compact('users', 'roles', 'courses'));
     }
+
+    public function filter(Request $request)
+    {
+        $query = User::query();
+
+        if ($request->has('course_id') && !empty($request->course_id)) {
+            $query->where('course_id', $request->course_id);
+        }
+
+        if ($request->has('role_name') && !empty($request->role_name)) {
+            $roleName = $request->role_name;
+            $query->whereHas("roles", function ($q) use ($roleName) {
+                $q->where("name", $roleName);
+            });
+        }
+
+        return view('admin.users.user-list')->with('users', $query->get());
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -68,7 +90,6 @@ class UsersController extends Controller
     public function show(User $user)
     {
         return view('admin.users.show')->with('user', $user);
-
     }
 
     /**
@@ -86,10 +107,15 @@ class UsersController extends Controller
         }
         $courses = Course::all();
         $roles = Role::all();
+        $tutors = User::whereHas("roles", function ($q) {
+            $q->where("name", 'tutor');
+        })->get();
+
         return view('admin.users.edit')->with([
             'user' => $user,
             'roles' => $roles,
             'courses' => $courses,
+            'tutors' => $tutors
         ]);
     }
     /**
@@ -110,11 +136,13 @@ class UsersController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'course_id' => $request->course_id,
+            'tutor_id' => $request->tutor_id,
         ]);
         $user->syncRoles($request->roles);
         // return $success;
 
-        if ($success) {$request->session()->flash('success', $user->name . ' has been updated');
+        if ($success) {
+            $request->session()->flash('success', $user->name . ' has been updated');
         } else {
             $request->session()->flash('error', 'There was an error updating the user');
         }
@@ -134,7 +162,7 @@ class UsersController extends Controller
         if (Gate::denies('delete-users')) {
             return redirect(route('admin.users.index'));
         }
-        
+
         $user->delete();
 
         return redirect()->route('admin.users.index');

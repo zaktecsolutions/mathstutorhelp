@@ -2595,6 +2595,16 @@ Vue.mixin({
       }).then(function (response) {
         $("#results").html(response.data);
       });
+    },
+    filterUsers: function filterUsers() {
+      axios.get("/admin/users/filter", {
+        params: {
+          role_name: $("#role").val(),
+          course_id: $("#course").val()
+        }
+      }).then(function (response) {
+        $("#results").html(response.data);
+      });
     }
   }
 });

@@ -55,6 +55,22 @@
                                 @enderror
                             </div>
                         </div>
+                        <div class="form-group row">
+                            <label for="tutor_id" class="col-md-2 col-form-label text-md-right"> Tutor</label>
+                            <div class="col-md-6">
+                                <select id="tutor_id" class="form-control">
+                                    <option value="">Select Tutor</option>
+                                    @foreach ($tutors as $tutor)
+                                    <option value="{{$tutor->id}}" @if($user->tutor_id == $tutor->id) selected @endif>{{$tutor->name}}</option>
+                                    @endforeach
+                                </select>
+                                @error('tutor_id')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
                         @endif
 
                         <div class="form-group row">

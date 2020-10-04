@@ -31,7 +31,19 @@ Vue.mixin({
                         topic_id: $("#topic").val(),
                         lesson_id: $("#lesson").val(),
                         quiz_id: $("#quiz").val(),
-                        course_id : $("#course_id").val()
+                        course_id: $("#course_id").val()
+                    }
+                })
+                .then(response => {
+                    $("#results").html(response.data);
+                });
+        },
+        filterUsers: function () {
+            axios
+                .get(`/admin/users/filter`, {
+                    params: {
+                        role_name: $("#role").val(),
+                        course_id: $("#course").val()
                     }
                 })
                 .then(response => {

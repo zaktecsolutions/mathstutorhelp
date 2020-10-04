@@ -24,7 +24,7 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/homepage', 'HomeController@index')->name('home');
 
 // admin user route
-Route::namespace ('Admin')
+Route::namespace('Admin')
     ->prefix('admin')
     ->name('admin.')
     ->middleware('role:admin')
@@ -32,7 +32,9 @@ Route::namespace ('Admin')
 
         Route::get('/dashboard', 'AdminController@dashboard')->name('dashboard');
         Route::get('/students', 'AdminController@students')->name('students');
+        Route::get('/users/filter', 'UsersController@filter')->name('filter-users');
         Route::resource('/users', 'UsersController');
+        
         Route::resource('courses', 'CoursesController');
         Route::resource('course.topics', 'TopicsController');
         Route::resource('course.topic.lessons', 'LessonsController');
@@ -47,7 +49,7 @@ Route::namespace ('Admin')
     });
 
 // Digitutor route
-Route::namespace ('Digitutor')
+Route::namespace('Digitutor')
     ->middleware('can:digitutor')
     ->prefix('digitutor')
     ->name('digitutor.')
@@ -61,7 +63,7 @@ Route::namespace ('Digitutor')
     });
 
 // student  route
-Route::namespace ('Student')
+Route::namespace('Student')
     ->middleware('role:student')
     ->prefix('student')
     ->group(function () {
@@ -78,7 +80,7 @@ Route::namespace ('Student')
     });
 
 // admin route
-Route::namespace ('Tutor')
+Route::namespace('Tutor')
     ->middleware('role:tutor')
     ->prefix('tutor')
     ->group(function () {
@@ -88,5 +90,4 @@ Route::namespace ('Tutor')
         Route::get('/edittutor', 'TutaccountController@edit')->name('edittutor');
         Route::post('/updatetutor', 'TutaccountController@update')->name('updatetutor');
         Route::get('/getstudent{id}', 'TutstudentController@show')->name('viewstudent');
-
     });
